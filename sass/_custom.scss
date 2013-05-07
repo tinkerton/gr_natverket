@@ -1,0 +1,38 @@
+// Your custom SCSS should be written here...
+body {
+	background: black;
+	color:#fff;
+	background-attachment: fixed;
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	background-size: auto 100%;
+
+ 
+
+}
+
+.wrapper {
+	text-align: center;
+	
+	height:100%;
+	
+}
+.wrapper:before {
+	content:'';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: -0.25em;
+	background-color: #0f0;
+}
+
+.centered_box {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  height: auto;
+ 
+  background-color: #000;
+
+}

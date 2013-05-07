@@ -1,0 +1,2 @@
+Author: Jonas Hörberg, jonas@tinkerton.se
+Based on: www.gumbyframework.com
