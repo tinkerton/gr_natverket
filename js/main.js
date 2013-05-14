@@ -15,6 +15,22 @@ Gumby.oldie(function() {
 
 // Document ready
 $(function() {
+	var i = 0;
+	
 
+	$(document).on('click', '#nextButton', function() {
+ 			var main = $('#main_div');
+ 			main.fadeOut(200, function () {main.html(addContent(i))}).fadeIn();
+ 			
+
+ 		
+ 		i++;
+	});
+
+		
+		function addContent(nodeId) {
+			var result = "<div class='twelve columns'><h1 class='lead'>YOU DID IT ("+nodeId+")!</h1><h2>Good work chap!</h2><div class='medium warning btn' id='nextButton'><a href='#'>Next</a></div></div>";
+		     return result;
+		} 	
 });
 
