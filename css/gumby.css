@@ -1836,7 +1836,7 @@ body .video.twitch, body .video.youtube.show_controls { padding-top: 30px; }
 
 body { background: black; color: #fff; background-attachment: fixed; background-image: url(../img/bg.jpg); background-repeat: no-repeat; background-position: 50% 0; background-size: auto 100%; }
 
-.centered_box { background-color: #000; padding: 20px 10px 30px 10px;   /*display: inline-block; vertical-align: middle; text-align: center; height: auto;  background-color: #000;
+.centered_box { background-color: #000; position: relative; padding: 20px 0px 30px 0px;   /*display: inline-block; vertical-align: middle; text-align: center; height: auto;  background-color: #000;
 */ }
 
 #outer { text-align: center; width: 100%; height: 100%; overflow: hidden; position: relative; }
@@ -1857,3 +1857,6 @@ body { background: black; color: #fff; background-attachment: fixed; background-
 *:first-child + html #middle[id] { position: absolute; display: block; vertical-align: inherit; top: 50%; }
 
 /* for explorer 7 only */
+.frameDecoration { position: relative; top: -65px; padding-top: 65px; margin-bottom: -65px; background-image: url(../img/overlay1.png); background-repeat: no-repeat; padding-left: 10px; padding-right: 10px; }
+
+.footerDecoration { position: relative; top: 65px; padding-top: -65px; margin-bottom: 65px; background-image: url(../img/overlay1.png); background-repeat: no-repeat; }
