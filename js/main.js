@@ -13,7 +13,7 @@ var FS = (function(self){
 
 
 	self.addContent = function(nodeId) {
-			var result = addNodeHeader() + addNodeTitle(nodeId,1) + addNodeVideos(nodeId) + "<h2>Good work chap!</h2>" + addNodeNextButton() + addNodeFooter();
+			var result = addNodeHeader() + addNodeTitle(nodeId,1) + addNodeVideos(nodeId) + addNodePreText(nodeId) + addNodePostText(nodeId) + addNodeNextButton() + addNodeFooter();
 		    return result;
 	} 	
 
@@ -70,16 +70,24 @@ var FS = (function(self){
 		for (var i=0; i<nrOfVideos; i++) {
 			res +="<div class='"+nrOfCols+" columns'><article class='vimeo video'>";
 			res +="<iframe style='visibility:hidden;' onload='this.style.visibility='visible'' ";
-			res += "src='" + contentObj[nodeId].videos[i].videoURL+" 'width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
+			res += "src='" + videos[i].videoURL+" 'width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
 			res +="</iframe></article></div>";
 		}
 		res+"</div>";
 
 		return res;
 	}
+	
+
+	function addNodePreText (nodeId) {
+		return "<h3>"+ contentObj[nodeId].pretext+"</h3>";
 		
+	}
 
-
+	function addNodePostText (nodeId) {
+		return "<p>"+ contentObj[nodeId].posttext+"</p>";
+		
+	}
 
 
 
