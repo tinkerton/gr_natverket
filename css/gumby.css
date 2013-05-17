@@ -1834,7 +1834,22 @@ body .video.twitch, body .video.youtube.show_controls { padding-top: 30px; }
 .modal.active { z-index: 999999; }
 .modal.active, .modal.active > .content { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 
-body { background: black; color: #dbd1b8; font-family: sans-serif; background-attachment: fixed; background-image: url(../img/bg.jpg); background-repeat: no-repeat; background-position: 50% 0; background-size: auto 100%; }
+body { background: black; color: #dbd1b8; font-family: sans-serif; /*	background-attachment: fixed;
+	background-image: url(../img/bg4.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	background-size: auto 100%;
+*/ }
+
+#outer { background-attachment: fixed; background-image: url(../img/bg.jpg); background-repeat: no-repeat; background-position: 50% 0; background-size: auto 100%; }
+
+.node_0 { background-image: url(../img/bg4.jpg) !important; }
+
+.node_1 { background-image: url(../img/bg2.jpg) !important; }
+
+.node_2 { background-image: url(../img/bg3.jpg) !important; }
+
+.node_3 { background-image: url(../img/bg.jpg) !important; }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'PTSansRegular'; color: #dbd1b8; /*text-shadow: 2px 2px 3px #000;
 -webkit-text-stroke:0.7px;

@@ -198,13 +198,15 @@ Gumby.oldie(function() {
 $(function() {
 	
 
+
 	var i = 0;
 	
 	$(document).on('click', '#nextButton', function() {
  			/*var main = $('#main_div');
  			main.fadeOut(200, function () {main.html(FS.addContent(i))}).fadeIn();*/
  			FS.gotoNode(i,1);
-
+ 			$('#outer').removeClass();
+ 			 $('#outer').addClass('node_'+i);
  			
 
  		
