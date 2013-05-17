@@ -1,7 +1,7 @@
 // Your custom SCSS should be written here...
 body {
 	background: black;
-	color:#fff;
+	color: #dbd1b8;
 	background-attachment: fixed;
 	background-image: url(../img/bg.jpg);
 	background-repeat: no-repeat;
@@ -92,8 +92,8 @@ $overlayHeight: 65px;
      background-image: url(../img/overlay1.png);
      background-repeat: no-repeat; 
     */
-     padding-left: 10px;
-     padding-right: 10px;
+     padding-left: 50px;
+     padding-right: 50px;
     
      }
 
@@ -103,7 +103,42 @@ $overlayHeight: 65px;
   border-radius: 10px;
  }
 
- .video {
+ .videoBg {
   margin-top: 30px;
   margin-bottom: 50px;
+  
+  -webkit-box-shadow: inset 0px 0px 85px 10px rgba(0,0,0,0.9);
+  -moz-box-shadow:    inset 0px 0px 85px 10px rgba(0,0,0,0.9);
+  box-shadow:         inset 0px 0px 85px 10px rgba(0,0,0,0.9);
+  
+  line-height: 0;         /* ensure no space between bottom */
+  
+  display: inline-block;  /* don't go wider than image */
+
  }
+ .videoBg iframe {
+  position: relative; 
+ 
+  background-color: #000;
+ }
+
+ .blur1 {
+    -webkit-filter:blur(1px);
+    filter:blur(1px);
+}
+.blur2 {
+    -webkit-filter:blur(2px);
+    filter:blur(2px);
+}
+.blur3 {
+    -webkit-filter:blur(3px);
+    filter:blur(3px);
+}
+.blur4 {
+    -webkit-filter:blur(4px);
+    filter:blur(4px);
+}
+.blur5 {
+    -webkit-filter:blur(5px);
+    filter:blur(5px);
+}
