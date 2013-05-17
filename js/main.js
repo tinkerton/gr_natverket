@@ -38,10 +38,14 @@ var FS = (function(self){
 		return res;
 	}
 
+	function removeLoader(iframeId) {
+		$('#loader_'+iframeId).remove();
+	}
 	
 	self.showIframe = function(iframeId) {
-		TweenMax.to($('#iframe_'+iframeId),1, {autoAlpha:1});
+		TweenMax.to($('#iframe_'+iframeId),0.75, {autoAlpha:1, onComplete:removeLoader, onCompleteParams:[iframeId]});
 	}
+
 
 
 	function addNodeVideos (nodeId) {
@@ -79,7 +83,9 @@ var FS = (function(self){
 		res ="<div class='row'>";
 
 		for (var i=0; i<nrOfVideos; i++) {
-			res +="<div class='"+nrOfCols+" columns'><article class='vimeo video videoBg'>";
+			res +="<div class='"+nrOfCols+" columns'>";
+			res +="<div class='loading' id='loader_"+i+"'><div class='track'></div><div class='spinner'><div class='mask'><div class='maskedCircle'></div></div></div></div>";
+			res +="<article class='vimeo video videoBg'>";
 			res +="<iframe id='iframe_"+i+"' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
 			res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
 			res +="</iframe></article></div>";
@@ -117,7 +123,6 @@ var FS = (function(self){
 		if (currentBlur>(50*speed)) {return};
 		if (currentBlur % (10*speed) ==0) {
 
-			console.log("currentBlur " + currentBlur/(10*speed));
 			$('#main_div').addClass("blur"+currentBlur/(10*speed));
 		}
 	
@@ -128,9 +133,6 @@ var FS = (function(self){
 		currentBlur--;
 		if (currentBlur>(50*speed)) {return};
 		if (currentBlur % (10*speed) ==0) {
-
-			console.log("currentBlur " + currentBlur/(10*speed));
-		//	$('#main_div').addClass("blur"+currentBlur/10);
 				$('#main_div').removeClass("blur"+(currentBlur/(10*speed)));
 		
 		}

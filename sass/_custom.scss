@@ -2,6 +2,7 @@
 body {
 	background: black;
 	color: #dbd1b8;
+  font-family: sans-serif;
 	background-attachment: fixed;
 	background-image: url(../img/bg.jpg);
 	background-repeat: no-repeat;
@@ -15,9 +16,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
 font-family: 'PTSansRegular';
 color: #dbd1b8;
-text-shadow: 2px 2px 3px #000;
+/*text-shadow: 2px 2px 3px #000;
 -webkit-text-stroke:0.7px;
 -webkit-text-stroke-color: #dbd1b8;
+*/
 -webkit-font-smoothing: antialiased;
 }
 h2, h3, h4, h5, h6, p {
@@ -94,7 +96,7 @@ $overlayHeight: 65px;
     */
      padding-left: 50px;
      padding-right: 50px;
-    
+   
      }
 
 
@@ -116,11 +118,7 @@ $overlayHeight: 65px;
   display: inline-block;  /* don't go wider than image */
 
  }
- .videoBg iframe {
-  position: relative; 
- 
-  background-color: #000;
- }
+
 
  .blur1 {
     -webkit-filter:blur(1px);
@@ -141,4 +139,69 @@ $overlayHeight: 65px;
 .blur5 {
     -webkit-filter:blur(5px);
     filter:blur(5px);
+}
+
+
+/*SPINNER LOADER*/
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@-o-keyframes spin {
+  from { -o-transform: rotate(0deg); }
+  to { -o-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Loading animation container */
+.loading {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+}
+
+/* Spin track (outer circle) */
+.loading .track {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 2px;
+  top: 2px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Spinning circle (inner circle) */
+.loading .maskedCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  border: 3px solid white;
+}
+
+/* Spinning circle mask */
+.loading .mask {  
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+}
+
+/* Spinner */
+.loading .spinner {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 22px;
+  height: 22px;
+  -webkit-animation: spin 1s infinite linear;
+  -o-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
 }
