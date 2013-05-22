@@ -39,21 +39,29 @@
   <!-- <link rel="stylesheet" href="css/style.css"> -->
 
  <link rel="stylesheet" href="fonts/fonts.css">
+ <link rel="stylesheet" href="css/bigvideo.css">
 
   <script src="js/libs/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
+  <div class="pattern-overlay"></div>
+    <div class="next-control" id="nextButton">
+             
+               <i class="icon-right-open-big naviconL"></i>
+          </div>
+          <div class="prev-control" id="prevButton">
+
+            <i class="icon-left-open-big naviconR"></i>
+     </div>
 	<div id="outer">
-		<div id="middle">
+      
+    
+    <div id="middle">
+		
 			<div id="inner">
+
              <div class="row centered_box" id="main_div">
-		           	
-                <div class="twelve columns frameDecoration">
-		        		<h1>WHAT WILL YOU DO?</h1>
-		        		<p>Lo-fi actually gentrify consequat. Ex bicycle rights YOLO fanny pack deserunt. Locavore pop-up hashtag elit fashion axe. Farm-to-table gentrify cosby sweater, gastropub keffiyeh sint godard bushwick labore selvage deep v in biodiesel art party typewriter</p>
-		       			
-		          		<div class="medium warning btn" id="nextButton"><a href="#">Start</a></div>
-		        		</div>
+		         </div>
 
 			</div>
              
@@ -61,11 +69,21 @@
 		</div>
 	</div>
 
-
+  <audio id="soundtrack"  loop="loop" preload="none" volume="1">
+      <source src="http://getgoingtoday.org/media/audio/soundtrack.mp3" type="audio/mp3">
+      <source src="http://getgoingtoday.org/media/audio/soundtrack.ogg" type="audio/ogg">
+    </audio>
 
   <!-- Grab Google CDN's jQuery, fall back to local if offline -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="js/libs/plugins.js"></script>
+  <script src="js/libs/jquery.imagesloaded.min.js"></script>
+   <script src="js/libs/video-js/video.js"></script>
+
+  <script src="js/libs/bigvideo.js"></script>
+   <script src="js/libs/backstretch.js"></script>
+
 
   <!--links for the  TweenLite, CSSPlugin, and EasePack-->
   <script src="js/libs/gs/plugins/CSSPlugin.min.js"></script>
@@ -95,6 +113,11 @@
    <script src="js/case1_content.js"></script>
   <script src="js/main.js"></script>
  
+
+
+
+
+
   <!-- Change UA-XXXXX-X to be your site's ID -->
   <!--<script>
     window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];

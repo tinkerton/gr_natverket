@@ -12,6 +12,8 @@ var FS = (function(self){
 	caseNodeId = 0;
 	contentObj = Case1.nodes.content;
 
+	var BV;
+
 	self.dimNextButton  = function() {
 		TweenMax.to($('#nextButton'),1, {opacity:0.2});
 	};
@@ -46,6 +48,35 @@ var FS = (function(self){
 		TweenMax.to($('#iframe_'+iframeId),0.75, {autoAlpha:1, onComplete:removeLoader, onCompleteParams:[iframeId]});
 	}
 
+
+	function setupBackground(nodeId) {
+		
+		$("#big-video-wrap").hide();
+		$(".backstretch").hide();
+		
+		switch(contentObj[nodeId].background.type) {
+			case "video":
+				if (Modernizr.touch) {
+    				$.backstretch("../img/"+contentObj[nodeId].background.ipadBG);
+    				$(".backstretch").fadeIn();
+		
+
+		    } else {
+   				FS.BV.show(contentObj[nodeId].background.url,{ambient:true});
+   				$("#big-video-wrap").fadeIn();
+			}
+	
+			break;
+			case "image":
+		
+				$.backstretch("../img/"+contentObj[nodeId].background.url);
+				$(".backstretch").fadeIn();
+			break;
+			
+		}
+		
+
+	}
 
 
 	function addNodeVideos (nodeId) {
@@ -112,7 +143,7 @@ var FS = (function(self){
 
 
 	self.addContent = function(nodeId) {
-			var result = addNodeHeader() + addNodeTitle(nodeId,1) + addNodeVideos(nodeId) + addNodePreText(nodeId) + addNodePostText(nodeId) + addNodeNextButton() + addNodeFooter();
+			var result = addNodeHeader() + addNodeTitle(nodeId,1) + addNodeVideos(nodeId) + addNodePreText(nodeId) + addNodePostText(nodeId) + addNodeFooter();
 		    return result;
 	};
 
@@ -144,12 +175,16 @@ var FS = (function(self){
 			maindiv.removeClass("blur"+i);
 		}
 		TweenMax.to(maindiv, 0, {alpha:1, scaleX:1, scaleY:1});
-		TweenMax.to($('#nextButton'), 0, {autoAlpha:1});
+	
 		currentBlur=0;
 	}
 
+
+
 	function onCompleteFadeoutNode(maindiv, nextNodeId, speed) {
 		console.log("nextNodeId " +nextNodeId);
+		setupBackground(nextNodeId);
+
 		maindiv.html(FS.addContent(nextNodeId));
 		TweenMax.fromTo (maindiv, speed, {alpha:0, scaleX:0.5, scaleY:0.5},{alpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeOut});
 	}
@@ -164,11 +199,11 @@ var FS = (function(self){
 		else {
 			oldNodeId = nextNodeId+1;
 		} 
-
+	
 		currentBlur = 0;
 		speed=0.25;
 		maindiv = $('#main_div');
-		TweenMax.to($('#nextButton'), 0.1, {autoAlpha:0});
+		
 		TweenMax.to (maindiv, speed, {alpha:0, scaleX:1.2, scaleY:1.2, onUpdate:updateBlur, onUpdateParams:[speed], onComplete:onCompleteFadeoutNode, onCompleteParams:[maindiv, nextNodeId, speed],  ease:Quad.easeIn});
 		
 	}
@@ -196,21 +231,37 @@ Gumby.oldie(function() {
 
 // Document ready
 $(function() {
+		FS.BV = new $.BigVideo();
+		FS.BV.init();
 	
-
-
 	var i = 0;
-	
+	FS.gotoNode(i,1);
+	$("#prevButton").hide();
+
+
+
 	$(document).on('click', '#nextButton', function() {
- 			/*var main = $('#main_div');
- 			main.fadeOut(200, function () {main.html(FS.addContent(i))}).fadeIn();*/
+ 		
+ 			if (i==_.size(Case1.nodes.content)-2) {
+ 				$("#nextButton").fadeOut();
+ 			}
+ 			$("#prevButton").fadeIn();
+ 			i++;
  			FS.gotoNode(i,1);
- 			$('#outer').removeClass();
- 			 $('#outer').addClass('node_'+i);
- 			
 
  		
- 		i++;
+ 	
+	});
+	$(document).on('click', '#prevButton', function() {
+ 			if(i==1) {
+ 				$("#prevButton").fadeOut();
+ 				
+ 			}
+ 			$("#nextButton").fadeIn();
+ 			i--;
+ 			FS.gotoNode(i,-1);
+
+ 	
 	});
 
 		
