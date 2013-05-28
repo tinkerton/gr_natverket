@@ -2,12 +2,14 @@ var Case1 = (function(self){
 
 self.nodes = {"content": 
 	[
-	{  	"title":"Det första fallet",
+	{  	"ID": "1.1.1",
+		"title":"Det första fallet",
 		"background":{"type":"video","url":"http://getgoingtoday.org/media/video/dream.mp4", "ipadBG":"bg4.jpg"},
 		"pretext":"Ibland är människohandeln av sexuell natur. De drabbade har ofta erbjudits andra jobb men blir istället sexslavar. Olika aktörer mot sexuell människohandel förklarar problematiken på olika sätt.",
 		"posttext":""
 	}, 
-	{  	"title":"Node nr 2. The hipster.",
+	{  	"ID": "1.1.2",
+		"title":"Node nr 2. The hipster.",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"},
 					{"videoURL":"http://player.vimeo.com/video/62803828"},
@@ -16,24 +18,20 @@ self.nodes = {"content":
 		"pretext":"Helvetica dolor tonx assumenda. Post-ironic officia squid, quinoa vinyl organic occaecat umami scenester nihil seitan selvage YOLO.",
 		"posttext":"Laborum neutra whatever sunt cupidatat, id anim thundercats. Butcher authentic freegan, helvetica thundercats sunt ex post-ironic umami aute irure blog delectus. Raw denim est trust fund ugh, cred in aute gluten-free put a bird on it. Sed pitchfork letterpress aliquip, chambray flexitarian fingerstache. Pitchfork kogi reprehenderit, organic biodiesel terry richardson flexitarian keytar pinterest disrupt PBR art party.n."
 	}, 
-	{  	"title":"The third Node",
+	{  	"ID": "1.1.3",
+		"title":"The third Node",
 		"background":{"type":"image","url":"bg2.jpg"},
 		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"}], 
 		"pretext":"",
 		"posttext":""
 	}, 
-	{  	"title":"Node four. The last of the  test content.",
+	{  	"ID": "1.1.4",
+		"title":"Node four. The last of the  test content.",
 		"background":{"type":"video","url":"http://getgoingtoday.org/media/video/dream.mp4", "ipadBG":"bg4,jpg"},
 		"pretext":"Pitchfork kogi reprehenderit, organic biodiesel terry richardson flexitarian keytar pinterest disrupt PBR art party.",
 		"posttext":"Lo-fi actually gentrify consequat. Ex bicycle rights YOLO fanny pack deserunt. Locavore pop-up hashtag elit fashion axe. Farm-to-table gentrify cosby sweater, gastropub keffiyeh sint godard bushwick labore selvage deep v in biodiesel art party typewriter. Mustache fugiat biodiesel, accusamus bespoke nulla enim sartorial bushwick. Qui tattooed occaecat polaroid nulla, id meggings readymade pickled reprehenderit. You probably haven't heard of them direct trade kogi butcher freegan, sapiente photo booth chillwave iphone cliche cupidatat reprehenderit veniam non meggings."
-	},
-	{  	"title":"En ny nod.",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"},
-					]
-		"pretext":"klipp in text från manus.",
-		"posttext":""
-	} 
+	}
+	
     ]
 };
 
