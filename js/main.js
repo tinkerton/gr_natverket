@@ -208,6 +208,11 @@ var FS = (function(self){
 		
 	}
 
+	self.setUpThumbs = function() {
+		var nrOfNodes = _.size(Case1.nodes.content);
+		console.log("nrOfNodes " + nrOfNodes);
+	}
+
 	return self;
 
 })({});
@@ -231,11 +236,15 @@ Gumby.oldie(function() {
 
 // Document ready
 $(function() {
-		FS.BV = new $.BigVideo();
-		FS.BV.init();
-	
 	var i = 0;
+
+	FS.BV = new $.BigVideo();
+	FS.BV.init();
+	
+	FS.setUpThumbs();
 	FS.gotoNode(i,1);
+	
+
 	$("#prevButton").hide();
 
 
