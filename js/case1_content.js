@@ -20,6 +20,17 @@ self.nodes = {"content":
 		"pretext":"Helvetica dolor tonx assumenda. Post-ironic officia squid, quinoa vinyl organic occaecat umami scenester nihil seitan selvage YOLO.",
 		"posttext":"Laborum neutra whatever sunt cupidatat, id anim thundercats. Butcher authentic freegan, helvetica thundercats sunt ex post-ironic umami aute irure blog delectus. Raw denim est trust fund ugh, cred in aute gluten-free put a bird on it. Sed pitchfork letterpress aliquip, chambray flexitarian fingerstache. Pitchfork kogi reprehenderit, organic biodiesel terry richardson flexitarian keytar pinterest disrupt PBR art party.n."
 	}, 
+	{  	"ID": "1.1.2.1",
+		"type":"info",
+		"title":"Node nr 2B. The SECOND.",
+		"background":{"type":"image","url":"bg4.jpg"},
+		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"},
+					{"videoURL":"http://player.vimeo.com/video/62803828"},
+					{"videoURL":"http://player.vimeo.com/video/62803828"}
+					], 
+		"pretext":"Helvetica dolor tonx assumenda. Post-ironic officia squid, quinoa vinyl organic occaecat umami scenester nihil seitan selvage YOLO.",
+		"posttext":"Laborum neutra whatever sunt cupidatat, id anim thundercats. Butcher authentic freegan, helvetica thundercats sunt ex post-ironic umami aute irure blog delectus. Raw denim est trust fund ugh, cred in aute gluten-free put a bird on it. Sed pitchfork letterpress aliquip, chambray flexitarian fingerstache. Pitchfork kogi reprehenderit, organic biodiesel terry richardson flexitarian keytar pinterest disrupt PBR art party.n."
+	}, 
 	{  	"ID": "1.1.3",
 		"type":"info",
 		"title":"The third Node",

@@ -7,7 +7,7 @@ var FS = (function(self){
 		caseNodeId,
 		contentObj,
 		currentBlur,
-		api;
+		currentNodeNr;
 
 	activeCase = 0;
 	caseNodeId = 0;
@@ -168,6 +168,9 @@ var FS = (function(self){
 		}
 	
 	}
+
+
+
 	function resetNodeAttributes() {
 		var maindiv = $('#main_div');
 		for (var i=1; i<=5; i++) {
@@ -175,7 +178,8 @@ var FS = (function(self){
 		}
 		TweenMax.to(maindiv, 0, {alpha:1, scaleX:1, scaleY:1});
 		currentBlur=0;
-		
+		FS.setUpThumbs();
+		FS.resize();
 
 	}
 
@@ -205,6 +209,8 @@ var FS = (function(self){
 			oldNodeId = ?;	
 		}
 	*/
+		  
+    	FS.currentNodeNr = nextNodeId;
 
 		FS.checkArrows(nextNodeId);
 		currentBlur = 0;
@@ -223,12 +229,17 @@ var FS = (function(self){
 		for (var i=0; i<nrOfNodes; i++) {
 			switch (contentObj[i].type) {
 				case "info":
-					res += "<div class='node-thumb node-info' onclick='FS.gotoNode("+i+",0);'></div>";
+					res += "<div class='node-thumb node-info";
+					if (FS.currentNodeNr==i) { res += " node-selected";}
+					res+="' onclick='FS.gotoNode("+i+",0);'></div>";
 				break;
 				case "question":
-				  res += "<div class='node-thumb node-question' onclick='FS.gotoNode("+i+",0);'></div>"; 
+				  res += "<div class='node-thumb node-question";
+				  if (FS.currentNodeNr==i) { res += " node-selected";}
+					res+="' onclick='FS.gotoNode("+i+",0);'></div>";
 				break;
 				case "hidden":
+
 				break;
 				
 			}
@@ -236,6 +247,28 @@ var FS = (function(self){
 			
 		navObj.html(res);
 
+	}
+	self.resize = function() {
+		var inner =  $('#inner');
+		var wind =  $(window);
+		var scrollwidth=17;
+
+
+		console.log("resize " + $("#main_div").height() + "  " + $(window).height() );
+
+		inner.css('max-height', wind.height()-60+'px');
+		inner.css('top', '-30px');
+
+		if ($("#main_div").height() > $(window).height()) {
+			inner.css("overflow-y","auto");
+			if (navigator.userAgent.match(/webkit/i)) {
+			 		scrollwidth=8;
+    		}
+    		TweenMax.to($('#nextButton'), 0.25,{css:{"right": scrollwidth + "px"}});
+    	}else {
+			inner.css("overflow-y","hidden");
+			TweenMax.to($('#nextButton'), 0.25,{css:{"right":"0px"}});
+		}
 	}
 
 	self.checkArrows = function(currentNodeNr) {
@@ -280,33 +313,33 @@ Gumby.oldie(function() {
 
 // Document ready
 $(function() {
-	var currentNodeNr = 0;
+	FS.currentNodeNr = 0;
 
 	FS.BV = new $.BigVideo();
 	FS.BV.init();
 	
 
 	FS.setUpThumbs();
-	FS.gotoNode(currentNodeNr,1);
+	FS.gotoNode(FS.currentNodeNr,1);
 	
 	$(document).on('click', '#nextButton', function() {
  		
  			
- 			currentNodeNr++;
+ 			FS.currentNodeNr ++;
  			
- 			FS.gotoNode(currentNodeNr,1);
+ 			FS.gotoNode(FS.currentNodeNr,1);
 
  		
  	
 	});
 	$(document).on('click', '#prevButton', function() {
- 			currentNodeNr--;
+ 			FS.currentNodeNr--;
  		
- 			FS.gotoNode(currentNodeNr,-1);
+ 			FS.gotoNode(FS.currentNodeNr,-1);
 
  	
 	});
-
+	
 		
 		
 });
