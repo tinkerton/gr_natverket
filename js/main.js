@@ -6,7 +6,8 @@ var FS = (function(self){
 	var activeCase, 
 		caseNodeId,
 		contentObj,
-		currentBlur;
+		currentBlur,
+		api;
 
 	activeCase = 0;
 	caseNodeId = 0;
@@ -14,9 +15,7 @@ var FS = (function(self){
 
 	var BV;
 
-	self.dimNextButton  = function() {
-		TweenMax.to($('#nextButton'),1, {opacity:0.2});
-	};
+
 
 
 	function addNodeHeader () {
@@ -90,7 +89,7 @@ var FS = (function(self){
 		if (videos === undefined) {return "";}
 
 		nrOfVideos = _.size(videos);
-		console.log("videonrs " + nrOfVideos);
+	
 
 		nrOfCols="twelve";
 		
@@ -175,31 +174,39 @@ var FS = (function(self){
 			maindiv.removeClass("blur"+i);
 		}
 		TweenMax.to(maindiv, 0, {alpha:1, scaleX:1, scaleY:1});
-	
 		currentBlur=0;
+		
+
 	}
 
 
 
 	function onCompleteFadeoutNode(maindiv, nextNodeId, speed) {
-		console.log("nextNodeId " +nextNodeId);
+		
 		setupBackground(nextNodeId);
 
 		maindiv.html(FS.addContent(nextNodeId));
+
+
 		TweenMax.fromTo (maindiv, speed, {alpha:0, scaleX:0.5, scaleY:0.5},{alpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeOut});
 	}
 
 
 	self.gotoNode = function(nextNodeId, direction) {
 		var oldNodeId, maindiv, speed;
-				
+		/*		
 		if (direction==1) { 
 			oldNodeId = nextNodeId-1;
 		}
-		else {
+		else if (direction==-1){
 			oldNodeId = nextNodeId+1;
 		} 
-	
+		else {
+			oldNodeId = ?;	
+		}
+	*/
+
+		FS.checkArrows(nextNodeId);
 		currentBlur = 0;
 		speed=0.25;
 		maindiv = $('#main_div');
@@ -210,7 +217,44 @@ var FS = (function(self){
 
 	self.setUpThumbs = function() {
 		var nrOfNodes = _.size(Case1.nodes.content);
-		console.log("nrOfNodes " + nrOfNodes);
+		var navObj = $("#case-nav");
+		var res ="";
+
+		for (var i=0; i<nrOfNodes; i++) {
+			switch (contentObj[i].type) {
+				case "info":
+					res += "<div class='node-thumb node-info' onclick='FS.gotoNode("+i+",0);'></div>";
+				break;
+				case "question":
+				  res += "<div class='node-thumb node-question' onclick='FS.gotoNode("+i+",0);'></div>"; 
+				break;
+				case "hidden":
+				break;
+				
+			}
+		}
+			
+		navObj.html(res);
+
+	}
+
+	self.checkArrows = function(currentNodeNr) {
+			if (currentNodeNr<_.size(Case1.nodes.content)-1) {
+ 				$("#nextButton").fadeIn();
+ 			}
+ 			else{
+ 				$("#nextButton").fadeOut();
+ 			}
+
+ 	 			
+ 			if(currentNodeNr==0) {
+ 				$("#prevButton").fadeOut();
+ 				
+ 			}else{
+ 					$("#prevButton").fadeIn();
+ 			}
+ 			
+
 	}
 
 	return self;
@@ -236,39 +280,29 @@ Gumby.oldie(function() {
 
 // Document ready
 $(function() {
-	var i = 0;
+	var currentNodeNr = 0;
 
 	FS.BV = new $.BigVideo();
 	FS.BV.init();
 	
+
 	FS.setUpThumbs();
-	FS.gotoNode(i,1);
+	FS.gotoNode(currentNodeNr,1);
 	
-
-	$("#prevButton").hide();
-
-
-
 	$(document).on('click', '#nextButton', function() {
  		
- 			if (i==_.size(Case1.nodes.content)-2) {
- 				$("#nextButton").fadeOut();
- 			}
- 			$("#prevButton").fadeIn();
- 			i++;
- 			FS.gotoNode(i,1);
+ 			
+ 			currentNodeNr++;
+ 			
+ 			FS.gotoNode(currentNodeNr,1);
 
  		
  	
 	});
 	$(document).on('click', '#prevButton', function() {
- 			if(i==1) {
- 				$("#prevButton").fadeOut();
- 				
- 			}
- 			$("#nextButton").fadeIn();
- 			i--;
- 			FS.gotoNode(i,-1);
+ 			currentNodeNr--;
+ 		
+ 			FS.gotoNode(currentNodeNr,-1);
 
  	
 	});
