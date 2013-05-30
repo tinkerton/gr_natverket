@@ -1931,3 +1931,5 @@ h2, h3, h4, h5, h6, p { text-align: left; }
 ::-webkit-scrollbar-thumb { background: #bcaa7b; border-radius: 10px; }
 
 ::-webkit-scrollbar-thumb:hover { background: #dbd1b8; }
+
+#js-preload { display: none; }

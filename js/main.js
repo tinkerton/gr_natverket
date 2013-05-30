@@ -290,6 +290,20 @@ var FS = (function(self){
 
 	}
 
+
+	self.preloadImages = function() {
+		var nrOfImages = _.size(Case1.preload.images);
+		var prelObj = $("#js-preload");
+		var res ="";
+
+		for (var i=0; i<nrOfImages; i++) {
+			if (i>0) res +=", ";
+			res +="url('img/"+ Case1.preload.images[i].url+"')";
+
+		}
+		prelObj.css("background-image",res);
+	}
+
 	return self;
 
 })({});
@@ -318,6 +332,7 @@ $(function() {
 	FS.BV = new $.BigVideo();
 	FS.BV.init();
 	
+	FS.preloadImages();
 
 	FS.setUpThumbs();
 	FS.gotoNode(FS.currentNodeNr,1);

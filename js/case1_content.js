@@ -1,5 +1,19 @@
 var Case1 = (function(self){
 
+self.preload = {"images":
+[{"url":"bg.jpg"},
+{"url":"bg2.jpg"},
+{"url":"bg3.jpg"},
+{"url":"bg4.jpg"},
+{"url":"1.1.2_bordell.png"},
+{"url":"1.2.1_macrostatistik.png"},
+{"url":"1.2.2_microstatistik.png"},
+{"url":"1.3.1_insandare.png"},
+{"url":"1.4.1_blogg.png"},
+{"url":"1.5.1_domstoslbeslut.png"}	
+]
+};
+
 self.nodes = {"content": 
 	[
 	{  	"ID": "1.1.1",

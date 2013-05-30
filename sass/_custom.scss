@@ -338,3 +338,7 @@ z-index: 400;
 ::-webkit-scrollbar-thumb:hover {
   background:$maintextColor;
 }
+
+#js-preload {
+  display: none;
+}
