@@ -35,7 +35,7 @@ var FS = (function(self){
 	function addNodeTitle (nodeId, size) {
 		
 		if (contentObj[nodeId].title == undefined) return "";
-		if (size===undefined) { size=1; }
+		if (size===undefined) { size=2; }
 
 		var res = "<h"+size + ">"+ contentObj[nodeId].title+"</h"+size+">";
 		return res;
@@ -243,7 +243,7 @@ var FS = (function(self){
 
 
 	self.addContent = function(nodeId) {
-			var result = addNodeHeader() + addNodeTitle(nodeId,1) + addNodePreText(nodeId) + addNodeImages(nodeId) + addNodeVideos(nodeId) + addNodeComic(nodeId)  + addNodePostText(nodeId) + addNodeFooter();
+			var result = addNodeHeader() + addNodeTitle(nodeId,2) + addNodePreText(nodeId) + addNodeImages(nodeId) + addNodeVideos(nodeId) + addNodeComic(nodeId)  + addNodePostText(nodeId) + addNodeFooter();
 		    return result;
 	};
 

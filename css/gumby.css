@@ -1838,7 +1838,7 @@ body { color: #dbd1b8; background: #000; font-familily: "Helvetica", "Arial", sa
 
 h1, h2, h3, h4, h5, h6 { font-family: 'PTSansRegular'; color: #dbd1b8; -webkit-font-smoothing: antialiased; }
 
-h2, h3, h4, h5, h6, p { text-align: left; }
+h3, h4, h5, h6, p { text-align: left; }
 
 .centered_box { position: relative; padding: 20px 0px 30px 0px; }
 

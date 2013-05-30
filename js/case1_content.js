@@ -118,6 +118,12 @@ self.nodes = {"content":
 			{"url":"1.3.1_insandare.png"} 
 		]
 	}, 
+	{  	"ID": "0",
+		"type":"question", 
+		"title":"Här kan du ställa en smart fråga som får de vassa kidzen att tänka till. Visst kan det bli hyffsat bra va?",
+		"background":{"type":"image","url":"bg2.jpg"},
+		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>"
+	}, 
 	{  	"ID": "1.3.2",
 		"type":"info",
 		"title":"Node 1.3.2",
