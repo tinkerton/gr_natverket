@@ -10,12 +10,33 @@ self.preload = {"images":
 {"url":"1.2.2_microstatistik.png"},
 {"url":"1.3.1_insandare.png"},
 {"url":"1.4.1_blogg.png"},
-{"url":"1.5.1_domstoslbeslut.png"}	
+{"url":"1.4.2_bild1.jpg"},
+{"url":"1.4.2_bild2.jpg"},
+{"url":"1.4.2_bild3.jpg"},
+{"url":"1.4.2_bild4.jpg"},
+{"url":"1.4.2_bild5.jpg"},
+{"url":"1.5.1_domstoslbeslut.png"},
+{"url":"1.5.2_bild1.jpg"},
+{"url":"1.5.2_bild2.jpg"},
+	
 ]
 };
 
 self.nodes = {"content": 
 	[
+	{  	"ID": "1.1.0",
+		"type":"info",
+		"title":"Star wars",
+		"background":{"type":"image","url":"bg4.jpg"},
+		"comic" : [	{"url":"1.4.2_bild1.jpg"},
+					{"url":"1.4.2_bild2.jpg"},
+					{"url":"1.4.2_bild3.jpg"},
+					{"url":"1.4.2_bild4.jpg"},
+					{"url":"1.4.2_bild5.jpg"}
+					],
+		"comic_row_height":"470px"
+	
+	}, 
 	{  	"ID": "1.1.1",
 		"type":"info", /*info, question, hidden*/
 		"title":"Det första fallet",
@@ -26,17 +47,6 @@ self.nodes = {"content":
 	{  	"ID": "1.1.2",
 		"type":"question",
 		"title":"Node nr 2. The hipster.",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"},
-					{"videoURL":"http://player.vimeo.com/video/62803828"},
-					{"videoURL":"http://player.vimeo.com/video/62803828"}
-					], 
-		"pretext":"Helvetica dolor tonx assumenda. Post-ironic officia squid, quinoa vinyl organic occaecat umami scenester nihil seitan selvage YOLO.",
-		"posttext":"Laborum neutra whatever sunt cupidatat, id anim thundercats. Butcher authentic freegan, helvetica thundercats sunt ex post-ironic umami aute irure blog delectus. Raw denim est trust fund ugh, cred in aute gluten-free put a bird on it. Sed pitchfork letterpress aliquip, chambray flexitarian fingerstache. Pitchfork kogi reprehenderit, organic biodiesel terry richardson flexitarian keytar pinterest disrupt PBR art party.n."
-	}, 
-	{  	"ID": "1.1.2.1",
-		"type":"info",
-		"title":"Node nr 2B. The SECOND.",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"},
 					{"videoURL":"http://player.vimeo.com/video/62803828"},

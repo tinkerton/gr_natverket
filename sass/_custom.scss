@@ -267,16 +267,14 @@ opacity: 0.4;
 
 #topleft-overlay {
  position: absolute;
-z-index:-10;
+z-index:200;
   background: url(../img/case_color_splash.png);
 background-repeat: no-repeat;
 top: 0px;
 left: 0px;
 width: 100%;
 height: 100%;
--webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+pointer-events:none;
   @include respond(portrait-tablets) { display: none; }
 }
 
@@ -341,4 +339,14 @@ z-index: 400;
 
 #js-preload {
   display: none;
+}
+img, object, embed .comicImg{
+  max-width: 200%;
+  width:auto;
+
+  border: 10px solid black;
+
+}
+.hiddenComic {
+  opacity: 0;
 }

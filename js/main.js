@@ -7,7 +7,8 @@ var FS = (function(self){
 		caseNodeId,
 		contentObj,
 		currentBlur,
-		currentNodeNr;
+		currentNodeNr,
+		comicsToFadeIn;
 
 	activeCase = 0;
 	caseNodeId = 0;
@@ -33,6 +34,7 @@ var FS = (function(self){
 
 	function addNodeTitle (nodeId, size) {
 		
+		if (contentObj[nodeId].title == undefined) return "";
 		if (size===undefined) { size=1; }
 
 		var res = "<h"+size + ">"+ contentObj[nodeId].title+"</h"+size+">";
@@ -52,7 +54,9 @@ var FS = (function(self){
 		
 		$("#big-video-wrap").hide();
 		$(".backstretch").hide();
-		
+		if (contentObj[nodeId].background == undefined) return;
+
+
 		switch(contentObj[nodeId].background.type) {
 			case "video":
 				if (Modernizr.touch) {
@@ -76,6 +80,83 @@ var FS = (function(self){
 		
 
 	}
+
+	function addNodeComic (nodeId) {
+		var comicImages,
+			nrOfImages,
+			nrOfCols1,
+			nrOfCols2,
+			res,
+			addedSecondRow,
+			comic_row_height;
+
+		comicImages = contentObj[nodeId].comic; 
+		if (comicImages === undefined) {
+			comicsToFadeIn=0;
+			return "";}
+	
+		nrOfImages= comicsToFadeIn = _.size(comicImages);
+		
+		switch (nrOfImages/2) {
+			case 4: //8 images
+				nrOfCols1 = nrOfCols2= "four_up";
+			break;
+			case 3: //6 images
+				nrOfCols1 = nrOfCols2= "three_up";
+			break;
+			case 2: //4 images
+				nrOfCols1 = nrOfCols2=  "two_up";
+			break;
+			case 1: //2 images
+				nrOfCols1 = nrOfCols2= "one_up";
+			break;
+
+			case 3.5: //7 images
+				nrOfCols1 = "tree_up";
+				nrOfCols2= "four_up";
+			break;
+			case 2.5: //5 images
+				nrOfCols1 = "two_up";
+				nrOfCols2= "three_up";
+			break;
+			case 1.5: //3 images
+				nrOfCols1 = "one_up";
+				nrOfCols2=  "two_up";
+			break;
+			default: //? images
+				nrOfCols1 = "one_up";
+				nrOfCols2= "one_up";
+			break;
+
+
+		}
+
+
+		comic_row_height = contentObj[nodeId].comic_row_height;
+
+		addedSecondRow = false;
+		for (var i=0; i<nrOfImages; i++) {
+			
+			if (i==0) {
+				res ="<ul class='tiles'>";	
+			}
+
+			if (nrOfImages%2!=0 && (i+1)>(nrOfImages)/2 && !addedSecondRow) {
+				addedSecondRow = true;
+				
+				res +="</ul><ul class='tiles'>";
+			}
+
+			res +="<li id='li_"+i+"' class='hiddenComic'><img src='img/"+comicImages[i].url+"' style='height:"+comic_row_height+";' class='comicImg'/></li>";
+		}
+		res+"</ul>";
+
+
+		return res;
+
+
+	}
+
 
 
 	function addNodeVideos (nodeId) {
@@ -129,11 +210,15 @@ var FS = (function(self){
 	
 
 	function addNodePreText (nodeId) {
+		var pretext = contentObj[nodeId].pretext;
+		if (pretext == undefined) return "";
 		return "<h3>"+ contentObj[nodeId].pretext+"</h3>";
 		
 	}
 
 	function addNodePostText (nodeId) {
+		var posttext = contentObj[nodeId].posttext;
+		if (posttext == undefined) return "";
 		return "<p>"+ contentObj[nodeId].posttext+"</p>";
 		
 	}
@@ -142,13 +227,14 @@ var FS = (function(self){
 
 
 	self.addContent = function(nodeId) {
-			var result = addNodeHeader() + addNodeTitle(nodeId,1) + addNodeVideos(nodeId) + addNodePreText(nodeId) + addNodePostText(nodeId) + addNodeFooter();
+			var result = addNodeHeader() + addNodeTitle(nodeId,1) + addNodePreText(nodeId) + addNodeVideos(nodeId) + addNodeComic(nodeId)  + addNodePostText(nodeId) + addNodeFooter();
 		    return result;
 	};
 
 
 	
 	function updateBlur(speed) {
+		return;
 		currentBlur++;
 		if (currentBlur>(50*speed)) {return};
 		if (currentBlur % (10*speed) ==0) {
@@ -160,6 +246,7 @@ var FS = (function(self){
 
 
 	function updateLessBlur(speed) {
+		return;
 		currentBlur--;
 		if (currentBlur>(50*speed)) {return};
 		if (currentBlur % (10*speed) ==0) {
@@ -169,6 +256,11 @@ var FS = (function(self){
 	
 	}
 
+	function showComics(comicsToFadeIn) {
+		for (var i=0; i<comicsToFadeIn; i++) {
+			TweenMax.to($('#li_'+i),1,{opacity:1, delay:1+ (i*2)});
+		} 
+	}
 
 
 	function resetNodeAttributes() {
@@ -180,6 +272,8 @@ var FS = (function(self){
 		currentBlur=0;
 		FS.setUpThumbs();
 		FS.resize();
+		if (comicsToFadeIn>0) showComics(comicsToFadeIn);
+		comicsToFadeIn =0;
 
 	}
 
@@ -254,7 +348,7 @@ var FS = (function(self){
 		var scrollwidth=17;
 
 
-		console.log("resize " + $("#main_div").height() + "  " + $(window).height() );
+		
 
 		inner.css('max-height', wind.height()-60+'px');
 		inner.css('top', '-30px');
