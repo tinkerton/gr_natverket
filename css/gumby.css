@@ -1934,6 +1934,10 @@ h2, h3, h4, h5, h6, p { text-align: left; }
 
 #js-preload { display: none; }
 
-img, object, embed .comicImg { max-width: 200%; width: auto; border: 10px solid black; }
+img, object, embed .comicImg { max-width: 200%; width: auto; }
 
-.hiddenComic { opacity: 0; }
+.comicImg { border: 10px solid black; }
+
+img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
+
+.hiddenComic { opacity: 0.1; }

@@ -344,9 +344,19 @@ img, object, embed .comicImg{
   max-width: 200%;
   width:auto;
 
-  border: 10px solid black;
+ 
 
 }
+.comicImg {
+ border: 10px solid black;
+}
+
+img, object, embed .node-image {
+  max-width: 100%;
+  width:auto;
+   border: none;
+ }
+
 .hiddenComic {
-  opacity: 0;
+  opacity: 0.1;
 }

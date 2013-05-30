@@ -80,6 +80,22 @@ var FS = (function(self){
 		
 
 	}
+	function addNodeImages(nodeId) {
+		var images,
+			nrOfImages,
+			res;
+			images = contentObj[nodeId].image; 
+			if (images === undefined) { return "";}
+
+			nrOfImages=  _.size(images);
+
+			res="";
+			for (var i=0; i<nrOfImages; i++) {
+				res+="<div class='node-image'><img src='img/"+images[i].url+"'/></div>"
+			}
+			return res;
+	}
+
 
 	function addNodeComic (nodeId) {
 		var comicImages,
@@ -227,7 +243,7 @@ var FS = (function(self){
 
 
 	self.addContent = function(nodeId) {
-			var result = addNodeHeader() + addNodeTitle(nodeId,1) + addNodePreText(nodeId) + addNodeVideos(nodeId) + addNodeComic(nodeId)  + addNodePostText(nodeId) + addNodeFooter();
+			var result = addNodeHeader() + addNodeTitle(nodeId,1) + addNodePreText(nodeId) + addNodeImages(nodeId) + addNodeVideos(nodeId) + addNodeComic(nodeId)  + addNodePostText(nodeId) + addNodeFooter();
 		    return result;
 	};
 
@@ -258,7 +274,7 @@ var FS = (function(self){
 
 	function showComics(comicsToFadeIn) {
 		for (var i=0; i<comicsToFadeIn; i++) {
-			TweenMax.to($('#li_'+i),1,{opacity:1, delay:1+ (i*2)});
+			TweenMax.to($('#li_'+i),1,{opacity:1, delay:(i*2)});
 		} 
 	}
 
