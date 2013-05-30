@@ -36,7 +36,17 @@ self.nodes = {"content":
 					],
 		"comic_row_height":"470px"
 	
-	}, 
+	},
+	{  	"ID": "1.1.0",
+		"type":"info",
+		"title":"Star wars 2",
+		"background":{"type":"image","url":"bg4.jpg"},
+		"comic" : [	{"url":"1.5.2_bild1.jpg"},
+					{"url":"1.5.2_bild2.jpg"}
+				],
+		"comic_row_height":"236px"
+	
+	},  
 	{  	"ID": "1.1.1",
 		"type":"info", /*info, question, hidden*/
 		"title":"Det första fallet",
