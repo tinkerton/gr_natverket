@@ -74,32 +74,36 @@ self.nodes = {"content":
 					],
 		"pretext":"Wall of text (citat)",
 		"posttext":"To be coded",
+		 "animation":"zoom"
 
 	},
 	{  	"ID": "1.1.2",
 		"type":"info",
 		"title":"Node 1.1.2",
-		"background":{"type":"image","url":"bg2.jpg"},
+		"background":{"type":"image","url":"bg.jpg"},
 		"image": [
 			{"url":"1.1.2_bordell.png"} 
-		]
+		],
+		 "animation":"zoom"
 			
 	},  
 	{  	"ID": "1.2.1",
 		"type":"info", 
 		"title":"Node 1.2.1",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"bg.jpg"},
 		"image": [
 			{"url":"1.2.1_macrostatistik.png"} 
-		]
+		],
+		 "animation":"left"
 	}, 
 	{  	"ID": "1.2.2",
 		"type":"info", 
 		"title":"Node 1.2.2",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"bg2.jpg"},
 		"image": [
 			{"url":"1.2.2_microstatistik.png"} 
-		]
+		],
+		 "animation":"right"
 	}, 
 	{  	"ID": "1.2.3",
 		"type":"info",
@@ -108,7 +112,8 @@ self.nodes = {"content":
 		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"}					
 					], 
 		"pretext":"",
-		"posttext":"Filmen om horan"
+		"posttext":"Filmen om horan",
+	     "animation":"fade"
 	}, 
 	{  	"ID": "1.3.1",
 		"type":"info", 
@@ -116,13 +121,15 @@ self.nodes = {"content":
 		"background":{"type":"image","url":"bg2.jpg"},
 		"image": [
 			{"url":"1.3.1_insandare.png"} 
-		]
+		],
+		 "animation":"up"
 	}, 
 	{  	"ID": "0",
 		"type":"question", 
 		"title":"Här kan du ställa en smart fråga som får de vassa kidzen att tänka till. Visst kan det bli hyffsat bra va?",
-		"background":{"type":"image","url":"bg2.jpg"},
-		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>"
+		"background":{"type":"image","url":"bg.jpg"},
+		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		 "animation":"down"
 	}, 
 	{  	"ID": "1.3.2",
 		"type":"info",
@@ -131,43 +138,48 @@ self.nodes = {"content":
 		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"}					
 					], 
 		"pretext":"",
-		"posttext":"Intervju med polisman"
+		"posttext":"Intervju med polisman",
+		 "animation":"left"
 	}, 
 	{  	"ID": "1.3.3",
 		"type":"info",
 		"title":"Node 1.3.3",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"bg3.jpg"},
 		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"}					
 					], 
 		"pretext":"",
-		"posttext":"Intervju med granne"
+		"posttext":"Intervju med granne",
+		 "animation":"left"
 	},
 	{  	"ID": "1.4.1",
 		"type":"info", 
 		"title":"Node 1.4.1",
-		"background":{"type":"image","url":"bg.jpg"},
+		"background":{"type":"image","url":"bg3.jpg"},
 		"image": [
 			{"url":"1.4.1_blogg.png"} 
-		]
+		],
+		 "animation":"right"
 	}, 
 	{  	"ID": "1.4.2",
 		"type":"info",
 		"title":"Node 1.4.2",
-		"background":{"type":"image","url":"bg2.jpg"},
+		"background":{"type":"image","url":"bg4.jpg"},
 		"comic" : [	{"url":"1.4.2_bild1.jpg"},
 					{"url":"1.4.2_bild2.jpg"},
 					{"url":"1.4.2_bild3.jpg"},
 					{"url":"1.4.2_bild4.jpg"},
 					{"url":"1.4.2_bild5.jpg"}
 					],
-		"comic_row_height":"470px"
+		"comic_row_height":"470px",
+		 "animation":"fade"
 	
 	},
 	{  	"ID": "1.5.1",
 		"type":"info",
 		"title":"Node 1.5.1",
-		"background":{"type":"image","url":"bg3.jpg"},
-		"posttext":"Domen för de tre personer som åttalats för grovt koppleri och människohandel blev följande:</p><p>Den ungerska man och kvinna som ska ha övertalat de två kvinnorna att sälja sex i Sverige och därefter tagit större delen av de pengar som de tjänat, döms för grovt koppleri till 2 års fängelse. Åtalspunkten om människohandel ogillas då det vare sig kan bevisas att tvång eller hot använts, eller att kvinnorna var ovilliga att sälja sex i Sverige.</p><p>Åklagare yrkade på skadestånd om 80 000 kr till vardera av de utsatta kvinnorna, men domstolen sänkte kravet till 20 000 kr, med motiveringen att det inte kan uteslutas att kvinnorna lät sig föras till Sverige för att där kunna få höga skadestånd, för att därigenom kunna ta sig ur sin fattiga situation i hemlandet.</p><p>Den svenske man som lånat ut sin lägenhet för att sälja de två ungerska kvinnorna döms för koppleri till 10 månaders fängelse."	
+		"background":{"type":"image","url":"bg4.jpg"},
+		"posttext":"Domen för de tre personer som åttalats för grovt koppleri och människohandel blev följande:</p><p>Den ungerska man och kvinna som ska ha övertalat de två kvinnorna att sälja sex i Sverige och därefter tagit större delen av de pengar som de tjänat, döms för grovt koppleri till 2 års fängelse. Åtalspunkten om människohandel ogillas då det vare sig kan bevisas att tvång eller hot använts, eller att kvinnorna var ovilliga att sälja sex i Sverige.</p><p>Åklagare yrkade på skadestånd om 80 000 kr till vardera av de utsatta kvinnorna, men domstolen sänkte kravet till 20 000 kr, med motiveringen att det inte kan uteslutas att kvinnorna lät sig föras till Sverige för att där kunna få höga skadestånd, för att därigenom kunna ta sig ur sin fattiga situation i hemlandet.</p><p>Den svenske man som lånat ut sin lägenhet för att sälja de två ungerska kvinnorna döms för koppleri till 10 månaders fängelse."	,
+		 "animation":"left"
 },
 {  	"ID": "1.5.2",
 		"type":"info",
@@ -176,7 +188,8 @@ self.nodes = {"content":
 		"comic" : [	{"url":"1.5.2_bild1.jpg"},
 					{"url":"1.5.2_bild2.jpg"}
 					],
-		"comic_row_height":"273px"
+		"comic_row_height":"273px",
+		 "animation":"right"
 	
 	},
 

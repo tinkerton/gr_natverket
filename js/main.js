@@ -1,4 +1,4 @@
-/*global $, jQuery, _, TweenMax, console, Case1*/
+/*global $, jQuery, _, TweenMax, console, Case1, Modernizer*/
 
 var FS = (function(self){
 	"use strict";
@@ -8,12 +8,15 @@ var FS = (function(self){
 		contentObj,
 		currentBlur,
 		currentNodeNr,
-		comicsToFadeIn;
+		comicsToFadeIn,
+		initComplete;
 
 	activeCase = 0;
 	caseNodeId = 0;
 	contentObj = Case1.nodes.content;
 
+	initComplete = false;
+	currentNodeNr =0;
 	var BV;
 
 
@@ -61,19 +64,19 @@ var FS = (function(self){
 			case "video":
 				if (Modernizr.touch) {
     				$.backstretch("../img/"+contentObj[nodeId].background.ipadBG);
-    				$(".backstretch").fadeIn();
+    				$(".backstretch").show();
 		
 
 		    } else {
    				FS.BV.show(contentObj[nodeId].background.url,{ambient:true});
-   				$("#big-video-wrap").fadeIn();
+   				$("#big-video-wrap").show();
 			}
 	
 			break;
 			case "image":
 		
 				$.backstretch("../img/"+contentObj[nodeId].background.url);
-				$(".backstretch").fadeIn();
+				$(".backstretch").show();
 			break;
 			
 		}
@@ -291,44 +294,110 @@ var FS = (function(self){
 		if (comicsToFadeIn>0) showComics(comicsToFadeIn);
 		comicsToFadeIn =0;
 
+
 	}
 
 
 
-	function onCompleteFadeoutNode(maindiv, nextNodeId, speed) {
-		
+	function onCompleteFadeoutNode(maindiv, nextNodeId, speed, animationType) {
+		var maindiv;
+		maindiv = maindiv = $('#main_div');
+
+		/*maindiv.css('visibility', 'hidden');
+		*/
 		setupBackground(nextNodeId);
 
 		maindiv.html(FS.addContent(nextNodeId));
+		if (Modernizr.touch || !FS.initComplete){
+			FS.initComplete = true;
+			maindiv.show();
+			resetNodeAttributes();
+		}else {
+			switch (animationType) {
+				case "up":
+					TweenMax.fromTo (maindiv, speed, {autoAlpha:0, css:{"padding-bottom": "30px", "padding-top": "2000px"}}, {autoAlpha:1, css:{"padding-bottom": "30px", "padding-top": "20px"},  onComplete:resetNodeAttributes, ease:Quad.easeOut});
+				break;
+				case "down":
+					TweenMax.fromTo (maindiv, speed, {autoAlpha:0, css:{"padding-top": "20px", "padding-bottom": "2000px"}}, {autoAlpha:1, css:{"padding-bottom": "30px", "padding-top": "20px"},  onComplete:resetNodeAttributes, ease:Quad.easeOut});
+	
+				break;
+				case "left":
+					TweenMax.fromTo (maindiv, speed, {autoAlpha:0, css:{"left": "2000px"}}, {autoAlpha:1, css:{"left": "0px"},  onComplete:resetNodeAttributes, ease:Quad.easeOut});
+				break;
+				case "right":
+					TweenMax.fromTo (maindiv, speed, {autoAlpha:0, css:{"left": "-2000px" }}, {autoAlpha:1, css:{"left": "0px"},  onComplete:resetNodeAttributes, ease:Quad.easeOut});
+				break;
+				case "zoom":
+					TweenMax.fromTo (maindiv, speed, {autoAlpha:0, scaleX:0, scaleY:0},{autoAlpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeOut});
+		
+				break;
+				case "fade":
+						TweenMax.fromTo (maindiv, speed, {alpha:0 },{alpha:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeOut});
+		
+				break;
+				case "none": default:
+					TweenMax.fromTo (maindiv, 0, {autoAlpha:0 },{autoAlpha:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeOut});
+		
+				break;
+
+			}
 
 
-		TweenMax.fromTo (maindiv, speed, {alpha:0, scaleX:0.5, scaleY:0.5},{alpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeOut});
+		/*TweenMax.fromTo (maindiv, speed, {alpha:0, scaleX:0.5, scaleY:0.5},{autoAlpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeOut});
+		*/
+		//	TweenMax.fromTo (maindiv, speed, {autoAlpha:0, scaleX:0, scaleY:0},{autoAlpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeOut});
+			}
 	}
 
 
 	self.gotoNode = function(nextNodeId, direction) {
 		var oldNodeId, maindiv, speed;
-		/*		
-		if (direction==1) { 
-			oldNodeId = nextNodeId-1;
-		}
-		else if (direction==-1){
-			oldNodeId = nextNodeId+1;
-		} 
-		else {
-			oldNodeId = ?;	
-		}
-	*/
-		  
-    	FS.currentNodeNr = nextNodeId;
-
-		FS.checkArrows(nextNodeId);
 		currentBlur = 0;
-		speed=0.25;
+		speed=0.5;
 		maindiv = $('#main_div');
+
+		oldNodeId = FS.currentNodeNr;
+
+	   	FS.currentNodeNr = nextNodeId + direction;
+	
+		FS.checkArrows(nextNodeId +direction);
+	
 		
-		TweenMax.to (maindiv, speed, {alpha:0, scaleX:1.2, scaleY:1.2, onUpdate:updateBlur, onUpdateParams:[speed], onComplete:onCompleteFadeoutNode, onCompleteParams:[maindiv, nextNodeId, speed],  ease:Quad.easeIn});
-		
+
+		if (Modernizr.touch || !FS.initComplete){
+			maindiv.hide();
+			onCompleteFadeoutNode(maindiv, FS.currentNodeNr , speed,"none");
+		}else {
+				console.log(oldNodeId + " " + nextNodeId);
+			var animationType = contentObj[oldNodeId].animation; 
+			switch (animationType) {
+				case "up":
+					TweenMax.to (maindiv, speed, {autoAlpha:0, css:{"padding-bottom": "2000px"}, onComplete:onCompleteFadeoutNode, onCompleteParams:[maindiv, FS.currentNodeNr , speed, animationType],  ease:Quad.easeIn});
+				break;
+				case "down":
+					TweenMax.to (maindiv, speed, {autoAlpha:0,  css:{"padding-top": "2000px"}, onComplete:onCompleteFadeoutNode, onCompleteParams:[maindiv, FS.currentNodeNr , speed, animationType],  ease:Quad.easeIn});
+				break;
+				case "left":
+					TweenMax.to (maindiv, speed, {autoAlpha:0, css:{"left": "-2000px"}, onComplete:onCompleteFadeoutNode, onCompleteParams:[maindiv, FS.currentNodeNr , speed, animationType],  ease:Quad.easeIn});
+				break;
+				case "right":
+					TweenMax.to (maindiv, speed, {autoAlpha:0, css:{"left": "2000px"}, onComplete:onCompleteFadeoutNode, onCompleteParams:[maindiv, FS.currentNodeNr , speed, animationType],  ease:Quad.easeIn});
+				break;
+				case "zoom":
+					TweenMax.to (maindiv, speed, {autoAlpha:0, scaleX:1.2, scaleY:1.2, onComplete:onCompleteFadeoutNode, onCompleteParams:[maindiv, FS.currentNodeNr , speed, animationType],  ease:Quad.easeIn});
+				break;
+				case "fade":
+					TweenMax.to (maindiv, speed, {alpha:0, onComplete:onCompleteFadeoutNode, onCompleteParams:[maindiv, FS.currentNodeNr , speed, animationType],  ease:Quad.easeIn});
+				break;
+				case "none": default:
+					TweenMax.to (maindiv, 0, {autoAlpha:0, onComplete:onCompleteFadeoutNode, onCompleteParams:[maindiv, FS.currentNodeNr , speed, animationType],  ease:Quad.easeIn});
+				break;
+
+
+
+
+			}
+		}
 	}
 
 	self.setUpThumbs = function() {
@@ -338,7 +407,7 @@ var FS = (function(self){
 
 		for (var i=0; i<nrOfNodes; i++) {
 			switch (contentObj[i].type) {
-				case "info":
+				case "info": 
 					res += "<div class='node-thumb node-info";
 					if (FS.currentNodeNr==i) { res += " node-selected";}
 					res+="' onclick='FS.gotoNode("+i+",0);'></div>";
@@ -368,16 +437,16 @@ var FS = (function(self){
 
 		inner.css('max-height', wind.height()-60+'px');
 		inner.css('top', '-30px');
-
+		TweenMax.to($('#prevButton'), 0.125,{css:{"left": "0px"}});
 		if ($("#main_div").height() > $(window).height()) {
 			inner.css("overflow-y","auto");
 			if (navigator.userAgent.match(/webkit/i)) {
 			 		scrollwidth=8;
     		}
-    		TweenMax.to($('#nextButton'), 0.25,{css:{"right": scrollwidth + "px"}});
+    		TweenMax.to($('#nextButton'), 0.125,{css:{"right": scrollwidth + "px"}});
     	}else {
 			inner.css("overflow-y","hidden");
-			TweenMax.to($('#nextButton'), 0.25,{css:{"right":"0px"}});
+			TweenMax.to($('#nextButton'), 0.125,{css:{"right":"0px"}});
 		}
 	}
 
@@ -428,15 +497,7 @@ Gumby.ready(function() {
 	if(Gumby.isOldie || Gumby.$dom.find('html').hasClass('ie9')) {
 		$('input, textarea').placeholder();
 	}
-});
 
-// Oldie document loaded
-Gumby.oldie(function() {
-	console.log("Oldie");
-});
-
-// Document ready
-$(function() {
 	FS.currentNodeNr = 0;
 
 	FS.BV = new $.BigVideo();
@@ -445,12 +506,12 @@ $(function() {
 	FS.preloadImages();
 
 	FS.setUpThumbs();
-	FS.gotoNode(FS.currentNodeNr,1);
+	FS.gotoNode(FS.currentNodeNr,0);
 	
 	$(document).on('click', '#nextButton', function() {
  		
+ 			TweenMax.to($('#nextButton'), 0.25,{css:{"right": "-8px"}});
  			
- 			FS.currentNodeNr ++;
  			
  			FS.gotoNode(FS.currentNodeNr,1);
 
@@ -458,14 +519,20 @@ $(function() {
  	
 	});
 	$(document).on('click', '#prevButton', function() {
- 			FS.currentNodeNr--;
- 		
+		TweenMax.to($('#prevButton'), 0.25,{css:{"left": "-8px"}});
+ 			 		
  			FS.gotoNode(FS.currentNodeNr,-1);
 
  	
 	});
 	
-		
-		
+
+});
+
+
+
+// Oldie document loaded
+Gumby.oldie(function() {
+	console.log("Oldie");
 });
 

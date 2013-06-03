@@ -10,6 +10,7 @@ body {
  overflow-x: hidden;
  height:100%;
  max-height:100%; 
+
 }
 
 
@@ -49,6 +50,7 @@ padding:20px 0px 30px 0px;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+ 
 
 }
 
@@ -267,7 +269,7 @@ opacity: 0.4;
 
 #topleft-overlay {
  position: absolute;
-z-index:200;
+z-index:-10;
   background: url(../img/case_color_splash.png);
 background-repeat: no-repeat;
 top: 0px;
