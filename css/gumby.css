@@ -1840,7 +1840,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'PTSansRegular'; color: #dbd1b8; -webkit-f
 
 h3, h4, h5, h6, p { text-align: left; }
 
-.centered_box { position: relative; padding: 20px 0px 30px 0px; }
+.centered_box { position: relative; padding: 50px 0px 30px 0px; }
 
 #outer { position: absolute; width: 100%; height: 100%; left: 0; top: 0; text-align: center; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
 
@@ -1914,11 +1914,11 @@ h3, h4, h5, h6, p { text-align: left; }
 
 #case-nav { position: absolute; height: 50px; width: 100%; bottom: 0px; /*background-color: #000;*/ z-index: 400; text-align: center; font-size: 20px; letter-spacing: 35px; white-space: nowrap; line-height: 12px; overflow: hidden; }
 
-.node-thumb { margin: 10px; display: inline-block; vertical-align: middle; cursor: pointer; }
+.node-thumb { margin: 5px; display: inline-block; vertical-align: middle; cursor: pointer; }
 
-.node-info { background-color: #333; width: 50px; height: 30px; }
+.node-info { background-color: #333; max-width: 50px; height: auto; min-height: 30px; min-width: 3%; }
 
-.node-question { background-color: #098; width: 30px; height: 30px; border-radius: 30px; }
+.node-question { background-color: #333; width: 30px; height: 30px; border-radius: 30px; }
 
 .node-selected { background-color: #FFF; }
 
@@ -1934,10 +1934,10 @@ h3, h4, h5, h6, p { text-align: left; }
 
 #js-preload { display: none; }
 
-img, object, embed .comicImg { max-width: 200%; width: auto; }
+img, object, embed .comicImg { max-width: 100%; width: auto; height: auto; }
 
 .comicImg { border: 10px solid black; }
 
 img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
 
-.hiddenComic { opacity: 0.1; }
+.hiddenComic { opacity: 0.1; display: block; float: left; }

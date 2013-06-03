@@ -28,7 +28,7 @@ h3, h4, h5, h6, p {
 .centered_box {
 
 position: relative;
-padding:20px 0px 30px 0px;
+padding:50px 0px 30px 0px;
 
 
 
@@ -50,7 +50,7 @@ padding:20px 0px 30px 0px;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
- 
+
 
 }
 
@@ -298,19 +298,21 @@ z-index: 400;
 
 .node-thumb {
 
-  margin: 10px;
+  margin: 5px;
    display: inline-block;  
     vertical-align: middle;
     cursor: pointer;
 }
 .node-info {
   background-color: #333;
-  width:50px;
-  height:30px;
+  max-width:50px;
+  height: auto;
+  min-height:30px;
+  min-width: 3%;
 }
 
 .node-question {
-  background-color: #098;
+  background-color: #333;
   width:30px;
   height:30px;
   border-radius: 30px;
@@ -343,8 +345,9 @@ z-index: 400;
   display: none;
 }
 img, object, embed .comicImg{
-  max-width: 200%;
+  max-width: 100%;
   width:auto;
+  height: auto;
 
  
 
@@ -361,4 +364,6 @@ img, object, embed .node-image {
 
 .hiddenComic {
   opacity: 0.1;
+  display: block;
+  float: left;
 }

@@ -74,7 +74,7 @@ self.nodes = {"content":
 					],
 		"pretext":"Wall of text (citat)",
 		"posttext":"To be coded",
-		 "animation":"zoom"
+		 "animation":"fade"
 
 	},
 	{  	"ID": "1.1.2",
@@ -84,7 +84,7 @@ self.nodes = {"content":
 		"image": [
 			{"url":"1.1.2_bordell.png"} 
 		],
-		 "animation":"zoom"
+		 "animation":"down"
 			
 	},  
 	{  	"ID": "1.2.1",
@@ -94,7 +94,7 @@ self.nodes = {"content":
 		"image": [
 			{"url":"1.2.1_macrostatistik.png"} 
 		],
-		 "animation":"left"
+		 "animation":"up"
 	}, 
 	{  	"ID": "1.2.2",
 		"type":"info", 
@@ -122,7 +122,7 @@ self.nodes = {"content":
 		"image": [
 			{"url":"1.3.1_insandare.png"} 
 		],
-		 "animation":"up"
+		 "animation":"down"
 	}, 
 	{  	"ID": "0",
 		"type":"question", 
@@ -171,7 +171,7 @@ self.nodes = {"content":
 					{"url":"1.4.2_bild5.jpg"}
 					],
 		"comic_row_height":"470px",
-		 "animation":"fade"
+		 "animation":"right"
 	
 	},
 	{  	"ID": "1.5.1",
