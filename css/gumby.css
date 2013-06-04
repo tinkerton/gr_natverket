@@ -1944,4 +1944,4 @@ img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
 
 #myCanvas { display: block; }
 
-.walloftextcontent { position: absolute; font-size: 1em; font-weight: bold; font-style: italic; width: 30em; line-height: 1.5em; text-align: center; display: block; background-color: #000; padding: 2em; border-radius: 1em 2em 0 2em; border: 5px solid #111; }
+.walloftextcontent { position: absolute; font-size: 1em; font-weight: bold; font-style: italic; width: 36em; line-height: 1.5em; text-align: left; display: block; background-color: rgba(0, 0, 0, 0.5); border-radius: 1em 2em 0 2em; /*border:5px solid #111;*/ padding: 2em; }

@@ -361,7 +361,7 @@ var FS = (function(self){
     	   		
     	   		//(i/_.size(walloftext)
     	   		var style ="top:"+ randy + "px; left:"+randx+"px;" ;
-    	   		myDiv.append("<div id='wall_"+i+"' class='walloftextcontent' style='"+style+"''>"+walloftext[i].text+"</div>");
+    	   		myDiv.append("<div id='wall_"+i+"' class='walloftextcontent' style='"+style+"''>- ” "+walloftext[i].text+" ”</div>");
     			
     			 TweenMax.set($("#wall_"+i), {zIndex:100+i, autoAlpha:0, scaleX:0.5, scaleY:0.5});
     	   		 var myT = TweenMax.to($("#wall_"+i), 20, {scaleX:1, scaleY:1, autoAlpha:1, zIndex:500+i, yoyo:true, repeat:-1, repeatDelay:3, delay:i*5 + i,  ease:Linear.easeNone});
