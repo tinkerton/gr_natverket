@@ -10,15 +10,20 @@ self.preload = {"images":
 {"url":"1.2.2_microstatistik.png"},
 {"url":"1.3.1_insandare.png"},
 {"url":"1.4.1_blogg.png"},
-{"url":"1.4.2_bild1.jpg"},
-{"url":"1.4.2_bild2.jpg"},
-{"url":"1.4.2_bild3.jpg"},
-{"url":"1.4.2_bild4.jpg"},
-{"url":"1.4.2_bild5.jpg"},
+{"url":"1.4.2_bild1.png"},
+{"url":"1.4.2_bild2.png"},
+{"url":"1.4.2_bild3.png"},
+{"url":"1.4.2_bild4.png"},
+{"url":"1.4.2_bild5.png"},
 {"url":"1.5.1_domstoslbeslut.png"},
-{"url":"1.5.2_bild1.jpg"},
-{"url":"1.5.2_bild2.jpg"},
-	
+{"url":"1.5.2_bild1.png"},
+{"url":"1.5.2_bild2.png"},
+{"url":"1.5.2_bild3.png"},
+{"url":"1.5.2_bild4.png"},
+{"url":"1.5.2_bild5.png"},
+{"url":"1.5.2_bild6.png"},
+{"url":"1.5.2_bild7.png"},
+{"url":"1.5.2_bild8.png"},
 ]
 };
 
@@ -51,7 +56,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "1.1.1",
 		"type":"info",
-		"title":"Node 1.1.1",
+		"title":"Node 1.1.1 - Citat sexköpare",
 		"background":{"type":"image","url":"bg.jpg"},
 		"walloftext" : [	
 					{"text":"Självklart ska man aldrig, aldrig, aldrig ge ett spårbart nummer till en escort. Tjejerna är ju extremt noga med att skydda sin identitet så varför ska vi torskar, som faktiskt begår en olaglig handling, skylta med vår identitet? <br/>Nej, skaffa ett kontantkort som ni INTE registrerar och ring från det"},
@@ -78,7 +83,7 @@ self.nodes = {"content":
 	},
 	{  	"ID": "1.1.2",
 		"type":"info",
-		"title":"Node 1.1.2",
+		"title":"Node 1.1.2 - Hemsida bordell",
 		"background":{"type":"image","url":"bg.jpg"},
 		"image": [
 			{"url":"1.1.2_bordell.png"} 
@@ -86,9 +91,16 @@ self.nodes = {"content":
 		 "animation":"down"
 			
 	},  
+	{  	"ID": "1.1",
+		"type":"question", 
+		"title":"Reflektionsfråga kapitel 1",
+		"background":{"type":"image","url":"bg.jpg"},
+		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		 "animation":"down"
+	},
 	{  	"ID": "1.2.1",
 		"type":"info", 
-		"title":"Node 1.2.1",
+		"title":"Node 1.2.1 - Macrostatistik",
 		"background":{"type":"image","url":"bg.jpg"},
 		"image": [
 			{"url":"1.2.1_macrostatistik.png"} 
@@ -97,7 +109,7 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.2.2",
 		"type":"info", 
-		"title":"Node 1.2.2",
+		"title":"Microstatistik",
 		"background":{"type":"image","url":"bg2.jpg"},
 		"image": [
 			{"url":"1.2.2_microstatistik.png"} 
@@ -106,15 +118,22 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.2.3",
 		"type":"info",
-		"title":"Node 1.2.3",
+		"title":"1.2.3 - Filmen om horan",
 		"background":{"type":"image","url":"bg.jpg"},
-		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"}					
+		"videos" : [{"videoURL":"http://www.youtube.com/embed/aZ1Ts3Mcpkw"}					
 					], 
 		"pretext":"",
 		"posttext":"Filmen om horan",
 	     "animation":"fade"
 	}, 
-	{  	"ID": "1.3.1",
+	{  	"ID": "1.2",
+		"type":"question", 
+		"title":"Reflektionsfråga kapitel 2",
+		"background":{"type":"image","url":"bg.jpg"},
+		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		 "animation":"down"
+	},
+	{  	"ID": "1.3.1 - Insändare",
 		"type":"info", 
 		"title":"Node 1.3.1",
 		"background":{"type":"image","url":"bg2.jpg"},
@@ -123,18 +142,11 @@ self.nodes = {"content":
 		],
 		 "animation":"down"
 	}, 
-	{  	"ID": "0",
-		"type":"question", 
-		"title":"Här kan du ställa en smart fråga som får de vassa kidzen att tänka till. Visst kan det bli hyffsat bra va?",
-		"background":{"type":"image","url":"bg.jpg"},
-		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
-		 "animation":"down"
-	}, 
 	{  	"ID": "1.3.2",
 		"type":"info",
-		"title":"Node 1.3.2",
+		"title":"Node 1.3.2 - Intervju med polis",
 		"background":{"type":"image","url":"bg3.jpg"},
-		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"}					
+		"videos" : [{"videoURL":"http://www.youtube.com/embed/kXie9VlG7hA"}					
 					], 
 		"pretext":"",
 		"posttext":"Intervju med polisman",
@@ -142,7 +154,7 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.3.3",
 		"type":"info",
-		"title":"Node 1.3.3",
+		"title":"Node 1.3.3 - Intervju med granne",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"}					
 					], 
@@ -150,9 +162,16 @@ self.nodes = {"content":
 		"posttext":"Intervju med granne",
 		 "animation":"left"
 	},
+	{  	"ID": "1.3",
+		"type":"question", 
+		"title":"Reflektionsfråga kapitel 3",
+		"background":{"type":"image","url":"bg.jpg"},
+		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		 "animation":"down"
+	}, 
 	{  	"ID": "1.4.1",
 		"type":"info", 
-		"title":"Node 1.4.1",
+		"title":"Node 1.4.1 - Hjälporganisationens blogg",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"image": [
 			{"url":"1.4.1_blogg.png"} 
@@ -161,36 +180,56 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.4.2",
 		"type":"info",
-		"title":"Node 1.4.2",
+		"title":"Node 1.4.2 - Barnets berättelse",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"comic" : [	{"url":"1.4.2_bild1.jpg"},
-					{"url":"1.4.2_bild2.jpg"},
-					{"url":"1.4.2_bild3.jpg"},
-					{"url":"1.4.2_bild4.jpg"},
-					{"url":"1.4.2_bild5.jpg"}
+		"comic" : [	{"url":"1.4.2_bild1.png"},
+					{"url":"1.4.2_bild2.png"},
+					{"url":"1.4.2_bild3.png"},
+					{"url":"1.4.2_bild4.png"},
+					{"url":"1.4.2_bild5.png"}
 					],
 		"comic_row_height":"470px",
 		 "animation":"right"
 	
 	},
+	{  	"ID": "1.4",
+		"type":"question", 
+		"title":"Reflektionsfråga kapitel 4",
+		"background":{"type":"image","url":"bg.jpg"},
+		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		 "animation":"down"
+	}, 
 	{  	"ID": "1.5.1",
 		"type":"info",
-		"title":"Node 1.5.1",
+		"title":"Node 1.5.1 - Domstolens beslut sammanfattning",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"posttext":"Domen för de tre personer som åttalats för grovt koppleri och människohandel blev följande:</p><p>Den ungerska man och kvinna som ska ha övertalat de två kvinnorna att sälja sex i Sverige och därefter tagit större delen av de pengar som de tjänat, döms för grovt koppleri till 2 års fängelse. Åtalspunkten om människohandel ogillas då det vare sig kan bevisas att tvång eller hot använts, eller att kvinnorna var ovilliga att sälja sex i Sverige.</p><p>Åklagare yrkade på skadestånd om 80 000 kr till vardera av de utsatta kvinnorna, men domstolen sänkte kravet till 20 000 kr, med motiveringen att det inte kan uteslutas att kvinnorna lät sig föras till Sverige för att där kunna få höga skadestånd, för att därigenom kunna ta sig ur sin fattiga situation i hemlandet.</p><p>Den svenske man som lånat ut sin lägenhet för att sälja de två ungerska kvinnorna döms för koppleri till 10 månaders fängelse."	,
 		 "animation":"left"
 },
 {  	"ID": "1.5.2",
 		"type":"info",
-		"title":"Node 1.5.2",
+		"title":"Node 1.5.2 - Seriestrip en vanlig dag",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"comic" : [	{"url":"1.5.2_bild1.jpg"},
-					{"url":"1.5.2_bild2.jpg"}
+		"comic" : [	{"url":"1.5.2_bild1.png"},
+					{"url":"1.5.2_bild2.png"},
+					{"url":"1.5.2_bild3.png"},
+					{"url":"1.5.2_bild4.png"},
+					{"url":"1.5.2_bild5.png"},
+					{"url":"1.5.2_bild6.png"},
+					{"url":"1.5.2_bild7.png"},
+					{"url":"1.5.2_bild8.png"}
 					],
 		"comic_row_height":"273px",
 		 "animation":"right"
 	
 	},
+	{  	"ID": "1.5",
+		"type":"question", 
+		"title":"Reflektionsfråga kapitel 5",
+		"background":{"type":"image","url":"bg.jpg"},
+		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		 "animation":"down"
+	}, 
 
     ]
 };
