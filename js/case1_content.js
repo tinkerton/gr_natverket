@@ -16,9 +16,14 @@ self.preload = {"images":
 {"url":"1.4.2_bild4.png"},
 {"url":"1.4.2_bild5.png"},
 {"url":"1.5.1_domstoslbeslut.png"},
-{"url":"1.5.2_bild1.jpg"},
-{"url":"1.5.2_bild2.jpg"},
-	
+{"url":"1.5.2_bild1.png"},
+{"url":"1.5.2_bild2.png"},
+{"url":"1.5.2_bild3.png"},
+{"url":"1.5.2_bild4.png"},
+{"url":"1.5.2_bild5.png"},
+{"url":"1.5.2_bild6.png"},
+{"url":"1.5.2_bild7.png"},
+{"url":"1.5.2_bild8.png"},
 ]
 };
 
@@ -206,8 +211,14 @@ self.nodes = {"content":
 		"type":"info",
 		"title":"Node 1.5.2 - Seriestrip en vanlig dag",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"comic" : [	{"url":"1.5.2_bild1.jpg"},
-					{"url":"1.5.2_bild2.jpg"}
+		"comic" : [	{"url":"1.5.2_bild1.png"},
+					{"url":"1.5.2_bild2.png"},
+					{"url":"1.5.2_bild3.png"},
+					{"url":"1.5.2_bild4.png"},
+					{"url":"1.5.2_bild5.png"},
+					{"url":"1.5.2_bild6.png"},
+					{"url":"1.5.2_bild7.png"},
+					{"url":"1.5.2_bild8.png"}
 					],
 		"comic_row_height":"273px",
 		 "animation":"right"
