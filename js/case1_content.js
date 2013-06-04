@@ -56,7 +56,6 @@ self.nodes = {"content":
 	[
 	{  	"ID": "1.1.1",
 		"type":"info",
-		"title":"Node 1.1.1 - Citat sexköpare",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"walloftext" : [	
 					{"text":"Självklart ska man aldrig, aldrig, aldrig ge ett spårbart nummer till en escort. Tjejerna är ju extremt noga med att skydda sin identitet så varför ska vi torskar, som faktiskt begår en olaglig handling, skylta med vår identitet? Nej, skaffa ett kontantkort som ni INTE registrerar och ring från det"},
@@ -83,7 +82,6 @@ self.nodes = {"content":
 	},
 	{  	"ID": "1.1.2",
 		"type":"info",
-		"title":"Node 1.1.2 - Hemsida bordell",
 		"background":{"type":"image","url":"bg.jpg"},
 		"image": [
 			{"url":"1.1.2_bordell.png"} 
@@ -100,7 +98,6 @@ self.nodes = {"content":
 	},
 	{  	"ID": "1.2.1",
 		"type":"info", 
-		"title":"Node 1.2.1 - Macrostatistik",
 		"background":{"type":"image","url":"bg.jpg"},
 		"image": [
 			{"url":"1.2.1_macrostatistik.png"} 
@@ -109,7 +106,6 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.2.2",
 		"type":"info", 
-		"title":"Microstatistik",
 		"background":{"type":"image","url":"bg2.jpg"},
 		"image": [
 			{"url":"1.2.2_microstatistik.png"} 
@@ -118,7 +114,6 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.2.3",
 		"type":"info",
-		"title":"1.2.3 - Filmen om horan",
 		"background":{"type":"image","url":"bg.jpg"},
 		"videos" : [{"videoURL":"http://www.youtube.com/embed/aZ1Ts3Mcpkw", "source" : "youtube"}					
 					], 
@@ -135,7 +130,6 @@ self.nodes = {"content":
 	},
 	{  	"ID": "1.3.1 - Insändare",
 		"type":"info", 
-		"title":"Node 1.3.1",
 		"background":{"type":"image","url":"bg2.jpg"},
 		"image": [
 			{"url":"1.3.1_insandare.png"} 
@@ -144,7 +138,6 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.3.2",
 		"type":"info",
-		"title":"Node 1.3.2 - Intervju med polis",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"videos" : [{"videoURL":"http://www.youtube.com/embed/kXie9VlG7hA",  "source" : "youtube"}					
 					], 
@@ -154,7 +147,6 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.3.3",
 		"type":"info",
-		"title":"Node 1.3.3 - Intervju med granne",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297", "source" : "vimeo"}					
 					], 
@@ -171,7 +163,6 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.4.1",
 		"type":"info", 
-		"title":"Node 1.4.1 - Hjälporganisationens blogg",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"image": [
 			{"url":"1.4.1_blogg.png"} 
@@ -201,14 +192,14 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.5.1",
 		"type":"info",
-		"title":"Node 1.5.1 - Domstolens beslut sammanfattning",
+		"title":"Domstolens beslut sammanfattning",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"posttext":"Domen för de tre personer som åttalats för grovt koppleri och människohandel blev följande:</p><p>Den ungerska man och kvinna som ska ha övertalat de två kvinnorna att sälja sex i Sverige och därefter tagit större delen av de pengar som de tjänat, döms för grovt koppleri till 2 års fängelse. Åtalspunkten om människohandel ogillas då det vare sig kan bevisas att tvång eller hot använts, eller att kvinnorna var ovilliga att sälja sex i Sverige.</p><p>Åklagare yrkade på skadestånd om 80 000 kr till vardera av de utsatta kvinnorna, men domstolen sänkte kravet till 20 000 kr, med motiveringen att det inte kan uteslutas att kvinnorna lät sig föras till Sverige för att där kunna få höga skadestånd, för att därigenom kunna ta sig ur sin fattiga situation i hemlandet.</p><p>Den svenske man som lånat ut sin lägenhet för att sälja de två ungerska kvinnorna döms för koppleri till 10 månaders fängelse."	,
 		 "animation":"left"
 },
 {  	"ID": "1.5.2",
 		"type":"info",
-		"title":"Node 1.5.2 - Seriestrip en vanlig dag",
+		"title":"En vanlig dag",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"comic" : [	{"url":"1.5.2_bild1.png"},
 					{"url":"1.5.2_bild2.png"},

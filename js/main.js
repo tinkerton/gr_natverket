@@ -40,7 +40,7 @@ var FS = (function(self){
 	}
 
 	function addNodeTitle (nodeId, size) {
-		return "";
+		
 		if (contentObj[nodeId].title == undefined) return "";
 		if (size===undefined) { size=2; }
 
