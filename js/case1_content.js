@@ -171,7 +171,7 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.4.2",
 		"type":"info",
-		"title":"Node 1.4.2 - Barnets berättelse",
+		"title":"Barnets berättelse",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"comic" : [	{"url":"1.4.2_bild1.png"},
 					{"url":"1.4.2_bild2.png"},

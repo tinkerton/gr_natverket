@@ -11,7 +11,9 @@ var FS = (function(self){
 		comicsToFadeIn,
 		initComplete,
 		oldBackground,
-		IDWallOfText;
+		IDWallOfText,
+		arrayOfWallTweens,
+		currentlyClickedWallText;
 
 
 	activeCase = 0;
@@ -21,6 +23,9 @@ var FS = (function(self){
 	initComplete = false;
 	currentNodeNr =0;
 	IDWallOfText = -1;
+	arrayOfWallTweens = [];
+	currentlyClickedWallText=-1;
+
 	var BV;
 
 
@@ -273,11 +278,24 @@ var FS = (function(self){
 		
 	}
 
+	function emptyWallTweens() {
+			for (var i=0; i<_.size(arrayOfWallTweens); i++) {
+			
+				arrayOfWallTweens[i].kill();
+
+			}
+		arrayOfWallTweens=[];
+		currentlyClickedWallText=-1;
+	
+	}
+
 	function addNodeWalloftext(nodeId) {
 		var walltext, canvasHeight, canvasWidth;
 	
 		walltext = contentObj[nodeId].walloftext;
-		if (walltext === undefined) {return "";}
+		if (walltext === undefined) {
+			if (_.size(arrayOfWallTweens)>0) {emptyWallTweens();}
+			return "";}
 
 		FS.IDWallOfText = nodeId;
 		return "<div id='myCanvas'  style='height:"+$(document).height() * 0.8+"px' ></div>";
@@ -295,7 +313,35 @@ var FS = (function(self){
 		    return result;
 	};
 
+	self.zoomIn = function(wallID) {
+		console.log("wallID clicked "+ wallID + "(old:"+currentlyClickedWallText+") size:"+_.size(arrayOfWallTweens));
 
+
+		if(currentlyClickedWallText==wallID) {
+			
+					var currTween = arrayOfWallTweens[wallID];
+					currTween = TweenMax.to($("#wall_"+wallID), 20, {scaleX:0, scaleY:0, autoAlpha:0, zIndex:100+wallID, yoyo:true, repeat:-1, repeatDelay:3, delay:0, ease:Linear.easeNone});
+					currentlyClickedWallText=-1;
+		}
+		else{ 
+			if (currentlyClickedWallText!=-1){
+				var currTween = arrayOfWallTweens[currentlyClickedWallText];
+				currTween = TweenMax.to($("#wall_"+currentlyClickedWallText), 20, {scaleX:0, scaleY:0, autoAlpha:0, zIndex:100+currentlyClickedWallText, yoyo:true, repeat:-1, repeatDelay:3, delay:0, ease:Linear.easeNone});
+			}
+				
+	
+			arrayOfWallTweens[wallID] = TweenMax.to($("#wall_"+currentlyClickedWallText),20, {scaleX:0, scaleY:0, autoAlpha:0, zIndex:100+wallID, yoyo:true, repeat:-1, repeatDelay:3, delay:0, ease:Linear.easeNone});
+			currentlyClickedWallText=wallID;
+			
+			arrayOfWallTweens[wallID].kill();
+			arrayOfWallTweens[wallID] = TweenMax.to($("#wall_"+wallID),0.25,{scaleX:1,scaleY:1, alpha:1, zIndex:500+wallID});
+
+		}
+
+	
+		}
+
+	
 
 	function startWallOfText(myIDWallOfText) {
  		var walloftext = contentObj[myIDWallOfText].walloftext;
@@ -312,13 +358,17 @@ var FS = (function(self){
     	   		var randy = Math.floor((Math.random()*$(window).height()*0.6)+1);
     	   		var rando  = 1 / ((i+1));
     	   		
-    	   		console.log((i+1) + " " + randy);
+    	   		
     	   		//(i/_.size(walloftext)
     	   		var style ="top:"+ randy + "px; left:"+randx+"px;" ;
     	   		myDiv.append("<div id='wall_"+i+"' class='walloftextcontent' style='"+style+"''>"+walloftext[i].text+"</div>");
     			
-    			 TweenMax.set($("#wall_"+i), {zIndex:100+i, alpha:0.02, scaleX:0.5, scaleY:0.5});
-    	   		 TweenMax.to($("#wall_"+i), 20, {scaleX:1, scaleY:1, alpha:1, zIndex:500+i, yoyo:true, repeat:-1, repeatDelay:3, delay:i*5 + i,  ease:Linear.easeNone});
+    			 TweenMax.set($("#wall_"+i), {zIndex:100+i, autoAlpha:0, scaleX:0.5, scaleY:0.5});
+    	   		 var myT = TweenMax.to($("#wall_"+i), 20, {scaleX:1, scaleY:1, autoAlpha:1, zIndex:500+i, yoyo:true, repeat:-1, repeatDelay:3, delay:i*5 + i,  ease:Linear.easeNone});
+    	   			arrayOfWallTweens.push(myT);
+
+    	   		 myDiv.append("<script>$('#wall_"+i+"').click(function() {FS.zoomIn("+ i +")});</script>");
+    	   		
     	   }
 
 	}
@@ -469,7 +519,8 @@ var FS = (function(self){
 		maindiv = $('#main_div');
 
 		oldNodeId = FS.currentNodeNr;
-
+	   
+	
 	   	FS.currentNodeNr = nextNodeId + direction;
 	
 		FS.checkArrows(nextNodeId +direction);
