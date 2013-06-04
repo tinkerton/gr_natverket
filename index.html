@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -31,7 +31,7 @@
   <meta itemprop="description" content="">
   <meta itemprop="image" content="">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1; user-scalable=no">
 
   <!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
        However, there is a blank style.css in the css directory should you prefer -->
@@ -41,10 +41,15 @@
  <link rel="stylesheet" href="fonts/fonts.css">
  <link rel="stylesheet" href="css/bigvideo.css">
 
+ 
+
   <script src="js/libs/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-  <div class="pattern-overlay"></div>
+  
+    <div id="pattern-overlay"></div>
+    <div id="topleft-overlay"></div>
+  
     <div class="next-control" id="nextButton">
              
                <i class="icon-right-open-big naviconL"></i>
@@ -53,27 +58,30 @@
 
             <i class="icon-left-open-big naviconR"></i>
      </div>
+
 	<div id="outer">
       
     
     <div id="middle">
 		
-			<div id="inner">
-
-             <div class="row centered_box" id="main_div">
-		         </div>
+			<div id="inner" >
+          
+             <div class="row centered_box scrollable" id="main_div">
+            
+		         
+             </div>
 
 			</div>
-             
+             <div id="case-nav"></div>
         </div>
 		</div>
 	</div>
-
- <!-- <audio id="soundtrack"  loop="loop" preload="none" volume="1">
+  <div id="js-preload"></div>
+  <!--<audio id="soundtrack"  loop="loop" preload="none" volume="1">
       <source src="http://getgoingtoday.org/media/audio/soundtrack.mp3" type="audio/mp3">
       <source src="http://getgoingtoday.org/media/audio/soundtrack.ogg" type="audio/ogg">
     </audio>
--->
+  -->
   <!-- Grab Google CDN's jQuery, fall back to local if offline -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.1.min.js"><\/script>')</script>
@@ -83,6 +91,7 @@
 
   <script src="js/libs/bigvideo.js"></script>
    <script src="js/libs/backstretch.js"></script>
+
 
 
   <!--links for the  TweenLite, CSSPlugin, and EasePack-->

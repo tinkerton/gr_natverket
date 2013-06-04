@@ -6,6 +6,8 @@
 
     Dependencies: jQuery, jQuery UI (Slider), Video.js, ImagesLoaded
 */
+/*global VideoJS*/
+
 
 ;(function($) {
 
