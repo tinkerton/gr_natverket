@@ -72,8 +72,7 @@ self.nodes = {"content":
 					{"text":"Har du tänkt på att vissa människor kanske reser mycket och har inte tid med flickvän eller ha tid med att gå ut och ragga ett pök...<br/>Och i sådana lägen så passar en prostituerad bra."},
 					{"text":"Klart man har läst saker om folk som tvingas till det. Jag har sett Lilja forever också. Men ingen av de jag gått till har tvingats till nåt, jag ger alltid pengarna direkt till henne så ingen hallick kommer och snor dem."},
 					],
-		"pretext":"Wall of text (citat)",
-		"posttext":"To be coded",
+		
 		 "animation":"fade"
 
 	},

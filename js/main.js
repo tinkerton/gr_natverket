@@ -10,7 +10,8 @@ var FS = (function(self){
 		currentNodeNr,
 		comicsToFadeIn,
 		initComplete,
-		oldBackground;
+		oldBackground,
+		IDWallOfText;
 
 
 	activeCase = 0;
@@ -19,6 +20,7 @@ var FS = (function(self){
 
 	initComplete = false;
 	currentNodeNr =0;
+	IDWallOfText = -1;
 	var BV;
 
 
@@ -261,13 +263,14 @@ var FS = (function(self){
 	}
 
 	function addNodeWalloftext(nodeId) {
-		var walltext, nrOfTexts;
-
+		var walltext;
+	
 		walltext = contentObj[nodeId].walloftext;
 		if (walltext === undefined) {return "";}
 
-		nrOfTexts = _.size(walltext);
-		return "found wall of texts ("+nrOfTexts+")";
+		FS.IDWallOfText = nodeId;
+
+		return "<canvas id='myCanvas' width='960' height='480px'></canvas>";
 		
 	}
 
@@ -277,6 +280,25 @@ var FS = (function(self){
 		    return result;
 	};
 
+	function startWallOfText(myIDWallOfText) {
+			var canvas = document.getElementById('myCanvas'); //$("#myCanvas");
+		    var context = canvas.getContext('2d');
+			var x = canvas.width/2;
+			var y = canvas.height/2;
+
+			 context.font = '14pt Calibri';
+			  context.textAlign = 'left';
+    	   context.fillStyle = 'white';
+    	  
+      		 var walloftext = contentObj[myIDWallOfText].walloftext;
+
+    	   for (var i = 0; i<_.size(walloftext); i++) {
+      		 
+      		 context.fillText(i+1+ " " + walloftext[i].text, 0, 20 + i*20);
+      		}
+
+			//FS.nrOfwallOftext
+	}
 
 	
 	function updateBlur(speed) {
@@ -318,7 +340,10 @@ var FS = (function(self){
 		currentBlur=0;
 		FS.setUpThumbs();
 		FS.resize();
+
 		if (comicsToFadeIn>0) showComics(comicsToFadeIn);
+		if (FS.IDWallOfText>-1) startWallOfText(FS.IDWallOfText);
+		FS.nrOfwallOftext=0;
 		comicsToFadeIn =0;
 
 
