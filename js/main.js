@@ -309,15 +309,15 @@ var FS = (function(self){
 
     	   for (var i = 0; i<_.size(walloftext); i++) {
     	   		var randx = 0 + Math.floor((Math.random()*480)+1);
-    	   		var randy = Math.floor((Math.random()*$(document).height()*0.6)+1);
+    	   		var randy = Math.floor((Math.random()*$(window).height()*0.6)+1);
     	   		var rando  = 1 / ((i+1));
     	   		
     	   		console.log((i+1) + " " + randy);
     	   		//(i/_.size(walloftext)
     	   		var style ="top:"+ randy + "px; left:"+randx+"px;" ;
-    	   		myDiv.append("<div id='wall_"+i+"' class='walloftextcontent' style='"+style+"''>"+i + " " +walloftext[i].text+"</div>");
+    	   		myDiv.append("<div id='wall_"+i+"' class='walloftextcontent' style='"+style+"''>"+walloftext[i].text+"</div>");
     			
-    			 TweenMax.set($("#wall_"+i), {zIndex:100+i, alpha:(0.1-(1/i)), scaleX:0.5, scaleY:0.5});
+    			 TweenMax.set($("#wall_"+i), {zIndex:100+i, alpha:0.02, scaleX:0.5, scaleY:0.5});
     	   		 TweenMax.to($("#wall_"+i), 20, {scaleX:1, scaleY:1, alpha:1, zIndex:500+i, yoyo:true, repeat:-1, repeatDelay:3, delay:i*(i/2) +0.5,  ease:Linear.easeNone});
     	   }
 
