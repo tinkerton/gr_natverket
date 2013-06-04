@@ -4,7 +4,8 @@ self.nodes = {"content":
 	[
 	{  	"ID": "1.1.1",
 		"title":"Det första fallet",
-		"background":{"type":"video","url":"http://getgoingtoday.org/media/video/dream.mp4", "ipadBG":"bg4.jpg"},
+		"background":{"type":"image","url":"bg4.jpg"},
+		/*"background":{"type":"video","url":"http://getgoingtoday.org/media/video/dream.mp4", "ipadBG":"bg4.jpg"},*/
 		"pretext":"Ibland är människohandeln av sexuell natur. De drabbade har ofta erbjudits andra jobb men blir istället sexslavar. Olika aktörer mot sexuell människohandel förklarar problematiken på olika sätt.",
 		"posttext":""
 	}, 
@@ -27,7 +28,7 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.1.4",
 		"title":"Node four. The last of the  test content.",
-		"background":{"type":"video","url":"http://getgoingtoday.org/media/video/dream.mp4", "ipadBG":"bg4,jpg"},
+		"background":{"type":"image","url":"bg3.jpg"},
 		"pretext":"Pitchfork kogi reprehenderit, organic biodiesel terry richardson flexitarian keytar pinterest disrupt PBR art party.",
 		"posttext":"Lo-fi actually gentrify consequat. Ex bicycle rights YOLO fanny pack deserunt. Locavore pop-up hashtag elit fashion axe. Farm-to-table gentrify cosby sweater, gastropub keffiyeh sint godard bushwick labore selvage deep v in biodiesel art party typewriter. Mustache fugiat biodiesel, accusamus bespoke nulla enim sartorial bushwick. Qui tattooed occaecat polaroid nulla, id meggings readymade pickled reprehenderit. You probably haven't heard of them direct trade kogi butcher freegan, sapiente photo booth chillwave iphone cliche cupidatat reprehenderit veniam non meggings."
 	}
