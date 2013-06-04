@@ -1834,7 +1834,7 @@ body .video.twitch, body .video.youtube.show_controls { padding-top: 30px; }
 .modal.active { z-index: 999999; }
 .modal.active, .modal.active > .content { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 
-body { color: #dbd1b8; background: #000; font-familily: "Helvetica", "Arial", sans-serif; overflow-x: hidden; height: 100%; max-height: 100%; }
+body { color: white; background: #000; font-familily: "Helvetica", "Arial", sans-serif; overflow-x: hidden; height: 100%; max-height: 100%; }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'PTSansRegular'; color: #dbd1b8; -webkit-font-smoothing: antialiased; }
 
@@ -1928,9 +1928,9 @@ h3, h4, h5, h6, p { text-align: left; }
 
 ::-webkit-scrollbar-track { background: #000; border: skinny plain #333; border-radius: 10px; }
 
-::-webkit-scrollbar-thumb { background: #bcaa7b; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 10px; }
 
-::-webkit-scrollbar-thumb:hover { background: #dbd1b8; }
+::-webkit-scrollbar-thumb:hover { background: white; }
 
 #js-preload { display: none; }
 
@@ -1942,4 +1942,6 @@ img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
 
 .hiddenComic { opacity: 0.1; display: block; float: left; }
 
-#myCanvas { margin-left: -60px; }
+#myCanvas { display: block; }
+
+.walloftextcontent { position: absolute; font-size: 1em; font-weight: bold; font-style: italic; width: 30em; line-height: 1.5em; text-align: center; display: block; background-color: #000; padding: 2em; border-radius: 1em 2em 0 2em; border: 5px solid #111; }

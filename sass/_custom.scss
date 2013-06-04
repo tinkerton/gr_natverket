@@ -1,7 +1,7 @@
 // Your custom SCSS should be written here...
 
 $overlayHeight: 65px;
-$maintextColor: #dbd1b8;
+$maintextColor: #FFF;
 
 body {
 	color: $maintextColor;
@@ -368,5 +368,34 @@ img, object, embed .node-image {
   float: left;
 }
 #myCanvas {
- margin-left: -60px;
+
+ display:block;
+
+ 
+
+}
+
+.walloftextcontent {
+  position: absolute;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: italic;
+  width: 30em;
+  line-height: 1.5em;
+  text-align: center;
+  display: block;
+  background-color: #000;
+  padding:2em;
+  border-radius: 1em 2em 0 2em;
+  border:5px solid #111;
+
+ 
+}
+
+
+
+.row {
+
+
+ 
 }

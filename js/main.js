@@ -40,7 +40,7 @@ var FS = (function(self){
 	}
 
 	function addNodeTitle (nodeId, size) {
-		
+		return "";
 		if (contentObj[nodeId].title == undefined) return "";
 		if (size===undefined) { size=2; }
 
@@ -235,10 +235,21 @@ var FS = (function(self){
 		for (var i=0; i<nrOfVideos; i++) {
 			res +="<div class='"+nrOfCols+" columns'>";
 			res +="<div class='loading' id='loader_"+i+"'><div class='track'></div><div class='spinner'><div class='mask'><div class='maskedCircle'></div></div></div></div>";
-			res +="<article class='vimeo video videoBg'>";
-			res +="<iframe id='iframe_"+i+"' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
-			res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
-			res +="</iframe></article></div>";
+			
+			if ( videos[i].source  == "youtube") {
+				res +="<article class='youtube video videoBg'>";
+				res +="<iframe width='560' height='315' src='"+ videos[i].videoURL + "?showinfo=0' frameborder='0' allowfullscreen></iframe>";
+				res +="</iframe>";
+
+			}
+			else {
+				res +="<article class='vimeo video videoBg'>";
+				res +="<iframe id='iframe_"+i+"' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
+				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
+				res +="</iframe>";
+
+			}
+			res +="</article></div>";
 		}
 		res+"</div>";
 
@@ -263,15 +274,19 @@ var FS = (function(self){
 	}
 
 	function addNodeWalloftext(nodeId) {
-		var walltext;
+		var walltext, canvasHeight, canvasWidth;
 	
 		walltext = contentObj[nodeId].walloftext;
 		if (walltext === undefined) {return "";}
 
 		FS.IDWallOfText = nodeId;
+		return "<div id='myCanvas'  style='height:"+$(document).height() * 0.8+"px' ></div>";
+	/*	canvasHeight =  $(document).height() * 0.8;
+		canvasWidth =$(document).width() * 0.8;
+		if (canvasWidth>940) canvasWidth = 940;
+		return "<canvas id='myCanvas' width='"+canvasWidth+"px' height='"+canvasHeight+"px'></canvas>";
+	*/
 
-		return "<canvas id='myCanvas' width='960' height='480px'></canvas>";
-		
 	}
 
 
@@ -280,7 +295,35 @@ var FS = (function(self){
 		    return result;
 	};
 
+
+
 	function startWallOfText(myIDWallOfText) {
+ 		var walloftext = contentObj[myIDWallOfText].walloftext;
+			
+      		var startX = 10;
+   		
+   		
+   			var myDiv = $("#myCanvas");
+
+
+
+    	   for (var i = 0; i<_.size(walloftext); i++) {
+    	   		var randx = 0 + Math.floor((Math.random()*480)+1);
+    	   		var randy = Math.floor((Math.random()*$(document).height()*0.6)+1);
+    	   		var rando  = 1 / ((i+1));
+    	   		
+    	   		console.log((i+1) + " " + randy);
+    	   		//(i/_.size(walloftext)
+    	   		var style ="top:"+ randy + "px; left:"+randx+"px;" ;
+    	   		myDiv.append("<div id='wall_"+i+"' class='walloftextcontent' style='"+style+"''>"+i + " " +walloftext[i].text+"</div>");
+    			
+    			 TweenMax.set($("#wall_"+i), {zIndex:100+i, alpha:(0.1-(1/i)), scaleX:0.5, scaleY:0.5});
+    	   		 TweenMax.to($("#wall_"+i), 20, {scaleX:1, scaleY:1, alpha:1, zIndex:500+i, yoyo:true, repeat:-1, repeatDelay:3, delay:i*(i/2) +0.5,  ease:Linear.easeNone});
+    	   }
+
+	}
+
+	/*function startWallOfText(myIDWallOfText) {
 			var canvas = document.getElementById('myCanvas'); //$("#myCanvas");
 		    var context = canvas.getContext('2d');
 			var x = canvas.width/2;
@@ -289,18 +332,35 @@ var FS = (function(self){
 			 context.font = '14pt Calibri';
 			  context.textAlign = 'left';
     	   context.fillStyle = 'white';
-    	  
+
       		 var walloftext = contentObj[myIDWallOfText].walloftext;
+			
+      		 var startx = 10;
+   			var currenty = 20;	
+   		
+
 
     	   for (var i = 0; i<_.size(walloftext); i++) {
-      		 
-      		 context.fillText(i+1+ " " + walloftext[i].text, 0, 20 + i*20);
+    	  
+    	   		context.fillText(i, 0,  currenty);
+    	  	 var textvalArr = toMultiLine(walloftext[i].text);
+     			for(var j = 0; j < textvalArr.length; j++){
+        			context.fillText(textvalArr[j], startx,currenty);
+        			currenty +=20;
+        			
+   			 }
+
+      	
       		}
-
-			//FS.nrOfwallOftext
 	}
-
 	
+	function toMultiLine(text){
+		   var textArr = new Array();
+		   text = text.replace(/\n\r?/g, '<br/>');
+		   textArr = text.split("<br/>");
+		   return textArr;
+	}
+	*/
 	function updateBlur(speed) {
 		return;
 		currentBlur++;
@@ -343,7 +403,7 @@ var FS = (function(self){
 
 		if (comicsToFadeIn>0) showComics(comicsToFadeIn);
 		if (FS.IDWallOfText>-1) startWallOfText(FS.IDWallOfText);
-		FS.nrOfwallOftext=0;
+		FS.IDWallOfText=-1;
 		comicsToFadeIn =0;
 
 

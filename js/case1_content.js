@@ -57,9 +57,9 @@ self.nodes = {"content":
 	{  	"ID": "1.1.1",
 		"type":"info",
 		"title":"Node 1.1.1 - Citat sexköpare",
-		"background":{"type":"image","url":"bg.jpg"},
+		"background":{"type":"image","url":"bg4.jpg"},
 		"walloftext" : [	
-					{"text":"Självklart ska man aldrig, aldrig, aldrig ge ett spårbart nummer till en escort. Tjejerna är ju extremt noga med att skydda sin identitet så varför ska vi torskar, som faktiskt begår en olaglig handling, skylta med vår identitet? <br/>Nej, skaffa ett kontantkort som ni INTE registrerar och ring från det"},
+					{"text":"Självklart ska man aldrig, aldrig, aldrig ge ett spårbart nummer till en escort. Tjejerna är ju extremt noga med att skydda sin identitet så varför ska vi torskar, som faktiskt begår en olaglig handling, skylta med vår identitet? Nej, skaffa ett kontantkort som ni INTE registrerar och ring från det"},
 					{"text":"Snuten är nog värsta rädslan för de flesta. Ingen rädsla alls för vad flickvänner/fruar/arbetskompisar/grannar/mamma ska säga?"},
 					{"text":"Att gå och tycka synd om dom eller bli deprimerad över faktum som detta är helt meningslöst. prostitution har funnits sjukt länge och kommer att finnas sjukt länge till. Så enkelt är det."},
 					{"text":"Det blev som en vana. Något jag inte kunde sluta med fast jag ville. Tillslut sökte jag hjälp. Jag ville inte vara den mannen som köper sex."},
@@ -74,7 +74,7 @@ self.nodes = {"content":
 					{"text":"När min flickvän fick reda på det så gick vårt förhållande sönder. Jag glömmer aldrig hennes blick."},
 					{"text":"Största problemet för mig är att det är beroendeframkallande. Jag har inte köpt sex sen förra sommaren eftersom jag träffat en bra tjej men jag saknar verkligen sexköpandet och jag hoppas jag kan hålla mig borta från det framöver eftersom jag vill ta seriöst på förhållandet."},
 					{"text":"Varför skulle man må dåligt? En trevlig stund med en trevlig tjej som dessutom får pengar för att knulla. Sen kan man göra kinky saker med en hora som man inte kan göra med frugan."},
-					{"text":"Har du tänkt på att vissa människor kanske reser mycket och har inte tid med flickvän eller ha tid med att gå ut och ragga ett pök...<br/>Och i sådana lägen så passar en prostituerad bra."},
+					{"text":"Har du tänkt på att vissa människor kanske reser mycket och har inte tid med flickvän eller ha tid med att gå ut och ragga ett pök... Och i sådana lägen så passar en prostituerad bra."},
 					{"text":"Klart man har läst saker om folk som tvingas till det. Jag har sett Lilja forever också. Men ingen av de jag gått till har tvingats till nåt, jag ger alltid pengarna direkt till henne så ingen hallick kommer och snor dem."},
 					],
 		
@@ -120,7 +120,7 @@ self.nodes = {"content":
 		"type":"info",
 		"title":"1.2.3 - Filmen om horan",
 		"background":{"type":"image","url":"bg.jpg"},
-		"videos" : [{"videoURL":"http://www.youtube.com/embed/aZ1Ts3Mcpkw"}					
+		"videos" : [{"videoURL":"http://www.youtube.com/embed/aZ1Ts3Mcpkw", "source" : "youtube"}					
 					], 
 		"pretext":"",
 		"posttext":"Filmen om horan",
@@ -146,7 +146,7 @@ self.nodes = {"content":
 		"type":"info",
 		"title":"Node 1.3.2 - Intervju med polis",
 		"background":{"type":"image","url":"bg3.jpg"},
-		"videos" : [{"videoURL":"http://www.youtube.com/embed/kXie9VlG7hA"}					
+		"videos" : [{"videoURL":"http://www.youtube.com/embed/kXie9VlG7hA",  "source" : "youtube"}					
 					], 
 		"pretext":"",
 		"posttext":"Intervju med polisman",
@@ -156,7 +156,7 @@ self.nodes = {"content":
 		"type":"info",
 		"title":"Node 1.3.3 - Intervju med granne",
 		"background":{"type":"image","url":"bg3.jpg"},
-		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297"}					
+		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297", "source" : "vimeo"}					
 					], 
 		"pretext":"",
 		"posttext":"Intervju med granne",
