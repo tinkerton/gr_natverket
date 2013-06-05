@@ -14,12 +14,17 @@ var FS = (function(self){
 		oldBackground,
 		IDWallOfText,
 		arrayOfWallTweens,
-		currentlyClickedWallText;
+		currentlyClickedWallText,
+		nrOfVideos,
+		video_player;
 
 
 	activeCase = Case1;
 	caseNodeId = 0;
 	
+	nrOfVideos = 0;
+
+
 	contentObj = activeCase.nodes.content;
 
 	initComplete = false;
@@ -220,19 +225,18 @@ var FS = (function(self){
 	function addNodeVideos (nodeId) {
 
 		var videos,
-			nrOfVideos,
 			nrOfCols,
 			res;
 		
 		videos = contentObj[nodeId].videos; 
 		if (videos === undefined) {return "";}
 
-		nrOfVideos = _.size(videos);
+		FS.nrOfVideos = _.size(videos);
 	
 
 		nrOfCols="twelve";
 		
-		switch (nrOfVideos) {
+		switch (FS.nrOfVideos) {
 			case 1:
 				nrOfCols = "twelve";
 			break;
@@ -251,7 +255,7 @@ var FS = (function(self){
 
 		res ="<div class='row'>";
 
-		for (var i=0; i<nrOfVideos; i++) {
+		for (var i=0; i<FS.nrOfVideos; i++) {
 			res +="<div class='"+nrOfCols+" columns'>";
 			res +="<div class='loading' id='loader_"+i+"'><div class='track'></div><div class='spinner'><div class='mask'><div class='maskedCircle'></div></div></div></div>";
 			
@@ -259,12 +263,13 @@ var FS = (function(self){
 				res +="<article class='youtube video videoBg'>";
 				res +="<iframe width='560' height='315' src='"+ videos[i].videoURL + "?showinfo=0' frameborder='0' allowfullscreen></iframe>";
 				res +="</iframe>";
+				FS.nrOfVideos = 0;
 
 			}
 			else {
 				res +="<article class='vimeo video videoBg'>";
 				res +="<iframe id='iframe_"+i+"' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
-				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
+				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0&api=1&player_id=iframe_"+i+"' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
 				res +="</iframe>";
 
 			}
@@ -361,8 +366,6 @@ var FS = (function(self){
  		var walloftext = contentObj[myIDWallOfText].walloftext;
 			
       		var startX = 10;
-   		
-   		
    			var myDiv = $("#myCanvas");
 
 
@@ -455,6 +458,45 @@ var FS = (function(self){
 	}
 
 
+	self.video_onFinish = function(id) {
+		  	console.log('finished');
+		  	 alert("Video " + id + " finished! Ask user a question and load a new video!");
+	}
+/*
+	self.video_onPlayProgress = function(data, id) {
+	   console.log(data.seconds + 's played');
+	}
+		
+
+	self.video_onPause = function(id) {
+		    console.log('paused');
+		 
+	}
+*/
+
+	function startVideoListener() {
+   		var iframe = $('#iframe_0')[0];
+   		FS.video_player = $f(iframe);
+    	
+   		// When the player is ready, add listeners for pause, finish, and playProgress
+		FS.video_player.addEvent('ready', function() {
+    	
+    
+  		//	FS.video_player.addEvent('pause',  FS.video_onPause);
+		    FS.video_player.addEvent('finish',  FS.video_onFinish);
+		//    FS.video_player.addEvent('playProgress',  FS.video_onPlayProgress);
+		});
+
+		// Call the API when a button is pressed
+		$('button').bind('click', function() {
+		    FS.video_player.api($(this).text().toLowerCase());
+		});
+
+		
+		
+	}
+
+
 	function resetNodeAttributes() {
 		var maindiv = $('#main_div');
 		for (var i=1; i<=5; i++) {
@@ -466,6 +508,7 @@ var FS = (function(self){
 		FS.resize();
 
 		if (comicsToFadeIn>0) showComics(comicsToFadeIn);
+		if (FS.nrOfVideos>0) startVideoListener();
 		if (FS.IDWallOfText>-1) startWallOfText(FS.IDWallOfText);
 		FS.IDWallOfText=-1;
 		comicsToFadeIn =0;
@@ -538,7 +581,7 @@ var FS = (function(self){
 
 		oldNodeId = FS.currentNodeNr;
 	   
-	
+		FS.nrOfVideos = 0;
 	   	FS.currentNodeNr = nextNodeId + direction;
 	
 		FS.checkArrows(FS.currentNodeNr);
