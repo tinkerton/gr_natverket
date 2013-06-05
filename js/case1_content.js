@@ -53,7 +53,13 @@ self.preload = {"images":
 
 */
 self.nodes = {"content": 
-	[
+	[{  "ID": "1.0",
+		"type":"chapter", 
+		"title":"Kapitel 1 - varför trafficking?",
+		"background":{"type":"image","url":"bg4.jpg"},
+		 "animation":"fade"
+	},
+
 	{  	"ID": "1.1.1",
 		"type":"info",
 		"background":{"type":"image","url":"bg4.jpg"},
@@ -77,7 +83,7 @@ self.nodes = {"content":
 					{"text":"Klart man har läst saker om folk som tvingas till det. Jag har sett Lilja forever också. Men ingen av de jag gått till har tvingats till nåt, jag ger alltid pengarna direkt till henne så ingen hallick kommer och snor dem."},
 					],
 		
-		 "animation":"fade"
+		 "animation":"left"
 
 	},
 	{  	"ID": "1.1.2",
@@ -91,8 +97,8 @@ self.nodes = {"content":
 	},  
 	{  	"ID": "1.1",
 		"type":"question", 
-		"title":"Reflektionsfråga kapitel 1",
-		"background":{"type":"image","url":"bg.jpg"},
+		"title":"Creativity & organizational storytelling<br/>is at the heart of everything we do.",
+		"background":{"type":"image","url":"bg2.jpg"},
 		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
 		 "animation":"down"
 	},
@@ -117,16 +123,15 @@ self.nodes = {"content":
 		"background":{"type":"image","url":"bg.jpg"},
 		"videos" : [{"videoURL":"http://www.youtube.com/embed/aZ1Ts3Mcpkw", "source" : "youtube"}					
 					], 
-		"pretext":"",
-		"posttext":"Filmen om horan",
-	     "animation":"fade"
+		"title":"Filmen om horan",
+	     "animation":"right"
 	}, 
 	{  	"ID": "1.2",
 		"type":"question", 
 		"title":"Reflektionsfråga kapitel 2",
-		"background":{"type":"image","url":"bg.jpg"},
+		"background":{"type":"image","url":"bg2.jpg"},
 		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
-		 "animation":"down"
+		 "animation":"left"
 	},
 	{  	"ID": "1.3.1 - Insändare",
 		"type":"info", 
@@ -142,7 +147,7 @@ self.nodes = {"content":
 		"videos" : [{"videoURL":"http://www.youtube.com/embed/kXie9VlG7hA",  "source" : "youtube"}					
 					], 
 		"pretext":"",
-		"posttext":"Intervju med polisman",
+		"title":"Intervju med polisman",
 		 "animation":"left"
 	}, 
 	{  	"ID": "1.3.3",
@@ -151,7 +156,7 @@ self.nodes = {"content":
 		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297", "source" : "vimeo"}					
 					], 
 		"pretext":"",
-		"posttext":"Intervju med granne",
+		"title":"Intervju med granne",
 		 "animation":"left"
 	},
 	{  	"ID": "1.3",

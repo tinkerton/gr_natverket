@@ -218,15 +218,19 @@ position: absolute;
 z-index: 300;
 top: 50%;
 right: 0px;
-margin-top: -98px;
-width: 55px;
-height: 103px;
+margin-top: -3em;
+max-width: 55px;
+max-height: 103px;
+width:6.4%;
+height:12%;
+min-width: 32px;
+min-height: 60px;
 overflow: hidden;
-padding: 20px 0px;
+padding: 1em 0em;
 cursor: pointer;
-border-radius: 10px 0px 0px 10px;
+border-radius: 1em 0em 0em 1em;
 background-color: rgba(255,255,255,0.3);
-border: 1px solid #222;
+border: 0.1em solid #222;
 
 }
 
@@ -242,7 +246,7 @@ border-radius: 0px 10px 10px 0px;
 
 .naviconL, .naviconR {
 
-  padding-top: 20px;
+  padding-top: 30%;
   font-size: 30px;
   padding-left: 15px;
  
@@ -280,12 +284,12 @@ pointer-events:none;
   @include respond(portrait-tablets) { display: none; }
 }
 
-#case-nav {
+#case-nav-wrapper {
 position: absolute;
 height: 50px;
 width: 100%;
 bottom: 0px;
-/*background-color: #000;*/
+background-color: rgba(0,0,0,0.2);
 z-index: 400;
  text-align: center;  
 
@@ -293,33 +297,56 @@ z-index: 400;
   letter-spacing: 35px;  
    white-space: nowrap;  
   line-height: 12px;  
-   overflow: hidden;  
+   overflow: visible;  
+   text-align: center;
+   display: block;
 }
+#case-nav{
+  max-width: 940px;
+  width: 100%;
+  display: inline-block;
+  padding-top: 0.2em;
 
+}
 .node-thumb {
 
-  margin: 5px;
+   margin: 0.2em;
+
    display: inline-block;  
-    vertical-align: middle;
-    cursor: pointer;
+   vertical-align: middle;
+   
+
 }
+
 .node-info {
   background-color: #333;
-  max-width:50px;
-  height: auto;
-  min-height:30px;
-  min-width: 3%;
+  width:1em;
+  height:1em;
+  
 }
 
 .node-question {
   background-color: #333;
-  width:30px;
-  height:30px;
-  border-radius: 30px;
+  width:1em;
+  height:1em;
+  border-radius: 1em;
+
 }
 .node-selected {
-  background-color:#FFF;
+  background-color:#FFF  !important;
+  margin-bottom: 1em  !important;
+  cursor: default !important;
+   background-image: none !important;
 }
+
+.node-visited {
+ 
+    cursor: pointer;
+    background: url(../img/c1_t1.jpg);
+    background-size: 100% auto;
+  background-repeat: no-repeat;
+
+ }
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -353,7 +380,7 @@ img, object, embed .comicImg{
 
 }
 .comicImg {
- border: 10px solid black;
+ 
 }
 
 img, object, embed .node-image {
@@ -364,9 +391,15 @@ img, object, embed .node-image {
 
 .hiddenComic {
   opacity: 0.1;
-  display: block;
+  display: inline-block;
   float: left;
 }
+.comicWrapper {
+ display: block;
+ text-align: center;
+}
+
+
 #myCanvas {
 
  display:block;
@@ -392,8 +425,27 @@ img, object, embed .node-image {
 
  
 }
+.titleDiv {
+  text-align: center;
+  max-width:940px;
+  display: block;
 
 
+}
+
+.text-black-bg {
+display: inline-block;
+background-color: rgba(0, 0, 0, 0.5);
+padding: 0.6em;
+
+color: #fff;
+text-align: left;
+
+}
+.title{
+  font-size:2.5em;
+  line-height: 1.2em;
+  }
 
 .row {
 

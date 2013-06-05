@@ -8,6 +8,7 @@ var FS = (function(self){
 		contentObj,
 		currentBlur,
 		currentNodeNr,
+		maxNodeNr,
 		comicsToFadeIn,
 		initComplete,
 		oldBackground,
@@ -16,9 +17,10 @@ var FS = (function(self){
 		currentlyClickedWallText;
 
 
-	activeCase = 0;
+	activeCase = Case1;
 	caseNodeId = 0;
-	contentObj = Case1.nodes.content;
+	
+	contentObj = activeCase.nodes.content;
 
 	initComplete = false;
 	currentNodeNr =0;
@@ -49,7 +51,13 @@ var FS = (function(self){
 		if (contentObj[nodeId].title == undefined) return "";
 		if (size===undefined) { size=2; }
 
-		var res = "<h"+size + ">"+ contentObj[nodeId].title+"</h"+size+">";
+		var titleArr = contentObj[nodeId].title.split("<br/>");
+		var res ="<div class='titleDiv'>";
+		for (var i=0; i<_.size(titleArr); i++) {
+			if (i>0) res+="<br/>";
+		 res += "<span class='text-black-bg title'>"+titleArr[i]+"</span>";   //"<h"+size + ">"+ contentObj[nodeId].title+"</h"+size+">";
+		}
+		res +="</div>";
 		return res;
 	}
 
@@ -69,6 +77,10 @@ var FS = (function(self){
 	function setupBackground(nodeId) {
 		
 		$("#big-video-wrap").hide();
+		
+
+
+
 		if (contentObj[nodeId].background == undefined || contentObj[nodeId].background.url==oldBackground ) return;
 		oldBackground = contentObj[nodeId].background.url;
 		
@@ -99,6 +111,7 @@ var FS = (function(self){
 		else {
 			$.backstretch("../img/"+oldBackground);
 		}
+		
 		
 
 	}
@@ -172,10 +185,11 @@ var FS = (function(self){
 
 		comic_row_height = contentObj[nodeId].comic_row_height;
 
-		res ="";
+		res ="<div class='comicWrapper'>";
 		for (var i=0; i<nrOfImages; i++) {
 			res +="<div id='li_"+i+"' class='hiddenComic'><img src='img/"+comicImages[i].url+"' style='max-height:"+comic_row_height+";' class='comicImg'/></div>";
 		}
+		res +="</div>";
 
 			/*
 		addedSecondRow = false;
@@ -448,7 +462,7 @@ var FS = (function(self){
 		}
 		TweenMax.to(maindiv, 0, {alpha:1, scaleX:1, scaleY:1});
 		currentBlur=0;
-		FS.setUpThumbs();
+		
 		FS.resize();
 
 		if (comicsToFadeIn>0) showComics(comicsToFadeIn);
@@ -470,6 +484,7 @@ var FS = (function(self){
 		
 
 		maindiv.html(FS.addContent(nextNodeId));
+	
 		if (Modernizr.touch || !FS.initComplete){
 			FS.initComplete = true;
 			maindiv.show();
@@ -514,6 +529,9 @@ var FS = (function(self){
 
 	self.gotoNode = function(nextNodeId, direction) {
 		var oldNodeId, maindiv, speed;
+	
+		if (nextNodeId+direction == FS.currentNodeNr) return;
+
 		currentBlur = 0;
 		speed=0.809;
 		maindiv = $('#main_div');
@@ -523,15 +541,20 @@ var FS = (function(self){
 	
 	   	FS.currentNodeNr = nextNodeId + direction;
 	
-		FS.checkArrows(nextNodeId +direction);
+		FS.checkArrows(FS.currentNodeNr);
 	
-		setupBackground(nextNodeId +direction);
+		setupBackground(FS.currentNodeNr);
+		
+		FS.setUpThumbs();
+
+		if (contentObj[FS.currentNodeNr].type=="info") $("#topleft-overlay").fadeOut();
+		else  $("#topleft-overlay").fadeIn();
 
 		if (Modernizr.touch || !FS.initComplete){
 			maindiv.hide();
 			onCompleteFadeoutNode(maindiv, FS.currentNodeNr , speed,"none");
 		}else {
-				console.log(oldNodeId + " " + nextNodeId);
+				
 			var animationType = contentObj[oldNodeId].animation; 
 			switch (animationType) {
 				case "up":
@@ -564,21 +587,41 @@ var FS = (function(self){
 	}
 
 	self.setUpThumbs = function() {
-		var nrOfNodes = _.size(Case1.nodes.content);
+		var nrOfNodes = _.size(activeCase.nodes.content);
 		var navObj = $("#case-nav");
 		var res ="";
+		
+		if (FS.maxNodeNr<FS.currentNodeNr) {
+			FS.maxNodeNr = FS.currentNodeNr;
+			
+		} 
 
 		for (var i=0; i<nrOfNodes; i++) {
 			switch (contentObj[i].type) {
-				case "info": 
+				case "info": case "chapter":
 					res += "<div class='node-thumb node-info";
 					if (FS.currentNodeNr==i) { res += " node-selected";}
-					res+="' onclick='FS.gotoNode("+i+",0);'></div>";
+					if (FS.maxNodeNr>=i) {
+						res +=" node-visited";
+						res +="' onclick='FS.gotoNode("+i+",0);'>";
+					}
+					else{
+						res +="'>"
+					}
+
+					res +="</div>";
 				break;
 				case "question":
 				  res += "<div class='node-thumb node-question";
 				  if (FS.currentNodeNr==i) { res += " node-selected";}
-					res+="' onclick='FS.gotoNode("+i+",0);'></div>";
+				  if (FS.maxNodeNr>=i) {
+				  	res +=" node-visited";
+				  	res +="' onclick='FS.gotoNode("+i+",0);'>";
+				   }
+				   else{
+						res +="'>"
+					}
+					res +="</div>";
 				break;
 				case "hidden":
 
@@ -614,7 +657,7 @@ var FS = (function(self){
 	}
 
 	self.checkArrows = function(currentNodeNr) {
-			if (currentNodeNr<_.size(Case1.nodes.content)-1) {
+			if (currentNodeNr<_.size(activeCase.nodes.content)-1) {
  				$("#nextButton").fadeIn();
  			}
  			else{
@@ -634,13 +677,13 @@ var FS = (function(self){
 
 
 	self.preloadImages = function() {
-		var nrOfImages = _.size(Case1.preload.images);
+		var nrOfImages = _.size(activeCase.preload.images);
 		var prelObj = $("#js-preload");
 		var res ="";
 
 		for (var i=0; i<nrOfImages; i++) {
 			if (i>0) res +=", ";
-			res +="url('img/"+ Case1.preload.images[i].url+"')";
+			res +="url('img/"+ activeCase.preload.images[i].url+"')";
 
 		}
 		prelObj.css("background-image",res);
@@ -684,7 +727,8 @@ Gumby.ready(function() {
 		$('input, textarea').placeholder();
 	}
 
-	FS.currentNodeNr = 0;
+	FS.currentNodeNr = -1;
+	FS.maxNodeNr = -1;
 
 	FS.BV = new $.BigVideo();
 	FS.BV.init();
@@ -692,7 +736,7 @@ Gumby.ready(function() {
 	FS.preloadImages();
 
 	FS.setUpThumbs();
-	FS.gotoNode(FS.currentNodeNr,0);
+	FS.gotoNode(FS.currentNodeNr,1);
 
 	$(document).on('click', '#nextButton', function() {
  		
