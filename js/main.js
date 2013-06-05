@@ -485,7 +485,7 @@ var FS = (function(self){
 
 		maindiv.html(FS.addContent(nextNodeId));
 	
-		if (Modernizr.touch || !FS.initComplete){
+		if (!FS.initComplete){ // ||(Modernizr.touch 
 			FS.initComplete = true;
 			maindiv.show();
 			resetNodeAttributes();
@@ -550,7 +550,7 @@ var FS = (function(self){
 		if (contentObj[FS.currentNodeNr].type=="info") $("#topleft-overlay").fadeOut();
 		else  $("#topleft-overlay").fadeIn();
 
-		if (Modernizr.touch || !FS.initComplete){
+		if (!FS.initComplete){  // Modernizr.touch || 
 			maindiv.hide();
 			onCompleteFadeoutNode(maindiv, FS.currentNodeNr , speed,"none");
 		}else {
