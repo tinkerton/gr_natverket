@@ -16,14 +16,18 @@ var FS = (function(self){
 		arrayOfWallTweens,
 		currentlyClickedWallText,
 		nrOfVideos,
-		video_player;
+		video_player,
+		currentNodeType,
+		currentSequence;
 
 
 	activeCase = Case1;
 	caseNodeId = 0;
 	
 	nrOfVideos = 0;
+	currentNodeType= "";
 
+	currentSequence = 0;
 
 	contentObj = activeCase.nodes.content;
 
@@ -219,7 +223,47 @@ var FS = (function(self){
 
 
 	}
+	function addNodeVideoSequence(nodeId) {
+		var res ="",
+			seq_type,
+			myObj;
+			
+			
+			myObj=contentObj[nodeId].sequences[FS.currentSequence];
+			seq_type=myObj.type;
+			if (FS.currentSequence == 0) {res ="<div class='row' id='seqWrapper'>"}
 
+			switch (seq_type) {
+				case "video":
+					res +="<div class='twelve columns'><div class='loading' id='loader_0'><div class='track'></div><div class='spinner'><div class='mask'><div class='maskedCircle'></div></div></div></div>";
+					res +="<article class='vimeo video videoBg'>";
+					res +="<iframe id='iframe_0' style='visibility:hidden;' onload='FS.showIframe(0)' ";
+					res += "src='" + myObj.url + "?title=0&byline=0&portrait=0&autoplay=1&api=1&player_id=iframe_0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
+					res +="</iframe></article></div>";
+				break;
+				case "question":
+					res +="<div class='twelve columns'>";
+					res +="<article class='vimeo video videoBg'>";
+					res +="<h2>"+myObj.text +"</h2>";
+					res +="<p><div class='pretty medium info btn'>"+ myObj.answers[0].text +"</div></p>";
+					res +="<p><div class='pretty medium info btn'>"+ myObj.answers[1].text +"</div></p>";
+					res +="</article></div>";
+				
+				break;
+				case "text":
+					res +="<div class='twelve columns'>";
+					res +="<h2>"+myObj.header +"</h2><p>"+ myObj.content +"</p>";
+					res +="</div>";
+					
+				break;
+				
+
+
+			}
+			if (FS.currentSequence == 0) res+="</div>"
+		
+		return res;
+	}
 
 
 	function addNodeVideos (nodeId) {
@@ -235,7 +279,7 @@ var FS = (function(self){
 	
 
 		nrOfCols="twelve";
-		
+		/*
 		switch (FS.nrOfVideos) {
 			case 1:
 				nrOfCols = "twelve";
@@ -251,7 +295,7 @@ var FS = (function(self){
 			break;
 
 		}
-
+		*/
 
 		res ="<div class='row'>";
 
@@ -267,6 +311,7 @@ var FS = (function(self){
 
 			}
 			else {
+				//KEEP ONLY THIS, SHOW ONLY ONE VIDEO AT A TIME ANYWAY
 				res +="<article class='vimeo video videoBg'>";
 				res +="<iframe id='iframe_"+i+"' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
 				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0&api=1&player_id=iframe_"+i+"' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
@@ -328,32 +373,72 @@ var FS = (function(self){
 
 
 	self.addContent = function(nodeId) {
-			var result = addNodeHeader() + addNodeTitle(nodeId,2) + addNodePreText(nodeId) + addNodeImages(nodeId) + addNodeVideos(nodeId) + addNodeComic(nodeId)  + addNodePostText(nodeId) + addNodeWalloftext(nodeId)+ addNodeFooter();
-		    return result;
+
+		FS.currentNodeType = contentObj[nodeId].type;
+
+		var result = addNodeHeader() + addNodeTitle(nodeId,2);
+		
+		switch (FS.currentNodeType) {
+			case "info":
+				result  += addNodePreText(nodeId) + addNodeImages(nodeId) + addNodeVideos(nodeId) +  addNodePostText(nodeId);
+		   
+			break
+			case "video_seq":
+				result  += addNodeVideoSequence(nodeId);
+		   
+			break;
+			case "chapter":
+				//add no more
+		   
+			break;
+			case "question":
+				result  +=  addNodePreText(nodeId)  + addNodePostText(nodeId);
+		   
+			break;
+			case "comic":
+				result += addNodeComic(nodeId);
+		   
+			break;
+			case "walloftext":
+				result += addNodeWalloftext(nodeId);
+		   
+
+			break;
+
+
+		}
+			result += addNodeFooter();
+	 		return result;
 	};
 
 	self.zoomIn = function(wallID) {
 		console.log("wallID clicked "+ wallID + "(old:"+currentlyClickedWallText+") size:"+_.size(arrayOfWallTweens));
 
 
-		if(currentlyClickedWallText==wallID) {
+		if(currentlyClickedWallText==wallID) { //click on a zoomed in walltext
 			
 					var currTween = arrayOfWallTweens[wallID];
+					$("#wall_"+wallID).removeClass("wallSelected");
+
 					currTween = TweenMax.to($("#wall_"+wallID), 20, {scaleX:0, scaleY:0, autoAlpha:0, zIndex:100+wallID, yoyo:true, repeat:-1, repeatDelay:3, delay:0, ease:Linear.easeNone});
 					currentlyClickedWallText=-1;
 		}
-		else{ 
-			if (currentlyClickedWallText!=-1){
+		else{  //clicked on another walltext, not the zoomed in
+			if (currentlyClickedWallText!=-1){ //in some walltext is zoomed in
 				var currTween = arrayOfWallTweens[currentlyClickedWallText];
+				$("#wall_"+currentlyClickedWallText).removeClass("wallSelected");
 				currTween = TweenMax.to($("#wall_"+currentlyClickedWallText), 20, {scaleX:0, scaleY:0, autoAlpha:0, zIndex:100+currentlyClickedWallText, yoyo:true, repeat:-1, repeatDelay:3, delay:0, ease:Linear.easeNone});
 			}
 				
-	
+		
 			arrayOfWallTweens[wallID] = TweenMax.to($("#wall_"+currentlyClickedWallText),20, {scaleX:0, scaleY:0, autoAlpha:0, zIndex:100+wallID, yoyo:true, repeat:-1, repeatDelay:3, delay:0, ease:Linear.easeNone});
+			$("#wall_"+wallID).removeClass("wallSelected");
 			currentlyClickedWallText=wallID;
 			
 			arrayOfWallTweens[wallID].kill();
-			arrayOfWallTweens[wallID] = TweenMax.to($("#wall_"+wallID),0.25,{scaleX:1,scaleY:1, alpha:1, zIndex:500+wallID});
+
+			arrayOfWallTweens[wallID] = TweenMax.to($("#wall_"+wallID),0.25,{scaleX:1,scaleY:1, alpha:1, zIndex:550+wallID});
+			$("#wall_"+wallID).addClass("wallSelected");
 
 		}
 
@@ -378,10 +463,12 @@ var FS = (function(self){
     	   		
     	   		//(i/_.size(walloftext)
     	   		var style ="top:"+ randy + "px; left:"+randx+"px;" ;
-    	   		myDiv.append("<div id='wall_"+i+"' class='walloftextcontent' style='"+style+"''>- ” "+walloftext[i].text+" ”</div>");
+    	   		myDiv.append("<div id='wall_"+i+"' class='walloftextcontent' style='"+style+"''><span class='wallOfTextHitarea'>- ” "+walloftext[i].text+" ”</span></div>");
     			
     			 TweenMax.set($("#wall_"+i), {zIndex:100+i, autoAlpha:0, scaleX:0.5, scaleY:0.5});
-    	   		 var myT = TweenMax.to($("#wall_"+i), 20, {scaleX:1, scaleY:1, autoAlpha:1, zIndex:500+i, yoyo:true, repeat:-1, repeatDelay:3, delay:i*5 + i,  ease:Linear.easeNone});
+    			 var myDelay = i;
+    			 if (i>2) myDelay = (i-2)*5 +(i-2); 
+    	   		 var myT = TweenMax.to($("#wall_"+i), 20, {scaleX:1, scaleY:1, autoAlpha:1, zIndex:500+i, yoyo:true, repeat:-1, repeatDelay:3, delay:myDelay,  ease:Linear.easeNone});
     	   			arrayOfWallTweens.push(myT);
 
     	   		 myDiv.append("<script>$('#wall_"+i+"').click(function() {FS.zoomIn("+ i +")});</script>");
@@ -390,44 +477,7 @@ var FS = (function(self){
 
 	}
 
-	/*function startWallOfText(myIDWallOfText) {
-			var canvas = document.getElementById('myCanvas'); //$("#myCanvas");
-		    var context = canvas.getContext('2d');
-			var x = canvas.width/2;
-			var y = canvas.height/2;
-
-			 context.font = '14pt Calibri';
-			  context.textAlign = 'left';
-    	   context.fillStyle = 'white';
-
-      		 var walloftext = contentObj[myIDWallOfText].walloftext;
-			
-      		 var startx = 10;
-   			var currenty = 20;	
-   		
-
-
-    	   for (var i = 0; i<_.size(walloftext); i++) {
-    	  
-    	   		context.fillText(i, 0,  currenty);
-    	  	 var textvalArr = toMultiLine(walloftext[i].text);
-     			for(var j = 0; j < textvalArr.length; j++){
-        			context.fillText(textvalArr[j], startx,currenty);
-        			currenty +=20;
-        			
-   			 }
-
-      	
-      		}
-	}
 	
-	function toMultiLine(text){
-		   var textArr = new Array();
-		   text = text.replace(/\n\r?/g, '<br/>');
-		   textArr = text.split("<br/>");
-		   return textArr;
-	}
-	*/
 	function updateBlur(speed) {
 		return;
 		currentBlur++;
@@ -459,20 +509,13 @@ var FS = (function(self){
 
 
 	self.video_onFinish = function(id) {
-		  	console.log('finished');
-		  	 alert("Video " + id + " finished! Ask user a question and load a new video!");
+		  	
+		  	// alert("Video " + id + " finished! Ask user a question and load a new video!");
+		  	 FS.currentSequence++;
+		  	 console.log(addNodeVideoSequence(FS.currentNodeNr));
+			$("#seqWrapper").html(addNodeVideoSequence(FS.currentNodeNr));
 	}
-/*
-	self.video_onPlayProgress = function(data, id) {
-	   console.log(data.seconds + 's played');
-	}
-		
 
-	self.video_onPause = function(id) {
-		    console.log('paused');
-		 
-	}
-*/
 
 	function startVideoListener() {
    		var iframe = $('#iframe_0')[0];
@@ -507,11 +550,22 @@ var FS = (function(self){
 		
 		FS.resize();
 
-		if (comicsToFadeIn>0) showComics(comicsToFadeIn);
-		if (FS.nrOfVideos>0) startVideoListener();
-		if (FS.IDWallOfText>-1) startWallOfText(FS.IDWallOfText);
-		FS.IDWallOfText=-1;
-		comicsToFadeIn =0;
+		switch(FS.currentNodeType) {
+			case "comic":
+				 showComics(comicsToFadeIn);
+				 comicsToFadeIn =0;
+			break;
+			case "video_seq":
+				 startVideoListener();
+			break;
+			case "walloftext":
+				  startWallOfText(FS.IDWallOfText);
+				  FS.IDWallOfText=-1;
+			break
+
+		}
+			
+		
 
 
 	}
@@ -580,7 +634,8 @@ var FS = (function(self){
 		maindiv = $('#main_div');
 
 		oldNodeId = FS.currentNodeNr;
-	   
+	   	FS.currentSequence = 0;
+
 		FS.nrOfVideos = 0;
 	   	FS.currentNodeNr = nextNodeId + direction;
 	
@@ -589,8 +644,9 @@ var FS = (function(self){
 		setupBackground(FS.currentNodeNr);
 		
 		FS.setUpThumbs();
+		var nType = contentObj[FS.currentNodeNr].type;
 
-		if (contentObj[FS.currentNodeNr].type=="info") $("#topleft-overlay").fadeOut();
+		if (!(nType=="chapter" || nType=="question")) $("#topleft-overlay").fadeOut();
 		else  $("#topleft-overlay").fadeIn();
 
 		if (!FS.initComplete){  // Modernizr.touch || 
@@ -641,7 +697,7 @@ var FS = (function(self){
 
 		for (var i=0; i<nrOfNodes; i++) {
 			switch (contentObj[i].type) {
-				case "info": case "chapter":
+				case "info": case "chapter": default:
 					res += "<div class='node-thumb node-info";
 					if (FS.currentNodeNr==i) { res += " node-selected";}
 					if (FS.maxNodeNr>=i) {

@@ -59,9 +59,39 @@ self.nodes = {"content":
 		"background":{"type":"image","url":"bg4.jpg"},
 		 "animation":"fade"
 	},
+	{  	"ID": "0.1.1",
+		"type":"video_seq",
+		"background":{"type":"image","url":"bg4.jpg"},
+		"sequences":[
+
+			{"type":"video",
+			 "url":"http://player.vimeo.com/video/68027628"},
+			{"type":"question",
+				"text":"Fråga polisen om:",
+				"answers":[
+							{"text":"-Hur många bultar finns det i ölandsbron?", "url":"http://player.vimeo.com/video/68027628"},
+							{"text":"-Vem är skyldig?", "url":"http://player.vimeo.com/video/68027628"}
+				]
+			},
+			{"type":"question",
+				"text":"Fråga två lyder:",
+				"answers":[
+							{"text":"-Hur många balkar finns det i ölandsbron?", "url":"http://player.vimeo.com/video/68027628"},
+							{"text":"-Vem är oskyldig?", "url":"http://player.vimeo.com/video/68027628"}
+				]
+			},
+			{"type":"video",
+			 "url":"http://player.vimeo.com/video/68027628"},
+			{"type":"text",
+			 "header":"Avslutningsrubrik",
+			 "content":"Brödtext om vad vi precis upplevt goes here. Lycka till i agentjobbet."
+			}],
+     	"title":"Ölandsbron",
+		"animation":"left"
+	},
 
 	{  	"ID": "1.1.1",
-		"type":"info",
+		"type":"walloftext",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"walloftext" : [	
 					{"text":"Självklart ska man aldrig, aldrig, aldrig ge ett spårbart nummer till en escort. Tjejerna är ju extremt noga med att skydda sin identitet så varför ska vi torskar, som faktiskt begår en olaglig handling, skylta med vår identitet? Nej, skaffa ett kontantkort som ni INTE registrerar och ring från det"},
@@ -153,7 +183,7 @@ self.nodes = {"content":
 	{  	"ID": "1.3.3",
 		"type":"info",
 		"background":{"type":"image","url":"bg3.jpg"},
-		"videos" : [{"videoURL":"http://player.vimeo.com/video/50650297", "source" : "vimeo"}					
+		"videos" : [{"videoURL":"http://player.vimeo.com/video/68027628", "source" : "vimeo"}					
 					], 
 		"pretext":"",
 		"title":"Intervju med granne",
@@ -175,7 +205,7 @@ self.nodes = {"content":
 		 "animation":"right"
 	}, 
 	{  	"ID": "1.4.2",
-		"type":"info",
+		"type":"comic",
 		"title":"Barnets berättelse",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"comic" : [	{"url":"1.4.2_bild1.png"},
