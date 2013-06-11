@@ -5,7 +5,8 @@
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
 <!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 9]><!--> <html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
+<!--[if gt IE 9]><!--> 
+<html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
 
@@ -31,7 +32,7 @@
   <meta itemprop="description" content="">
   <meta itemprop="image" content="">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1; user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -55,33 +56,24 @@
     <div class="next-control" id="nextButton">
              
                <i class="icon-right-open-big naviconL"></i>
-          </div>
-          <div class="prev-control" id="prevButton">
+    </div>
+    <div class="prev-control" id="prevButton">
 
             <i class="icon-left-open-big naviconR"></i>
-     </div>
+    </div>
 
-	<!--<div id="outer"  ontouchstart="touchStart(event,'outer');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">-->
- <div id="outer">
-      
-    
-    <div id="middle">
-		
-			<div id="inner" >
-
-             <div class="row centered_box scrollable" id="main_div">
-            
-		         
-             </div>
-
-			</div>
-             <div id="case-nav-wrapper">
-                <div id="case-nav"></div>
-           </div>
+	  <div id="outer">
+      <div id="middle">
+		    <div id="inner" >
+          <div class="row centered_box scrollable" id="main_div">
+          </div>
+			  </div>
+        <div id="case-nav-wrapper">
+          <div id="case-nav"></div>
         </div>
+      </div>
 		</div>
-	</div>
-  <div id="js-preload"></div>
+	<div id="js-preload"></div>
   <!--<audio id="soundtrack"  loop="loop" preload="none" volume="1">
       <source src="http://getgoingtoday.org/media/audio/soundtrack.mp3" type="audio/mp3">
       <source src="http://getgoingtoday.org/media/audio/soundtrack.ogg" type="audio/ogg">

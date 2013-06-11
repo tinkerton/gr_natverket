@@ -223,8 +223,8 @@ var FS = (function(self){
 
 
 	}
-	self.saveAnswer = function (nodeId, answer) {
-		var myObj=contentObj[nodeId];
+	self.saveAnswer = function (answer) {
+		var myObj=contentObj[FS.currentNodeNr];
 
 		console.log("LOG: "+ myObj.analysisLog + " - "  +myObj.answers[answer].analysisLog);
 		FS.gotoNode(FS.currentNodeNr,1);
@@ -240,9 +240,9 @@ var FS = (function(self){
 			
 			res +="<article class='vimeo video videoBg'>";
 			res +="<div class='sequenceHeadline'>"+myObj.question +"</div>";
-			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer("+nodeId+",0)>"+ myObj.answers[0].text +"</div>";
+			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer(0)>"+ myObj.answers[0].text +"</div>";
 			 
-			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer("+nodeId+",1)>"+ myObj.answers[1].text +"</div>";
+			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer(1)>"+ myObj.answers[1].text +"</div>";
 			res +="</article></div>";
 
 			return res;

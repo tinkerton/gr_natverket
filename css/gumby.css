@@ -2001,7 +2001,7 @@ img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
 
 .sequenceHeadline { font-size: 2em; line-height: 1.2em; display: block; padding: 20px; text-align: left; }
 
-.sequenceAnswer { font-size: 1.5em; line-height: 1em; display: block; padding: 30px; margin-bottom: 4px; text-align: left; background-color: rgba(0, 0, 0, 0.8); }
+.sequenceAnswer { font-size: 1.5em; line-height: 1em; display: block; padding: 30px; margin-bottom: 4px; text-align: left; background-color: rgba(0, 0, 0, 0.8); position: relative; z-index: 2000; }
 
 .sequenceAnswer:hover { background-color: rgba(255, 255, 255, 0.7); color: #000; }
 
