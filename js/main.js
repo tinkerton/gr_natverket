@@ -43,7 +43,7 @@ var FS = (function(self){
 
 
 	function addNodeHeader () {
-		return "<div class='twelve columns frameDecoration'>";
+		return "<div class='centered ten columns' id='nodeHeader'>";
 	}
 
 	function addNodeFooter () {
@@ -223,6 +223,13 @@ var FS = (function(self){
 
 
 	}
+
+	self.gotoSequence = function(sequenceID) {
+		 FS.currentSequence =  sequenceID;
+		$("#seqWrapper").html(addNodeVideoSequence(FS.currentNodeNr));
+		startVideoListener();
+	}
+
 	function addNodeVideoSequence(nodeId) {
 		var res ="",
 			seq_type,
@@ -235,25 +242,29 @@ var FS = (function(self){
 
 			switch (seq_type) {
 				case "video":
-					res +="<div class='twelve columns'><div class='loading' id='loader_0'><div class='track'></div><div class='spinner'><div class='mask'><div class='maskedCircle'></div></div></div></div>";
+					res +="<div class='centered eleven columns'><div class='loading' id='loader_0'><div class='track'></div><div class='spinner'><div class='mask'><div class='maskedCircle'></div></div></div></div>";
 					res +="<article class='vimeo video videoBg'>";
-					res +="<iframe id='iframe_0' style='visibility:hidden;' onload='FS.showIframe(0)' ";
-					res += "src='" + myObj.url + "?title=0&byline=0&portrait=0&autoplay=1&api=1&player_id=iframe_0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
+					res +="<iframe id='iframe_"+myObj.sequenceID+"' style='visibility:hidden;' onload='FS.showIframe("+myObj.sequenceID+")' ";
+					res += "src='" + myObj.url + "?title=0&byline=0&portrait=0&autoplay=1&api=1&player_id=iframe_"+myObj.sequenceID+"' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
 					res +="</iframe></article></div>";
+
 				break;
 				case "question":
-					res +="<div class='twelve columns'>";
+					res +="<div class='centered eleven columns'>";
 					res +="<article class='vimeo video videoBg'>";
-					res +="<h2>"+myObj.text +"</h2>";
-					res +="<p><div class='pretty medium info btn'>"+ myObj.answers[0].text +"</div></p>";
-					res +="<p><div class='pretty medium info btn'>"+ myObj.answers[1].text +"</div></p>";
+					res +="<div class='sequenceHeadline'>"+myObj.text +"</div>";
+					res +="<div class='sequenceAnswer' onClick='FS.gotoSequence("+myObj.answers[0].gotoID+")'>"+ myObj.answers[0].text +"</div>";
+					res +="<div class='sequenceAnswer' onClick='FS.gotoSequence("+myObj.answers[1].gotoID+")'>"+ myObj.answers[1].text +"</div>";
 					res +="</article></div>";
 				
 				break;
 				case "text":
-					res +="<div class='twelve columns'>";
-					res +="<h2>"+myObj.header +"</h2><p>"+ myObj.content +"</p>";
-					res +="</div>";
+					res +="<div class='centered eleven columns'>";
+					res +="<article class='vimeo video videoBg'>";
+					res +="<div class='sequenceHeadline'>"+myObj.header +"</div>";
+					res +="<div class='sequenceText'>"+ myObj.content +"</div>";
+					res +="</article></div>";
+				
 					
 				break;
 				
@@ -278,7 +289,7 @@ var FS = (function(self){
 		FS.nrOfVideos = _.size(videos);
 	
 
-		nrOfCols="twelve";
+		nrOfCols="eleven";
 		/*
 		switch (FS.nrOfVideos) {
 			case 1:
@@ -300,7 +311,7 @@ var FS = (function(self){
 		res ="<div class='row'>";
 
 		for (var i=0; i<FS.nrOfVideos; i++) {
-			res +="<div class='"+nrOfCols+" columns'>";
+			res +="<div class='centered "+nrOfCols+" columns'>";
 			res +="<div class='loading' id='loader_"+i+"'><div class='track'></div><div class='spinner'><div class='mask'><div class='maskedCircle'></div></div></div></div>";
 			
 			if ( videos[i].source  == "youtube") {
@@ -412,7 +423,7 @@ var FS = (function(self){
 	};
 
 	self.zoomIn = function(wallID) {
-		console.log("wallID clicked "+ wallID + "(old:"+currentlyClickedWallText+") size:"+_.size(arrayOfWallTweens));
+		//console.log("wallID clicked "+ wallID + "(old:"+currentlyClickedWallText+") size:"+_.size(arrayOfWallTweens));
 
 
 		if(currentlyClickedWallText==wallID) { //click on a zoomed in walltext
@@ -450,13 +461,13 @@ var FS = (function(self){
 	function startWallOfText(myIDWallOfText) {
  		var walloftext = contentObj[myIDWallOfText].walloftext;
 			
-      		var startX = 10;
+      	
    			var myDiv = $("#myCanvas");
 
-
+   			var maxX = $("#nodeHeader").width()-500;
 
     	   for (var i = 0; i<_.size(walloftext); i++) {
-    	   		var randx = 0 + Math.floor((Math.random()*480)+1);
+    	   		var randx = 0 + Math.floor((Math.random()*maxX)+1);//0 + Math.floor((Math.random()*480)+1);
     	   		var randy = Math.floor((Math.random()*$(window).height()*0.6)+1);
     	   		var rando  = 1 / ((i+1));
     	   		
@@ -510,15 +521,40 @@ var FS = (function(self){
 
 	self.video_onFinish = function(id) {
 		  	
-		  	// alert("Video " + id + " finished! Ask user a question and load a new video!");
-		  	 FS.currentSequence++;
-		  	 console.log(addNodeVideoSequence(FS.currentNodeNr));
+		  	
+		  	 removeVideoListener();
+		  	 FS.currentSequence =  contentObj[FS.currentNodeNr].sequences[FS.currentSequence].gotoID;
+		  //	 console.log(FS.currentSequence);
+		  //	 console.log(addNodeVideoSequence(FS.currentNodeNr));
 			$("#seqWrapper").html(addNodeVideoSequence(FS.currentNodeNr));
+			startVideoListener();
+
+
+
+	}
+	function removeVideoListener() {
+	//	console.log("removeVideoListener " +FS.currentSequence );
+   		var iframe = $('#iframe_'+FS.currentSequence)[0];
+   		if(iframe==undefined) return;
+//console.log("remove sucess");
+   		FS.video_player = $f(iframe);
+    	
+   		// When the player is ready, add listeners for pause, finish, and playProgress
+		FS.video_player.removeEvent('ready');
+		FS.video_player.removeEvent('finish');
+		$('button').unbind();
+
+	
+
+		
+		
 	}
 
-
 	function startVideoListener() {
-   		var iframe = $('#iframe_0')[0];
+	//	console.log("startVideoListener " +FS.currentSequence );
+   		var iframe = $('#iframe_'+FS.currentSequence)[0];
+   		if(iframe==undefined) return;
+//console.log("start sucess");
    		FS.video_player = $f(iframe);
     	
    		// When the player is ready, add listeners for pause, finish, and playProgress
@@ -628,14 +664,16 @@ var FS = (function(self){
 		var oldNodeId, maindiv, speed;
 	
 		if (nextNodeId+direction == FS.currentNodeNr) return;
+		 removeVideoListener();
 
 		currentBlur = 0;
 		speed=0.809;
 		maindiv = $('#main_div');
 
 		oldNodeId = FS.currentNodeNr;
-	   	FS.currentSequence = 0;
 
+	   	FS.currentSequence = 0;
+	 
 		FS.nrOfVideos = 0;
 	   	FS.currentNodeNr = nextNodeId + direction;
 	
@@ -741,7 +779,7 @@ var FS = (function(self){
 		
 
 		inner.css('max-height', wind.height()-60+'px');
-		inner.css('top', '-30px');
+		inner.css('top', '-50px');
 		TweenMax.to($('#prevButton'), 0.125,{css:{"left": "0px"}});
 		if ($("#main_div").height() > $(window).height()) {
 			inner.css("overflow-y","auto");

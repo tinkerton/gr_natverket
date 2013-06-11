@@ -59,43 +59,12 @@ self.nodes = {"content":
 		"background":{"type":"image","url":"bg4.jpg"},
 		 "animation":"fade"
 	},
-	{  	"ID": "0.1.1",
-		"type":"video_seq",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"sequences":[
-
-			{"type":"video",
-			 "url":"http://player.vimeo.com/video/68027628"},
-			{"type":"question",
-				"text":"Fråga polisen om:",
-				"answers":[
-							{"text":"-Hur många bultar finns det i ölandsbron?", "url":"http://player.vimeo.com/video/68027628"},
-							{"text":"-Vem är skyldig?", "url":"http://player.vimeo.com/video/68027628"}
-				]
-			},
-			{"type":"question",
-				"text":"Fråga två lyder:",
-				"answers":[
-							{"text":"-Hur många balkar finns det i ölandsbron?", "url":"http://player.vimeo.com/video/68027628"},
-							{"text":"-Vem är oskyldig?", "url":"http://player.vimeo.com/video/68027628"}
-				]
-			},
-			{"type":"video",
-			 "url":"http://player.vimeo.com/video/68027628"},
-			{"type":"text",
-			 "header":"Avslutningsrubrik",
-			 "content":"Brödtext om vad vi precis upplevt goes here. Lycka till i agentjobbet."
-			}],
-     	"title":"Ölandsbron",
-		"animation":"left"
-	},
-
 	{  	"ID": "1.1.1",
 		"type":"walloftext",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"walloftext" : [	
 					{"text":"Självklart ska man aldrig, aldrig, aldrig ge ett spårbart nummer till en escort. Tjejerna är ju extremt noga med att skydda sin identitet så varför ska vi torskar, som faktiskt begår en olaglig handling, skylta med vår identitet? Nej, skaffa ett kontantkort som ni INTE registrerar och ring från det"},
-					{"text":"Snuten är nog värsta rädslan för de flesta. Ingen rädsla alls för vad flickvänner/fruar/arbetskompisar/grannar/mamma ska säga?"},
+					{"text":"Snuten är nog värsta rädslan för de flesta. Ingen rädsla alls för vad flickvänner / fruar / arbetskompisar / grannar / mamma ska säga?"},
 					{"text":"Att gå och tycka synd om dom eller bli deprimerad över faktum som detta är helt meningslöst. prostitution har funnits sjukt länge och kommer att finnas sjukt länge till. Så enkelt är det."},
 					{"text":"Det blev som en vana. Något jag inte kunde sluta med fast jag ville. Tillslut sökte jag hjälp. Jag ville inte vara den mannen som köper sex."},
 					{"text":"Jag ville inte känna saker som var jobbiga i mitt liv. Lösningen blev att köpa sex. Det är inget jag är stolt över. Jag gör det inte lika mycket nuförtiden, men ibland så känns det som enda sättet att få utlopp för saker."},
@@ -181,13 +150,48 @@ self.nodes = {"content":
 		 "animation":"left"
 	}, 
 	{  	"ID": "1.3.3",
-		"type":"info",
-		"background":{"type":"image","url":"bg3.jpg"},
-		"videos" : [{"videoURL":"http://player.vimeo.com/video/68027628", "source" : "vimeo"}					
-					], 
-		"pretext":"",
-		"title":"Intervju med granne",
-		 "animation":"left"
+		"type":"video_seq",
+		"background":{"type":"image","url":"bg4.jpg"},
+		"sequences":[
+
+			{
+				"sequenceID":"0",
+			 	"type":"video",
+			 	"url":"http://player.vimeo.com/video/68027628",
+			 	 "gotoID":"1"
+			 },
+			{
+				"sequenceID":"1",
+				"type":"question",
+				"text":"Fråga polisen om:",
+				"answers":[
+							{"text":"-Hur många bultar finns det i ölandsbron?", "gotoID":"2"},
+							{"text":"-Vem är skyldig?", "gotoID":"3"}
+				]
+			},
+			{	
+				"sequenceID":"2",
+				"type":"question",
+				"text":"Fråga två lyder:",
+				"answers":[
+							{"text":"-Hur många balkar finns det i ölandsbron?", "gotoID":"4"},
+							{"text":"-Vem är oskyldig?",  "gotoID":"3"}
+				]
+			},
+			{
+				"sequenceID":"3",
+				"type":"video",
+			 	"url":"http://player.vimeo.com/video/56225093",
+			 	"gotoID":"4"
+			 },
+			{
+				"sequenceID":"4",
+				"type":"text",
+			 	"header":"Avslutningsrubrik",
+			 	"content":"Brödtext om vad vi precis upplevt goes here. Lycka till i agentjobbet."
+			}],
+     	"title":"Intervju med granne",
+		"animation":"left"
 	},
 	{  	"ID": "1.3",
 		"type":"question", 
@@ -233,7 +237,7 @@ self.nodes = {"content":
 		 "animation":"left"
 },
 {  	"ID": "1.5.2",
-		"type":"info",
+		"type":"comic",
 		"title":"En vanlig dag",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"comic" : [	{"url":"1.5.2_bild1.png"},

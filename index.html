@@ -32,6 +32,8 @@
   <meta itemprop="image" content="">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1; user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
        However, there is a blank style.css in the css directory should you prefer -->
@@ -59,7 +61,8 @@
             <i class="icon-left-open-big naviconR"></i>
      </div>
 
-	<div id="outer">
+	<!--<div id="outer"  ontouchstart="touchStart(event,'outer');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">-->
+ <div id="outer">
       
     
     <div id="middle">
@@ -124,6 +127,7 @@
   
    <script src="js/case1_content.js"></script>
   <script src="js/main.js"></script>
+   <!--<script src="js/swipe.js"></script>-->
  
 
 
