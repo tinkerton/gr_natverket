@@ -223,11 +223,41 @@ var FS = (function(self){
 
 
 	}
+	self.saveAnswer = function (nodeId, answer) {
+		var myObj=contentObj[nodeId];
+
+		console.log("LOG: "+ myObj.analysisLog + " - "  +myObj.answers[answer].analysisLog);
+		FS.gotoNode(FS.currentNodeNr,1);
+	}
+
+	function addNodeQuestion(nodeId) {
+		var res="",
+			myObj=contentObj[nodeId];
+			
+		
+
+			res +="<div class='centered eleven columns'>";
+			
+			res +="<article class='vimeo video videoBg'>";
+			res +="<div class='sequenceHeadline'>"+myObj.question +"</div>";
+			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer("+nodeId+",0)>"+ myObj.answers[0].text +"</div>";
+			 
+			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer("+nodeId+",1)>"+ myObj.answers[1].text +"</div>";
+			res +="</article></div>";
+
+			return res;
+
+	}
+
+	self.populateSequence = function() {
+		$("#seqWrapper").html(addNodeVideoSequence(FS.currentNodeNr));
+		 TweenMax.to($("#seqWrapper"), 0.5, {alpha:1, onComplete:FS.startVideoListener})
+	}
 
 	self.gotoSequence = function(sequenceID) {
 		 FS.currentSequence =  sequenceID;
-		$("#seqWrapper").html(addNodeVideoSequence(FS.currentNodeNr));
-		startVideoListener();
+		 TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
+	
 	}
 
 	function addNodeVideoSequence(nodeId) {
@@ -403,7 +433,7 @@ var FS = (function(self){
 		   
 			break;
 			case "question":
-				result  +=  addNodePreText(nodeId)  + addNodePostText(nodeId);
+				result  +=  addNodeQuestion(nodeId);
 		   
 			break;
 			case "comic":
@@ -526,8 +556,8 @@ var FS = (function(self){
 		  	 FS.currentSequence =  contentObj[FS.currentNodeNr].sequences[FS.currentSequence].gotoID;
 		  //	 console.log(FS.currentSequence);
 		  //	 console.log(addNodeVideoSequence(FS.currentNodeNr));
-			$("#seqWrapper").html(addNodeVideoSequence(FS.currentNodeNr));
-			startVideoListener();
+		   TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
+			
 
 
 
@@ -550,7 +580,7 @@ var FS = (function(self){
 		
 	}
 
-	function startVideoListener() {
+	self.startVideoListener = function() {
 	//	console.log("startVideoListener " +FS.currentSequence );
    		var iframe = $('#iframe_'+FS.currentSequence)[0];
    		if(iframe==undefined) return;
@@ -592,7 +622,7 @@ var FS = (function(self){
 				 comicsToFadeIn =0;
 			break;
 			case "video_seq":
-				 startVideoListener();
+				 FS.startVideoListener();
 			break;
 			case "walloftext":
 				  startWallOfText(FS.IDWallOfText);

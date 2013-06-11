@@ -96,9 +96,15 @@ self.nodes = {"content":
 	},  
 	{  	"ID": "1.1",
 		"type":"question", 
-		"title":"Creativity & organizational storytelling<br/>is at the heart of everything we do.",
+		"analysisLog":"1.1 Reflektionsfråga kapitel 1",
+		"title":"Reflektionsfråga kapitel 1",
+		"question":"What is at the heart of everything we do, agent?",
 		"background":{"type":"image","url":"bg2.jpg"},
-		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		"answers":[
+							{"text":"- Creativity","analysisLog":"1. Creativity"},
+							{"text":"- Money","analysisLog":"2. Money"}
+				]
+		 ,
 		 "animation":"down"
 	},
 	{  	"ID": "1.2.1",
@@ -127,10 +133,16 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "1.2",
 		"type":"question", 
+		"analysisLog":"1.2 Reflektionsfråga kapitel 2",
 		"title":"Reflektionsfråga kapitel 2",
+		"question":"What is the meaning of life?",
 		"background":{"type":"image","url":"bg2.jpg"},
-		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
-		 "animation":"left"
+		"answers":[
+							{"text":"- 42","analysisLog":"1. 42"},
+							{"text":"- Money","analysisLog":"2. Money"}
+				]
+		 ,
+		 "animation":"down"
 	},
 	{  	"ID": "1.3.1 - Insändare",
 		"type":"info", 
@@ -195,11 +207,17 @@ self.nodes = {"content":
 	},
 	{  	"ID": "1.3",
 		"type":"question", 
+		"analysisLog":"1.3 Reflektionsfråga kapitel 3",
 		"title":"Reflektionsfråga kapitel 3",
-		"background":{"type":"image","url":"bg.jpg"},
-		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		"question":"What is X",
+		"background":{"type":"image","url":"bg2.jpg"},
+		"answers":[
+							{"text":"- Yes","analysisLog":"1. Yes"},
+							{"text":"- No","analysisLog":"2. No"}
+				]
+		 ,
 		 "animation":"down"
-	}, 
+	},
 	{  	"ID": "1.4.1",
 		"type":"info", 
 		"background":{"type":"image","url":"bg3.jpg"},
@@ -224,11 +242,17 @@ self.nodes = {"content":
 	},
 	{  	"ID": "1.4",
 		"type":"question", 
+		"analysisLog":"1.4 Reflektionsfråga kapitel 4",
 		"title":"Reflektionsfråga kapitel 4",
-		"background":{"type":"image","url":"bg.jpg"},
-		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		"question":"Think about a color",
+		"background":{"type":"image","url":"bg2.jpg"},
+		"answers":[
+							{"text":"- Red","analysisLog":"1. Red"},
+							{"text":"- Black","analysisLog":"2. Black"}
+				]
+		 ,
 		 "animation":"down"
-	}, 
+	},
 	{  	"ID": "1.5.1",
 		"type":"info",
 		"title":"Domstolens beslut sammanfattning",
@@ -255,11 +279,17 @@ self.nodes = {"content":
 	},
 	{  	"ID": "1.5",
 		"type":"question", 
+		"analysisLog":"1.5 Reflektionsfråga kapitel 5",
 		"title":"Reflektionsfråga kapitel 5",
-		"background":{"type":"image","url":"bg.jpg"},
-		"pretext":"<center>JA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEJ</center>",
+		"question":"Is this the end?",
+		"background":{"type":"image","url":"bg2.jpg"},
+		"answers":[
+							{"text":"- Yes","analysisLog":"1. Yes"},
+							{"text":"- No","analysisLog":"2. No"}
+				]
+		 ,
 		 "animation":"down"
-	}, 
+	},
 
     ]
 };
