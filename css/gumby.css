@@ -2018,10 +2018,12 @@ img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
 
 #agent p { font-family: 'Anonymous Pro', sans-serif; font-size: 0.6em; line-height: 1.2em; }
 
-#debugPrevButton, #debugNextButton { position: absolute; left: 0; width: 50px; height: 35px; padding: 15px; cursor: pointer; background-color: rgba(255, 0, 0, 0.2); letter-spacing: 10px; }
+#debugPrevButton, #debugNextButton { position: absolute; left: 0; width: 50px; height: 17px; padding: 0px 10px 10px 0px; cursor: pointer; color: #F33; background-color: rgba(255, 0, 0, 0.2); letter-spacing: 10px; }
 
-#debugNextButton { right: 0; left: auto; }
+#debugtitle { color: #F33; font-size: 10px; letter-spacing: 10px; position: absolute; left: 0; }
 
-#nodeNrDebug { width: 100px; height: 35px; text-align: left; position: absolute; left: 100px; color: red; letter-spacing: 10px; }
+#debugNextButton { right: 0; left: auto; padding-bottom: 2px; }
+
+#nodeNrDebug { width: 100px; height: 35px; text-align: right; position: absolute; right: 220px; color: red; letter-spacing: 10px; }
 
 #audioWrapper { display: none; }

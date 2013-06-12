@@ -2,7 +2,7 @@
 
 var FS = (function(self){
 	"use strict";
-	var DEBUG = true;
+	
 
 	var activeCase, 
 		caseNodeId,
@@ -21,12 +21,14 @@ var FS = (function(self){
 		currentNodeType,
 		currentSequence,
 		nextArrowTimeout,
-		animateTextTimeout;
+		animateTextTimeout,
+		DEBUG,
+		BV;
 
 
 	
 
-	var BV;
+	
 
 
 
@@ -760,7 +762,8 @@ var FS = (function(self){
 	self.gotoNode = function(nextNodeId, direction) {
 		var oldNodeId, maindiv, speed;
 	
-		if (nextNodeId+direction == FS.currentNodeNr) return;
+		if ((nextNodeId+direction == FS.currentNodeNr) && FS.initComplete) return;
+		
 		 removeVideoListener();
 
 		currentBlur = 0;
@@ -776,8 +779,9 @@ var FS = (function(self){
 	
 		//REMOVE POSSIBILTY TO NAVIGATE FREELY
 		//	FS.checkArrows(FS.currentNodeNr);
+		FS.checkDebugArrows(FS.currentNodeNr);
 	
-		if (DEBUG == true) $("#nodeNrDebug").html("DEBUG: Node " + contentObj[FS.currentNodeNr].ID);
+		if (FS.DEBUG == "true") $("#nodeNrDebug").html("Node " + contentObj[FS.currentNodeNr].ID);
 
 		 clearTimeout(nextArrowTimeout);
 		 clearTimeout(animateTextTimeout);
@@ -796,10 +800,12 @@ var FS = (function(self){
 			$("#topleft-overlay").css("background-image","url("+activeCase.topLeftImage.url+")");
 		}
 		if (!FS.initComplete){  // Modernizr.touch || 
+			
 			maindiv.hide();
 				
 			onCompleteFadeoutNode(maindiv, FS.currentNodeNr , speed,"none");
 		}else {
+			
 			$("#nextButton").fadeOut();	
 			var animationType = contentObj[oldNodeId].animation; 
 			switch (animationType) {
@@ -926,6 +932,24 @@ var FS = (function(self){
  			
 
 	}
+	self.checkDebugArrows = function(currentNodeNr) {
+			if (currentNodeNr<_.size(activeCase.nodes.content)-1) {
+ 				$("#debugNextButton").fadeIn();
+ 			}
+ 			else{
+ 				$("#debugNextButton").fadeOut();
+ 			}
+
+ 	 			
+ 			if(currentNodeNr==0) {
+ 				$("#debugPrevButton").fadeOut();
+ 				
+ 			}else{
+ 					$("#debugPrevButton").fadeIn();
+ 			}
+ 			
+
+	}
 
 
 	self.preloadImages = function() {
@@ -989,7 +1013,7 @@ var FS = (function(self){
 
 
 	self.startCase = function(newActiveCase) {
-		console.log("start case " +newActiveCase);
+		
 		activeCase = newActiveCase;
 
 		caseNodeId = 0;
@@ -998,8 +1022,8 @@ var FS = (function(self){
 		currentNodeType= "";
 		currentSequence = 0;
 	
+		
 		FS.initComplete = false;
-		initComplete = false;
 		IDWallOfText = -1;
 		arrayOfWallTweens = [];
 		currentlyClickedWallText=-1;
@@ -1014,6 +1038,8 @@ var FS = (function(self){
 		FS.preloadImages();
 
 		//FS.setUpThumbs();
+
+
 		
 		FS.gotoNode(currentNodeNr,1);
 	}
@@ -1044,12 +1070,14 @@ Gumby.ready(function() {
 		$('input, textarea').placeholder();
 	}
 
-	
-		//HIDE THUMBS
 		
 		$("#prevButton").hide();
+		
+		//SET TO TRUE TO ENABLE DEBUG MODE FOR FEEDBACK
+		FS.DEBUG = "false";
+		if (params.debug ==1) FS.DEBUG = "true";
 
-		if (FS.DEBUG == false) {
+		if (FS.DEBUG == "false") {
 			$("#case-nav-wrapper").hide();
 			$("#debugNextButton").hide();
 			$("#debugPrevButton").hide();
@@ -1140,3 +1168,11 @@ function loadScript(url, callback){
 }
 
 
+var prmstr = window.location.search.substr(1);
+var prmarr = prmstr.split ("&");
+var params = {};
+
+for ( var i = 0; i < prmarr.length; i++) {
+    var tmparr = prmarr[i].split("=");
+    params[tmparr[0]] = tmparr[1];
+}
