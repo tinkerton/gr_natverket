@@ -6,7 +6,9 @@ $maintextColor: #FFF;
 body {
 	color: $maintextColor;
   background: #000;
- font-familily: "Helvetica", "Arial", sans-serif;
+ /*font-familily: "Helvetica", "Arial", sans-serif;
+ */
+ font-family: 'Roboto Condensed', sans-serif;
  overflow-x: hidden;
  height:100%;
  max-height:100%; 
@@ -17,7 +19,7 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-font-family: 'PTSansRegular';
+
 color:$maintextColor;
 -webkit-font-smoothing: antialiased;
 }
@@ -317,7 +319,7 @@ opacity: 0.4;
 #topleft-overlay {
  position: absolute;
 z-index:10;
-  background: url(../img/case_color_splash.png);
+/*background: url(../img/case_color_splash.png);*/
 background-repeat: no-repeat;
 top: 0px;
 left: 0px;
@@ -326,6 +328,7 @@ height: 100%;
 pointer-events:none;
  
 }
+
 
 #case-nav-wrapper {
 position: absolute;
@@ -487,6 +490,7 @@ img, object, embed .node-image {
   text-align: center;
   max-width:940px;
   display: block;
+  margin-top: 50px;
 
 
 }
@@ -501,6 +505,7 @@ text-align: left;
 
 }
 .title{
+  text-transform:uppercase;
   font-size:2.5em;
   line-height: 1.2em;
   }
@@ -539,3 +544,79 @@ text-align: left;
    text-align: left;
 
 }
+.questionHeadline {
+   font-size:2em;
+   line-height: 1.2em;
+   display: block;
+   padding: 20px;
+   margin: 10px 0px;
+   text-align: left;
+
+
+}
+.questionDiv {
+  width: 100%;
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: inline-block;
+}
+
+.agentImage {
+ 
+
+}
+
+.agentul {
+  padding-top: 60px;
+}
+
+
+#agent {
+  font-family: 'Anonymous Pro', sans-serif;
+  font-size: 2em;
+  height:350px;
+  width:auto;
+  visibility: hidden;
+  color: #0F0;
+  text-shadow: 0 0 10px #5F5;
+
+}
+#agent p {
+  font-family: 'Anonymous Pro', sans-serif;
+  font-size: 0.6em;
+  line-height: 1.2em;
+}
+
+#debugPrevButton, #debugNextButton {
+position: absolute;
+left:0;
+width:50px;
+height: 35px;
+padding:15px;
+cursor:pointer;
+background-color: rgba(255,0,0,0.2);
+
+letter-spacing: 10px;
+}
+
+#debugNextButton {
+  right:0;
+  left:auto;
+}
+#nodeNrDebug {
+  width:100px;
+  height:35px;
+  text-align: left;
+  position: absolute;
+  left:100px;
+  color:red;
+  letter-spacing: 10px;
+
+}
+#audioWrapper {
+  display: none;
+}
+

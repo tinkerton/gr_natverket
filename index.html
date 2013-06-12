@@ -36,13 +36,17 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+
+  <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+
   <!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
        However, there is a blank style.css in the css directory should you prefer -->
   <link rel="stylesheet" href="css/gumby.css">
   <!-- <link rel="stylesheet" href="css/style.css"> -->
 
- <link rel="stylesheet" href="fonts/fonts.css">
- <link rel="stylesheet" href="css/bigvideo.css">
+  <link rel="stylesheet" href="css/bigvideo.css">
 
  
 
@@ -69,16 +73,17 @@
           </div>
 			  </div>
         <div id="case-nav-wrapper">
+
           <div id="case-nav"></div>
+          <div id="nodeNrDebug">node 1.1.1</div>
+          <div id="debugPrevButton"><</div>
+          <div id="debugNextButton">></div>
         </div>
       </div>
 		</div>
+    <div id="audioWrapper"></div>
 	<div id="js-preload"></div>
-  <!--<audio id="soundtrack"  loop="loop" preload="none" volume="1">
-      <source src="http://getgoingtoday.org/media/audio/soundtrack.mp3" type="audio/mp3">
-      <source src="http://getgoingtoday.org/media/audio/soundtrack.ogg" type="audio/ogg">
-    </audio>
-  -->
+  
   <!-- Grab Google CDN's jQuery, fall back to local if offline -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.1.min.js"><\/script>')</script>
@@ -117,7 +122,10 @@
   <script src="js/plugins.js"></script>
   <script src="js/libs/underscore-min.js"></script>
   
-   <script src="js/case1_content.js"></script>
+
+  <script src="js/CaseIntro_content.js"></script>
+  <script src="js/Case1_HUB_content.js"></script>
+  <script src="js/Case1_content.js"></script>
   <script src="js/main.js"></script>
    <!--<script src="js/swipe.js"></script>-->
  

@@ -1,7 +1,8 @@
-/*global $, jQuery, _, TweenMax, console, Case1, Modernizer*/
+/*global $, jQuery, _, TweenMax, console, CaseIntro, Case1_HUB, Case1, Modernizer*/
 
 var FS = (function(self){
 	"use strict";
+	var DEBUG = true;
 
 	var activeCase, 
 		caseNodeId,
@@ -18,24 +19,12 @@ var FS = (function(self){
 		nrOfVideos,
 		video_player,
 		currentNodeType,
-		currentSequence;
+		currentSequence,
+		nextArrowTimeout,
+		animateTextTimeout;
 
 
-	activeCase = Case1;
-	caseNodeId = 0;
 	
-	nrOfVideos = 0;
-	currentNodeType= "";
-
-	currentSequence = 0;
-
-	contentObj = activeCase.nodes.content;
-
-	initComplete = false;
-	currentNodeNr =0;
-	IDWallOfText = -1;
-	arrayOfWallTweens = [];
-	currentlyClickedWallText=-1;
 
 	var BV;
 
@@ -124,18 +113,19 @@ var FS = (function(self){
 		
 
 	}
-	function addNodeImages(nodeId) {
+	function addNodeImages(nodeId,imageClass) {
 		var images,
 			nrOfImages,
 			res;
 			images = contentObj[nodeId].image; 
 			if (images === undefined) { return "";}
 
+			if (imageClass ==undefined) imageClass ="node-image";
 			nrOfImages=  _.size(images);
 
 			res="";
 			for (var i=0; i<nrOfImages; i++) {
-				res+="<div class='node-image'><img src='img/"+images[i].url+"'/></div>"
+				res+="<div class='"+imageClass+"'><img src='img/"+images[i].url+"'/></div>"
 			}
 			return res;
 	}
@@ -223,11 +213,33 @@ var FS = (function(self){
 
 
 	}
+
+	function startCase1() {
+			FS.startCase(Case1);
+	}
+	function startCase2() {
+		alert("Case 2 är inte byggt ännu.");
+		//		FS.startCase(Case2);
+	}
+	function startCase1HUB() {
+			FS.startCase(Case1_HUB);
+	}
+	function startCase2HUB() {
+		alert("Case 2 HUB är inte byggt ännu.");
+		//		FS.startCase(Case2);
+	}
+
+
+
 	self.saveAnswer = function (answer) {
 		var myObj=contentObj[FS.currentNodeNr];
 
 		console.log("LOG: "+ myObj.analysisLog + " - "  +myObj.answers[answer].analysisLog);
-		FS.gotoNode(FS.currentNodeNr,1);
+		
+		if(myObj.answers[answer].callback!=undefined) {
+			console.log(myObj.answers[answer].callback);
+			eval(myObj.answers[answer].callback)();
+		}else FS.gotoNode(FS.currentNodeNr,1);
 	}
 
 	function addNodeQuestion(nodeId) {
@@ -238,8 +250,8 @@ var FS = (function(self){
 
 			res +="<div class='centered eleven columns'>";
 			
-			res +="<article class='vimeo video videoBg'>";
-			res +="<div class='sequenceHeadline'>"+myObj.question +"</div>";
+			res +="<article class='questionDiv'>";
+			res +="<div class='questionHeadline'>"+myObj.question +"</div>";
 			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer(0)>"+ myObj.answers[0].text +"</div>";
 			 
 			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer(1)>"+ myObj.answers[1].text +"</div>";
@@ -412,6 +424,30 @@ var FS = (function(self){
 
 	}
 
+	function addNodeAgent(nodeId) {
+		var res="";
+			if (contentObj[nodeId].image != undefined) {
+				res +="<ul class='two_up tiles agentul'><li>"+addNodeImages(nodeId,"agentImage")+"</li><li><div id='agent'>";
+				res +="<p>"+contentObj[nodeId].text + "</p></div></li></ul>";
+			}else { 
+				res +="<div class='twelve columns row agentul' id='agent'>";
+				res +="<p>"+contentObj[nodeId].text + "</p></div>";
+			}
+			
+			return res;
+
+
+	}
+	function addNodeMusic(nodeId) {
+		var res ="",
+			musicURL = contentObj[nodeId].music ;
+		if ( musicURL== undefined) return "";
+		res +="<audio id='soundtrack'  loop='loop' preload='auto' volume='1' autoplay='autoplay'>";
+		res +="<source src='"+musicURL+".mp3' type='audio/mpeg'>";
+		res +="<source src='"+musicURL+".ogg' type='audio/ogg'>";
+    	res +="</audio>";
+    	return res;
+	}
 
 	self.addContent = function(nodeId) {
 
@@ -438,6 +474,10 @@ var FS = (function(self){
 			break;
 			case "comic":
 				result += addNodeComic(nodeId);
+		   
+			break;
+			case "agent":
+				result += addNodeAgent(nodeId);
 		   
 			break;
 			case "walloftext":
@@ -515,6 +555,7 @@ var FS = (function(self){
     	   		 myDiv.append("<script>$('#wall_"+i+"').click(function() {FS.zoomIn("+ i +")});</script>");
     	   		
     	   }
+
 
 	}
 
@@ -605,15 +646,24 @@ var FS = (function(self){
 		
 	}
 
+	function showNext() {
+		$("#nextButton").fadeIn();
+
+	}
+	function killSound(){
+		$("#soundtrack").remove();
+	}
 
 	function resetNodeAttributes() {
-		var maindiv = $('#main_div');
+	/*	var maindiv = $('#main_div');
 		for (var i=1; i<=5; i++) {
 			maindiv.removeClass("blur"+i);
 		}
 		TweenMax.to(maindiv, 0, {alpha:1, scaleX:1, scaleY:1});
 		currentBlur=0;
-		
+	*/	
+		var music,
+			showNextButton = contentObj[FS.currentNodeNr].showNextButton;
 		FS.resize();
 
 		switch(FS.currentNodeType) {
@@ -628,10 +678,27 @@ var FS = (function(self){
 				  startWallOfText(FS.IDWallOfText);
 				  FS.IDWallOfText=-1;
 			break
+			case "agent":
+				 $("#agent").css("visibility","visible");
+				animateText($("#agent").children(), showNext);
+			break;
 
 		}
+		if (showNextButton>=0) {
+			console.log(showNextButton);
+			nextArrowTimeout = setTimeout(showNext,parseInt(showNextButton));	
+		}
+
+
+		music = contentObj[FS.currentNodeNr].music;
+		if (music!=undefined && music!="continue") {
+
+			$("#audioWrapper").html(addNodeMusic(FS.currentNodeNr));
+		}else if (contentObj[FS.currentNodeNr].music!="continue") {
+			TweenMax.to($("#soundtrack"),1,{volume:0, onComplete:killSound});
 			
-		
+		}
+	
 
 
 	}
@@ -672,7 +739,7 @@ var FS = (function(self){
 		
 				break;
 				case "fade":
-						TweenMax.fromTo (maindiv, speed, {autoAlpha:0 },{autoAlpha:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeInOut});
+						TweenMax.fromTo (maindiv, speed, {css:{ "opacity":"0"} },{css:{ "opacity":"1"} , onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeInOut});
 		
 				break;
 				case "none": default:
@@ -707,21 +774,33 @@ var FS = (function(self){
 		FS.nrOfVideos = 0;
 	   	FS.currentNodeNr = nextNodeId + direction;
 	
-		FS.checkArrows(FS.currentNodeNr);
+		//REMOVE POSSIBILTY TO NAVIGATE FREELY
+		//	FS.checkArrows(FS.currentNodeNr);
 	
+		if (DEBUG == true) $("#nodeNrDebug").html("DEBUG: Node " + contentObj[FS.currentNodeNr].ID);
+
+		 clearTimeout(nextArrowTimeout);
+		 clearTimeout(animateTextTimeout);
+
+		emptyWallTweens();
+
 		setupBackground(FS.currentNodeNr);
 		
 		FS.setUpThumbs();
 		var nType = contentObj[FS.currentNodeNr].type;
 
 		if (!(nType=="chapter" || nType=="question")) $("#topleft-overlay").fadeOut();
-		else  $("#topleft-overlay").fadeIn();
-
+		else  {
+		
+			$("#topleft-overlay").fadeIn();
+			$("#topleft-overlay").css("background-image","url("+activeCase.topLeftImage.url+")");
+		}
 		if (!FS.initComplete){  // Modernizr.touch || 
 			maindiv.hide();
+				
 			onCompleteFadeoutNode(maindiv, FS.currentNodeNr , speed,"none");
 		}else {
-				
+			$("#nextButton").fadeOut();	
 			var animationType = contentObj[oldNodeId].animation; 
 			switch (animationType) {
 				case "up":
@@ -757,7 +836,13 @@ var FS = (function(self){
 		var nrOfNodes = _.size(activeCase.nodes.content);
 		var navObj = $("#case-nav");
 		var res ="";
-		
+
+		//HIDE THUMBS********************************************************************
+																				return;
+
+
+		//*******************************************************************************																		
+																
 		if (FS.maxNodeNr<FS.currentNodeNr) {
 			FS.maxNodeNr = FS.currentNodeNr;
 			
@@ -860,13 +945,78 @@ var FS = (function(self){
 
 
 
+	function animateText(elements, callback) {
+		/* get: array with hidden elements to be displayes, callback function */
+   		 var i = 0;
+
+    	(function iterate() {
+       		 if (i < elements.length) {
+         	    elements[i].style.display = "block"; // show
+       	     	animateNode(elements[i], iterate); 
+           		i++;
+        	 } else if (callback != undefined)
+            	callback();
+    	})();    
+    
+    	function animateNode(element, callback) {
+        	var pieces = [];
+        	if (element.nodeType==1) {
+            	while (element.hasChildNodes())
+                	pieces.push(element.removeChild(element.firstChild));
+           			animateTextTimeout = setTimeout(function childStep() {
+                	if (pieces.length) {
+                    	animateNode(pieces[0], childStep); 
+                    	element.appendChild(pieces.shift());
+                	} else if (callback != undefined)
+                    	callback();
+            		}, 2000/60);
+        	} else if (element.nodeType==3) {
+            	pieces = element.data.match(/.{0,2}/g); // 2: Number of chars per frame
+            	element.data = "";
+            	(function addText(){
+                	element.data += pieces.shift();
+                	animateTextTimeout = setTimeout(pieces.length
+                    ? addText
+                    : callback,
+                  	2000/60);
+            	})();
+        	}
+    	}
+	}
 
 
 
 
 
+	self.startCase = function(newActiveCase) {
+		console.log("start case " +newActiveCase);
+		activeCase = newActiveCase;
 
+		caseNodeId = 0;
+	
+		nrOfVideos = 0;
+		currentNodeType= "";
+		currentSequence = 0;
+	
+		FS.initComplete = false;
+		initComplete = false;
+		IDWallOfText = -1;
+		arrayOfWallTweens = [];
+		currentlyClickedWallText=-1;
 
+		contentObj = activeCase.nodes.content;
+
+		currentNodeNr = -1;
+		maxNodeNr = -1;
+
+		
+	
+		FS.preloadImages();
+
+		//FS.setUpThumbs();
+		
+		FS.gotoNode(currentNodeNr,1);
+	}
 
 
 
@@ -894,16 +1044,22 @@ Gumby.ready(function() {
 		$('input, textarea').placeholder();
 	}
 
-	FS.currentNodeNr = -1;
-	FS.maxNodeNr = -1;
-
-	FS.BV = new $.BigVideo();
-	FS.BV.init();
 	
-	FS.preloadImages();
+		//HIDE THUMBS
+		
+		$("#prevButton").hide();
 
-	FS.setUpThumbs();
-	FS.gotoNode(FS.currentNodeNr,1);
+		if (FS.DEBUG == false) {
+			$("#case-nav-wrapper").hide();
+			$("#debugNextButton").hide();
+			$("#debugPrevButton").hide();
+		}
+
+	BV = new $.BigVideo();
+	BV.init();
+
+	//START CASE HERE - MAIN
+	FS.startCase(CaseIntro);
 
 	$(document).on('click', '#nextButton', function() {
  		
@@ -923,8 +1079,29 @@ Gumby.ready(function() {
  	
 	});
 
+
+
+	$(document).on('click', '#debugNextButton', function() {
+ 		
+ 				
+ 			
+ 			FS.gotoNode(FS.currentNodeNr,1);
+
+ 		
+ 	
+	});
+	$(document).on('click', '#debugPrevButton', function() {
+		
+ 			 		
+ 			FS.gotoNode(FS.currentNodeNr,-1);
+
+ 	
+	});
+
+
+
 	$(window).resize(function() {
-		FS.setUpThumbs();
+		//FS.setUpThumbs();
 		FS.resize();
 	});
 	
@@ -937,4 +1114,29 @@ Gumby.ready(function() {
 Gumby.oldie(function() {
 	console.log("Oldie");
 });
+
+
+function loadScript(url, callback){
+
+    var script = document.createElement("script")
+    script.type = "text/javascript";
+
+    if (script.readyState){  //IE
+        script.onreadystatechange = function(){
+            if (script.readyState == "loaded" ||
+                    script.readyState == "complete"){
+                script.onreadystatechange = null;
+                callback();
+            }
+        };
+    } else {  //Others
+        script.onload = function(){
+            callback();
+        };
+    }
+
+    script.src = url;
+    document.getElementsByTagName("body")[0].appendChild(script);
+}
+
 
