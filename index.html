@@ -5,7 +5,8 @@
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
 <!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 9]><!--> <html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
+<!--[if gt IE 9]><!--> 
+<html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
 
@@ -31,17 +32,21 @@
   <meta itemprop="description" content="">
   <meta itemprop="image" content="">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1; user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+  <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
 
   <!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
        However, there is a blank style.css in the css directory should you prefer -->
   <link rel="stylesheet" href="css/gumby.css">
   <!-- <link rel="stylesheet" href="css/style.css"> -->
 
- <link rel="stylesheet" href="fonts/fonts.css">
- <link rel="stylesheet" href="css/bigvideo.css">
+  <link rel="stylesheet" href="css/bigvideo.css">
 
  
 
@@ -55,38 +60,30 @@
     <div class="next-control" id="nextButton">
              
                <i class="icon-right-open-big naviconL"></i>
-          </div>
-          <div class="prev-control" id="prevButton">
+    </div>
+    <div class="prev-control" id="prevButton">
 
             <i class="icon-left-open-big naviconR"></i>
-     </div>
+    </div>
 
-	<!--<div id="outer"  ontouchstart="touchStart(event,'outer');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">-->
- <div id="outer">
-      
-    
-    <div id="middle">
-		
-			<div id="inner" >
+	  <div id="outer">
+      <div id="middle">
+		    <div id="inner" >
+          <div class="row centered_box scrollable" id="main_div">
+          </div>
+			  </div>
+        <div id="case-nav-wrapper">
 
-             <div class="row centered_box scrollable" id="main_div">
-            
-		         
-             </div>
-
-			</div>
-             <div id="case-nav-wrapper">
-                <div id="case-nav"></div>
-           </div>
+          <div id="case-nav"></div>
+          <div id="nodeNrDebug">node 1.1.1</div>
+          <div id="debugPrevButton"><</div>
+          <div id="debugNextButton">></div>
         </div>
+      </div>
 		</div>
-	</div>
-  <div id="js-preload"></div>
-  <!--<audio id="soundtrack"  loop="loop" preload="none" volume="1">
-      <source src="http://getgoingtoday.org/media/audio/soundtrack.mp3" type="audio/mp3">
-      <source src="http://getgoingtoday.org/media/audio/soundtrack.ogg" type="audio/ogg">
-    </audio>
-  -->
+    <div id="audioWrapper"></div>
+	<div id="js-preload"></div>
+  
   <!-- Grab Google CDN's jQuery, fall back to local if offline -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.1.min.js"><\/script>')</script>
@@ -125,7 +122,10 @@
   <script src="js/plugins.js"></script>
   <script src="js/libs/underscore-min.js"></script>
   
-   <script src="js/case1_content.js"></script>
+
+  <script src="js/CaseIntro_content.js"></script>
+  <script src="js/Case1_HUB_content.js"></script>
+  <script src="js/Case1_content.js"></script>
   <script src="js/main.js"></script>
    <!--<script src="js/swipe.js"></script>-->
  

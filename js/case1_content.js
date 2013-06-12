@@ -27,6 +27,8 @@ self.preload = {"images":
 ]
 };
 
+self.topLeftImage = {"url":"img/case_color_splash.png"};
+
 /*ID: info, question, hidden*/
 /*TEMPLATES
 	{  	"ID": "1.1.1",
@@ -57,7 +59,8 @@ self.nodes = {"content":
 		"type":"chapter", 
 		"title":"Kapitel 1 - varför trafficking?",
 		"background":{"type":"image","url":"bg4.jpg"},
-		 "animation":"fade"
+		 "animation":"fade",
+		 "showNextButton":"0"
 	},
 	{  	"ID": "1.1.1",
 		"type":"walloftext",
@@ -82,7 +85,8 @@ self.nodes = {"content":
 					{"text":"Klart man har läst saker om folk som tvingas till det. Jag har sett Lilja forever också. Men ingen av de jag gått till har tvingats till nåt, jag ger alltid pengarna direkt till henne så ingen hallick kommer och snor dem."},
 					],
 		
-		 "animation":"left"
+		 "animation":"up",
+		  "showNextButton":"10000"
 
 	},
 	{  	"ID": "1.1.2",
@@ -91,7 +95,9 @@ self.nodes = {"content":
 		"image": [
 			{"url":"1.1.2_bordell.png"} 
 		],
-		 "animation":"down"
+		 "animation":"down",
+		  "showNextButton":"5000"
+
 			
 	},  
 	{  	"ID": "1.1",
@@ -105,7 +111,8 @@ self.nodes = {"content":
 							{"text":"- Money","analysisLog":"2. Money"}
 				]
 		 ,
-		 "animation":"down"
+		 "animation":"down",
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "1.2.1",
 		"type":"info", 
@@ -113,7 +120,8 @@ self.nodes = {"content":
 		"image": [
 			{"url":"1.2.1_macrostatistik.png"} 
 		],
-		 "animation":"up"
+		 "animation":"up",
+		 "showNextButton":"5000"
 	}, 
 	{  	"ID": "1.2.2",
 		"type":"info", 
@@ -121,7 +129,8 @@ self.nodes = {"content":
 		"image": [
 			{"url":"1.2.2_microstatistik.png"} 
 		],
-		 "animation":"right"
+		 "animation":"right",
+		 "showNextButton":"5000"
 	}, 
 	{  	"ID": "1.2.3",
 		"type":"info",
@@ -129,7 +138,8 @@ self.nodes = {"content":
 		"videos" : [{"videoURL":"http://www.youtube.com/embed/aZ1Ts3Mcpkw", "source" : "youtube"}					
 					], 
 		"title":"Filmen om horan",
-	     "animation":"right"
+	     "animation":"right",
+		 "showNextButton":"5000"
 	}, 
 	{  	"ID": "1.2",
 		"type":"question", 
@@ -142,7 +152,8 @@ self.nodes = {"content":
 							{"text":"- Money","analysisLog":"2. Money"}
 				]
 		 ,
-		 "animation":"down"
+		 "animation":"down",
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "1.3.1 - Insändare",
 		"type":"info", 
@@ -150,7 +161,8 @@ self.nodes = {"content":
 		"image": [
 			{"url":"1.3.1_insandare.png"} 
 		],
-		 "animation":"down"
+		 "animation":"down",
+		 "showNextButton":"5000"
 	}, 
 	{  	"ID": "1.3.2",
 		"type":"info",
@@ -159,7 +171,8 @@ self.nodes = {"content":
 					], 
 		"pretext":"",
 		"title":"Intervju med polisman",
-		 "animation":"left"
+		 "animation":"left",
+		 "showNextButton":"5000"
 	}, 
 	{  	"ID": "1.3.3",
 		"type":"video_seq",
@@ -203,7 +216,8 @@ self.nodes = {"content":
 			 	"content":"Brödtext om vad vi precis upplevt goes here. Lycka till i agentjobbet."
 			}],
      	"title":"Intervju med granne",
-		"animation":"left"
+		"animation":"left",
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "1.3",
 		"type":"question", 
@@ -216,7 +230,8 @@ self.nodes = {"content":
 							{"text":"- No","analysisLog":"2. No"}
 				]
 		 ,
-		 "animation":"down"
+		 "animation":"down",
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "1.4.1",
 		"type":"info", 
@@ -224,7 +239,8 @@ self.nodes = {"content":
 		"image": [
 			{"url":"1.4.1_blogg.png"} 
 		],
-		 "animation":"right"
+		 "animation":"right",
+		 "showNextButton":"5000"
 	}, 
 	{  	"ID": "1.4.2",
 		"type":"comic",
@@ -237,7 +253,8 @@ self.nodes = {"content":
 					{"url":"1.4.2_bild5.png"}
 					],
 		"comic_row_height":"470px",
-		 "animation":"right"
+		 "animation":"right",
+		 "showNextButton":"5000"
 	
 	},
 	{  	"ID": "1.4",
@@ -258,7 +275,8 @@ self.nodes = {"content":
 		"title":"Domstolens beslut sammanfattning",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"posttext":"Domen för de tre personer som åttalats för grovt koppleri och människohandel blev följande:</p><p>Den ungerska man och kvinna som ska ha övertalat de två kvinnorna att sälja sex i Sverige och därefter tagit större delen av de pengar som de tjänat, döms för grovt koppleri till 2 års fängelse. Åtalspunkten om människohandel ogillas då det vare sig kan bevisas att tvång eller hot använts, eller att kvinnorna var ovilliga att sälja sex i Sverige.</p><p>Åklagare yrkade på skadestånd om 80 000 kr till vardera av de utsatta kvinnorna, men domstolen sänkte kravet till 20 000 kr, med motiveringen att det inte kan uteslutas att kvinnorna lät sig föras till Sverige för att där kunna få höga skadestånd, för att därigenom kunna ta sig ur sin fattiga situation i hemlandet.</p><p>Den svenske man som lånat ut sin lägenhet för att sälja de två ungerska kvinnorna döms för koppleri till 10 månaders fängelse."	,
-		 "animation":"left"
+		 "animation":"left",
+		 "showNextButton":"5000"
 },
 {  	"ID": "1.5.2",
 		"type":"comic",
@@ -274,7 +292,8 @@ self.nodes = {"content":
 					{"url":"1.5.2_bild8.png"}
 					],
 		"comic_row_height":"273px",
-		 "animation":"right"
+		 "animation":"right",
+		 "showNextButton":"5000"
 	
 	},
 	{  	"ID": "1.5",
@@ -288,7 +307,8 @@ self.nodes = {"content":
 							{"text":"- No","analysisLog":"2. No"}
 				]
 		 ,
-		 "animation":"down"
+		 "animation":"down",
+		 "showNextButton":"-1"
 	},
 
     ]
