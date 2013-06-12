@@ -1,4 +1,4 @@
-/*global $, jQuery, _, TweenMax, console, CaseIntro, Case1_HUB, Case1, Modernizer*/
+/*global $, jQuery, _, TweenMax, console, CaseIntro, Case1_HUB, Case2_HUB, Case1a, Case2a, Case1b, Case2b,  Modernizer*/
 
 var FS = (function(self){
 	"use strict";
@@ -81,7 +81,7 @@ var FS = (function(self){
 
 
 
-		if (contentObj[nodeId].background == undefined || contentObj[nodeId].background.url==oldBackground ) return;
+		if (contentObj[nodeId].background == undefined || contentObj[nodeId].background.url==oldBackground) return;
 		oldBackground = contentObj[nodeId].background.url;
 		
 		if(FS.initComplete){
@@ -216,19 +216,25 @@ var FS = (function(self){
 
 	}
 
-	function startCase1() {
-			FS.startCase(Case1);
+	function startCase1a() {
+			FS.startCase(Case1a);
 	}
-	function startCase2() {
-		alert("Case 2 är inte byggt ännu.");
-		//		FS.startCase(Case2);
+	function startCase1b() {
+			FS.startCase(Case1b);
+	}
+	function startCase2a() {
+		//alert("Case 2 är inte byggt ännu.");
+		FS.startCase(Case2a);
+	}
+	function startCase2b() {
+		//alert("Case 2 är inte byggt ännu.");
+		FS.startCase(Case2b);
 	}
 	function startCase1HUB() {
-			FS.startCase(Case1_HUB);
+		FS.startCase(Case1_HUB);
 	}
 	function startCase2HUB() {
-		alert("Case 2 HUB är inte byggt ännu.");
-		//		FS.startCase(Case2);
+		FS.startCase(Case2_HUB);
 	}
 
 

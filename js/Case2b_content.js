@@ -1,29 +1,7 @@
-var Case1a = (function(self){
+var Case2b = (function(self){
 
 self.preload = {"images":
 [{"url":"bg.jpg"},
-{"url":"bg2.jpg"},
-{"url":"bg3.jpg"},
-{"url":"bg4.jpg"},
-{"url":"1.1.2_bordell.png"},
-{"url":"1.2.1_macrostatistik.png"},
-{"url":"1.2.2_microstatistik.png"},
-{"url":"1.3.1_insandare.png"},
-{"url":"1.4.1_blogg.png"},
-{"url":"1.4.2_bild1.png"},
-{"url":"1.4.2_bild2.png"},
-{"url":"1.4.2_bild3.png"},
-{"url":"1.4.2_bild4.png"},
-{"url":"1.4.2_bild5.png"},
-{"url":"1.5.1_domstoslbeslut.png"},
-{"url":"1.5.2_bild1.png"},
-{"url":"1.5.2_bild2.png"},
-{"url":"1.5.2_bild3.png"},
-{"url":"1.5.2_bild4.png"},
-{"url":"1.5.2_bild5.png"},
-{"url":"1.5.2_bild6.png"},
-{"url":"1.5.2_bild7.png"},
-{"url":"1.5.2_bild8.png"},
 ]
 };
 
@@ -57,8 +35,8 @@ self.topLeftImage = {"url":"img/case_color_splash.png"};
 self.nodes = {"content": 
 	[{  "ID": "1.0",
 		"type":"chapter", 
-		"title":"Kapitel 1 - varför trafficking?",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"title":"Kapitel 2b - case2b",
+		"background":{"type":"image","url":"bg.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},

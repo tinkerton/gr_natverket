@@ -15,8 +15,8 @@ self.nodes = {"content":
 		"question":"Vad vill du undersöka",
 		"background":{"type":"image","url":"bg-case-1.jpg"},
 		"answers":[
-							{"text":"- Polisen","analysisLog":"1. ITEM 1","callback":"startCase1"},
-							{"text":"- Statistiken","analysisLog":"2. ITEM 2","callback":"startCase1"}
+							{"text":"- Polisen","analysisLog":"1. ITEM 1","callback":"startCase1a"},
+							{"text":"- Statistiken","analysisLog":"2. ITEM 2","callback":"startCase1b"}
 				]
 		 ,
 		 "animation":"down",
