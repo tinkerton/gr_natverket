@@ -23,7 +23,8 @@ var FS = (function(self){
 		nextArrowTimeout,
 		animateTextTimeout,
 		DEBUG,
-		BV;
+		BV,
+		globalAnimation;
 
 
 	
@@ -240,14 +241,20 @@ var FS = (function(self){
 
 
 	self.saveAnswer = function (answer) {
+		if(globalAnimation==1) return;
+		globalAnimation=1;
 		var myObj=contentObj[FS.currentNodeNr];
 
 		console.log("LOG: "+ myObj.analysisLog + " - "  +myObj.answers[answer].analysisLog);
 		
 		if(myObj.answers[answer].callback!=undefined) {
-			console.log(myObj.answers[answer].callback);
-			eval(myObj.answers[answer].callback)();
-		}else FS.gotoNode(FS.currentNodeNr,1);
+			console.log( myObj.answers[answer].callback);
+			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myObj.answers[answer].callback]});
+
+		}else {
+			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete: FS.gotoNode,onCompleteParams:[FS.currentNodeNr,1]});
+
+		}
 	}
 
 	function addNodeQuestion(nodeId) {
@@ -457,6 +464,47 @@ var FS = (function(self){
     	return res;
 	}
 
+
+	self.respondToHUB = function (chapter) {	
+		if(globalAnimation==1) return;
+		globalAnimation=1;
+		var myObj=contentObj[FS.currentNodeNr];
+
+		console.log("HUB: "+ myObj.analysisLog + " - "  +myObj.chapters[chapter].analysisLog);
+		
+		if(myObj.chapters[chapter].callback!=undefined) {
+			console.log( myObj.chapters[chapter].callback);
+			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myObj.chapters[chapter].callback]});
+		}
+		else console.log("HUB error: could not found callback action in function respondToHUB");
+	}
+
+	function addHubMenu(nodeId) {
+		var res, 
+			nrOfChapters,
+			myObj,
+		 	wHeight;
+
+			//res = "<div class='chapterWrapper' style='height:"+$(window).height()+"px; width:"+$(window).width()+"px; '>";
+			wHeight =$(window).height();
+			//if (wHeight>768) wHeight = 768px;
+
+			res = "<div class='chapterWrapper' style='height:"+wHeight+"px; width:960px; '>";
+
+			myObj = contentObj[nodeId].chapters;
+			nrOfChapters = _.size(myObj);
+
+			for (var i=0; i<nrOfChapters; i++) {
+				res +="<div id='chapter_"+i+"' class='chapterItem' style='height:"+myObj[i].height+"; width:"+myObj[i].width+"; left:"+myObj[i].left+"; top:"+myObj[i].top+"; font-size:"+myObj[i].fontsize+"em;'  onClick=FS.respondToHUB("+i+")>"+myObj[i].text+"</div>";
+			
+			}
+
+
+
+			res+="</div>";
+		return res;
+	}
+
 	self.addContent = function(nodeId) {
 
 		FS.currentNodeType = contentObj[nodeId].type;
@@ -490,6 +538,11 @@ var FS = (function(self){
 			break;
 			case "walloftext":
 				result += addNodeWalloftext(nodeId);
+		   
+
+			break;
+			case "hub":
+				result = addHubMenu(nodeId);
 		   
 
 			break;
@@ -662,6 +715,19 @@ var FS = (function(self){
 		$("#soundtrack").remove();
 	}
 
+	function startHUBAnimation() {
+	
+		var myObj, nrOfChapters;
+		myObj = contentObj[FS.currentNodeNr].chapters;
+			nrOfChapters = _.size(myObj);
+
+			for (var i=0; i<nrOfChapters; i++) {
+				var delay  = Math.random();
+				TweenMax.to($("#chapter_"+i), 2, {scaleX:1.1, scaleY:1.1,  yoyo:true, repeat:-1, repeatDelay:delay, delay:i/10,  ease:Quad.easeInOut});
+			}
+	}
+
+
 	function resetNodeAttributes() {
 	/*	var maindiv = $('#main_div');
 		for (var i=1; i<=5; i++) {
@@ -673,7 +739,7 @@ var FS = (function(self){
 		var music,
 			showNextButton = contentObj[FS.currentNodeNr].showNextButton;
 		FS.resize();
-
+		globalAnimation=0;
 		switch(FS.currentNodeType) {
 			case "comic":
 				 showComics(comicsToFadeIn);
@@ -690,10 +756,13 @@ var FS = (function(self){
 				 $("#agent").css("visibility","visible");
 				animateText($("#agent").children(), showNext);
 			break;
+			case "hub":
+				startHUBAnimation();
+			break;
 
 		}
 		if (showNextButton>=0) {
-			console.log(showNextButton);
+			console.log("showNextButton: " + showNextButton);
 			nextArrowTimeout = setTimeout(showNext,parseInt(showNextButton));	
 		}
 
@@ -1019,16 +1088,16 @@ var FS = (function(self){
 
 
 	self.startCase = function(newActiveCase) {
-		
-		activeCase = newActiveCase;
+		console.log("startCase " + newActiveCase + " (" +eval(newActiveCase)+")");
+		activeCase = eval(newActiveCase);
 
 		caseNodeId = 0;
-	
+		
 		nrOfVideos = 0;
 		currentNodeType= "";
 		currentSequence = 0;
+		TweenMax.to($("#main_div"),1,{css:{"opacity":"1"}});
 	
-		
 		FS.initComplete = false;
 		IDWallOfText = -1;
 		arrayOfWallTweens = [];
@@ -1091,6 +1160,8 @@ Gumby.ready(function() {
 
 	BV = new $.BigVideo();
 	BV.init();
+
+	FS.globalAnimation = 0;
 
 	//START CASE HERE - MAIN
 	FS.startCase(CaseIntro);
