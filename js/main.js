@@ -24,7 +24,8 @@ var FS = (function(self){
 		animateTextTimeout,
 		DEBUG,
 		BV,
-		globalAnimation;
+		globalAnimation,
+		unlockedChapters;
 
 
 	
@@ -216,22 +217,62 @@ var FS = (function(self){
 
 
 	}
+	function checkToUnlockChapters() {
+		
+		var myObj=contentObj[FS.currentNodeNr],
+			nrOfUnlocks = _.size(FS.unlockedChapters);;
+		for (var i=0; i<_.size(myObj.chapters); i++) {
+				if (myObj.chapters[i].lockeduntil<=nrOfUnlocks) {
+					$("#chapter_"+myObj.chapters[i].ID).removeClass("locked");
+			
+			}
+			
+		}
+	}
 
+	function exitChapter(nextHUB) {
+		var foundNextHUB =false,
+			currentCase = activeCase.ID.text;	
+
+			
+		for (var i=0; i<=_.size(FS.unlockedChapters); i++) {
+			if (FS.unlockedChapters[i] == currentCase) {
+				foundNextHUB = true;
+				break;
+			}
+			
+		}
+		if(currentCase!="CaseIntro" && foundNextHUB == false) FS.unlockedChapters.push(currentCase);
+		
+	//	console.log("exitChapter goto:"+ nextHUB  + "    unlockedChapters:" + _.size(FS.unlockedChapters) +" " + currentCase);
+	
+		TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[nextHUB]});
+	}
 
 
 	self.saveAnswer = function (answer) {
 		if(globalAnimation==1) return;
 		globalAnimation=1;
-		var myObj=contentObj[FS.currentNodeNr];
+		
+		var myObj=contentObj[FS.currentNodeNr],
+			myCallback = myObj.answers[answer].callback;
+
 
 		console.log("LOG: "+ myObj.analysisLog + " - "  +myObj.answers[answer].analysisLog);
 		
-		if(myObj.answers[answer].callback!=undefined) {
-			console.log( myObj.answers[answer].callback);
-			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myObj.answers[answer].callback]});
+		if(myCallback!=undefined && myCallback!="Case1_HUB"  && myCallback!="Case2_HUB") {
+			//console.log( myCallback);
+			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myCallback]});
 
 		}else {
-			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete: FS.gotoNode,onCompleteParams:[FS.currentNodeNr,1]});
+			if(myCallback =="Case1_HUB" || myCallback=="Case2_HUB") {
+
+				exitChapter(myCallback);
+			}
+			else {
+				globalAnimation=0;
+				TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete: FS.gotoNode,onCompleteParams:[FS.currentNodeNr,1]});
+			}
 
 		}
 	}
@@ -446,13 +487,19 @@ var FS = (function(self){
 
 	self.respondToHUB = function (chapter) {	
 		if(globalAnimation==1) return;
-		globalAnimation=1;
-		var myObj=contentObj[FS.currentNodeNr];
+	
 
-		console.log("HUB: "+ myObj.analysisLog + " - "  +myObj.chapters[chapter].analysisLog);
+		var myObj=contentObj[FS.currentNodeNr];
+		console.log("goto chapter " + chapter + " : " + myObj.chapters[chapter].lockeduntil + " | " +  _.size(FS.unlockedChapters));
+		if (myObj.chapters[chapter].lockeduntil > _.size(FS.unlockedChapters)) {
+				//console.log("return");
+				return;
+		}
+		globalAnimation=1;
+		//console.log("respondToHUB: "+ myObj.analysisLog + " - "  +myObj.chapters[chapter].analysisLog);
 		
 		if(myObj.chapters[chapter].callback!=undefined) {
-			console.log( myObj.chapters[chapter].callback);
+		//	console.log( myObj.chapters[chapter].callback);
 			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myObj.chapters[chapter].callback]});
 		}
 		else console.log("HUB error: could not found callback action in function respondToHUB");
@@ -475,8 +522,10 @@ var FS = (function(self){
 
 			for (var i=0; i<nrOfChapters; i++) {
 
-				res +="<div id='chapter_"+i+"' class='chapterItem";
-				if(myObj[i].lockeduntil!=undefined) {res +=" locked";}
+				res +="<div id='chapter_"+myObj[i].ID+"' class='chapterItem";
+				if(myObj[i].lockeduntil!=undefined) {
+					res +=" locked";
+				}
 				res +="' style='height:"+myObj[i].height+"; width:"+myObj[i].width+"; left:"+myObj[i].left+"; top:"+myObj[i].top+"; font-size:"+myObj[i].fontsize+"em;'  onClick=FS.respondToHUB("+i+")>"+myObj[i].text+"</div>";
 			
 			}
@@ -722,6 +771,7 @@ var FS = (function(self){
 			showNextButton = contentObj[FS.currentNodeNr].showNextButton;
 		FS.resize();
 		globalAnimation=0;
+
 		switch(FS.currentNodeType) {
 			case "comic":
 				 showComics(comicsToFadeIn);
@@ -739,6 +789,7 @@ var FS = (function(self){
 				animateText($("#agent").children(), showNext);
 			break;
 			case "hub":
+				checkToUnlockChapters();
 				startHUBAnimation();
 			break;
 
@@ -773,6 +824,7 @@ var FS = (function(self){
 		
 
 		maindiv.html(FS.addContent(nextNodeId));
+	
 	
 		if (!FS.initComplete){ // ||(Modernizr.touch 
 			FS.initComplete = true;
@@ -818,9 +870,10 @@ var FS = (function(self){
 
 	self.gotoNode = function(nextNodeId, direction) {
 		var oldNodeId, maindiv, speed;
-	
-		if ((nextNodeId+direction == FS.currentNodeNr) && FS.initComplete) return;
 		
+		if ((nextNodeId+direction == FS.currentNodeNr) && FS.initComplete) return;
+		if(globalAnimation==1) return;
+		globalAnimation =1;
 		 removeVideoListener();
 
 		currentBlur = 0;
@@ -1072,7 +1125,7 @@ var FS = (function(self){
 	self.startCase = function(newActiveCase) {
 		console.log("startCase " + newActiveCase + " (" +eval(newActiveCase)+")");
 		activeCase = eval(newActiveCase);
-
+		globalAnimation=0;
 		caseNodeId = 0;
 		
 		nrOfVideos = 0;
@@ -1097,7 +1150,6 @@ var FS = (function(self){
 		//FS.setUpThumbs();
 
 
-		
 		FS.gotoNode(currentNodeNr,1);
 	}
 
@@ -1144,6 +1196,7 @@ Gumby.ready(function() {
 	BV.init();
 
 	FS.globalAnimation = 0;
+	FS.unlockedChapters = new Array();
 
 	//START CASE HERE - MAIN
 	FS.startCase(CaseIntro);

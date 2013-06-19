@@ -1,5 +1,5 @@
-var Case1b = (function(self){
-self.ID = {"text":"Case1b"};
+var Case1d = (function(self){
+self.ID = {"text":"Case1d"};
 
 self.preload = {"images":
 [{"url":"bg.jpg"},
@@ -9,7 +9,7 @@ self.preload = {"images":
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "1.B.0",
+	[{  "ID": "1.d.0",
 		"type":"chapter", 
 		"title":"Kapitel 1b - case1b",
 		"background":{"type":"image","url":"bg.jpg"},

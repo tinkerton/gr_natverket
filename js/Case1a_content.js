@@ -1,4 +1,5 @@
 var Case1a = (function(self){
+self.ID = {"text":"Case1a"};
 
 self.preload = {"images":
 [{"url":"bg.jpg"},
@@ -303,8 +304,8 @@ self.nodes = {"content":
 		"question":"Is this the end?",
 		"background":{"type":"image","url":"bg2.jpg"},
 		"answers":[
-							{"text":"- Yes","analysisLog":"1. Yes"},
-							{"text":"- No","analysisLog":"2. No"}
+							{"text":"- Yes","analysisLog":"1. Yes", "callback":"Case1_HUB"},
+							{"text":"- No","analysisLog":"2. No", "callback":"Case1_HUB"}
 				]
 		 ,
 		 "animation":"down",

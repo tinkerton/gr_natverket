@@ -1,5 +1,5 @@
-var Case1b = (function(self){
-self.ID = {"text":"Case1b"};
+var Case1c = (function(self){
+self.ID = {"text":"Case1c"};
 
 self.preload = {"images":
 [{"url":"bg.jpg"},
@@ -9,18 +9,18 @@ self.preload = {"images":
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "1.B.0",
+	[{  "ID": "1.c.0",
 		"type":"chapter", 
-		"title":"Kapitel 1b - case1b",
+		"title":"Kapitel c - case1c",
 		"background":{"type":"image","url":"bg.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
 	
-	{  	"ID": "1.B.END",
+	{  	"ID": "1.c.END",
 		"type":"question", 
 		"analysisLog":"1.5 Reflektionsfråga kapitel 5",
-		"title":"Reflektionsfråga kapitel 1B",
+		"title":"Reflektionsfråga kapitel 1c",
 		"question":"Is this the end?",
 		"background":{"type":"image","url":"bg2.jpg"},
 		"answers":[
