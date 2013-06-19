@@ -2030,6 +2030,10 @@ img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
 
 .chapterWrapper { position: relative; /*background-color:  rgba(250,250,50,0.2);*/ font-size: 0.9em; }
 
-.chapterItem { position: absolute; font-size: 1em; font-weight: bold; font-style: normal; line-height: 1.6em; letter-spacing: -0.06em; text-align: center; display: block; background-color: rgba(50, 50, 50, 0.8); border-radius: 0.8em; border: 0.1em solid #FFF; padding: 0.25em 0.25em; }
+.chapterItem { position: absolute; font-size: 1em; font-weight: bold; font-style: normal; line-height: 1.6em; letter-spacing: -0.06em; text-shadow: -1px -1px black; display: block; background-color: rgba(233, 77, 126, 0.9); border-radius: 0.8em 0.8em 0em 0.8em; border: 0.1em solid rgba(0, 0, 0, 0.6); padding: 0.25em 0.25em; }
 
-.chapterItem:hover { background-color: rgba(255, 255, 255, 0.9); color: #111; }
+.chapterItem:hover { background-color: rgba(0, 0, 0, 0.8); border: 0.1em solid rgba(233, 77, 126, 0.4); color: #f4a8c0; cursor: pointer; }
+
+.locked { color: #999; background-color: rgba(40, 40, 40, 0.9); text-shadow: none; }
+
+.locked:hover { cursor: default; color: #999; background-color: rgba(40, 40, 40, 0.9); text-shadow: none; border: 0.1em solid rgba(0, 0, 0, 0.6); }

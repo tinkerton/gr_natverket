@@ -217,27 +217,6 @@ var FS = (function(self){
 
 	}
 
-	function startCase1a() {
-			FS.startCase(Case1a);
-	}
-	function startCase1b() {
-			FS.startCase(Case1b);
-	}
-	function startCase2a() {
-		//alert("Case 2 är inte byggt ännu.");
-		FS.startCase(Case2a);
-	}
-	function startCase2b() {
-		//alert("Case 2 är inte byggt ännu.");
-		FS.startCase(Case2b);
-	}
-	function startCase1HUB() {
-		FS.startCase(Case1_HUB);
-	}
-	function startCase2HUB() {
-		FS.startCase(Case2_HUB);
-	}
-
 
 
 	self.saveAnswer = function (answer) {
@@ -495,7 +474,10 @@ var FS = (function(self){
 			nrOfChapters = _.size(myObj);
 
 			for (var i=0; i<nrOfChapters; i++) {
-				res +="<div id='chapter_"+i+"' class='chapterItem' style='height:"+myObj[i].height+"; width:"+myObj[i].width+"; left:"+myObj[i].left+"; top:"+myObj[i].top+"; font-size:"+myObj[i].fontsize+"em;'  onClick=FS.respondToHUB("+i+")>"+myObj[i].text+"</div>";
+
+				res +="<div id='chapter_"+i+"' class='chapterItem";
+				if(myObj[i].lockeduntil!=undefined) {res +=" locked";}
+				res +="' style='height:"+myObj[i].height+"; width:"+myObj[i].width+"; left:"+myObj[i].left+"; top:"+myObj[i].top+"; font-size:"+myObj[i].fontsize+"em;'  onClick=FS.respondToHUB("+i+")>"+myObj[i].text+"</div>";
 			
 			}
 
@@ -723,7 +705,7 @@ var FS = (function(self){
 
 			for (var i=0; i<nrOfChapters; i++) {
 				var delay  = Math.random();
-				TweenMax.to($("#chapter_"+i), 2, {scaleX:1.1, scaleY:1.1,  yoyo:true, repeat:-1, repeatDelay:delay, delay:i/10,  ease:Quad.easeInOut});
+				TweenMax.to($("#chapter_"+i), 2, {scaleX:1.1, scaleY:1.1,  yoyo:true, repeat:-1, repeatDelay:delay, delay:i*delay,  ease:Quad.easeInOut});
 			}
 	}
 

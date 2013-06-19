@@ -651,22 +651,39 @@ letter-spacing: 10px;
   font-style: normal;
    line-height: 1.6em;
   letter-spacing: -0.06em;
-  
-  text-align: center;
+  text-shadow: -1px -1px rgba(0,0,0,1);
   display: block;
-  background-color: rgba(50,50,50,0.8);
-  border-radius: 0.8em;
-  border:0.1em solid #FFF;
+  background-color: rgba(233, 77, 126, 0.9);
+  border-radius: 0.8em 0.8em 0em 0.8em;
+  border:0.1em solid rgba(0,0,0,0.6);
   padding: 0.25em 0.25em;
 
 
 
 }
 .chapterItem:hover {
-  background-color: rgba(255,255,255,0.9);
-  color:#111;
-};
+  background-color: rgba(0,0,0,0.8);
+  border:0.1em solid rgba(233,77,126,0.4);
+  color:   lighten(rgb(233,77,126),20%);
+  cursor:pointer;
+   
 
 
+}
 
 
+.locked {
+   color:#999;
+   background-color:rgba(40,40,40,0.9);
+    text-shadow: none;
+}
+
+.locked:hover {
+  cursor:default;
+   color:#999;
+   background-color: rgba(40,40,40,0.9);
+   text-shadow: none;
+  border:0.1em solid rgba(0,0,0,0.6);
+   
+
+}
