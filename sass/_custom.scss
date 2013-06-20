@@ -699,14 +699,7 @@ overflow: hidden;
 opacity: 0;
 
 }
-/* iPad Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  
-  .comicParallelWrapper {
-    height:550px;
-  }
-  
-}
+
 
 
 #comicScroller {
@@ -761,10 +754,19 @@ opacity: 0;
   margin-right: 0px;
   text-align: left;
   padding-top:80px;
-  font-size: 23px;
+  font-size: 22px;
 
 }
 
 .comicSlide.comicActive div.comicHeader {
   margin-right: 70px;
+}
+
+/* iPad Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  
+  .comicParallelWrapper {
+    height:550px;
+  }
+ 
 }

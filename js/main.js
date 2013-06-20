@@ -1267,8 +1267,8 @@ Gumby.ready(function() {
 	FS.unlockedChapters = new Array();
 
 	//START CASE HERE - MAIN
-	//FS.startCase(CaseIntro);
-	FS.startCase(Case1b);
+	FS.startCase(CaseIntro);
+	//FS.startCase(Case1b);
 
 	$(document).on('click', '#nextButton', function() {
  		
