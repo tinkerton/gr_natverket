@@ -133,7 +133,68 @@ var FS = (function(self){
 			}
 			return res;
 	}
+	function startComicParallel(nrOfSlides) {
+		var winHeight = $(window).height()/3;
+		TweenMax.to($("#comicScroller"),0,{top:winHeight});
+		TweenMax.to($(".comicParallelWrapper"),1,{css:{"opacity":"1"},delay:0});
+		
+		for (var i=0; i<nrOfSlides; i++) {
+			$("#slide_"+i).data("nr",i)
+			$("#slide_"+i).click(function(){
+				resetAllComicParallels(nrOfSlides);
+				var scrollto = winHeight -134* parseInt($(this).data("nr"));
+				console.log("scrollto "+ scrollto);
+				TweenMax.to($("#comicScroller"),0,{top:scrollto});
+				
+				$(this).addClass("comicActive");
+			});
+		}
+	}
+function resetAllComicParallels(nrOfSlides,exceptSlide) {
+		
+		for (var i=0; i<nrOfSlides; i++) {
+			$("#slide_"+i).removeClass("comicActive")
+		
+		}
+	}
 
+
+	function addNodeComicParallel(nodeId) {
+		var res,
+			comicSlides,
+			nrOfSlides;
+			
+
+			comicSlides = contentObj[nodeId].comicparallel; 
+			if (comicSlides === undefined) {
+				comicsToFadeIn=0;
+				return "";}
+
+			nrOfSlides= comicsToFadeIn = _.size(comicSlides);
+
+			//comic_row_height = contentObj[nodeId].comic_row_height;
+
+			res ="<div class='comicParallelWrapper'>";
+			res +="<div id='comicScroller'>";
+			for (var i=0; i<nrOfSlides; i++) {
+				res +="<div id='slide_"+i+"' class='comicSlide";
+				if (i==0) res +=" comicActive";
+				res +="'>";
+				res +="<div id='li_"+i+"text' class='comicHeader'>"+comicSlides[i].slide.text+"</div>";
+				res +="<div id='li_"+i+"a' class='parallelcomic'><img src='img/"+comicSlides[i].slide.url+"' /></div>";
+				res +="<div id='li_"+i+"b' class='parallelcomic'><img src='img/"+comicSlides[i].slide.url2+"' /></div>";
+				res +="<div id='li_"+i+"c' class='parallelcomic'><img src='img/"+comicSlides[i].slide.url3+"' /></div>";
+				
+				res +="</div>";
+			}
+			res +="</div></div>";
+
+
+		return res;
+
+
+
+	}
 
 	function addNodeComic (nodeId) {
 		var comicImages,
@@ -563,6 +624,9 @@ var FS = (function(self){
 				result += addNodeComic(nodeId);
 		   
 			break;
+			case "comicparallel":
+				result += addNodeComicParallel(nodeId);
+			break;
 			case "agent":
 				result += addNodeAgent(nodeId);
 		   
@@ -759,7 +823,7 @@ var FS = (function(self){
 	}
 
 
-	function resetNodeAttributes() {
+	function startNode() {
 	/*	var maindiv = $('#main_div');
 		for (var i=1; i<=5; i++) {
 			maindiv.removeClass("blur"+i);
@@ -775,6 +839,10 @@ var FS = (function(self){
 		switch(FS.currentNodeType) {
 			case "comic":
 				 showComics(comicsToFadeIn);
+				 comicsToFadeIn =0;
+			break;
+			case "comicparallel":
+				 startComicParallel(comicsToFadeIn);
 				 comicsToFadeIn =0;
 			break;
 			case "video_seq":
@@ -829,41 +897,41 @@ var FS = (function(self){
 		if (!FS.initComplete){ // ||(Modernizr.touch 
 			FS.initComplete = true;
 			maindiv.show();
-			resetNodeAttributes();
+			startNode();
 		}else {
 			switch (animationType) {
 				case "up":
-					TweenMax.fromTo (maindiv, speed, { css:{"top": "1000px", "opacity":"0"}}, {alpha:1, css:{"top": "0px", "opacity":"1"},  onComplete:resetNodeAttributes, ease:Quad.easeInOut});
+					TweenMax.fromTo (maindiv, speed, { css:{"top": "1000px", "opacity":"0"}}, {alpha:1, css:{"top": "0px", "opacity":"1"},  onComplete:startNode, ease:Quad.easeInOut});
 				break;
 				case "down":
-					TweenMax.fromTo (maindiv, speed, {css:{"top": "-1000px", "opacity":"0"}}, {autoAlpha:1, css:{"top": "0px", "opacity":"1"},  onComplete:resetNodeAttributes, ease:Quad.easeInOut});
+					TweenMax.fromTo (maindiv, speed, {css:{"top": "-1000px", "opacity":"0"}}, {autoAlpha:1, css:{"top": "0px", "opacity":"1"},  onComplete:startNode, ease:Quad.easeInOut});
 	
 				break;
 				case "left":
-					TweenMax.fromTo (maindiv, speed, { css:{"left": "2000px", "opacity":"0"}}, {autoAlpha:1, css:{"left": "0px", "opacity":"1"},  onComplete:resetNodeAttributes, ease:Quad.easeInOut});
+					TweenMax.fromTo (maindiv, speed, { css:{"left": "2000px", "opacity":"0"}}, {autoAlpha:1, css:{"left": "0px", "opacity":"1"},  onComplete:startNode, ease:Quad.easeInOut});
 				break;
 				case "right":
-					TweenMax.fromTo (maindiv, speed, { css:{"left": "-2000px", "opacity":"0" }}, {autoAlpha:1, css:{"left": "0px", "opacity":"1"},  onComplete:resetNodeAttributes, ease:Quad.easeInOut});
+					TweenMax.fromTo (maindiv, speed, { css:{"left": "-2000px", "opacity":"0" }}, {autoAlpha:1, css:{"left": "0px", "opacity":"1"},  onComplete:startNode, ease:Quad.easeInOut});
 				break;
 				case "zoom":
-					TweenMax.fromTo (maindiv, speed, {autoAlpha:0, scaleX:0.5, scaleY:0.5},{autoAlpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeInOut});
+					TweenMax.fromTo (maindiv, speed, {autoAlpha:0, scaleX:0.5, scaleY:0.5},{autoAlpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:startNode, ease:Quad.easeInOut});
 		
 				break;
 				case "fade":
-						TweenMax.fromTo (maindiv, speed, {css:{ "opacity":"0"} },{css:{ "opacity":"1"} , onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeInOut});
+						TweenMax.fromTo (maindiv, speed, {css:{ "opacity":"0"} },{css:{ "opacity":"1"} , onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:startNode, ease:Quad.easeInOut});
 		
 				break;
 				case "none": default:
-					TweenMax.fromTo (maindiv, 0, {autoAlpha:0 },{autoAlpha:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeInOut});
+					TweenMax.fromTo (maindiv, 0, {autoAlpha:0 },{autoAlpha:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:startNode, ease:Quad.easeInOut});
 		
 				break;
 
 			}
 
 
-		/*TweenMax.fromTo (maindiv, speed, {alpha:0, scaleX:0.5, scaleY:0.5},{autoAlpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeIn});
+		/*TweenMax.fromTo (maindiv, speed, {alpha:0, scaleX:0.5, scaleY:0.5},{autoAlpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:startNode, ease:Quad.easeIn});
 		*/
-		//	TweenMax.fromTo (maindiv, speed, {autoAlpha:0, scaleX:0, scaleY:0},{autoAlpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:resetNodeAttributes, ease:Quad.easeIn});
+		//	TweenMax.fromTo (maindiv, speed, {autoAlpha:0, scaleX:0, scaleY:0},{autoAlpha:1, scaleX:1, scaleY:1, onUpdate:updateLessBlur, onUpdateParams:[speed], onComplete:startNode, ease:Quad.easeIn});
 			}
 	}
 
@@ -1143,7 +1211,7 @@ var FS = (function(self){
 		currentNodeNr = -1;
 		maxNodeNr = -1;
 
-		
+		$(".backstretch").remove();
 	
 		FS.preloadImages();
 
@@ -1199,7 +1267,8 @@ Gumby.ready(function() {
 	FS.unlockedChapters = new Array();
 
 	//START CASE HERE - MAIN
-	FS.startCase(CaseIntro);
+	//FS.startCase(CaseIntro);
+	FS.startCase(Case1b);
 
 	$(document).on('click', '#nextButton', function() {
  		

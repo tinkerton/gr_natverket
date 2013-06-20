@@ -1,7 +1,31 @@
 var Case1_HUB = (function(self){
 self.ID = {"text":"Case1_HUB"};
 self.preload = {"images":
-[{"url":"bg-case-1.jpg"}
+[	{"url":"bg-case-1.jpg"},
+	{"url":"1.5.2_horan1.png"},
+	{"url":"1.5.2_torsken1.png"},
+	{"url":"1.5.2_hallicken1.png"},
+	{"url":"1.5.2_horan2.png"},
+	{"url":"1.5.2_torsken2.png"},
+	{"url":"1.5.2_hallicken2.png"},
+	{"url":"1.5.2_horan3.png"},
+	{"url":"1.5.2_torsken3.png"},
+	{"url":"1.5.2_hallicken3.png"},
+	{"url":"1.5.2_horan4.png"},
+	{"url":"1.5.2_torsken4.png"},
+	{"url":"1.5.2_hallicken4.png"},
+	{"url":"1.5.2_horan5.png"},
+	{"url":"1.5.2_torsken5.png"},
+	{"url":"1.5.2_hallicken5.png"},
+	{"url":"1.5.2_horan6.png"},
+	{"url":"1.5.2_torsken6.png"},
+	{"url":"1.5.2_hallicken6.png"},
+	{"url":"1.5.2_horan7.png"},
+	{"url":"1.5.2_torsken7.png"},
+	{"url":"1.5.2_hallicken7.png"},
+	{"url":"1.5.2_horan8.png"},
+	{"url":"1.5.2_torsken8.png"},
+	{"url":"1.5.2_hallicken8.png"}
 ]
 };
 
