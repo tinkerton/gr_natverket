@@ -48,6 +48,7 @@ self.nodes = {"content":
 								{"url":"1.5.2_horan1.png",
 								"url2":"1.5.2_torsken1.png",
 								"url3":"1.5.2_hallicken1.png",
+								
 								"text":"8.00"},
 					},
 					{"slide": 
@@ -103,7 +104,6 @@ self.nodes = {"content":
 	{  	"ID": "1.B.END",
 		"type":"question", 
 		"analysisLog":"1.5 Reflektionsfråga kapitel 5",
-		"title":"Reflektionsfråga kapitel 1B",
 		"question":"Is this the end?",
 		"background":{"type":"image","url":"bg2.jpg"},
 		"answers":[

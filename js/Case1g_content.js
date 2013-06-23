@@ -21,7 +21,6 @@ self.nodes = {"content":
 	{  	"ID": "1.G.END",
 		"type":"question", 
 		"analysisLog":"1.5 Reflektionsfråga kapitel 5",
-		"title":"Reflektionsfråga kapitel 1G",
 		"question":"Is this the end?",
 		"background":{"type":"image","url":"bg2.jpg"},
 		"answers":[

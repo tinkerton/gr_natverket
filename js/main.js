@@ -133,8 +133,47 @@ var FS = (function(self){
 			}
 			return res;
 	}
+
+function startComicSingle(nrOfSlides) {
+		var winHeight = 0;
+		TweenMax.to($("#comicScroller"),0,{top:winHeight});
+		TweenMax.to($(".comicSingleWrapper"),1,{css:{"opacity":"1"},delay:0});
+/*
+		for (var i=0; i<nrOfSlides; i++) {
+			$("#slide_"+i).data("nr",i)
+			$("#slide_"+i).click(function(){
+	
+				var scrollto = winHeight -440* parseInt($(this).data("nr"));	
+				TweenMax.to($("#comicScroller"),0,{top:scrollto});
+				
+			});
+		}
+*/	
+	}
+
+
 	function startComicParallel(nrOfSlides) {
-		var winHeight = $(window).height()/3;
+		var winHeight,
+		comicHeight,
+		myObj = contentObj[FS.currentNodeNr].comicparallel[0].slide; 
+
+		if (myObj.url !=undefined) {
+			comicHeight = 200;
+			winHeight=0;
+		}
+		if (myObj.url2 !=undefined) {
+			comicHeight =200;
+			winHeight= $(window).height()/4;
+	}
+		if (myObj.url3 !=undefined) {
+			comicHeight =200;
+			winHeight= $(window).height()/3;
+	}
+		if (myObj.url4 !=undefined) {
+			comicHeight =185;
+			winHeight= $(window).height()/3;
+		}
+
 		TweenMax.to($("#comicScroller"),0,{top:winHeight});
 		TweenMax.to($(".comicParallelWrapper"),1,{css:{"opacity":"1"},delay:0});
 		
@@ -142,7 +181,7 @@ var FS = (function(self){
 			$("#slide_"+i).data("nr",i)
 			$("#slide_"+i).click(function(){
 				resetAllComicParallels(nrOfSlides);
-				var scrollto = winHeight -134* parseInt($(this).data("nr"));
+				var scrollto = winHeight -(comicHeight*0.7)* parseInt($(this).data("nr"));
 				console.log("scrollto "+ scrollto);
 				TweenMax.to($("#comicScroller"),0,{top:scrollto});
 				
@@ -162,7 +201,9 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 	function addNodeComicParallel(nodeId) {
 		var res,
 			comicSlides,
-			nrOfSlides;
+			nrOfSlides,
+			myObj,
+			comicWidth;
 			
 
 			comicSlides = contentObj[nodeId].comicparallel; 
@@ -176,14 +217,23 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 
 			res ="<div class='comicParallelWrapper'>";
 			res +="<div id='comicScroller'>";
+			//width:280px;
+			if (comicSlides[0].slide.url !=undefined) comicWidth = 660;
+		 	if (comicSlides[0].slide.url2 !=undefined) comicWidth =460;
+			if (comicSlides[0].slide.url3 !=undefined) comicWidth =300;
+			if (comicSlides[0].slide.url4 !=undefined) comicWidth =220;
+			
 			for (var i=0; i<nrOfSlides; i++) {
+				myObj = comicSlides[i].slide;
 				res +="<div id='slide_"+i+"' class='comicSlide";
 				if (i==0) res +=" comicActive";
 				res +="'>";
-				res +="<div id='li_"+i+"text' class='comicHeader'>"+comicSlides[i].slide.text+"</div>";
-				res +="<div id='li_"+i+"a' class='parallelcomic'><img src='img/"+comicSlides[i].slide.url+"' /></div>";
-				res +="<div id='li_"+i+"b' class='parallelcomic'><img src='img/"+comicSlides[i].slide.url2+"' /></div>";
-				res +="<div id='li_"+i+"c' class='parallelcomic'><img src='img/"+comicSlides[i].slide.url3+"' /></div>";
+				//if (myObj.text != undefined) res +="<div id='li_"+i+"text' class='comicHeader'>"+myObj.text+"</div>";
+				if (myObj.url != undefined) res +="<div id='li_"+i+"a' class='parallelcomic' style='width:"+comicWidth+"px;'><img src='img/"+myObj.url+"' /></div>";
+				if (myObj.url2 != undefined) res +="<div id='li_"+i+"b' class='parallelcomic' style='width:"+comicWidth+"px;'><img src='img/"+myObj.url2+"' /></div>";
+				if (myObj.url3 != undefined) res +="<div id='li_"+i+"c' class='parallelcomic' style='width:"+comicWidth+"px;'><img src='img/"+myObj.url3+"' /></div>";
+				if (myObj.url4 != undefined) res +="<div id='li_"+i+"c' class='parallelcomic' style='width:"+comicWidth+"px;'><img src='img/"+myObj.url4+"' /></div>";
+			
 				
 				res +="</div>";
 			}
@@ -195,6 +245,43 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 
 
 	}
+
+function addNodeComicSingle(nodeId) {
+		var res,
+			comicSlides,
+			nrOfSlides,
+			myObj;
+			
+
+			comicSlides = contentObj[nodeId].comicsingle; 
+			if (comicSlides === undefined) {
+				comicsToFadeIn=0;
+				return "";}
+
+			nrOfSlides= comicsToFadeIn = _.size(comicSlides);
+
+
+			res ="<div class='comicSingleWrapper' style='height:"+nrOfSlides * 517+"px;'>";
+			res +="<div id='comicScroller'>";
+			for (var i=0; i<nrOfSlides; i++) {
+				myObj = comicSlides[i].slide;
+				res +="<div id='slide_"+i+"' class='singleComicSlide";
+				if (i==0) res +=" comicActive";
+				res +="'>";
+				if (myObj.url != undefined) res +="<div id='li_"+i+"a' class='singlecomic'><img src='img/"+myObj.url+"' /></div>";
+				if (myObj.text != undefined) res +="<div id='li_"+i+"text' class='comicSingleHeader'>"+myObj.text+"</div>";
+					
+				res +="</div>";
+			}
+			res +="</div></div>";
+
+
+		return res;
+
+
+
+	}
+
 
 	function addNodeComic (nodeId) {
 		var comicImages,
@@ -587,7 +674,7 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 				if(myObj[i].lockeduntil!=undefined) {
 					res +=" locked";
 				}
-				res +="' style='height:"+myObj[i].height+"; width:"+myObj[i].width+"; left:"+myObj[i].left+"; top:"+myObj[i].top+"; font-size:"+myObj[i].fontsize+"em;'  onClick=FS.respondToHUB("+i+")>"+myObj[i].text+"</div>";
+				res +="' style='height:"+myObj[i].height+"; width:"+myObj[i].width+"; left:"+myObj[i].left+"; top:"+myObj[i].top+"; padding-top:"+myObj[i].paddingtop+"; font-size:"+myObj[i].fontsize+"em;'  onClick=FS.respondToHUB("+i+")>"+myObj[i].text+"</div>";
 			
 			}
 
@@ -627,6 +714,10 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 			case "comicparallel":
 				result += addNodeComicParallel(nodeId);
 			break;
+			case "comicsingle":
+				result += addNodeComicSingle(nodeId);
+			break;
+			
 			case "agent":
 				result += addNodeAgent(nodeId);
 		   
@@ -811,14 +902,14 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 	}
 
 	function startHUBAnimation() {
-	
+	return;
 		var myObj, nrOfChapters;
 		myObj = contentObj[FS.currentNodeNr].chapters;
 			nrOfChapters = _.size(myObj);
 
 			for (var i=0; i<nrOfChapters; i++) {
 				var delay  = Math.random();
-				TweenMax.to($("#chapter_"+i), 2, {scaleX:1.1, scaleY:1.1,  yoyo:true, repeat:-1, repeatDelay:delay, delay:i*delay,  ease:Quad.easeInOut});
+				TweenMax.to($("#chapter_"+i), 2, {scaleX:1.05, scaleY:1.05,  yoyo:true, repeat:-1, repeatDelay:delay*3, delay:i*delay,  ease:Quad.easeInOut});
 			}
 	}
 
@@ -841,8 +932,12 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 				 showComics(comicsToFadeIn);
 				 comicsToFadeIn =0;
 			break;
-			case "comicparallel":
+			case "comicparallel": 
 				 startComicParallel(comicsToFadeIn);
+				 comicsToFadeIn =0;
+			break;
+			case "comicsingle":
+				 startComicSingle(comicsToFadeIn);
 				 comicsToFadeIn =0;
 			break;
 			case "video_seq":
@@ -1268,7 +1363,7 @@ Gumby.ready(function() {
 
 	//START CASE HERE - MAIN
 	FS.startCase(CaseIntro);
-	//FS.startCase(Case1b);
+	//FS.startCase(Case1_HUB);
 
 	$(document).on('click', '#nextButton', function() {
  		
