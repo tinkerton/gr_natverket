@@ -13,20 +13,20 @@ self.nodes = {"content":
 	[{  "ID": "1.5",
 		"type":"chapter", 
 		"title":"Polisens arbete",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
 	{  	"ID": "1.5.1",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Intro till Polisens arbete * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Nu ska du få veta mer om hur polisväsende arbetar mot trafficking. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
 	}, 
 	{  "ID": "1.5.2",
-		"type":"chapter", 
+		"type":"info", 
 		"title":"Intervju med polisen",
 		"background":{"type":"image","url":"bg4.jpg"},
 		 "animation":"fade",
@@ -94,7 +94,7 @@ self.nodes = {"content":
 		 "showNextButton":"-1"
 	},
 	{  "ID": "1.5.4",
-		"type":"chapter", 
+		"type":"info", 
 		"title":"Intervju med granne",
 		"background":{"type":"image","url":"bg4.jpg"},
 		 "animation":"fade",
@@ -165,11 +165,11 @@ self.nodes = {"content":
 	{  	"ID": "1.5.6",
 		"type":"question", 
 		"analysisLog":"1.5.6 Fråga kapitel 5, Case 1",
-		"question":"Fråga?",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"question":"~ * Besvara påståendet: De som sysslar med människohandel är ofta delar av större kriminella nätverk. * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"- svar 1","analysisLog":"1. Svar 1"},
-							{"text":"-svar 2","analysisLog":"2. Svar 2"}
+							{"text":"- JA","analysisLog":"1. JA"},
+							{"text":"- NEJ","analysisLog":"2. NEJ"}
 				]
 		 ,
 		 "animation":"left",
@@ -178,8 +178,8 @@ self.nodes = {"content":
 	
 	{  	"ID": "1.5.7",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Svar till frågan * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Medan vapen och droger bara kan säljas en gång, så kan en människa säljas om och om igen. Trafficking är den tredje största inkomsten för den organiserade brottsligheten. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"Case1_HUB"

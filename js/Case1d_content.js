@@ -12,14 +12,14 @@ self.nodes = {"content":
 	[{  "ID": "1.4",
 		"type":"chapter", 
 		"title":"Människorna som säljs",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
 	{  	"ID": "1.4.1",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Intro till Människorna som säljs * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Nu kommer du lära dig mer om de människor som hamnar i trafficking. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
@@ -62,12 +62,12 @@ self.nodes = {"content":
 	},
 	{  	"ID": "1.4.4",
 		"type":"question", 
-		"analysisLog":"1.1.4 Fråga kapitel 1, Case 1",
-		"question":"Fråga?",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"analysisLog":"1.4.4 Fråga kapitel 4, Case 1",
+		"question":"~ * Besvara påståendet: Personer som hamnar i trafficking är ofta mycket fattiga i sitt hemland. * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"- svar 1","analysisLog":"1. Svar 1"},
-							{"text":"-svar 2","analysisLog":"2. Svar 2"}
+							{"text":"- JA","analysisLog":"1. JA"},
+							{"text":"- NEJ","analysisLog":"2. NEJ"}
 				]
 		 ,
 		 "animation":"left",
@@ -76,8 +76,8 @@ self.nodes = {"content":
 	
 	{  	"ID": "1.4.5",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Svar till frågan * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Det är inte ovanligt att personer som traffickeras gör det frivilligt i tron att det är ett tillfälligt jobb som de måste ta för att kunna försörja sin familj. Människohandlarna använder ofta barn och närstående som ett sätt att kontrollera och utpressa de som traffickerats. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"Case1_HUB"

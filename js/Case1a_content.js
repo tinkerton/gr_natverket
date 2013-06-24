@@ -12,14 +12,14 @@ self.nodes = {"content":
 	[{  "ID": "1.1",
 		"type":"chapter", 
 		"title":"Vad är trafficking?",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
 	{  	"ID": "1.1.1",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Intro till vad är trafficking * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * För att få mer kunskap om trafficking och sex mot ersättning ska du nu få lära dig mer om definition av trafficking, begrepp och fakta. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
@@ -49,11 +49,11 @@ self.nodes = {"content":
 	{  	"ID": "1.1.4",
 		"type":"question", 
 		"analysisLog":"1.1.4 Fråga kapitel 1, Case 1",
-		"question":"Fråga?",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"question":"~ * Besvara påståendet: Största delen av traffickingindustrin består av att människor säljs för sexuella syften.  * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"- svar 1","analysisLog":"1. Svar 1"},
-							{"text":"-svar 2","analysisLog":"2. Svar 2"}
+							{"text":"- JA","analysisLog":"1. JA"},
+							{"text":"- NEJ","analysisLog":"2. NEJ"}
 				]
 		 ,
 		 "animation":"left",
@@ -62,8 +62,8 @@ self.nodes = {"content":
 	
 	{  	"ID": "1.1.5",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Svar till frågan * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * 58% av all trafficking är för sexuella syften. De som säljs i Sverige är kvinnor, men utomlands säljs även barn. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"Case1_HUB"

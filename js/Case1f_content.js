@@ -13,14 +13,14 @@ self.nodes = {"content":
 	[{  "ID": "1.6",
 		"type":"chapter", 
 		"title":"Vad händer efteråt?",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
 	{  	"ID": "1.6.1",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Intro till Vad händer efteråt * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ *  Nu ska du få veta vad som händer efter att en person har räddats ifrån trafficking och sexslaveri. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
@@ -52,11 +52,11 @@ self.nodes = {"content":
 	{  	"ID": "1.6.4",
 		"type":"question", 
 		"analysisLog":"1.6.4 Fråga kapitel 6, Case 1",
-		"question":"Fråga?",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"question":"~ * Besvara påståendet: Även om de skyldiga blivit dömda, kan de som blivit offer för människohandel inte känna sig helt trygga. * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"- svar 1","analysisLog":"1. Svar 1"},
-							{"text":"-svar 2","analysisLog":"2. Svar 2"}
+							{"text":"- JA","analysisLog":"1. JA"},
+							{"text":"- NEJ","analysisLog":"2. NEJ"}
 				]
 		 ,
 		 "animation":"left",
@@ -65,8 +65,8 @@ self.nodes = {"content":
 	
 	{  	"ID": "1.6.5",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Svar till frågan * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * När personer räddats ur trafficking reser tillbaka till sitt hemland är risken stor att de åter igen fångas av samma nätverk. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"Case1_HUB"

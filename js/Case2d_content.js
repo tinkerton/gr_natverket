@@ -12,19 +12,19 @@ self.nodes = {"content":
 	[{  "ID": "2.4",
 		"type":"chapter", 
 		"title":"Hur många fejkar?",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
-	{  	"ID": "2.1.1",
+	{  	"ID": "2.4.1",
 		"type":"agent",
-		"background":{"type":"image","url":"bg3.jpg"},
-		"text":"~ * Intro till Hur många fejkar * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Du ska nu få ta del av information och fakta kring övergrepp och anmälningar i Sverige. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
 	}, 
-	{  	"ID": "2.1.2",
+	{  	"ID": "2.4.2",
 		"type":"info",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"image": [
@@ -35,24 +35,24 @@ self.nodes = {"content":
 
 			
 	},  
-	{  	"ID": "2.1.4",
+	{  	"ID": "2.4.4",
 		"type":"question", 
-		"analysisLog":"2.1.4 Fråga kapitel 1, Case 2",
-		"question":"Fråga?",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"analysisLog":"2.4.4 Fråga kapitel 4, Case 2",
+		"question":"~ * Besvara påståendet: Att många våldtäkter sker i hemmet tyder på att personerna känner varann sen innan. * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"- svar 1","analysisLog":"1. Svar 1"},
-							{"text":"-svar 2","analysisLog":"2. Svar 2"}
+							{"text":"- JA","analysisLog":"1. JA"},
+							{"text":"- NEJ","analysisLog":"2. NEJ"}
 				]
 		 ,
 		 "animation":"left",
 		 "showNextButton":"-1"
 	},
 	
-	{  	"ID": "2.1.5",
+	{  	"ID": "2.4.5",
 		"type":"agent",
-		"background":{"type":"image","url":"bg3.jpg"},
-		"text":"~ * Svar till frågan * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * De flesta våldtäkter, inte bara de som sker i hemmet, begås av personer som känner offret sen innan. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"Case2_HUB"

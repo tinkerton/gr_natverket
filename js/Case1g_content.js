@@ -13,14 +13,14 @@ self.nodes = {"content":
 	[{  "ID": "1.7",
 		"type":"chapter", 
 		"title":"En vanlig dag",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
 	{  	"ID": "1.7.1",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Intro till En vanlig dag * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ *  För att få en större förståelse för prostitution och sex mot ersättning ska du nu få ta del av alla inblandade personers perspektiv. Hur skiljer sig en vanlig dag för de olika personerna? * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
@@ -79,7 +79,7 @@ self.nodes = {"content":
 					}
 										  	
 		],
-		"comic_row_height":"273px",
+		"comic_row_height":"221px",
 		 "animation":"fade",
 		 "showNextButton":"1500",
 		"callback":"OUTRO"

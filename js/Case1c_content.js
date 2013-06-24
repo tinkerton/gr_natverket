@@ -12,14 +12,14 @@ self.nodes = {"content":
 	[{  "ID": "1.3",
 		"type":"chapter", 
 		"title":"Vilka köper sex?",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
 	{  	"ID": "1.3.1",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Intro till Vilka köper sex * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Du ska nu få se vad de som köper sex tänker och säger. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
@@ -65,11 +65,11 @@ self.nodes = {"content":
 	{  	"ID": "1.3.4",
 		"type":"question", 
 		"analysisLog":"1.3.4 Fråga kapitel 3, Case 1",
-		"question":"Fråga?",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"question":"~ * Besvara påståendet: Personer köper sex gör det för att det ger en kick, snarare än att de inte kan få sex annars. * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"- svar 1","analysisLog":"1. Svar 1"},
-							{"text":"-svar 2","analysisLog":"2. Svar 2"}
+							{"text":"- JA","analysisLog":"1. JA"},
+							{"text":"- NEJ","analysisLog":"2. NEJ"}
 				]
 		 ,
 		 "animation":"left",
@@ -78,8 +78,8 @@ self.nodes = {"content":
 	
 	{  	"ID": "1.3.5",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"~ * Svar till frågan * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * De som köper sex har i många fall andra sexuella relationer också,  är gifta eller i fasta förhållanden. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"Case1_HUB"

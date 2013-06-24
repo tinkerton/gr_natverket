@@ -47,8 +47,8 @@ self.nodes = {"content":
 		"question":"~ * Vilket case i Nätverket, vill du ta dig an? * ~ ",
 		"background":{"type":"image","url":"intro1.jpg"},
 		"answers":[
-							{"text":"- Case 1 - Varför trafficking?","analysisLog":"1. CASE 1","callback":"Case1_HUB"},
-							{"text":"- Case 2 - Bara på skoj?","analysisLog":"2. CASE 2","callback":"Case2_HUB"}
+							{"text":"Case 1 - Varför trafficking?","analysisLog":"1. CASE 1","callback":"Case1_HUB"},
+							{"text":"Case 2 - Bara på skoj?","analysisLog":"2. CASE 2","callback":"Case2_HUB"}
 				]
 		 ,
 		 "animation":"down",

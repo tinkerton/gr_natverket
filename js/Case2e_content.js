@@ -1,5 +1,5 @@
 var Case2e = (function(self){
-self.ID = {"text":"Case1c"};
+self.ID = {"text":"Case2e"};
 
 self.preload = {"images":
 [{"url":"bg.jpg"},
@@ -12,14 +12,14 @@ self.nodes = {"content":
 	[{  "ID": "2.5",
 		"type":"chapter", 
 		"title":"Mikaelas samtal med kuratorn",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
 	{  	"ID": "2.5.1",
 		"type":"agent",
-		"background":{"type":"image","url":"bg3.jpg"},
-		"text":"~ * Intro till Mikaelas samtal med kuratorn * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Nu ska du få ta del av ett samtal mellan Mikaela och skolans kurator. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
@@ -97,11 +97,11 @@ self.nodes = {"content":
 	{  	"ID": "2.5.3",
 		"type":"question", 
 		"analysisLog":"2.5.3 Fråga kapitel 5, Case 2",
-		"question":"Fråga?",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"question":"~ * Besvara påståendet: Kuratorn försöker hjälpa Mikaela att komma över det som har skett, genom att göra händelsen mindre allvarlig. * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"- svar 1","analysisLog":"1. Svar 1"},
-							{"text":"-svar 2","analysisLog":"2. Svar 2"}
+							{"text":"- JA","analysisLog":"1. JA"},
+							{"text":"- NEJ","analysisLog":"2. NEJ"}
 				]
 		 ,
 		 "animation":"left",
@@ -110,8 +110,8 @@ self.nodes = {"content":
 	
 	{  	"ID": "2.5.4",
 		"type":"agent",
-		"background":{"type":"image","url":"bg3.jpg"},
-		"text":"~ * Svar till frågan * ~",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Kuratorns försöker få Mikaela att känna att hon inte ska ta så allvarligt på det som hände, och får det att låta som att det var lika mycket Mikaelas fel som Samuel och James. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"Case2_HUB"

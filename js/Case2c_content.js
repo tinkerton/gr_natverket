@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[{  "ID": "2.3",
 		"type":"chapter", 
 		"title":"Filmen om horan",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},

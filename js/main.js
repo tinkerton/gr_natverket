@@ -164,7 +164,7 @@ function startComicSingle(nrOfSlides) {
 			winHeight=0;
 		}
 		if (myObj.url2 !=undefined) {
-			comicHeight =200;
+			comicHeight =370;
 			winHeight= $(window).height()/4;
 	}
 		if (myObj.url3 !=undefined) {
@@ -205,7 +205,8 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 			comicSlides,
 			nrOfSlides,
 			myObj,
-			comicWidth;
+			comicWidth,
+			comicHeight;
 			
 
 			comicSlides = contentObj[nodeId].comicparallel; 
@@ -220,16 +221,18 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 			res ="<div class='comicParallelWrapper'>";
 			res +="<div id='comicScroller'>";
 			//width:280px;
-			if (comicSlides[0].slide.url !=undefined) comicWidth = 660;
-		 	if (comicSlides[0].slide.url2 !=undefined) comicWidth =460;
-			if (comicSlides[0].slide.url3 !=undefined) comicWidth =300;
-			if (comicSlides[0].slide.url4 !=undefined) comicWidth =220;
+			if (comicSlides[0].slide.url !=undefined) {comicWidth = 660;}
+		 	if (comicSlides[0].slide.url2 !=undefined) {comicWidth =460;}
+			if (comicSlides[0].slide.url3 !=undefined) {comicWidth =300;}
+			if (comicSlides[0].slide.url4 !=undefined){ comicWidth =220;}
 			
+			comicHeight = contentObj[nodeId].comic_row_height;
+
 			for (var i=0; i<nrOfSlides; i++) {
 				myObj = comicSlides[i].slide;
 				res +="<div id='slide_"+i+"' class='comicSlide";
 				if (i==0) res +=" comicActive";
-				res +="'>";
+				res +="'  style='height:"+comicHeight+";'>";
 				//if (myObj.text != undefined) res +="<div id='li_"+i+"text' class='comicHeader'>"+myObj.text+"</div>";
 				if (myObj.url != undefined) res +="<div id='li_"+i+"a' class='parallelcomic' style='width:"+comicWidth+"px;'><img src='img/"+myObj.url+"' /></div>";
 				if (myObj.url2 != undefined) res +="<div id='li_"+i+"b' class='parallelcomic' style='width:"+comicWidth+"px;'><img src='img/"+myObj.url2+"' /></div>";
@@ -459,6 +462,11 @@ function addNodeComicSingle(nodeId) {
 	}
 
 	self.gotoSequence = function(sequenceID) {
+		 if (sequenceID == "-1") {
+		 	console.log("END of video");
+		 	FS.gotoNode(FS.currentNodeNr,1); 
+		 return; 
+		}
 		 FS.currentSequence =  sequenceID;
 		 TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
 	
@@ -860,6 +868,7 @@ function addNodeComicSingle(nodeId) {
 		  	
 		  	
 		  	 removeVideoListener();
+		  	 console.log("video on finish");
 		  	 FS.currentSequence =  contentObj[FS.currentNodeNr].sequences[FS.currentSequence].gotoID;
 		   	 if ( FS.currentSequence!=undefined)  TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
 		  	 else {
@@ -1424,7 +1433,8 @@ Gumby.ready(function() {
 
 	//START CASE HERE - MAIN
 	FS.startCase(CaseIntro);
-	//FS.startCase(Case2_HUB);
+	//FS.startCase(Case1d);
+
 
 	$(document).on('click', '#nextButton', function() {
  		
