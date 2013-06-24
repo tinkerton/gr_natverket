@@ -1423,8 +1423,8 @@ Gumby.ready(function() {
 	FS.unlockedChapters = new Array();
 
 	//START CASE HERE - MAIN
-	//FS.startCase(CaseIntro);
-	FS.startCase(Case2_HUB);
+	FS.startCase(CaseIntro);
+	//FS.startCase(Case2_HUB);
 
 	$(document).on('click', '#nextButton', function() {
  		
