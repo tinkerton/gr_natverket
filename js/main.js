@@ -35,8 +35,10 @@ var FS = (function(self){
 
 
 
-	function addNodeHeader () {
-		return "<div class='centered ten columns' id='nodeHeader'>";
+	function addNodeHeader (nodeId) {
+		var cols = "ten";
+		if (contentObj[nodeId].size!=undefined) cols = contentObj[nodeId].size;
+		return "<div class='centered " + cols + " columns' id='nodeHeader'>";
 	}
 
 	function addNodeFooter () {
@@ -129,7 +131,7 @@ var FS = (function(self){
 
 			res="";
 			for (var i=0; i<nrOfImages; i++) {
-				res+="<div class='"+imageClass+"'><img src='img/"+images[i].url+"'/></div>"
+				res+="<div class='"+imageClass+"'><img class='imgOfNode' src='img/"+images[i].url+"'/></div>"
 			}
 			return res;
 	}
@@ -368,7 +370,8 @@ function addNodeComicSingle(nodeId) {
 	function checkToUnlockChapters() {
 		
 		var myObj=contentObj[FS.currentNodeNr],
-			nrOfUnlocks = _.size(FS.unlockedChapters);;
+			nrOfUnlocks = _.size(FS.unlockedChapters);
+		console.log( "checkToUnlockChapters " + nrOfUnlocks);
 		for (var i=0; i<_.size(myObj.chapters); i++) {
 				if (myObj.chapters[i].lockeduntil<=nrOfUnlocks) {
 					$("#chapter_"+myObj.chapters[i].ID).removeClass("locked");
@@ -376,6 +379,7 @@ function addNodeComicSingle(nodeId) {
 			}
 			
 		}
+			console.log( "checkToUnlockChapters2 " + nrOfUnlocks);
 	}
 
 	function exitChapter(nextHUB) {
@@ -476,18 +480,18 @@ function addNodeComicSingle(nodeId) {
 				break;
 				case "question":
 					res +="<div class='centered eleven columns'>";
-					res +="<article class='vimeo video videoBg'>";
+					res +="<article class=''>";
 					res +="<div class='sequenceHeadline'>"+myObj.text +"</div>";
-					res +="<div class='sequenceAnswer' onClick='FS.gotoSequence("+myObj.answers[0].gotoID+")'>"+ myObj.answers[0].text +"</div>";
-					res +="<div class='sequenceAnswer' onClick='FS.gotoSequence("+myObj.answers[1].gotoID+")'>"+ myObj.answers[1].text +"</div>";
+					res +="<div class='sequenceAnswer videoQuestion' onClick='FS.gotoSequence("+myObj.answers[0].gotoID+")'>"+ myObj.answers[0].text +"</div>";
+					res +="<div class='sequenceAnswer videoQuestion' onClick='FS.gotoSequence("+myObj.answers[1].gotoID+")'>"+ myObj.answers[1].text +"</div>";
 					res +="</article></div>";
 				
 				break;
 				case "text":
 					res +="<div class='centered eleven columns'>";
-					res +="<article class='vimeo video videoBg'>";
-					res +="<div class='sequenceHeadline'>"+myObj.header +"</div>";
-					res +="<div class='sequenceText'>"+ myObj.content +"</div>";
+					res +="<article class=''>";
+					if  (myObj.header!=undefined) res +="<div class='sequenceHeadline'>"+myObj.header +"</div>";
+					if  (myObj.content!=undefined) res +="<div class='sequenceText'>"+ myObj.content +"</div>";
 					res +="</article></div>";
 				
 					
@@ -512,7 +516,7 @@ function addNodeComicSingle(nodeId) {
 		if (videos === undefined) {return "";}
 
 		FS.nrOfVideos = _.size(videos);
-	
+		
 
 		nrOfCols="eleven";
 		/*
@@ -549,8 +553,8 @@ function addNodeComicSingle(nodeId) {
 			else {
 				//KEEP ONLY THIS, SHOW ONLY ONE VIDEO AT A TIME ANYWAY
 				res +="<article class='vimeo video videoBg'>";
-				res +="<iframe id='iframe_"+i+"' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
-				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0&api=1&player_id=iframe_"+i+"' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
+				res +="<iframe id='iframe_0' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
+				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0&autoplay=1&api=1&player_id=iframe_0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
 				res +="</iframe>";
 
 			}
@@ -688,10 +692,10 @@ function addNodeComicSingle(nodeId) {
 
 		FS.currentNodeType = contentObj[nodeId].type;
 
-		var result = addNodeHeader() + addNodeTitle(nodeId,2);
+		var result = addNodeHeader(nodeId) + addNodeTitle(nodeId,2);
 		
 		switch (FS.currentNodeType) {
-			case "info":
+			case "info": case "video":
 				result  += addNodePreText(nodeId) + addNodeImages(nodeId) + addNodeVideos(nodeId) +  addNodePostText(nodeId);
 		   
 			break
@@ -836,20 +840,42 @@ function addNodeComicSingle(nodeId) {
 		} 
 	}
 
+	self.video_onSingleVideoFinish =function(id) {
+			var iframe = $('#iframe_0');
+   			if(iframe==undefined) return;
+			FS.video_player = $f(iframe);
+    	
+   			FS.video_player.removeEvent('ready');
+			FS.video_player.removeEvent('finish');
+			console.log("end of video");
+			FS.gotoNode(FS.currentNodeNr,1);
+	}
 
 	self.video_onFinish = function(id) {
 		  	
 		  	
 		  	 removeVideoListener();
 		  	 FS.currentSequence =  contentObj[FS.currentNodeNr].sequences[FS.currentSequence].gotoID;
+		   	 if ( FS.currentSequence!=undefined)  TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
+		  	 else {
+		  	 	if (contentObj[FS.currentNodeNr].callback!=undefined) {
+		  	 		exitChapter(contentObj[FS.currentNodeNr].callback);
+
+		  	 	}else {
+		  	 		FS.gotoNode(FS.currentNodeNr,1);
+		  	 	}
+		  	 }
 		  //	 console.log(FS.currentSequence);
 		  //	 console.log(addNodeVideoSequence(FS.currentNodeNr));
-		   TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
+		  
 			
 
 
 
 	}
+
+
+
 	function removeVideoListener() {
 	//	console.log("removeVideoListener " +FS.currentSequence );
    		var iframe = $('#iframe_'+FS.currentSequence)[0];
@@ -867,6 +893,14 @@ function addNodeComicSingle(nodeId) {
 		
 		
 	}
+	self.startSingleVideoListener = function () {
+		var iframe = $('#iframe_0');
+		FS.video_player = $f(iframe);
+    		
+		FS.video_player.addEvent('ready', function() {
+    		    FS.video_player.addEvent('finish',  FS.video_onSingleVideoFinish);
+		});
+	}
 
 	self.startVideoListener = function() {
 	//	console.log("startVideoListener " +FS.currentSequence );
@@ -876,13 +910,15 @@ function addNodeComicSingle(nodeId) {
    		FS.video_player = $f(iframe);
     	
    		// When the player is ready, add listeners for pause, finish, and playProgress
+		
 		FS.video_player.addEvent('ready', function() {
-    	
-    
+    		
   		//	FS.video_player.addEvent('pause',  FS.video_onPause);
 		    FS.video_player.addEvent('finish',  FS.video_onFinish);
-		//    FS.video_player.addEvent('playProgress',  FS.video_onPlayProgress);
+			
+		    		//    FS.video_player.addEvent('playProgress',  FS.video_onPlayProgress);
 		});
+	 
 
 		// Call the API when a button is pressed
 		$('button').bind('click', function() {
@@ -943,6 +979,9 @@ function addNodeComicSingle(nodeId) {
 			case "video_seq":
 				 FS.startVideoListener();
 			break;
+			case "video":
+				 FS.startSingleVideoListener();
+			break;
 			case "walloftext":
 				  startWallOfText(FS.IDWallOfText);
 				  FS.IDWallOfText=-1;
@@ -953,6 +992,8 @@ function addNodeComicSingle(nodeId) {
 			break;
 			case "hub":
 				checkToUnlockChapters();
+				showNextButton=-1;
+				$("#nextButton").fadeOut();	
 				startHUBAnimation();
 			break;
 
@@ -1053,7 +1094,19 @@ function addNodeComicSingle(nodeId) {
 		//REMOVE POSSIBILTY TO NAVIGATE FREELY
 		//	FS.checkArrows(FS.currentNodeNr);
 		FS.checkDebugArrows(FS.currentNodeNr);
+		
+
+		try
+ 		 {
+  			if (contentObj[oldNodeId].callback!=undefined) {
+  				
+  				exitChapter(contentObj[oldNodeId].callback);
+  				return;
+  			};
+		 }catch(err) {}
 	
+		
+
 		if (FS.DEBUG == "true") $("#nodeNrDebug").html("Node " + contentObj[FS.currentNodeNr].ID);
 
 		 clearTimeout(nextArrowTimeout);
@@ -1072,13 +1125,13 @@ function addNodeComicSingle(nodeId) {
 			$("#topleft-overlay").fadeIn();
 			$("#topleft-overlay").css("background-image","url("+activeCase.topLeftImage.url+")");
 		}
+
 		if (!FS.initComplete){  // Modernizr.touch || 
 			
 			maindiv.hide();
 				
 			onCompleteFadeoutNode(maindiv, FS.currentNodeNr , speed,"none");
 		}else {
-			
 			$("#nextButton").fadeOut();	
 			var animationType = contentObj[oldNodeId].animation; 
 			switch (animationType) {

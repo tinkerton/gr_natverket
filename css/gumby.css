@@ -1862,7 +1862,7 @@ h3, h4, h5, h6, p { text-align: left; }
 /* for explorer 7 only */
 .frameDecoration { padding-left: 60px; padding-right: 60px; }
 
-.videoBg { margin-top: 30px; margin-bottom: 50px; -webkit-box-shadow: inset 0px 0px 85px 10px rgba(0, 0, 0, 0.9); -moz-box-shadow: inset 0px 0px 85px 10px rgba(0, 0, 0, 0.9); box-shadow: inset 0px 0px 85px 10px rgba(0, 0, 0, 0.9); line-height: 0; /* ensure no space between bottom */ display: inline-block; /* don't go wider than image */ }
+.videoBg { margin-top: 90px; margin-bottom: 50px; -webkit-box-shadow: inset 0px 0px 85px 10px rgba(0, 0, 0, 0.9); -moz-box-shadow: inset 0px 0px 85px 10px rgba(0, 0, 0, 0.9); box-shadow: inset 0px 0px 85px 10px rgba(0, 0, 0, 0.9); line-height: 0; /* ensure no space between bottom */ display: inline-block; /* don't go wider than image */ }
 
 .blur1 { -webkit-filter: blur(1px); filter: blur(1px); }
 
@@ -2063,3 +2063,7 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 .comicActive { opacity: 1; padding-left: 0px; zoom: 1; }
 
 .comicSingleHeader { position: relative; width: 660px; height: 40px; padding: 5px; display: inline-block; background-color: rgba(0, 0, 0, 0.8); text-align: left; font-size: 18px; }
+
+.imgOfNode { width: 100%; }
+
+.videoQuestion { font-size: 1em; }
