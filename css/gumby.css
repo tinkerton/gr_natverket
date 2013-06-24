@@ -2067,3 +2067,5 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 .imgOfNode { width: 100%; }
 
 .videoQuestion { font-size: 1em; }
+
+.visitedChapter { background-color: rgba(90, 197, 189, 0.8); }

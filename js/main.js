@@ -371,15 +371,20 @@ function addNodeComicSingle(nodeId) {
 		
 		var myObj=contentObj[FS.currentNodeNr],
 			nrOfUnlocks = _.size(FS.unlockedChapters);
-		console.log( "checkToUnlockChapters " + nrOfUnlocks);
+		
 		for (var i=0; i<_.size(myObj.chapters); i++) {
 				if (myObj.chapters[i].lockeduntil<=nrOfUnlocks) {
 					$("#chapter_"+myObj.chapters[i].ID).removeClass("locked");
+					
+				}
 			
-			}
+					if (_.contains(FS.unlockedChapters, myObj.chapters[i].callback)) {
+						$("#chapter_"+i).addClass("visitedChapter");
+						
+					}
 			
 		}
-			console.log( "checkToUnlockChapters2 " + nrOfUnlocks);
+			
 	}
 
 	function exitChapter(nextHUB) {
@@ -1419,7 +1424,7 @@ Gumby.ready(function() {
 
 	//START CASE HERE - MAIN
 	FS.startCase(CaseIntro);
-	//FS.startCase(Case1g);
+	//FS.startCase(Case2_HUB);
 
 	$(document).on('click', '#nextButton', function() {
  		
