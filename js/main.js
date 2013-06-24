@@ -488,7 +488,7 @@ function addNodeComicSingle(nodeId) {
 					res +="<article class=''>";
 					res +="<div class='sequenceHeadline'>"+myObj.text +"</div>";
 					res +="<div class='sequenceAnswer videoQuestion' onClick='FS.gotoSequence("+myObj.answers[0].gotoID+")'>"+ myObj.answers[0].text +"</div>";
-					res +="<div class='sequenceAnswer videoQuestion' onClick='FS.gotoSequence("+myObj.answers[1].gotoID+")'>"+ myObj.answers[1].text +"</div>";
+					if(myObj.answers[1]!=undefined) res +="<div class='sequenceAnswer videoQuestion' onClick='FS.gotoSequence("+myObj.answers[1].gotoID+")'>"+ myObj.answers[1].text +"</div>";
 					res +="</article></div>";
 				
 				break;
@@ -1423,8 +1423,8 @@ Gumby.ready(function() {
 	FS.unlockedChapters = new Array();
 
 	//START CASE HERE - MAIN
-	FS.startCase(CaseIntro);
-	//FS.startCase(Case2_HUB);
+	//FS.startCase(CaseIntro);
+	FS.startCase(Case2_HUB);
 
 	$(document).on('click', '#nextButton', function() {
  		

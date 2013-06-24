@@ -44,11 +44,11 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"Intro, select case:",
 		/*"title":"SPECIALISERING",*/
-		"question":"~ * Vad vill du specialisera dig på som agent i Nätverket? * ~ ",
+		"question":"~ * Vilket case i Nätverket, vill du ta dig an? * ~ ",
 		"background":{"type":"image","url":"intro1.jpg"},
 		"answers":[
-							{"text":"- Jag vill sätta mig in på djupet om frågan om Trafficking","analysisLog":"1. CASE 1","callback":"Case1_HUB"},
-							{"text":"- Jag är mest intresserad av hur det här skulle kunna drabba mig i min vardag","analysisLog":"2. CASE 2","callback":"Case2_HUB"}
+							{"text":"- Case 1 - Varför trafficking?","analysisLog":"1. CASE 1","callback":"Case1_HUB"},
+							{"text":"- Case 2 - Bara på skoj?","analysisLog":"2. CASE 2","callback":"Case2_HUB"}
 				]
 		 ,
 		 "animation":"down",

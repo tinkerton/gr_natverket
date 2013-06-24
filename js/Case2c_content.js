@@ -2,34 +2,36 @@ var Case2c = (function(self){
 self.ID = {"text":"Case2c"};
 
 self.preload = {"images":
-[{"url":"bg.jpg"},
+[{"url":"bg3.jpg"},
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "2.c.0",
+	[{  "ID": "2.3",
 		"type":"chapter", 
-		"title":"Kapitel c - case2c",
-		"background":{"type":"image","url":"bg.jpg"},
+		"title":"Filmen om horan",
+		"background":{"type":"image","url":"bg3.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
+	{  	"ID": "2.3.1",
+		"type":"video_seq",
+		"background":{"type":"image","url":"bg3.jpg"},
+		"sequences":[
+
+			{
+				"sequenceID":"0",
+			 	"type":"video",
+			 	"url":"http://player.vimeo.com/video/68480322"
+			 }],
+			 "animation":"fade",
+			  "showNextButton":"1500",
+			 "callback":"Case2_HUB"
+			}
 	
-	{  	"ID": "1.c.END",
-		"type":"question", 
-		"analysisLog":"1.5 Reflektionsfråga kapitel 5",
-		"question":"Is this the end?",
-		"background":{"type":"image","url":"bg2.jpg"},
-		"answers":[
-							{"text":"- Yes","analysisLog":"1. Yes", "callback":"Case2_HUB"},
-							{"text":"- No","analysisLog":"2. No", "callback":"Case2_HUB"}
-				]
-		 ,
-		 "animation":"down",
-		 "showNextButton":"-1"
-	},
+
 
     ]
 };

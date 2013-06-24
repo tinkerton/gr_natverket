@@ -2,78 +2,104 @@ var Case2b = (function(self){
 self.ID = {"text":"Case2b"};
 
 self.preload = {"images":
-[{"url":"bg.jpg"},
+[{"url":"bg3.jpg"}
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "2.b.0",
+	[{  "ID": "2.2",
 		"type":"chapter", 
-		"title":"Kapitel - case2b",
-		"background":{"type":"image","url":"bg.jpg"},
+		"title":"Det som stod på Internet",
+		"background":{"type":"image","url":"bg3.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},
-	{  	"ID": "1.5.2",
-		"type":"comicparallel",
+	{  	"ID": "2.2.1",
+		"type":"agent",
+		"background":{"type":"image","url":"bg3.jpg"},
+		"text":"~ * Intro till Det som stod på Internet * ~",
+		"animation":"fade",
+		"showNextButton":"0"
+			
+	}, 
+	{  "ID": "2.2.2",
+		"type":"chapter", 
+		"title":"Mikaelas youtube",
+		"background":{"type":"image","url":"bg3.jpg"},
+		 "animation":"left",
+		 "showNextButton":"0"
+	},
+	{  	"ID": "2.2.3",
+		"type":"video_seq",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"comicparallel" : [	{"slide": 
-								{"url":"1.5.2_horan1.png",
-								"text":"8.00"},
-					},
-					{"slide": 
-								{"url":"1.5.2_horan2.png",
-								"text":"9.00"},
-					},
-					{"slide": 
-								{"url":"1.5.2_horan3.png",
-								"text":"10.00"},
-					},
-					{"slide": 
-								{"url":"1.5.2_horan4.png",
-								"text":"11.00"},
-					},
-					{"slide": 
-								{"url":"1.5.2_horan5.png",
-								"text":"12.00"},
-								},
-					{"slide": 
-								{"url":"1.5.2_horan6.png",
-								"text":"13.00"},
-								},
-					{"slide": 
-								{"url":"1.5.2_horan7.png",
-								"text":"14.00"},
-								},
-					{"slide": 
-								{"url":"1.5.2_horan8.png",
-								"text":"15.00"},
-					}
-										  	
-		],
-		"comic_row_height":"273px",
-		 "animation":"fade",
-		 "showNextButton":"1500"
-	
+		"sequences":[
+
+			{
+				"sequenceID":"0",
+			 	"type":"video",
+			 	"url":"http://player.vimeo.com/video/68693255"
+			 }],
+			 "animation":"down",
+			  "showNextButton":"1500"
+		 
 	},
 	
-	{  	"ID": "1.c.END",
+
+	{  	"ID": "2.2.4",
+		"type":"info",
+		"size":"twelve",
+		"background":{"type":"image","url":"bg4.jpg"},
+		"pretext":"<br/>",
+		"posttext":"<br/>",
+		"image": [
+			{"url":"2.1.1_facebook.png"} 
+		],
+		 "animation":"left",
+		  "showNextButton":"1000"
+
+			
+	},  
+	{  	"ID": "2.2.5",
+		"type":"info",
+		"size":"twelve",
+		"background":{"type":"image","url":"bg4.jpg"},
+		"pretext":"<br/>",
+		"posttext":"<br/>",
+		"image": [
+			{"url":"2.2.1_forumet.png"} 
+		],
+		 "animation":"right",
+		  "showNextButton":"1000"
+			
+	},  
+
+
+	{  	"ID": "2.2.6",
 		"type":"question", 
-		"analysisLog":"1.5 Reflektionsfråga kapitel 5",
-		"question":"Is this the end?",
-		"background":{"type":"image","url":"bg2.jpg"},
+		"analysisLog":"2.2.6 Fråga kapitel 2, Case 2",
+		"question":"Fråga?",
+		"background":{"type":"image","url":"bg3.jpg"},
 		"answers":[
-							{"text":"- Yes","analysisLog":"1. Yes", "callback":"Case2_HUB"},
-							{"text":"- No","analysisLog":"2. No", "callback":"Case2_HUB"}
+							{"text":"- svar 1","analysisLog":"1. Svar 1"},
+							{"text":"-svar 2","analysisLog":"2. Svar 2"}
 				]
 		 ,
-		 "animation":"down",
+		 "animation":"left",
 		 "showNextButton":"-1"
 	},
-
-    ]
+	
+	{  	"ID": "2.2.7",
+		"type":"agent",
+		"background":{"type":"image","url":"bg3.jpg"},
+		"text":"~ * Svar till frågan * ~",
+		"animation":"fade",
+		"showNextButton":"0",
+		"callback":"Case2_HUB"
+			
+	}
+]
 };
 
 
