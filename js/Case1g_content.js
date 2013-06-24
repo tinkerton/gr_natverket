@@ -25,7 +25,7 @@ self.nodes = {"content":
 		"showNextButton":"0"
 			
 	},
-	{  	"ID": "1.¨7.2",
+	{  	"ID": "1.7.2",
 		"type":"comicparallel",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"comicparallel" : [	{"slide": 
@@ -81,8 +81,8 @@ self.nodes = {"content":
 		],
 		"comic_row_height":"273px",
 		 "animation":"fade",
-		 "showNextButton":"1500"
-	
+		 "showNextButton":"1500",
+		"callback":"OUTRO"
 	},
 
     ]

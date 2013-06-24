@@ -168,12 +168,12 @@ function startComicSingle(nrOfSlides) {
 			winHeight= $(window).height()/4;
 	}
 		if (myObj.url3 !=undefined) {
-			comicHeight =200;
-			winHeight= $(window).height()/3;
+			comicHeight =225;
+			winHeight= $(window).height()/3 -30;
 	}
 		if (myObj.url4 !=undefined) {
 			comicHeight =185;
-			winHeight= $(window).height()/3;
+			winHeight= $(window).height()/3 -30;
 		}
 
 		TweenMax.to($("#comicScroller"),0,{top:winHeight});
@@ -1099,9 +1099,12 @@ function addNodeComicSingle(nodeId) {
 		try
  		 {
   			if (contentObj[oldNodeId].callback!=undefined) {
+  				if (contentObj[oldNodeId].callback=="OUTRO") window.location = "outro.html";
+  				else {
+  					exitChapter(contentObj[oldNodeId].callback);
+  					return;	
+  				}	
   				
-  				exitChapter(contentObj[oldNodeId].callback);
-  				return;
   			};
 		 }catch(err) {}
 	
@@ -1416,7 +1419,7 @@ Gumby.ready(function() {
 
 	//START CASE HERE - MAIN
 	FS.startCase(CaseIntro);
-	//FS.startCase(Case1_HUB);
+	//FS.startCase(Case1g);
 
 	$(document).on('click', '#nextButton', function() {
  		

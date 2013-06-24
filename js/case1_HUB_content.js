@@ -91,7 +91,7 @@ self.nodes = {"content":
 								"callback":"Case1f"},
 							{"text":"En vanlig dag", 
 								"ID":"6",
-								"lockeduntil":"6", 
+								"lockeduntil":"0", 
 								"width":"165px", "height":"150px",
 								 "left":"49%", "top":"52%", 
 								 "paddingtop":"12px",
