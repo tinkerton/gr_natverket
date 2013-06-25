@@ -82,7 +82,7 @@ self.nodes = {"content":
 	{  	"ID": "1.6.5",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ *  Jag hoppas detta har varit ett givande träningsprogram för dig. Nu är det dags för dig att återvända till verkligeheten och de utmaningar som väntar dig där. Hälsningar, S. * ~",
+		"text":"~ *  Jag hoppas detta har varit ett givande träningsprogram för dig. Nu är det dags för dig att återvända till verkligheten  och de utmaningar som väntar dig där. Hälsningar, S. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"OUTRO"
