@@ -20,17 +20,10 @@ self.nodes = {"content":
 	{  	"ID": "1.5.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Nu ska du få veta mer om hur polisväsende arbetar mot trafficking. * ~",
+		"text":"~ * Nu ska du få veta mer om hur polisen arbetar mot trafficking. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
-	}, 
-	{  "ID": "1.5.2",
-		"type":"info", 
-		"title":"Intervju med polisen",
-		"background":{"type":"image","url":"bg4.jpg"},
-		 "animation":"fade",
-		 "showNextButton":"0"
 	},
 	{  	"ID": "1.5.3",
 		"type":"video_seq",
@@ -93,62 +86,63 @@ self.nodes = {"content":
      	"animation":"left",
 		 "showNextButton":"-1"
 	},
-	{  "ID": "1.5.4",
-		"type":"info", 
-		"title":"Intervju med granne",
-		"background":{"type":"image","url":"bg4.jpg"},
-		 "animation":"fade",
-		 "showNextButton":"0"
-	},
+	{  	"ID": "1.5.4",
+		"type":"agent",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Du får nu möjlighet att ställa några frågor till ett vittne som ringde polisen angående ett misstänkt fall av trafficking. * ~",
+		"animation":"fade",
+		"showNextButton":"0"
+			
+	}, 
 	{  	"ID": "1.5.5",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"sequences":[
 
-		/*	{
+		{
 				"sequenceID":"0",
 			 	"type":"video",
-			 	"url":"http://player.vimeo.com/video/68434439",
+			 	"url":"http://player.vimeo.com/video/68480172",
 			 	 "gotoID":"1"
-			 },*/
+			 },
 			{
-				"sequenceID":"0",
+				"sequenceID":"1",
 				"type":"question",
 				"text":"Ställ en fråga:",
 				"answers":[
-							{"text":"-Kan du berätta något om vad du märkt av det som skedde här?", "gotoID":"1"},
-							{"text":"-Vad var det som gjorde dig misstänksam?", "gotoID":"2"}
+							{"text":"-Kan du berätta något om vad du märkt av det som skedde här?", "gotoID":"2"},
+							{"text":"-Vad var det som gjorde dig misstänksam?", "gotoID":"3"}
 				]
-			},
-			{	
-				"sequenceID":"1",
-				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68480173",
-			 	 "gotoID":"3"//4
 			},
 			{	
 				"sequenceID":"2",
 				"type":"video",
+			 	"url":"http://player.vimeo.com/video/68480173",
+			 	 "gotoID":"4"//4
+			},
+			{	
+				"sequenceID":"3",
+				"type":"video",
 			 	"url":"http://player.vimeo.com/video/68480174",
-			 	 "gotoID":"3"//4
+			 	 "gotoID":"4"//4
 			},
 			{
-				"sequenceID":"3",
+				"sequenceID":"4",
 				"type":"question",
 				"text":"Ställ en fråga:",
 				"answers":[
-							{"text":"-Ringde du polisen?", "gotoID":"4"},
-							{"text":"-Varför tog det så lång tid innan du ringde?", "gotoID":"5"}
+							{"text":"-Ringde du polisen?", "gotoID":"5"},
+							{"text":"-Varför tog det så lång tid innan du ringde?", "gotoID":"6"}
 				]
 			},
 			{	
-				"sequenceID":"4",
+				"sequenceID":"5",
 				"type":"video",
 			 	"url":"http://player.vimeo.com/video/68480175",
 			 	// "gotoID":"7"
 			},
 			{	
-				"sequenceID":"5",
+				"sequenceID":"6",
 				"type":"video",
 			 	"url":"http://player.vimeo.com/video/68480177",
 			 //	 "gotoID":"7"
