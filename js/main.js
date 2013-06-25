@@ -75,7 +75,9 @@ var FS = (function(self){
 
 	function setnewBG(url) {
 		$(".backstretch").remove();
-		$.backstretch("../img/"+url);
+	
+	
+		$.backstretch("img/"+url);
 	}
 
 	function setupBackground(nodeId) {
@@ -94,7 +96,7 @@ var FS = (function(self){
 		switch(contentObj[nodeId].background.type) {
 			case "video":
 				if (Modernizr.touch) {
-    				$.backstretch("../img/"+contentObj[nodeId].background.ipadBG);
+    				$.backstretch("img/"+contentObj[nodeId].background.ipadBG);
     				$(".backstretch").show();
 		
 
@@ -113,7 +115,7 @@ var FS = (function(self){
 			}
 		}
 		else {
-			$.backstretch("../img/"+oldBackground);
+			$.backstretch("img/"+oldBackground);
 		}
 		
 		

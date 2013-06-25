@@ -62,7 +62,7 @@ self.nodes = {"content":
 			{	
 				"sequenceID":"3",
 				"type":"video",
-				"url":"http://player.vimeo.com/video/68641204x", //alt 1.2  //SAKNAS
+				"url":"http://player.vimeo.com/video/69065952", //alt 1.2 
 			 	 "gotoID":"4"
 			},
 			{
