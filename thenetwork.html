@@ -54,7 +54,10 @@
   <!-- Grab Google CDN's jQuery, fall back to local if offline -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.1.min.js"><\/script>')</script>
+    
   
+
+
   <!--                  
  <script src="js/libs/plugins.js"></script> 
   <script src="js/libs/jquery.imagesloaded.min.js"></script> 
@@ -102,13 +105,15 @@
     $(function(){
     $("#prevButton").hide();
     $("#nextButton").hide();
-
+/*
      $.ajaxSetup({
         cache: true
      });
+   */
      loadScripts=new Array();
     var completedLoads = 0;
     var sizeOfScripts = 0;
+    console.log("kom hit 1 ");
      loadScripts =[ "js/libs/plugins.js", 
                     "js/libs/jquery.imagesloaded.min.js",
                     "js/libs/backstretch.js",
@@ -116,37 +121,44 @@
                     "js/libs/gs/plugins/CSSPlugin.min.js",
                     "js/libs/gs/easing/EasePack.min.js",
                     "js/libs/gs/TweenMax.min.js",
-                    "js/libs/gumby.min.js",
-                    "js/CaseIntro_content.js?q=1",
-                    "js/Case1_HUB_content.js?q=1",
-                    "js/Case1a_content.js?q=1",
-                    "js/Case1b_content.js?q=1",
-                     "js/Case1c_content.js?q=1",
-                    "js/Case1d_content.js?q=1",
-                      "js/Case1e_content.js?q=1",
-                    "js/Case1f_content.js?q=1",
-                      "js/Case1g_content.js?q=1",
-                    "js/Case2_HUB_content.js?q=1",
-                    "js/Case2a_content.js?q=1",
-                    "js/Case2b_content.js?q=1",
-                      "js/Case2c_content.js?q=1",
-                    "js/Case2d_content.js?q=1",
-                      "js/Case2e_content.js?q=1",
-                    "js/Case2f_content.js?q=1",
-                      "js/Case2g_content.js?q=1",
-                    "js/main.js"];
+                    "js/libs/gumby.min.js", 
+                    "js/CaseIntro_content.js",
+                    "js/Case1_HUB_content.js",
+                    "js/Case1a_content.js",
+                    "js/Case1b_content.js",
+                     "js/Case1c_content.js",
+                    "js/Case1d_content.js",
+                      "js/Case1e_content.js",
+                    "js/Case1f_content.js",
+                      "js/Case1g_content.js",
+                    "js/Case2_HUB_content.js",
+                    "js/Case2a_content.js",
+                    "js/Case2b_content.js",
+                      "js/Case2c_content.js",
+                    "js/Case2d_content.js",
+                      "js/Case2e_content.js",
+                    "js/Case2f_content.js",
+                      "js/Case2g_content.js",
+                      "js/main.js"
+                    
+                   ];
 
       $('#main_div').append('<div id="loading-spinner">LADDAR</div>');
      
     sizeOfScripts = _.size(loadScripts);
      while (_.size(loadScripts)>0) {
 
-       $.getScript(loadScripts.shift()).done(function(script, textStatus) {
+       $.getScript(loadScripts.shift())
+        .done(function(script, textStatus) {
                  completedLoads++;
+                  console.log(completedLoads + " " +sizeOfScripts );
                  var percent = parseInt(completedLoads/sizeOfScripts*100,0);
                   $('#loading-spinner').html("LADDAR<br/>"+percent +"%");
                  if (completedLoads == sizeOfScripts) startApplication();
-          });
+          })
+       .fail(function(jqxhr, settings, exception) {
+       console.log(settings + " " + exception );
+      });
 
       }
 
