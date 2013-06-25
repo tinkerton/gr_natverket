@@ -19,19 +19,19 @@ self.nodes = {"content":
 	{  	"ID": "2.7.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * James och Samuel dömdes till fängelsestraff för våldtäkt, kränkning och köp av sex mot ersättning. Det har nu gått ett år sen våldtäkten. Du ska nu få träffa Mikaelas pappa och James. * ~",
+		"text":"~ * James och Samuel dömdes till fängelsestraff för våldtäkt, kränkning och köp av sex mot ersättning. Det har nu gått ett år sen våldtäkten. Du ska nu få träffa Mikaelas pappa. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 			
 	}, 
 
-	{  "ID": "2.7.2",
+	/*{  "ID": "2.7.2",
 		"type":"info", 
 		"title":"Intervju med Mikaelas pappa",
 		"background":{"type":"image","url":"bg3.jpg"},
 		 "animation":"left",
 		 "showNextButton":"0"
-	},
+	},*/
 
 	{  	"ID": "2.7.3",
 		"type":"video_seq",
@@ -116,14 +116,21 @@ self.nodes = {"content":
      	"animation":"left",
 		 "showNextButton":"-1"
 	},
-
-{  "ID": "2.7.4",
+	{  	"ID": "2.7.4",
+		"type":"agent",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Du ska nu få ställa några frågor till James. * ~",
+		"animation":"fade",
+		"showNextButton":"0"
+			
+	}, 
+/*{  "ID": "2.7.4",
 		"type":"info", 
 		"title":"Intervju med James",
 		"background":{"type":"image","url":"bg3.jpg"},
 		 "animation":"left",
 		 "showNextButton":"0"
-	},
+	},*/
 
 	{  	"ID": "2.7.5",
 		"type":"video_seq",
@@ -266,16 +273,20 @@ self.nodes = {"content":
 		 "showNextButton":"-1"
 	},
 
-
-
-	{  	"ID": "2.7.4",
+	{  	"ID": "2.7.5",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ *  Nu har du avslutat din utbildning och är redo att agera som agent i Nätverket - ute i verkligheten. Återkom gärna ifall du vill ta del av vårt andra träningsprogram, eller om du vill ta del av detta program en gång till. * ~",
+		"text":"~ *  Detta var den sista noden i träningsprogrammet Bara på skoj? Du är nu redo att vara agent i Nätverket.<br/>Det är förståeligt om du nu har fler frågor än innan, och många funderingar kring de här sakerna. Det är en naturlig reaktion och en viktig del av att vara agent - att tänka och reflektera. * ~",
+		"animation":"fade",
+		"showNextButton":"0",
+	}, 
+	{  	"ID": "2.7.6",
+		"type":"agent",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ *  Jag hoppas detta har varit ett givande träningsprogram för dig. Nu är det dags för dig att återvända till verkligheten  och de utmaningar som väntar dig där. Hälsningar, S. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"OUTRO"
-			
 	}, 
 
     ]

@@ -56,13 +56,21 @@ self.nodes = {"content":
 		 "showNextButton":"1500"
 	
 	},
-	{  "ID": "2.6.3",
+	/*{  "ID": "2.6.3",
 		"type":"info", 
 		"title":"Förhör i en rättsal",
 		"background":{"type":"image","url":"bg3.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
+	{  	"ID": "2.6.3",
+		"type":"agent",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Här följer förhör i rättsalen med James och Samuel. * ~",
+		"animation":"fade",
+		"showNextButton":"0"
+			
+	}, 
 	{  	"ID": "2.6.4",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg3.jpg"},
@@ -312,7 +320,7 @@ self.nodes = {"content":
 	{  	"ID": "2.6.6",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * När det finns olika versioner av samma händelse är det svårt att veta vem man ska lita på. Om sex är ömsesidigt ska det finnas en bra kommunikation mellan alla som är med, och då riskerar man inte att någon far illa. * ~",
+		"text":"~ * När det finns olika versioner av samma händelse är det svårt att veta vem man ska lita på. Om sex är ömsesidigt ska det finnas en bra kommunikation mellan alla som är med, och då riskerar ingen att fara illa. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"Case2_HUB"

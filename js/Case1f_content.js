@@ -76,7 +76,6 @@ self.nodes = {"content":
 		"text":"~ *  Detta var den sista noden i träningsprogrammet Varför trafficking? Du är nu redo att vara agent i Nätverket.<br/>Det är förståeligt om du nu har fler frågor än innan, och många funderingar kring de här sakerna. Det är en naturlig reaktion och en viktig del av att vara agent - att tänka och reflektera. * ~",
 		"animation":"fade",
 		"showNextButton":"0",
-		"callback":"OUTRO"
 	}, 
 
 	{  	"ID": "1.6.5",

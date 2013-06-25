@@ -23,7 +23,19 @@ self.nodes = {"content":
 		/*"image": [
 			{"url":"1.1.2_bordell.png"} 
 		],*/
-		"text":"~ * Välkommen till Nätverkets träningsprogram för nya agenter. Varje dag sker kränkningar och brott ute i samhället. Även här hemma i Sverige. Att vara agent handlar om att lära sig känna igen dessa situationer, och stå upp för rättvisa, mänskliga rättigheter och schyssta värderingar.<br/>Genom att du och många fler väljer att bli agenter kan vi tillsammans kan se till att dessa brott går till historien och aldrig mer upprepas.  * ~",
+		"text":"~ * Välkommen till Nätverkets träningsprogram för nya agenter. Mitt namn, liksom ditt och alla andra agenters, är hemligt. Kanske kan du gissa vilka de övriga är? Vi håller kontakten via olika kanaler, men oftast är vi anonyma. <br> <br>Här kallar jag mig för S. * ~",
+		"music":"music/bridgeofsighs",
+     	"animation":"fade",
+		"showNextButton":"1500"
+			
+	}, 
+	{  	"ID": "INTRO.3",
+		"type":"agent",
+		"background":{"type":"image","url":"intro2.jpg"},
+		/*"image": [
+			{"url":"1.1.2_bordell.png"} 
+		],*/
+		"text":"~ * Varje dag sker kränkningar och brott ute i samhället. Även här hemma i Sverige. Att vara agent handlar om att lära sig känna igen dessa situationer, och stå upp för rättvisa, mänskliga rättigheter och schyssta värderingar. * ~",
 		"music":"music/bridgeofsighs",
      	"animation":"fade",
 		"showNextButton":"1500"
@@ -33,7 +45,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"Intro, select case:",
 		/*"title":"SPECIALISERING",*/
-		"question":"~ * Du ska nu välja ett av två tränignsprogram. I programmet Varför trafficking? lär du dig om trafficking och hur det sker, varje dag, i Sverige och Europa. I programmet Bara på skoj? lär du dig om sexuella kränkningar i verkligheten och på internet. Personerna som det berättelserna handlar om är påhittade, men all fakta kommer från verkligheten. * ~ ",
+		"question":"~ * Du ska nu välja ett av två tränignsprogram. I programmet Varför trafficking? lär du dig om trafficking och hur det sker, varje dag, i Sverige och Europa. I programmet Bara på skoj? lär du dig om sexuella kränkningar i verkligheten och på internet. Personerna som berättelserna handlar om är påhittade, men all fakta kommer från verkligheten. <br><br> Lycka till i träningsprogrammet. Hälsningar S. * ~ ",
 		"background":{"type":"image","url":"intro1.jpg"},
 		"answers":[
 							{"text":"1 - Varför trafficking?","analysisLog":"1. CASE 1","callback":"Case1_HUB"},
