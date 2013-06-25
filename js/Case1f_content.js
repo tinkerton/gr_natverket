@@ -62,16 +62,31 @@ self.nodes = {"content":
 		 "animation":"left",
 		 "showNextButton":"-1"
 	},
-	
-	{  	"ID": "1.6.5",
+	{  	"ID": "1.6.6",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"text":"~ * När personer räddats ur trafficking reser tillbaka till sitt hemland är risken stor att de åter igen fångas av samma nätverk. * ~",
 		"animation":"fade",
+		"showNextButton":"0"
+	},
+
+	{  	"ID": "1.6.5",
+		"type":"agent",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ *  Detta var den sista noden i träningsprogrammet Varför trafficking? Du är nu redo att vara agent i Nätverket.<br/>Det är förståeligt om du nu har fler frågor än innan, och många funderingar kring de här sakerna. Det är en naturlig reaktion och en viktig del av att vara agent - att tänka och reflektera. * ~",
+		"animation":"fade",
 		"showNextButton":"0",
-		"callback":"Case1_HUB"
-			
-	}
+		"callback":"OUTRO"
+	}, 
+
+	{  	"ID": "1.6.5",
+		"type":"agent",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ *  Jag hoppas detta har varit ett givande träningsprogram för dig. Nu är det dags för dig att återvända till verkligeheten och de utmaningar som väntar dig där. Hälsningar, S. * ~",
+		"animation":"fade",
+		"showNextButton":"0",
+		"callback":"OUTRO"
+	}, 
 
     ]
 };
