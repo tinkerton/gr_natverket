@@ -24,13 +24,13 @@ self.nodes = {"content":
 		"showNextButton":"0"
 			
 	}, 
-	{  "ID": "2.2.2",
+	/*{  "ID": "2.2.2",
 		"type":"info", 
 		"title":"Mikaelas youtube",
 		"background":{"type":"image","url":"bg3.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "2.2.3",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg3.jpg"},

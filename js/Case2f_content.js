@@ -229,7 +229,7 @@ self.nodes = {"content":
 				"text":"Advokaten frågar",
 				"answers":[
 							{"text":"- James, kan du beskriva vad det var som hände? ", "gotoID":"19"},
-							{"text":"- James, kan du berätta om vems idé det var att ni skulle ha sex?", "gotoID":"19"}
+							{"text":"- James, kan du berätta om vems idé det var att ni skulle ha sex?", "gotoID":"20"}
 				]
 			},
 							{	
@@ -251,8 +251,8 @@ self.nodes = {"content":
 				"type":"question",
 				"text":"Åklagaren frågar",
 				"answers":[
-							{"text":"- Samuel, hade Mikaela på något sätt uttryckt att hon ville att du skulle filma när ni hade sex?", "gotoID":"21"},
-							{"text":"- Samuel, hade Mikaela på något sätt uttryckt att hon ville att du skulle publicera filmen på internet?", "gotoID":"22"}
+							{"text":"- Samuel, hade Mikaela på något sätt uttryckt att hon ville att du skulle filma när ni hade sex?", "gotoID":"22"},
+							{"text":"- Samuel, hade Mikaela på något sätt uttryckt att hon ville att du skulle publicera filmen på internet?", "gotoID":"23"}
 				]
 			},
 							{	

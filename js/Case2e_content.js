@@ -111,7 +111,7 @@ self.nodes = {"content":
 	{  	"ID": "2.5.4",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Kuratorns försöker få Mikaela att känna att hon inte ska ta så allvarligt på det som hände, och får det att låta som att det var lika mycket Mikaelas fel som Samuel och James. * ~",
+		"text":"~ * Kan det vara så att kuratorn genom det hon säger till Mikaela, får det att låta som att det var lika mycket Mikaelas fel som Samuel och James? * ~",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"Case2_HUB"
