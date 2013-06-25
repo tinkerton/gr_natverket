@@ -2,7 +2,7 @@ var Case1e = (function(self){
 self.ID = {"text":"Case1e"};
 
 self.preload = {"images":
-[{"url":"bg4.jpg"},
+[{"url":""}
 ]
 };
 
@@ -10,13 +10,13 @@ self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 
 self.nodes = {"content": 
-	[{  "ID": "1.5",
+	[/*{  "ID": "1.5",
 		"type":"chapter", 
 		"title":"Polisens arbete",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "1.5.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},

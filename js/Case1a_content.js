@@ -2,20 +2,20 @@ var Case1a = (function(self){
 self.ID = {"text":"Case1a"};
 
 self.preload = {"images":
-[{"url":"bg.jpg"}
+[{"url":""}
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "1.1",
+	[/*{  "ID": "1.1",
 		"type":"chapter", 
 		"title":"Vad är trafficking?",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "1.1.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
@@ -27,6 +27,7 @@ self.nodes = {"content":
 	{  	"ID": "1.1.2",
 		"type":"info",
 		"background":{"type":"image","url":"bg4.jpg"},
+		"size":"twelve",
 		"image": [
 			{"url":"1.2.1_macrostatistik.png"} 
 		],
@@ -38,6 +39,7 @@ self.nodes = {"content":
 	{  	"ID": "1.1.3",
 		"type":"info",
 		"background":{"type":"image","url":"bg4.jpg"},
+		"size":"twelve",
 		"image": [
 			{"url":"1.2.2_microstatistik.png"} 
 		],

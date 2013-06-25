@@ -1,8 +1,7 @@
 var CaseIntro = (function(self){
 self.ID = {"text":"CaseIntro"};
 self.preload = {"images":
-[{"url":"case_color_splash2.png"},
-{"url":"intro1.jpg"},
+[{"url":"intro1.jpg"},
 {"url":"intro2.jpg"},
 {"url":"bg-case-1.jpg"},
 {"url":"bg-case-2.jpg"}

@@ -2,20 +2,20 @@ var Case2f = (function(self){
 self.ID = {"text":"Case2f"};
 
 self.preload = {"images":
-[{"url":"bg.jpg"},
+[{"url":""}
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "2.6",
+	[/*{  "ID": "2.6",
 		"type":"chapter", 
 		"title":"Skilda sanningar",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "2.6.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
@@ -65,7 +65,7 @@ self.nodes = {"content":
 	},
 	{  	"ID": "2.6.4",
 		"type":"video_seq",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"bg3.jpg"},
 		"sequences":[
 
 		/*	{

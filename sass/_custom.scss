@@ -2,7 +2,9 @@
 
 $overlayHeight: 65px;
 $maintextColor: #FFF;
-
+html{
+  background: #000;
+}
 body {
 	color: $maintextColor;
   background: #000;
@@ -43,7 +45,7 @@ padding:50px 0px 30px 0px;
   position: absolute;
   width: 100%;
   height: 100%;
-
+  z-index:10;
   left:0;
   top:0;
   text-align: center;
@@ -58,7 +60,7 @@ padding:50px 0px 30px 0px;
 
 #outer[id] {
       display: table;
-      position: static;
+   /*   position: static;*/
 }
 
 #middle {
@@ -303,7 +305,7 @@ border-radius: 0em 1em 1em 0em;
 }
 #pattern-overlay {
   position: absolute;
-  z-index:-20;
+  z-index:5;
 background: url(../img/grid.png);
 background-repeat: repeat;
 top: 0px;
@@ -318,7 +320,7 @@ opacity: 0.4;
 
 #topleft-overlay {
  position: absolute;
-z-index:10;
+z-index:30;
 /*background: url(../img/case_color_splash.png);*/
 background-repeat: no-repeat;
 top: 0px;

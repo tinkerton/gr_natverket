@@ -2,20 +2,20 @@ var Case2e = (function(self){
 self.ID = {"text":"Case2e"};
 
 self.preload = {"images":
-[{"url":"bg.jpg"},
+[{"url":""}
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "2.5",
+	[/*{  "ID": "2.5",
 		"type":"chapter", 
 		"title":"Mikaelas samtal med kuratorn",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "2.5.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},

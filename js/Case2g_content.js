@@ -2,20 +2,20 @@ var Case2g = (function(self){
 self.ID = {"text":"Case2g"};
 
 self.preload = {"images":
-[{"url":"bg.jpg"},
+[{"url":""}
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "2.7",
+	[/*{  "ID": "2.7",
 		"type":"chapter", 
 		"title":"Ett år senare",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "2.7.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},

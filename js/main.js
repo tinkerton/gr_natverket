@@ -641,6 +641,7 @@ function addNodeComicSingle(nodeId) {
 
 	}
 	function addNodeMusic(nodeId) {
+		return;
 		var res ="",
 			musicURL = contentObj[nodeId].music ;
 		if ( musicURL== undefined) return "";
@@ -1048,7 +1049,7 @@ function addNodeComicSingle(nodeId) {
 	
 		if (!FS.initComplete){ // ||(Modernizr.touch 
 			FS.initComplete = true;
-			maindiv.show();
+			maindiv.fadeIn('slow');
 			startNode();
 		}else {
 			switch (animationType) {
@@ -1138,12 +1139,13 @@ function addNodeComicSingle(nodeId) {
 		FS.setUpThumbs();
 		var nType = contentObj[FS.currentNodeNr].type;
 
-		if (!(nType=="chapter" || nType=="question")) $("#topleft-overlay").fadeOut();
+		/*if (!(nType=="chapter" || nType=="question")) $("#topleft-overlay").fadeOut();
 		else  {
 		
 			$("#topleft-overlay").fadeIn();
 			$("#topleft-overlay").css("background-image","url("+activeCase.topLeftImage.url+")");
 		}
+		*/
 
 		if (!FS.initComplete){  // Modernizr.touch || 
 			
@@ -1299,6 +1301,7 @@ function addNodeComicSingle(nodeId) {
 
 	self.preloadImages = function() {
 		var nrOfImages = _.size(activeCase.preload.images);
+		if (activeCase.preload.images[0].url=="") return;
 		var prelObj = $("#js-preload");
 		var res ="";
 
@@ -1392,44 +1395,23 @@ function addNodeComicSingle(nodeId) {
 
 
 
-
-
-
-
-
-
-
-	return self;
-
-})({});
-
-
-
-// Gumby is ready to go
-Gumby.ready(function() {
-	console.log('Gumby is ready to go...', Gumby.debug());
-
-	// placeholder polyfil
-	if(Gumby.isOldie || Gumby.$dom.find('html').hasClass('ie9')) {
-		$('input, textarea').placeholder();
-	}
-
-		
+	self.startMain = function() {
+		console.log("START MAIN");
 		$("#prevButton").hide();
 		
 		//SET TO TRUE TO ENABLE DEBUG MODE FOR FEEDBACK
-		FS.DEBUG = "false";
-		if (params.debug ==1) FS.DEBUG = "true";
+	DEBUG = "false";
+		if (params.debug ==1) DEBUG = "true";
 
-		if (FS.DEBUG == "false") {
+		if (DEBUG == "false") {
 			$("#case-nav-wrapper").hide();
 			$("#debugNextButton").hide();
 			$("#debugPrevButton").hide();
 		}
 
-	BV = new $.BigVideo();
-	BV.init();
-
+	//BV = new $.BigVideo();
+	//BV.init();
+ 
 	FS.globalAnimation = 0;
 	FS.unlockedChapters = new Array();
 
@@ -1481,9 +1463,34 @@ Gumby.ready(function() {
 		//FS.setUpThumbs();
 		FS.resize();
 	});
-	
+}
+
+
+
+
+
+
+	return self;
+
+})({});
+
+
+
+// Gumby is ready to go
+Gumby.ready(function() {
+	console.log('Gumby is ready to go...', Gumby.debug());
+
+	// placeholder polyfil
+	if(Gumby.isOldie || Gumby.$dom.find('html').hasClass('ie9')) {
+		$('input, textarea').placeholder();
+	}
+
+
+
+
 
 });
+
 
 
 

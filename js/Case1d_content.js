@@ -2,20 +2,20 @@ var Case1d = (function(self){
 self.ID = {"text":"Case1d"};
 
 self.preload = {"images":
-[{"url":"bg4.jpg"},
+[{"url":""}
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "1.4",
+	[/*{  "ID": "1.4",
 		"type":"chapter", 
 		"title":"Människorna som säljs",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "1.4.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},

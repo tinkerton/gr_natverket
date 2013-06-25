@@ -2,20 +2,20 @@ var Case2a = (function(self){
 self.ID = {"text":"Case2a"};
 
 self.preload = {"images":
-[{"url":"bg3.jpg"}
+[{"url":""}
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "2.1",
+	[/*{  "ID": "2.1",
 		"type":"chapter", 
 		"title":"Det som skrevs i tidningen",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "2.1.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},

@@ -2,7 +2,7 @@ var Case1f = (function(self){
 self.ID = {"text":"Case1f"};
 
 self.preload = {"images":
-[{"url":"bg4.jpg"},
+[{"url":""}
 ]
 };
 
@@ -10,13 +10,13 @@ self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 
 self.nodes = {"content": 
-	[{  "ID": "1.6",
+	[/*{  "ID": "1.6",
 		"type":"chapter", 
 		"title":"Vad händer efteråt?",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "1.6.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},

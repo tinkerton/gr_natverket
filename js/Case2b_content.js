@@ -2,20 +2,20 @@ var Case2b = (function(self){
 self.ID = {"text":"Case2b"};
 
 self.preload = {"images":
-[{"url":"bg3.jpg"}
+[{"url":""}
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "2.2",
+	[/*{  "ID": "2.2",
 		"type":"chapter", 
 		"title":"Det som stod på Internet",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "2.2.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
@@ -56,7 +56,7 @@ self.nodes = {"content":
 		"image": [
 			{"url":"2.1.1_facebook.png"} 
 		],
-		 "animation":"down",
+		 "animation":"fade",
 		  "showNextButton":"1000"
 
 			

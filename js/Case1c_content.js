@@ -2,20 +2,20 @@ var Case1c = (function(self){
 self.ID = {"text":"Case1c"};
 
 self.preload = {"images":
-[{"url":"bg4.jpg"},
+[{"url":""}
 ]
 };
 
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[{  "ID": "1.3",
+	[/*{  "ID": "1.3",
 		"type":"chapter", 
 		"title":"Vilka köper sex?",
 		"background":{"type":"image","url":"intro1.jpg"},
 		 "animation":"fade",
 		 "showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "1.3.1",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
@@ -54,6 +54,7 @@ self.nodes = {"content":
 	{  	"ID": "1.3.3",
 		"type":"info",
 		"background":{"type":"image","url":"bg4.jpg"},
+		"size":"eleven",
 		"image": [
 			{"url":"1.1.2_bordell.png"} 
 		],

@@ -1834,6 +1834,8 @@ body .video.twitch, body .video.youtube.show_controls { padding-top: 30px; }
 .modal.active { z-index: 999999; }
 .modal.active, .modal.active > .content { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 
+html { background: #000; }
+
 body { color: white; background: #000; /*font-familily: "Helvetica", "Arial", sans-serif;
 */ font-family: 'Roboto Condensed', sans-serif; overflow-x: hidden; height: 100%; max-height: 100%; }
 
@@ -1843,9 +1845,9 @@ h3, h4, h5, h6, p { text-align: left; }
 
 .centered_box { position: relative; padding: 50px 0px 30px 0px; }
 
-#outer { position: absolute; width: 100%; height: 100%; left: 0; top: 0; text-align: center; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+#outer { position: absolute; width: 100%; height: 100%; z-index: 10; left: 0; top: 0; text-align: center; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
 
-#outer[id] { display: table; position: static; }
+#outer[id] { display: table; /*   position: static;*/ }
 
 #middle { position: absolute; top: 50%; }
 
@@ -1948,9 +1950,9 @@ border-radius: 0px 10px 10px 0px;
 
 .naviconR { padding-left: -20px; padding-right: 10px; }
 
-#pattern-overlay { position: absolute; z-index: -20; background: url(../img/grid.png); background-repeat: repeat; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.4; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+#pattern-overlay { position: absolute; z-index: 5; background: url(../img/grid.png); background-repeat: repeat; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.4; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
 
-#topleft-overlay { position: absolute; z-index: 10; /*background: url(../img/case_color_splash.png);*/ background-repeat: no-repeat; top: 0px; left: 0px; width: 100%; height: 100%; pointer-events: none; }
+#topleft-overlay { position: absolute; z-index: 30; /*background: url(../img/case_color_splash.png);*/ background-repeat: no-repeat; top: 0px; left: 0px; width: 100%; height: 100%; pointer-events: none; }
 
 #case-nav-wrapper { position: absolute; height: 50px; width: 100%; bottom: 0px; background-color: rgba(0, 0, 0, 0.2); z-index: 400; text-align: center; font-size: 20px; letter-spacing: 35px; white-space: nowrap; line-height: 12px; overflow: visible; text-align: center; display: block; }
 

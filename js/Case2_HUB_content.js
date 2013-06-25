@@ -1,7 +1,23 @@
 var Case2_HUB = (function(self){
 self.ID = {"text":"Case2_HUB"};
 self.preload = {"images":
-[	{"url":"bg-case-2.jpg"}
+[	{"url":"bg-case-2.jpg"},
+	{"url":"bg3.jpg"},
+	{"url":"2.1.4_artikel-om-fallet.png"},
+	{"url":"2.2.2_artikel.png"},
+	{"url":"2.1.1_facebook.png"},
+	{"url":"2.2.1_forumet.png"}, 
+	{"url":"2.3.1_statistik.png"},
+	{"url":"2.4.2_mikaela1.png"},
+	{"url":"2.4.2_samuel1.png"},
+	{"url":"2.4.2_mikaela2.png"},
+	{"url":"2.4.2_samuel2.png"},
+	{"url":"2.4.2_mikaela3.png"},
+	{"url":"2.4.2_samuel3.png"},
+	{"url":"2.4.2_mikaela4.png"},
+	{"url":"2.4.2_samuel4.png"},
+	{"url":"2.4.2_mikaela5.png"},
+	{"url":"2.4.2_samuel5.png"},
 ]
 };
 
