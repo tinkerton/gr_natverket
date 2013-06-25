@@ -113,7 +113,7 @@
      loadScripts=new Array();
     var completedLoads = 0;
     var sizeOfScripts = 0;
-    console.log("kom hit 1 ");
+  
      loadScripts =[ "js/libs/plugins.js", 
                     "js/libs/jquery.imagesloaded.min.js",
                     "js/libs/backstretch.js",
@@ -151,7 +151,7 @@
        $.getScript(loadScripts.shift())
         .done(function(script, textStatus) {
                  completedLoads++;
-                  console.log(completedLoads + " " +sizeOfScripts );
+                 // console.log(completedLoads + " " +sizeOfScripts );
                  var percent = parseInt(completedLoads/sizeOfScripts*100,0);
                   $('#loading-spinner').html("LADDAR<br/>"+percent +"%");
                  if (completedLoads == sizeOfScripts) startApplication();

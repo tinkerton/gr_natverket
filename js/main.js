@@ -1016,7 +1016,7 @@ function addNodeComicSingle(nodeId) {
 
 		}
 		if (showNextButton>=0) {
-			console.log("showNextButton: " + showNextButton);
+			//console.log("showNextButton: " + showNextButton);
 			nextArrowTimeout = setTimeout(showNext,parseInt(showNextButton));	
 		}
 
@@ -1361,7 +1361,7 @@ function addNodeComicSingle(nodeId) {
 
 
 	self.startCase = function(newActiveCase) {
-		console.log("startCase " + newActiveCase + " (" +eval(newActiveCase)+")");
+		//console.log("startCase " + newActiveCase + " (" +eval(newActiveCase)+")");
 		activeCase = eval(newActiveCase);
 		globalAnimation=0;
 		caseNodeId = 0;
@@ -1396,7 +1396,7 @@ function addNodeComicSingle(nodeId) {
 
 
 	self.startMain = function() {
-		console.log("START MAIN");
+		
 		$("#prevButton").hide();
 		
 		//SET TO TRUE TO ENABLE DEBUG MODE FOR FEEDBACK
