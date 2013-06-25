@@ -29,12 +29,10 @@ self.nodes = {"content":
 		"background":{"type":"image","url":"bg4.jpg"},
 		"walloftext" : [	
 					{"text":"Självklart ska man aldrig, aldrig, aldrig ge ett spårbart nummer till en escort. Tjejerna är ju extremt noga med att skydda sin identitet så varför ska vi torskar, som faktiskt begår en olaglig handling, skylta med vår identitet? Nej, skaffa ett kontantkort som ni INTE registrerar och ring från det"},
-					{"text":"Snuten är nog värsta rädslan för de flesta. Ingen rädsla alls för vad flickvänner / fruar / arbetskompisar / grannar / mamma ska säga?"},
 					{"text":"Att gå och tycka synd om dom eller bli deprimerad över faktum som detta är helt meningslöst. prostitution har funnits sjukt länge och kommer att finnas sjukt länge till. Så enkelt är det."},
 					{"text":"Det blev som en vana. Något jag inte kunde sluta med fast jag ville. Tillslut sökte jag hjälp. Jag ville inte vara den mannen som köper sex."},
 					{"text":"Jag ville inte känna saker som var jobbiga i mitt liv. Lösningen blev att köpa sex. Det är inget jag är stolt över. Jag gör det inte lika mycket nuförtiden, men ibland så känns det som enda sättet att få utlopp för saker."},
 					{"text":"Jag blir kåt av det. Det är inte svårare än så. Tyvärr ger det mig inte alls lika mycket att ha sex med min flickvän längre."},
-					{"text":"Jag skulle aldrig gå till nån som är offer för trafficking. Det är min gräns. Aldrig."},
 					{"text":"Det blir liksom som att det känns overkligt när man är utomlands. Som att det inte riktigt räknas."},
 					{"text":"Det är bättre att det är nån som jag, som är snäll som köper än att det är nån som inte behandlar tjejerna bra."},
 					{"text":"Tjejer kan få sex hur lätt som helst. Jag tycker man inte ska skuldbelägga killar som köper sex, det kanske är enda sättet för dem att få ligga."},
