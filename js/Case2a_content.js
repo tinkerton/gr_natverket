@@ -36,7 +36,7 @@ self.nodes = {"content":
 	{  	"ID": "2.1.2.5",
 		"type":"agent",
 		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Samma dag fanns en artikel om Samuel, en av de anklagade killarna. * ~",
+		"text":"~ * En äldre tidningsartikel, om en av de dömda killarna: Samuel. * ~",
 		"animation":"fade",
 		"showNextButton":"0"
 		
