@@ -32,9 +32,15 @@ self.nodes = {"content":
 		],
 		 "animation":"right",
 		  "showNextButton":"1000"
-
-			
 	},  
+	{  	"ID": "2.1.2.5",
+		"type":"agent",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"text":"~ * Samma dag fanns en artikel om Samuel, en av de anklagade killarna. * ~",
+		"animation":"fade",
+		"showNextButton":"0"
+		
+	}, 
 	{  	"ID": "2.1.3",
 		"type":"info",
 		"background":{"type":"image","url":"bg3.jpg"},
@@ -49,7 +55,7 @@ self.nodes = {"content":
 	{  	"ID": "2.1.4",
 		"type":"question", 
 		"analysisLog":"2.1.4 Fråga kapitel 1, Case 2",
-		"question":"~ * Besvara påståendet: Samuel och James var omtyckta person bland jämnåriga. * ~",
+		"question":"~ * Besvara påståendet: Samuel och James var omtyckta bland jämnåriga. * ~",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
 							{"text":"- JA","analysisLog":"1. JA"},
