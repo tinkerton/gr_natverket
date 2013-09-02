@@ -57,7 +57,7 @@ self.nodes = {"content":
 								"paddingtop":"13px",
 								"fontsize":"3",
 								"analysisLog":"1. Vad är trafficking",
-								"callback":"Case1_trafficking"}
+								"callback":"Case1_trafficking"},
 							{"text":"Vilka köper sex", 
 								"ID":"1",
 								"width":"160px", "height":"130px", 

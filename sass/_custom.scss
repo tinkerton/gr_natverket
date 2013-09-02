@@ -836,3 +836,100 @@ width:280px;
 .visitedChapter {
   background-color:rgba(90,197,189,0.8);
  }
+
+
+ .index_bg {
+  background-color: #FFF;
+  color:#313131;
+  height:100%;
+
+ }
+ .index_imgcenter {
+  text-align: center;
+  padding-right: 22px;
+
+ }
+ .index_logos {
+  bottom:-50px;
+ }
+
+ .index_footer {
+  position: absolute;
+  bottom:0px;
+
+ }
+
+.index_startBtnContainer {
+  width: 100%;
+  margin: 0 50%;
+
+text-align: center;
+
+
+}
+
+.index_startbtn {
+background: url(../img/index/starta.png);
+background-repeat: no-repeat;
+height: 372px;
+width: 363px;
+margin-left: -182px;
+background-position: center;
+
+}
+
+.index_startbtn:hover {
+ background: url(../img/index/startahover.png);
+ background-repeat: no-repeat;
+height: 372px;
+background-position:center; 
+}
+
+.start_topcontainer {
+  padding-top: 30px;
+
+}
+
+.start_strong {
+  font-size: 20px;
+
+}
+
+.start_footer {
+  background-color: #e94d7e;
+  padding: 20px;
+  color:#FFF;
+  
+  font-style: italic;
+}
+
+.start_footer p {
+  font-size: 14px;
+
+   line-height: 1.2em;
+}
+
+.start_temp {
+  padding-top: 20px;
+}
+
+.start_oktbtn {
+
+  background: url(../img/index/ok_fattar.png);
+background-repeat: no-repeat;
+height: 259px;
+width: 205px;
+margin-left: -102px;
+background-position: center;
+}
+
+
+.start_oktbtn:hover {
+
+  background: url(../img/index/ok_fattarhover.png);
+background-repeat: no-repeat;
+height: 259px;
+width: 205px;
+margin-left: -102px;
+background-position: center;
+}
