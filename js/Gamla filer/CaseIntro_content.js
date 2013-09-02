@@ -23,7 +23,7 @@ self.nodes = {"content":
 		/*"image": [
 			{"url":"1.1.2_bordell.png"} 
 		],*/
-		"text":"Välkommen till Nätverket. Det här är vårt träningsprogram för nya agenter.<br><br> Här kommer du få olika perspektiv på kränkningar av mänskliga rättigheter och sexövergrepp – något som tyvärr sker varje dag i Sverige och utomlands. Lyckligtvis finns det saker som du och jag kan göra – och att bli agent i Nätverket är en sådan sak. <br><br> Mitt namn är Kim, och jag kommer guida dig genom träningsprogrammet för nya agenter.",
+		"text":"~ * Välkommen till Nätverkets träningsprogram för nya agenter. Mitt namn, liksom ditt och alla andra agenters, är hemligt. Kanske kan du gissa vilka de övriga är? Vi håller kontakten via olika kanaler, men oftast är vi anonyma. <br> <br>Här kallar jag mig för S. * ~",
 		"music":"music/bridgeofsighs",
      	"animation":"fade",
 		"showNextButton":"1500"
@@ -35,17 +35,16 @@ self.nodes = {"content":
 		/*"image": [
 			{"url":"1.1.2_bordell.png"} 
 		],*/
-		"text":"Programmet består av två delar. Du kommer gå igenom dessa en i taget och få olika perspektiv på de här frågorna.<br> <br> Men att vara agent handlar inte bara om att kunna en massa fakta. Därför kommer jag ställa frågor till dig längs vägen, för att se om du klarar av att tänka själv och göra egna ställningstaganden.<br> <br>Lycka till!<br>// Kim",
+		"text":"~ * Varje dag sker kränkningar och brott ute i samhället. Även här hemma i Sverige. <br><br>Att vara agent handlar om att lära sig känna igen dessa situationer, och stå upp för rättvisa, mänskliga rättigheter och schyssta värderingar. * ~",
 		"music":"music/bridgeofsighs",
      	"animation":"fade",
-		"showNextButton":"1500",
-		"callback":"Case1_intro"
+		"showNextButton":"1500"
 			
-	}//, 
-	/*{  	"ID": "INTRO.4",
+	}, 
+	{  	"ID": "INTRO.4",
 		"type":"question", 
 		"analysisLog":"Intro, select case:",
-		/*"title":"SPECIALISERING",
+		/*"title":"SPECIALISERING",*/
 		"question":"~ * Du ska nu välja ett av två tränignsprogram. <br> I programmet Varför trafficking? lär du dig om trafficking och hur det sker, varje dag, i Sverige och Europa. <br> I programmet Bara på skoj? lär du dig om sexuella kränkningar i verkligheten och på internet. <br>Personerna som berättelserna handlar om är påhittade, men all fakta kommer från verkligheten. <br><br> Lycka till i träningsprogrammet. Hälsningar S. * ~ ",
 		"background":{"type":"image","url":"intro1.jpg"},
 		"answers":[
@@ -55,7 +54,7 @@ self.nodes = {"content":
 		 ,
 		 "animation":"down",
 		 "showNextButton":"-1"
-	},*/
+	},
 
     ]
 };
