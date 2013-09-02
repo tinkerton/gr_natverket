@@ -1,81 +1,130 @@
 <!doctype html>
-<html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 9]><!--> <html class="no-js index_bg" lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
 <head>
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-<meta charset="UTF-8">
-<title>Fair Sex: Nätverket (alpha release 1.0)</title>
-<style type="text/css">
-<!--
-body {
-	font-family: 'Roboto Condensed', sans-serif;
-	color:#313131;
-	line-height:20px;
-	font-size:16px;
-}
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Välkommen till Fair Sex: Nätverket</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="humans.txt">
+
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
+  <!-- Facebook Metadata /-->
+  <meta property="fb:page_id" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:description" content=""/>
+  <meta property="og:title" content=""/>
+
+  <!-- Google+ Metadata /-->
+  <meta itemprop="name" content="">
+  <meta itemprop="description" content="">
+  <meta itemprop="image" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
+       However, there is a blank style.css in the css directory should you prefer -->
+  <link rel="stylesheet" href="css/gumby.css">
+ 
+
+  <script src="js/libs/modernizr-2.6.2.min.js"></script>
+</head>
 
 
-a img {
-	border: none;
-}
 
-a:link {
-	color:#313131;
-	text-decoration: underline; 
-}
-a:visited {
-	color:#313131;
-	text-decoration: underline;
-}
-a:hover, a:active, a:focus { 
-	text-decoration: none;
-	color:#313131;
-}
+<body class="index_bg">
 
+  <div class="container index_container">
 
-.container {
-	width: 80%;
-	max-width: 1160px;
-	min-width: 780px;
-	margin: 0 auto; 
-}
+  	<div class="row">
+  	  <div class="twelve columns special head">
+  	  	<img src="img/index/header2.png"/>
+  	  </div>
+  	</div>
 
+<div class="row start_topcontainer">
+	<div class="push_one six columns">
+<p><strong class="start_strong">Tack för att du spelade Fair Sex: Nätverket</strong><br/><br/>
 
-.content {
-	padding: 10px 0;
-	margin: -400px;
-}
+Om du tycker att det här är en viktig fråga och vill veta mer om vad du 
+kan göra för att motverka trafficking och kränkningar av mänskliga 
+rättigheter, har vi samlat olika förslag på en agentsida – för dig som vill 
+fortsätta arbeta som agent i Nätverket.</p><p>
+Du kan också titta in på <a href="http://realstars.eu/blogg/" target="_blank">RealStars blogg</a> eller facebook för att få veta 
+mer om arbetet mot trafficking.</p><p>
 
-.header{font-weight:bold; font-size:30px;}
+Fair Sex: Nätverket är ett spel av <a href="http://realstars.eu/about/" target="_blank">RealStars</a>. Spelet är framtaget av 
+<a href="http://www.pedagogisktcentrum.se/" target="_blank">Pedagogiskt Centrum, GR Utbildning</a>. Projektet är finansierat 
+av <a href="http://www.arvsfonden.se/" target="_blank">Allmänna Arvsfonden</a>.</p>
+</div>
 
-p{text-align:center}
+<div class="five columns">
+	<div class="centered twelve columns index_imgcenter">
+      	<div class="index_startBtnContainer ">
+        <a href="agent.html"><div class="outro_agenttbtn"></div></a>
+      </div>
+      </div>
+</div>
 
-.headerImage {
-	padding-right: 220px;
-}
-
-.side{position: relative;
-    right: -65%;
-    top: 400px;
-    z-index: 10;}
-
--->
-</style></head>
-
-<body>
-<div class="container">
-  <div class="content">
-<a href="https://docs.google.com/forms/d/1FVctSdf-g8DSNX4tsQ3PrI-_lPX5PKW4vygvWYq927E/viewform">--><img class="side" src="img/3/sida.png" height="400"></a>
-  <div class="main">
-  	<p><img class="headerImage" src="img/1/head.png"></p>
-  	<p class="header">Tack för att du spelade</p>
-    <p>Om du tycker att det här är en viktig fråga och vill veta mer om vad du kan göra för att motverka trafficking och kränkningar av
-    <br> mänskliga rättigheter, har vi samlat olika förslag på en agentsida – för dig som vill fortsätta arbeta som agent i Nätverket.
-    <br>Du kan också titta in på <a href="http://www.realstars.eu" target="new">RealStars blogg</a> eller <a href="http://www.facebook.com/RealStars.eu?ref=ts" target="new">facebook</a> för att få veta mer om arbetet mot trafficking.
-</p>
-    <p>Fair Sex: Nätverket är ett spel av <a href="http://www.realstars.eu" target="new">RealStars</a>. Spelet är framtaget av <a href="http://www.pedagogisktcentrum.se" target="new">Pedagogiskt Centrum, GR Utbildning</a>. <br>Projektet är finansierat av <a href="http://www.arvsfonden.se" target="new">Allmänna Arvsfonden</a>.</p>
-    <p><img src="img/3/bottom-logos.png"></p>
+   
+ <div class="row">
+      <div class="centered twelve columns index_imgcenter index_logos">
+        <a href="http://www.pedagogisktcentrum.se/" target="_blank"><img src="img/index/gr_logo.png"/></a> <a href="http://www.arvsfonden.se/" target="_blank"><img src="img/index/af_logo.png"/></a> <a href="http://realstars.eu/about/" target="_blank"><img src="img/index/rs_logo.png"/></a>
+      </div>
     </div>
-    <!-- end .content --></div>
-  <!-- end .container --></div>
-</body>
+
+   
+  	</div> <!--! end of #container -->
+
+  </section>
+
+  <!-- Grab Google CDN's jQuery, fall back to local if offline -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.1.min.js"><\/script>')</script>
+
+  <!--
+  Include gumby.js followed by UI modules.
+  Or concatenate and minify into a single file
+  <script src="js/libs/gumby.js"></script>
+  <script src="js/libs/ui/gumby.retina.js"></script>
+  <script src="js/libs/ui/gumby.fixed.js"></script>
+  <script src="js/libs/ui/gumby.skiplink.js"></script>
+  <script src="js/libs/ui/gumby.toggleswitch.js"></script>
+  <script src="js/libs/ui/gumby.checkbox.js"></script>
+  <script src="js/libs/ui/gumby.radiobtn.js"></script>
+  <script src="js/libs/ui/gumby.tabs.js"></script>
+  <script src="js/libs/ui/jquery.validation.js"></script>
+  <script src="js/libs/gumby.init.js"></script>
+  -->
+  <script src="js/libs/gumby.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <!--<script>
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>-->
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+
+  </body>
 </html>

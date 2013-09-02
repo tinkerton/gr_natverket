@@ -842,6 +842,7 @@ width:280px;
   background-color: #FFF;
   color:#313131;
   height:100%;
+  font-size: 14px;
 
  }
  .index_imgcenter {
@@ -910,7 +911,7 @@ background-position:center;
 }
 
 .start_temp {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .start_oktbtn {
@@ -932,4 +933,28 @@ height: 259px;
 width: 205px;
 margin-left: -102px;
 background-position: center;
+}
+
+
+.outro_agenttbtn {
+  background: url(../img/index/agentbtn.png);
+background-repeat: no-repeat;
+height: 237px;
+width: 316px;
+margin-left: -158px;
+background-position: center;
+}
+
+.outro_agenttbtn:hover {
+  background: url(../img/index/agentbtnhover.png);
+background-repeat: no-repeat;
+height: 237px;
+width: 316px;
+margin-left: -158px;
+background-position: center;
+}
+
+.start_topcontainer a{
+   color:#313131;
+ text-decoration: underline;
 }
