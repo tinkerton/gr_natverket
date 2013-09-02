@@ -1,4 +1,4 @@
-var Case1a = (function(self){
+var Case1_outro = (function(self){
 self.ID = {"text":"Case1_outro"};
 
 self.preload = {"images":
@@ -37,19 +37,7 @@ self.nodes = {"content":
 		 "showNextButton":"-1"
 	}
 
-
-//	"callback":"Case2_intro"
-	
-	/*{  	"ID": "1.1.5",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"",
-		"animation":"fade",
-		"showNextButton":"0",
-		"callback":"Case1_HUB"
-			
-	}*/
-]
+	]
 };
 
 

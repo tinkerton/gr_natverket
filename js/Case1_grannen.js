@@ -1,4 +1,4 @@
-var Case1e = (function(self){
+var Case1_grannen = (function(self){
 self.ID = {"text":"Case1_grannen"};
 
 self.preload = {"images":
@@ -29,13 +29,12 @@ self.nodes = {"content":
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"sequences":[
-
-		{
+			{
 				"sequenceID":"0",
 			 	"type":"video",
 			 	"url":"http://player.vimeo.com/video/68480172",
 			 	 "gotoID":"1"
-			 },
+			},
 			{
 				"sequenceID":"1",
 				"type":"question",

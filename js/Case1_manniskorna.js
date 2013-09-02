@@ -1,4 +1,4 @@
-var Case1d = (function(self){
+var Case1_manniskorna = (function(self){
 self.ID = {"text":"Case1_manniskorna"};
 
 self.preload = {"images":

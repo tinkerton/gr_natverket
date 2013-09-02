@@ -1,4 +1,4 @@
-var Case1a = (function(self){
+var Case1_intro = (function(self){
 self.ID = {"text":"Case1_intro"};
 
 self.preload = {"images":
@@ -16,7 +16,6 @@ self.nodes = {"content":
 		"text":"Som agenter arbetar vi mot alla former av kränkningar, men trafficking är den grövsta av kränkningarna mot mänskliga rättigheter. Den första delen av det här programmet är till för att du ska få veta några olika anledningar till att det finns trafficking och vad man kan göra som agent i Nätverket för att arbeta mot det. <br><br>//Kim",
 		"animation":"fade",
 		"showNextButton":"0"
-			
 	},
 	{  	"ID": "Case1_intro_film",
 		"type":"video_seq",

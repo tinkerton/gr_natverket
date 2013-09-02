@@ -1,4 +1,4 @@
-var Case1g = (function(self){
+var Case1_envanligdag = (function(self){
 self.ID = {"text":"Case1_envanligdag"};
 
 self.preload = {"images":
@@ -10,21 +10,7 @@ self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 
 self.nodes = {"content": 
-	[/*{  "ID": "1.7",
-		"type":"chapter", 
-		"title":"En vanlig dag",
-		"background":{"type":"image","url":"intro1.jpg"},
-		 "animation":"fade",
-		 "showNextButton":"0"
-	},*/
-	/*{  	"ID": "1.7.1",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ *  För att få en större förståelse för prostitution och sex mot ersättning ska du nu få ta del av alla inblandade personers perspektiv. Hur skiljer sig en vanlig dag för de olika personerna? * ~",
-		"animation":"fade",
-		"showNextButton":"0"
-			
-	},*/
+	[
 	{  	"ID": "Case1_envanligdag_serie",
 		"type":"comicparallel",
 		"background":{"type":"image","url":"bg4.jpg"},
@@ -87,9 +73,8 @@ self.nodes = {"content":
 		],
 		"comic_row_height":"221px",
 		 "animation":"fade",
-		 "showNextButton":"-1",
+		 "showNextButton":"-1"
 	},
-
 	{  	"ID": "Case1_envanligdag_fraga",
 		"type":"question", 
 		"analysisLog":"envanligdag_fraga",
@@ -104,16 +89,6 @@ self.nodes = {"content":
 		 "showNextButton":"-1",
 		 "callback":"Case1_HUB"
 	}
-	
-	/*{  	"ID": "1.1.5",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Kvinnor som blivit offer för människohandlarna hotas för att de inte ska rymma eller berätta för någon om sin situation. * ~",
-		"animation":"fade",
-		"showNextButton":"0",
-		"callback":"Case1_HUB"
-	}*/
-
     ]
 };
 
