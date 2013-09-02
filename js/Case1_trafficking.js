@@ -20,7 +20,7 @@ self.nodes = {"content":
 			 	"url":"https://www.youtube.com/watch?v=A4bLeY2xwtg"
 			 }],
 			 "animation":"fade",
-			  "showNextButton":"-1"
+			  "showNextButton":"0"
 	},
 	{  	"ID": "Case1_trafficking_fraga",
 		"type":"question", 

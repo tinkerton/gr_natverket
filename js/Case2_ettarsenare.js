@@ -1,5 +1,5 @@
-var Case2g = (function(self){
-self.ID = {"text":"Case2g"};
+var Case_ettarsenare = (function(self){
+self.ID = {"text":"Case2_ettarsenare"};
 
 self.preload = {"images":
 [{"url":""}
@@ -9,31 +9,8 @@ self.preload = {"images":
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[/*{  "ID": "2.7",
-		"type":"chapter", 
-		"title":"Ett år senare",
-		"background":{"type":"image","url":"intro1.jpg"},
-		 "animation":"fade",
-		 "showNextButton":"0"
-	},*/
-	{  	"ID": "2.7.1",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * James och Samuel dömdes till fängelsestraff för våldtäkt, kränkning och köp av sex mot ersättning. Det har nu gått ett år sen våldtäkten. Du ska nu få träffa Mikaelas pappa. * ~",
-		"animation":"fade",
-		"showNextButton":"0"
-			
-	}, 
-
-	/*{  "ID": "2.7.2",
-		"type":"info", 
-		"title":"Intervju med Mikaelas pappa",
-		"background":{"type":"image","url":"bg3.jpg"},
-		 "animation":"left",
-		 "showNextButton":"0"
-	},*/
-
-	{  	"ID": "2.7.3",
+	[
+	{  	"ID": "Case2_ettarsenare_pappan",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"sequences":[
@@ -114,29 +91,12 @@ self.nodes = {"content":
 			 	"url":"http://player.vimeo.com/video/68641529"		 	
 			 }],
      	"animation":"left",
-		 "showNextButton":"-1"
-	},
-	{  	"ID": "2.7.4",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Du ska nu få ställa några frågor till James. * ~",
-		"animation":"fade",
-		"showNextButton":"0"
-			
-	}, 
-/*{  "ID": "2.7.4",
-		"type":"info", 
-		"title":"Intervju med James",
-		"background":{"type":"image","url":"bg3.jpg"},
-		 "animation":"left",
 		 "showNextButton":"0"
-	},*/
-
-	{  	"ID": "2.7.5",
+	},
+	{  	"ID": "Case2_ettarsenare_james",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"sequences":[
-
 			{
 				"sequenceID":"0",
 				"type":"question",
@@ -239,7 +199,7 @@ self.nodes = {"content":
 										]
 									},
 											{	
-												"sequenceID":13,
+												"sequenceID":"13",
 												"type":"video",
 											 	"url":"http://player.vimeo.com/video/68912935"// james 01
 											 	 //AVSLUTA
@@ -269,30 +229,25 @@ self.nodes = {"content":
 
 			],
      	"animation":"left",
-
-		 "showNextButton":"-1"
+		 "showNextButton":"0"
 	},
-
-	{  	"ID": "2.7.5",
-		"type":"agent",
+	{  	"ID": "Case2_ettarsenare_fraga",
+		"type":"question", 
+		"analysisLog":"Case2_ettarsenare_fraga1",
+		"question":"(placeholder)Reflektionsfråga kring hur James och samuel skiljer sig och vad det säger om deras människosyn.",
 		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ *  Detta var den sista noden i träningsprogrammet Bara på skoj? Du är nu redo att vara agent i Nätverket.<br/>Det är förståeligt om du nu har fler frågor än innan, och många funderingar kring de här sakerna. Det är en naturlig reaktion och en viktig del av att vara agent - att tänka och reflektera. * ~",
-		"animation":"fade",
-		"showNextButton":"0",
-	}, 
-	{  	"ID": "2.7.6",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ *  Jag hoppas detta har varit ett givande träningsprogram för dig. Nu är det dags för dig att återvända till verkligheten  och de utmaningar som väntar dig där. Hälsningar, S. * ~",
-		"animation":"fade",
-		"showNextButton":"0",
-		"callback":"OUTRO"
-	}, 
+		"answers":[
+							{"text":"Svar1","analysisLog":"1. Svar"},
+							{"text":"Svar2","analysisLog":"2. Svar"},
+							{"text":"Svar3","analysisLog":"3. Svar"}
+				],
+		 "animation":"left",
+		 "showNextButton":"-1",
+		 "callback":"Case2_outro"
+	}
 
     ]
 };
-
-
 	return self;
 
 })({});

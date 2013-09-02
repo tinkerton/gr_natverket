@@ -20,7 +20,7 @@ self.nodes = {"content":
 			 	"url":"hhttps://www.youtube.com/watch?v=A4bLeY2xwtg"
 			 }],
 			 "animation":"fade",
-			  "showNextButton":"-1"
+			  "showNextButton":"0"
 	},
 	{  	"ID": "Case1_outro_fraga",
 		"type":"question", 

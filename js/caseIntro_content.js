@@ -17,18 +17,18 @@ self.nodes = {"content":
 		 "animation":"fade",
 		 "showNextButton":"0"
 	},*/
-	{  	"ID": "INTRO.2",
+	/*{  	"ID": "INTRO.2",
 		"type":"agent",
 		"background":{"type":"image","url":"intro1.jpg"},
-		/*"image": [
+		"image": [
 			{"url":"1.1.2_bordell.png"} 
-		],*/
+		],
 		"text":"Välkommen till Nätverket. Det här är vårt träningsprogram för nya agenter.<br><br> Här kommer du få olika perspektiv på kränkningar av mänskliga rättigheter och sexövergrepp – något som tyvärr sker varje dag i Sverige och utomlands. Lyckligtvis finns det saker som du och jag kan göra – och att bli agent i Nätverket är en sådan sak. <br><br> Mitt namn är Kim, och jag kommer guida dig genom träningsprogrammet för nya agenter.",
 		"music":"music/bridgeofsighs",
      	"animation":"fade",
-		"showNextButton":"1500"
+		"showNextButton":"0"
 			
-	}, 
+	}, */
 	{  	"ID": "INTRO.3",
 		"type":"agent",
 		"background":{"type":"image","url":"intro1.jpg"},
@@ -38,7 +38,7 @@ self.nodes = {"content":
 		"text":"Programmet består av två delar. Du kommer gå igenom dessa en i taget och få olika perspektiv på de här frågorna.<br> <br> Men att vara agent handlar inte bara om att kunna en massa fakta. Därför kommer jag ställa frågor till dig längs vägen, för att se om du klarar av att tänka själv och göra egna ställningstaganden.<br> <br>Lycka till!<br>// Kim",
 		"music":"music/bridgeofsighs",
      	"animation":"fade",
-		"showNextButton":"1500",
+		"showNextButton":"0",
 		"callback":"Case1_intro"
 			
 	}//, 

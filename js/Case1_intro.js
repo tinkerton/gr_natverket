@@ -24,10 +24,10 @@ self.nodes = {"content":
 			{
 				"sequenceID":"0",
 			 	"type":"video",
-			 	"url":"hhttps://www.youtube.com/watch?v=A4bLeY2xwtg"
+			 	"url":"http://vimeo.com/68693255"
 			 }],
 			 "animation":"fade",
-			  "showNextButton":"-1",
+			  "showNextButton":"0",
 			  "callback":"Case1_HUB"
 	}
 ]

@@ -1,5 +1,5 @@
-var Case2f = (function(self){
-self.ID = {"text":"Case2f"};
+var Case2_rattssalen = (function(self){
+self.ID = {"text":"Case2_rattssalen"};
 
 self.preload = {"images":
 [{"url":""}
@@ -9,69 +9,8 @@ self.preload = {"images":
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[/*{  "ID": "2.6",
-		"type":"chapter", 
-		"title":"Skilda sanningar",
-		"background":{"type":"image","url":"intro1.jpg"},
-		 "animation":"fade",
-		 "showNextButton":"0"
-	},*/
-	{  	"ID": "2.6.1",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Här kommer du få veta mer om de olika versionerna av vad som egentligen hände. * ~",
-		"animation":"fade",
-		"showNextButton":"0"
-			
-	}, 
-
-	{  	"ID": "2.6.2",
-		"type":"comicparallel",
-		"background":{"type":"image","url":"bg3.jpg"},
-		"comicparallel" : [	{"slide": 
-								{"url":"2.4.2_mikaela1.png",
-								"url2":"2.4.2_samuel1.png",}
-					},
-					{"slide": 
-								{"url":"2.4.2_mikaela2.png",
-								"url2":"2.4.2_samuel2.png"}
-					},
-					{"slide": 
-								{"url":"2.4.2_mikaela3.png",
-								"url2":"2.4.2_samuel3.png"}
-					},
-					{"slide": 
-								{"url":"2.4.2_mikaela4.png",
-								"url2":"2.4.2_samuel4.png"}
-					},
-						{"slide": 
-								{"url":"2.4.2_mikaela5.png",
-								"url2":"2.4.2_samuel5.png"}
-					}
-					
-										  	
-		],
-		"comic_row_height":"370px",
-		 "animation":"left",
-		 "showNextButton":"1500"
-	
-	},
-	/*{  "ID": "2.6.3",
-		"type":"info", 
-		"title":"Förhör i en rättsal",
-		"background":{"type":"image","url":"bg3.jpg"},
-		 "animation":"fade",
-		 "showNextButton":"0"
-	},*/
-	{  	"ID": "2.6.3",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Här följer förhör i rättsalen med James och Samuel. * ~",
-		"animation":"fade",
-		"showNextButton":"0"
-			
-	}, 
-	{  	"ID": "2.6.4",
+	[
+	{  	"ID": "Case2_rattssalen_forhor",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"sequences":[
@@ -296,37 +235,23 @@ self.nodes = {"content":
 		
 			 ],
      	"animation":"left",
-		 "showNextButton":"-1"
+		 "showNextButton":"0"
 	},
-
-
-
-
-	
-	{  	"ID": "2.6.5",
+	{  	"ID": "Case2_rattssalen_fraga",
 		"type":"question", 
-		"analysisLog":"2.6.5 Fråga kapitel 6, Case 2",
-		"question":"~ * Besvara påståendet: Varken Samuel eller James tog allvarligt på när Mikaela försökte säga ifrån. * ~",
+		"analysisLog":"Case2_rattssalen_fraga1",
+		"question":"Hur tycker du att Samuel och James versioner av händelsen skiljer sig från Mikaelas?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"- JA","analysisLog":"1. JA"},
-							{"text":"- NEJ","analysisLog":"2. NEJ"}
+							{"text":"Svar1","analysisLog":"1. Svar"},
+							{"text":"Svar2","analysisLog":"2. Svar"},
+							{"text":"Svar3","analysisLog":"3. Svar"}
 				]
 		 ,
 		 "animation":"left",
-		 "showNextButton":"-1"
-	},
-	
-	{  	"ID": "2.6.6",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * När det finns olika versioner av samma händelse är det svårt att veta vem man ska lita på. Om sex är ömsesidigt ska det finnas en bra kommunikation mellan alla som är med, och då riskerar ingen att fara illa. * ~",
-		"animation":"fade",
-		"showNextButton":"0",
-		"callback":"Case2_HUB"
-			
+		 "showNextButton":"-1",
+		 "callback":"Case2_HUB"
 	}
-
     ]
 };
 

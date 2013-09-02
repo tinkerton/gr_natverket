@@ -31,7 +31,7 @@ self.nodes = {"content":
 					{"text":"Klart man har läst saker om folk som tvingas till det. Jag har sett Lilja forever också. Men ingen av de jag gått till har tvingats till nåt, jag ger alltid pengarna direkt till henne så ingen hallick kommer och snor dem."}
 					],
 		"animation":"up",
-		"showNextButton":"-1"
+		"showNextButton":"0"
 		},
 	{"ID": "Case1_sexkopare_bordell",
 		"type":"info",
@@ -41,7 +41,7 @@ self.nodes = {"content":
 			{"url":"1.1.2_bordell.png"} 
 		],
 		"animation":"down",
-		"showNextButton":"-1"
+		"showNextButton":"0"
 		},
 	{  	"ID": "Case1_sexkopare_enavoss",
 		"type":"video_seq",
@@ -54,7 +54,7 @@ self.nodes = {"content":
 			}
 			],
 		"animation":"fade",
-		"showNextButton":"-1"
+		"showNextButton":"0"
 	},
 	{  	"ID": "Case1_sexkopare_karta",
 		"type":"info",
@@ -64,7 +64,7 @@ self.nodes = {"content":
 			{"url":"1.2.2_microstatistik.png"} 
 		],
 		"animation":"down",
-		"showNextButton":"-1"
+		"showNextButton":"0"
 	},
 	{  	"ID": "Case1_sexkopare_fraga",
 		"type":"question", 

@@ -53,7 +53,7 @@ self.nodes = {"content":
 		],
 		"comic_row_height":"320px",
 		 "animation":"fade",
-		 "showNextButton":"1500"
+		 "showNextButton":"0"
 	},
 	{  	"ID": "Case1_mannsikorna_fraga",
 		"type":"question", 

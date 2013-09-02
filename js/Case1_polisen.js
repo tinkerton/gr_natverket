@@ -81,7 +81,7 @@ self.nodes = {"content":
 			},
 			],
      	"animation":"left",
-		 "showNextButton":"-1"
+		 "showNextButton":"0"
 	},
 	{  	"ID": "Case1_polisen_fraga",
 		"type":"question", 

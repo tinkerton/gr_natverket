@@ -1,5 +1,5 @@
-var Case2e = (function(self){
-self.ID = {"text":"Case2e"};
+var Case2_kuratorn = (function(self){
+self.ID = {"text":"Case2_kuratorn"};
 
 self.preload = {"images":
 [{"url":""}
@@ -9,22 +9,8 @@ self.preload = {"images":
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[/*{  "ID": "2.5",
-		"type":"chapter", 
-		"title":"Mikaelas samtal med kuratorn",
-		"background":{"type":"image","url":"intro1.jpg"},
-		 "animation":"fade",
-		 "showNextButton":"0"
-	},*/
-	{  	"ID": "2.5.1",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Nu ska du få ta del av ett samtal mellan Mikaela och skolans kurator. * ~",
-		"animation":"fade",
-		"showNextButton":"0"
-			
-	}, 
-	{  	"ID": "2.5.2",
+	[
+	{  	"ID": "Case2_kuratorn_samtal",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"sequences":[
@@ -92,30 +78,22 @@ self.nodes = {"content":
 			 	
 			}],
      	"animation":"left",
-		 "showNextButton":"-1"
+		 "showNextButton":"0"
 	},
-	{  	"ID": "2.5.3",
+	{  	"ID": "Case2_kuratorn_fraga",
 		"type":"question", 
-		"analysisLog":"2.5.3 Fråga kapitel 5, Case 2",
-		"question":"~ * Besvara påståendet: Kuratorn försöker hjälpa Mikaela att komma över det som har skett, genom att göra händelsen mindre allvarlig. * ~",
+		"analysisLog":"Case2_kuratorn_fraga1",
+		"question":"(placeholder)Reflektionsfråga kring kuratorns bemötande av Mikaela.",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"- JA","analysisLog":"1. JA"},
-							{"text":"- NEJ","analysisLog":"2. NEJ"}
+							{"text":"Svar1","analysisLog":"1. Svar"},
+							{"text":"Svar2","analysisLog":"2. Svar"},
+							{"text":"Svar3","analysisLog":"3. Svar"}
 				]
 		 ,
 		 "animation":"left",
-		 "showNextButton":"-1"
-	},
-	
-	{  	"ID": "2.5.4",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Kan det vara så att kuratorn genom det hon säger till Mikaela, får det att låta som att det var lika mycket Mikaelas fel som Samuel och James? * ~",
-		"animation":"fade",
-		"showNextButton":"0",
-		"callback":"Case2_HUB"
-			
+		 "showNextButton":"-1",
+		 "callback":"Case2_HUB"
 	}
 
     ]
