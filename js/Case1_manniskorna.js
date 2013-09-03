@@ -17,7 +17,7 @@ self.nodes = {"content":
 		"pretext":"<br/>",
 		"posttext":"<br/>",
 		"image": [
-			{"url":"1.4.1_blogg2.png"} 
+			{"url":"Case1_manniskorna_crina.png"} 
 		],
 		 "animation":"down",
 		  "showNextButton":"0"			
@@ -29,31 +29,22 @@ self.nodes = {"content":
 		"pretext":"<br/>",
 		"posttext":"<br/>",
 		"image": [
-			{"url":"1.4.1_blogg2.png"} 
+			{"url":"Case1_manniskorna_jobbet.png"} 
 		],
 		 "animation":"down",
 		  "showNextButton":"0"			
-	},  
-	{  	"ID": "Case1_manniskorna_systern",
-		"type":"comicparallel",
+	},
+	{  	"ID": "Case1_manniskorna_sverige",
+		"type":"info",
+		"size":"twelve",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"comicparallel" : [	{"slide": 
-								{"url":"1.4.2_bild1.png",
-								"url2":"1.4.2_bild2.png",}
-					},
-					{"slide": 
-								{"url":"1.4.2_bild3.png",
-								"url2":"1.4.2_bild4.png"}
-					},
-					{"slide": 
-								{"url":"1.4.2_bild5.png"}
-					}
-					
-										  	
+		"pretext":"<br/>",
+		"posttext":"<br/>",
+		"image": [
+			{"url":"Case1_manniskorna_sverige.png"} 
 		],
-		"comic_row_height":"320px",
-		 "animation":"fade",
-		 "showNextButton":"0"
+		"animation":"down",
+		"showNextButton":"0"			
 	},
 	{  	"ID": "Case1_mannsikorna_fraga",
 		"type":"question", 
