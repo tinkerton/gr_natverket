@@ -73,7 +73,7 @@ self.nodes = {"content":
 		],
 		"comic_row_height":"221px",
 		 "animation":"fade",
-		 "showNextButton":"-1"
+		 "showNextButton":"0"
 	},
 	{  	"ID": "Case1_envanligdag_fraga",
 		"type":"question", 
