@@ -1,4 +1,4 @@
-var Case_ettarsenare = (function(self){
+var Case2_ettarsenare = (function(self){
 self.ID = {"text":"Case2_ettarsenare"};
 
 self.preload = {"images":

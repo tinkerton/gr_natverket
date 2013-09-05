@@ -27,7 +27,8 @@ self.nodes = {"content":
 		"background":{"type":"image","url":"bg4.jpg"},
 		"text":"(placeholder)Att man nu har gått igenom träningsprogrammet och är redo att agera som agent – i verkligeheten. <br><br>//Kim",
 		"animation":"fade",
-		"showNextButton":"0"
+		"showNextButton":"0",
+		"callback":"OUTRO"
 	}
 ]
 };

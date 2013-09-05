@@ -406,7 +406,7 @@ function addNodeComicSingle(nodeId) {
 		}
 		if(currentCase!="CaseIntro" && foundNextHUB == false) FS.unlockedChapters.push(currentCase);
 		
-	//	console.log("exitChapter goto:"+ nextHUB  + "    unlockedChapters:" + _.size(FS.unlockedChapters) +" " + currentCase);
+		console.log("exitChapter goto:"+ nextHUB  + "    unlockedChapters:" + _.size(FS.unlockedChapters) +" " + currentCase);
 	
 		TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[nextHUB]});
 	}
@@ -1112,13 +1112,14 @@ function addNodeComicSingle(nodeId) {
 		//	FS.checkArrows(FS.currentNodeNr);
 		FS.checkDebugArrows(FS.currentNodeNr);
 		
-
 		try
  		 {
   			if (contentObj[oldNodeId].callback!=undefined) {
   				if (contentObj[oldNodeId].callback=="OUTRO") window.location = "outro.html";
   				else {
-  					exitChapter(contentObj[oldNodeId].callback);
+  					console.log("JONAS force exit");
+		
+  						exitChapter(contentObj[oldNodeId].callback);
   					return;	
   				}	
   				

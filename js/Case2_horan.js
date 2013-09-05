@@ -21,10 +21,10 @@ self.nodes = {"content":
 			 	"url":"http://player.vimeo.com/video/68480322"
 			 }],
 			 "animation":"fade",
-			 "showNextButton":"0",
-			 "callback":"Case2_HUB"
-	}  
-	/*{  	"ID": "Case2_horan_fraga",
+			 "showNextButton":"-1",
+			
+	} , 
+	{  	"ID": "Case2_horan_fraga",
 		"type":"question", 
 		"analysisLog":"Case2_horan_fraga1",
 		"question":"Vad tänker du när det skrivs negativa saker om någon på internet?",
@@ -38,7 +38,7 @@ self.nodes = {"content":
 		 "animation":"left",
 		 "showNextButton":"-1",
 		 "callback":"Case2_HUB"
-	}*/
+	}
     ]
 };
 
