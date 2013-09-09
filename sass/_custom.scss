@@ -475,6 +475,23 @@ img, object, embed .node-image {
 
  
 }
+.walloftextcontent2 {
+  font-size: 1em;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.4em;
+  text-align: left;
+  display: block;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 1em 2em 0 2em;
+  /*border:5px solid #111;*/
+  pointer-events:none;
+  padding:2em;
+
+
+ 
+}
+
 
 .wallOfTextHitarea {
    pointer-events:auto !important;
@@ -586,8 +603,8 @@ text-align: left;
   height:350px;
   width:auto;
   visibility: hidden;
-  color: #0F0;
-  text-shadow: 0 0 10px #5F5;
+  color: #5ac5bd;
+  text-shadow: 0 0 10px #5ac5bd;
 
 }
 #agent p {

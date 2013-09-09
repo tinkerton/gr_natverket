@@ -1992,6 +1992,8 @@ img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
 
 .walloftextcontent { position: absolute; font-size: 1em; font-weight: bold; font-style: italic; width: 500px; line-height: 1.4em; text-align: left; display: block; background-color: rgba(0, 0, 0, 0.5); border-radius: 1em 2em 0 2em; /*border:5px solid #111;*/ pointer-events: none; padding: 2em; }
 
+.walloftextcontent2 { font-size: 1em; font-weight: bold; font-style: italic; line-height: 1.4em; text-align: left; display: block; background-color: rgba(0, 0, 0, 0.5); border-radius: 1em 2em 0 2em; /*border:5px solid #111;*/ pointer-events: none; padding: 2em; }
+
 .wallOfTextHitarea { pointer-events: auto !important; cursor: pointer; }
 
 .wallSelected { background-color: white; color: #000; }
@@ -2016,7 +2018,7 @@ img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
 
 .agentul { padding-top: 60px; }
 
-#agent { font-family: 'Anonymous Pro', sans-serif; font-size: 2em; height: 350px; width: auto; visibility: hidden; color: #0F0; text-shadow: 0 0 10px #5F5; }
+#agent { font-family: 'Anonymous Pro', sans-serif; font-size: 2em; height: 350px; width: auto; visibility: hidden; color: #5ac5bd; text-shadow: 0 0 10px #5ac5bd; }
 
 #agent p { font-family: 'Anonymous Pro', sans-serif; font-size: 0.6em; line-height: 1.2em; }
 
