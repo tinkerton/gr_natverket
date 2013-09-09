@@ -678,6 +678,11 @@ function addNodeComicSingle(nodeId) {
 		else console.log("HUB error: could not found callback action in function respondToHUB");
 	}
 
+
+
+	
+
+
 	function addHubMenu(nodeId) {
 		var res, 
 			nrOfChapters,
