@@ -44,14 +44,13 @@ self.nodes = {"content":
 		"showNextButton":"0"
 		},
 	{  	"ID": "Case1_sexkopare_enavoss",
-		"type":"video_seq",
+		"type":"info",
+		"size":"twelve",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"sequences":[
-			{
-				"sequenceID":"0",
-			 	"type":"video",
-			 	"url":"http://player.vimeo.com/video/68480322"
-			}
+		"videos":[{"videoURL":"http://player.vimeo.com/video/74038868",  "source" : "vimeo"},
+		{"videoURL":"http://player.vimeo.com/video/74038869",  "source" : "vimeo"},
+		{"videoURL":"http://player.vimeo.com/video/74038870",  "source" : "vimeo"}	
+			
 			],
 		"animation":"fade",
 		"showNextButton":"0"

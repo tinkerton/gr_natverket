@@ -525,19 +525,23 @@ function addNodeComicSingle(nodeId) {
 
 		var videos,
 			nrOfCols,
-			res;
+			res, 
+			autoplay;
 		
 		videos = contentObj[nodeId].videos; 
 		if (videos === undefined) {return "";}
 
-		FS.nrOfVideos = _.size(videos);
-		
+		autoplay=1;
 
-		nrOfCols="eleven";
-		/*
+
+		FS.nrOfVideos = _.size(videos);
+		if (FS.nrOfVideos>1) autoplay=0;
+
+		nrOfCols="twelve";
+		
 		switch (FS.nrOfVideos) {
 			case 1:
-				nrOfCols = "twelve";
+				nrOfCols = "eleven";
 			break;
 			case 2:
 				nrOfCols = "six";
@@ -550,12 +554,13 @@ function addNodeComicSingle(nodeId) {
 			break;
 
 		}
-		*/
+		
 
 		res ="<div class='row'>";
 
 		for (var i=0; i<FS.nrOfVideos; i++) {
-			res +="<div class='centered "+nrOfCols+" columns'>";
+			if(FS.nrOfVideos<=1) res +="<div class='centered "+nrOfCols+" columns'>";
+			else res +="<div class='"+nrOfCols+" columns'>";
 			res +="<div class='loading' id='loader_"+i+"'><div class='track'></div><div class='spinner'><div class='mask'><div class='maskedCircle'></div></div></div></div>";
 			
 			if ( videos[i].source  == "youtube") {
@@ -568,8 +573,8 @@ function addNodeComicSingle(nodeId) {
 			else {
 				//KEEP ONLY THIS, SHOW ONLY ONE VIDEO AT A TIME ANYWAY
 				res +="<article class='vimeo video videoBg'>";
-				res +="<iframe id='iframe_0' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
-				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0&autoplay=1&api=1&player_id=iframe_0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
+				res +="<iframe id='iframe_"+i+"'' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
+				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0&autoplay="+autoplay+"&api=1&player_id=iframe_0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
 				res +="</iframe>";
 
 			}
