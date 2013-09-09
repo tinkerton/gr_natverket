@@ -2105,3 +2105,13 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 .outro_agenttbtn:hover { background: url(../img/index/agentbtnhover.png); background-repeat: no-repeat; height: 237px; width: 316px; margin-left: -158px; background-position: center; }
 
 .start_topcontainer a { color: #313131; text-decoration: underline; }
+
+.indexheader { font-family: Helvetica, Arial, sans-serif; font-size: 26px; color: #000; }
+
+.indexsmaller { font-size: 18px; }
+
+.indexbreaker { margin: 90px 0 20px 0; border-top: 1px solid #CCC; border-bottom: none; border-left: none; border-right: none; }
+
+.indexbox { background-color: #e94d7e; padding: 20px; color: #FFF; }
+
+.index_container a { color: #99035D; }
