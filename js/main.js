@@ -497,8 +497,11 @@ function addNodeComicSingle(nodeId) {
 					res +="<div class='centered eleven columns'>";
 					res +="<article class=''>";
 					res +="<div class='sequenceHeadline'>"+myObj.text +"</div>";
-					res +="<div class='sequenceAnswer videoQuestion' onClick='FS.gotoSequence("+myObj.answers[0].gotoID+")'>"+ myObj.answers[0].text +"</div>";
-					if(myObj.answers[1]!=undefined) res +="<div class='sequenceAnswer videoQuestion' onClick='FS.gotoSequence("+myObj.answers[1].gotoID+")'>"+ myObj.answers[1].text +"</div>";
+					for (var i=0; i<_.size(myObj.answers); i++) {
+						res +="<div class='sequenceAnswer videoQuestion' onClick='FS.gotoSequence("+myObj.answers[i].gotoID+")'>"+ myObj.answers[i].text +"</div>";
+					//if(myObj.answers[1]!=undefined) res +="<div class='sequenceAnswer videoQuestion' onClick='FS.gotoSequence("+myObj.answers[1].gotoID+")'>"+ myObj.answers[1].text +"</div>";
+					}
+
 					res +="</article></div>";
 				
 				break;

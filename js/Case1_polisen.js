@@ -42,11 +42,11 @@ self.nodes = {"content":
 				"answers":[
 							{"text":"Hur arbetar polisen för att förhindra trafficking?", "gotoID":"2"},
 							{"text":"Vad gör polisen för att påverka människors attityder?", "gotoID":"3"},
-							{"text":"Vad kan man göra som privatperson?", "gotoID":"4"},
-							{"text":"Hur stort är problemet med trafficking i Sverige?", "gotoID":"5"},
-							{"text":"Varför är det olagligt att köpa sex från vanliga prostituerade som inte är offer för trafficking?", "gotoID":"6"},
-							{"text":"Hur väl fungerar den svenska sexköpslagen för att minska efterfrågan?", "gotoID":"7"},
-							{"text":"Avsluta", "gotoID":"Case1_polisen_fraga"}
+						//	{"text":"Vad kan man göra som privatperson?", "gotoID":"4"},
+							{"text":"Hur stort är problemet med trafficking i Sverige?", "gotoID":"4"},
+							{"text":"Varför är det olagligt att köpa sex från vanliga prostituerade som inte är offer för trafficking?", "gotoID":"5"},
+							{"text":"Hur väl fungerar den svenska sexköpslagen för att minska efterfrågan?", "gotoID":"6"},
+							{"text":"Avsluta", "gotoID":"-1"}
 				]
 			},
 			{	
@@ -62,19 +62,19 @@ self.nodes = {"content":
 			 	 "gotoID":"1"
 			},
 			{	
-				"sequenceID":"5",
+				"sequenceID":"4",
 				"type":"video",
 			 	"url":"http://player.vimeo.com/video/68434441",
 			 	 "gotoID":"1"
 			},
 			{	
-				"sequenceID":"6",
+				"sequenceID":"5",
 				"type":"video",
 			 	"url":"http://player.vimeo.com/video/68434442",
 			 	 "gotoID":"1"
 			},
 			{
-				"sequenceID":"7",
+				"sequenceID":"6",
 				"type":"video",
 			 	"url":"http://player.vimeo.com/video/68434512",
 			 	"gotoID":"1"		 	
