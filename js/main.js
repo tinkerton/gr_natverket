@@ -11,6 +11,7 @@ var FS = (function(self){
 		currentNodeNr,
 		maxNodeNr,
 		comicsToFadeIn,
+		currentComic,
 		initComplete,
 		oldBackground,
 		IDWallOfText,
@@ -25,6 +26,7 @@ var FS = (function(self){
 		DEBUG,
 		BV,
 		globalAnimation,
+		myTimeout,
 		unlockedChapters;
 
 
@@ -155,7 +157,6 @@ function startComicSingle(nrOfSlides) {
 */	
 	}
 
-
 	function startComicParallel(nrOfSlides) {
 		var winHeight,
 		comicHeight,
@@ -180,27 +181,60 @@ function startComicSingle(nrOfSlides) {
 
 		TweenMax.to($("#comicScroller"),0,{top:winHeight});
 		TweenMax.to($(".comicParallelWrapper"),1,{css:{"opacity":"1"},delay:0});
-		
+		currentComic = 0;
 		for (var i=0; i<nrOfSlides; i++) {
 			$("#slide_"+i).data("nr",i)
 			$("#slide_"+i).click(function(){
-				resetAllComicParallels(nrOfSlides);
-				var scrollto = winHeight -(comicHeight*0.7)* parseInt($(this).data("nr"));
-				console.log("scrollto "+ scrollto);
+				var currentNr = parseInt($(this).data("nr"));
+				emptyWallTweens();
+				if(currentComic==currentNr && currentNr < nrOfSlides-1) {
+					currentNr++;
+				}
+				else if (currentComic<currentNr && currentComic<nrOfSlides-1) currentNr = currentComic+1;
+				else if (currentComic>currentNr && currentComic>0) currentNr = currentComic-1;
+			
+				resetAllComicParallels(nrOfSlides, currentNr);
+					
+				var scrollto = winHeight -(comicHeight*0.7)* currentNr;
+				//console.log("scrollto "+ scrollto + "  currentNr="+currentNr + "            currentComic="+currentComic);
 				TweenMax.to($("#comicScroller"),0,{top:scrollto});
-				
-				$(this).addClass("comicActive");
+				currentComic = currentNr;
+	
+				$("#slide_"+currentNr).addClass("comicActive");
+				TweenMax.to($("#slide_"+currentNr),0, {css:{"opacity":"1"}});
+				startComicHint(nrOfSlides);
 			});
 		}
+		resetAllComicParallels(nrOfSlides, 0);
+		startComicHint(nrOfSlides);
+		$("#slide_0").addClass("comicActive");
 	}
 function resetAllComicParallels(nrOfSlides,exceptSlide) {
-		
+			window.clearTimeout(myTimeout);
+		console.log("resetAllComicParallels " + nrOfSlides+ ","+exceptSlide);
 		for (var i=0; i<nrOfSlides; i++) {
-			$("#slide_"+i).removeClass("comicActive")
-		
+			
+				$("#slide_"+i).removeClass("comicActive")
+				
+			
 		}
+		
 	}
 
+	function startComicHint(nrOfSlides) {
+		console.log("startComicHint " + nrOfSlides+ ","+currentComic);
+		window.clearTimeout(myTimeout);
+		var myT;
+			for (var i=0; i<nrOfSlides; i++) {
+				if (i != currentComic) {
+				$("#slide_"+i).removeClass("comicActive")
+				myT = TweenMax.fromTo($("#slide_"+i),0.15,{css:{"opacity":"0.1"}}, {css:{"opacity":"0.5"}, yoyo:true, repeat:3, repeatDelay:0.25, delay:5});
+				arrayOfWallTweens.push(myT);
+				
+				}
+			}
+			myTimeout = setTimeout(function(){startComicHint(nrOfSlides)},8000);
+	}
 
 	function addNodeComicParallel(nodeId) {
 		var res,
@@ -1063,6 +1097,7 @@ self.zoomIn_BUP = function(wallID) {
 			showNextButton = contentObj[FS.currentNodeNr].showNextButton;
 		FS.resize();
 		globalAnimation=0;
+		window.clearTimeout(myTimeout);
 
 		switch(FS.currentNodeType) {
 			case "comic":

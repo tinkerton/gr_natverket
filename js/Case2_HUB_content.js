@@ -92,7 +92,7 @@ self.nodes = {"content":
 								"callback":"Case2_fejk"},
 							{"text":"Ett år senare", 
 								"ID":"7",
-								"lockeduntil":"6", 
+								"lockeduntil":"0", 
 								"width":"204px", "height":"114px",
 								 "left":"13%", "top":"65%", 
 								 "paddingtop":"25px",

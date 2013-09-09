@@ -106,7 +106,7 @@ self.nodes = {"content":
 								 "callback":"Case1_envanligdag"},
 							{"text":"Vad händer efteråt?", 
 								"ID":"6",
-								"lockeduntil":"2", 
+								"lockeduntil":"0", 
 								"width":"245px", "height":"162px", 
 								"left":"72%", "top":"13%", 
 								"paddingtop":"13px",

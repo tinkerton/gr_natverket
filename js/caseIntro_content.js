@@ -39,9 +39,29 @@ self.nodes = {"content":
 		"music":"music/bridgeofsighs",
      	"animation":"fade",
 		"showNextButton":"0",
-		"callback":"Case1_intro"
+
 			
-	}//, 
+	},
+	{  	"ID": "Case1_intro_kim",
+		"type":"agent",
+		"background":{"type":"image","url":"bg4.jpg"},
+		"text":"Som agenter arbetar vi mot alla former av kränkningar, men trafficking är den grövsta av kränkningarna mot mänskliga rättigheter. Den första delen av det här programmet är till för att du ska få veta några olika anledningar till att det finns trafficking och vad man kan göra som agent i Nätverket för att arbeta mot det. <br><br>//Kim",
+		"animation":"fade",
+		"showNextButton":"0"
+	},
+	{  	"ID": "Case1_Intro",
+		"type":"info",
+		"size":"twelve",
+		"background":{"type":"image","url":"bg4.jpg"},
+		"videos":[{"videoURL":"http://player.vimeo.com/video/74038866",  "source" : "vimeo"}
+			
+			],
+		"animation":"fade",
+		"showNextButton":"0",
+		"callback":"Case1_HUB"
+	}
+
+	//, 
 	/*{  	"ID": "INTRO.4",
 		"type":"question", 
 		"analysisLog":"Intro, select case:",

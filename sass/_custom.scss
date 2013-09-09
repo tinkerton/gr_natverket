@@ -572,8 +572,8 @@ text-align: left;
    padding: 90px 20px 20px 20px;
    margin: 10px 0px;
    text-align: left;
-   text-shadow: 0 0 10px #5F5;
-   color:#0F0;
+   text-shadow: 0 0 10px #5ac5bd;
+   color:#5ac5bd;
 
 }
 .questionDiv {
@@ -672,7 +672,7 @@ letter-spacing: 10px;
   letter-spacing: -0.06em;
   text-shadow: -1px -1px rgba(0,0,0,1);
   display: block;
-  background-color: rgba(255, 255, 255, 0.5);
+background-color:rgba(90,197,189,0.8);
 border-radius: 0em 3em 3em 3em;
 border: 0.1em solid rgba(255, 255, 255, 0.6);
   padding: 0.25em 0.25em;
@@ -851,7 +851,10 @@ width:280px;
   font-size: 1em;
 }
 .visitedChapter {
-  background-color:rgba(90,197,189,0.8);
+  background-color:rgba(255,255,255,0.8);
+  color:rgba(120,120,120,0.8);
+   text-shadow: -1px -1px rgba(255,255,255,1);
+
  }
 
 

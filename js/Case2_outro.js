@@ -10,17 +10,15 @@ self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
 	[
-	{  	"ID": "Case2_outro_film",
-		"type":"video_seq",
+	{  	"ID": "Case1_Outro",
+		"type":"info",
+		"size":"twelve",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"sequences":[
-			{
-				"sequenceID":"0",
-			 	"type":"video",
-			 	"url":"https://www.youtube.com/watch?v=A4bLeY2xwtg"
-			 }],
-			 "animation":"fade",
-			  "showNextButton":"0"
+		"videos":[{"videoURL":"http://player.vimeo.com/video/74038867",  "source" : "vimeo"}
+			
+			],
+		"animation":"fade",
+		"showNextButton":"0"
 	},
 	{  	"ID": "Case2_outro_kim",
 		"type":"agent",
