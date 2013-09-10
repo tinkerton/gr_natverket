@@ -21,7 +21,7 @@ self.nodes = {"content":
 			 	"url":"http://player.vimeo.com/video/68027628"
 			 }],
 			 "animation":"fade",
-			 "showNextButton":"-1",
+			 "showNextButton":"0",
 			
 	} , 
 	{  	"ID": "Case2_horan_fraga",
