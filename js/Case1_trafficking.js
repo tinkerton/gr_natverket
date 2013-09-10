@@ -25,12 +25,12 @@ self.nodes = {"content":
 	{  	"ID": "Case1_trafficking_fraga",
 		"type":"question", 
 		"analysisLog":"1.1.4 Fråga kapitel 1, Case 1",
-		"question":"Reflektionsfråga Vad är trafficking?",
+		"question":"Kim: Vad tror du är huvudanledningen till att trafficking fortsätter?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Svar","analysisLog":"1. Svar","callback":"Case1_HUB"},
-							{"text":"Svar","analysisLog":"2. Svar","callback":"Case1_HUB"},
-							{"text":"Svar","analysisLog":"3. Svar","callback":"Case1_HUB"}
+							{"text":"Att det finns män som vill köpa sex.","analysisLog":"1. Svar","callback":"Case1_HUB"},
+							{"text":"Att samhället inte agerar hårdare mot de som köper sex och bidrar till trafficking-industrin.","analysisLog":"2. Svar","callback":"Case1_HUB"},
+							{"text":"Att ligorna som sysslar med människohandel är duktiga på att dölja vad de håller på med.  ","analysisLog":"3. Svar","callback":"Case1_HUB"}
 				]
 		 ,
 		 "animation":"left",

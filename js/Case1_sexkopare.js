@@ -27,7 +27,7 @@ self.nodes = {"content":
 		"animation":"up",
 		"showNextButton":"0"
 		},
-	{"ID": "Case1_sexkopare_bordell",
+	/*{"ID": "Case1_sexkopare_bordell",
 		"type":"info",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"size":"eleven",
@@ -36,7 +36,7 @@ self.nodes = {"content":
 		],
 		"animation":"down",
 		"showNextButton":"0"
-		},
+		},*/
 	{  	"ID": "Case1_sexkopare_enavoss",
 		"type":"info",
 		"size":"twelve",
@@ -49,7 +49,7 @@ self.nodes = {"content":
 		"animation":"fade",
 		"showNextButton":"0"
 	},
-	{  	"ID": "Case1_sexkopare_karta",
+	/*{  	"ID": "Case1_sexkopare_karta",
 		"type":"info",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"size":"eleven",
@@ -58,16 +58,29 @@ self.nodes = {"content":
 		],
 		"animation":"down",
 		"showNextButton":"0"
-	},
+	},*/
 	{  	"ID": "Case1_sexkopare_fraga",
 		"type":"question", 
 		"analysisLog":"Case1_sexkopare_fraga1",
-		"question":"Reflektionsfråga Vilka köper sex?",
+		"question":"Kim: Varför köper man sex?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Svar","analysisLog":"1. Svar","callback":"Case1_HUB"},
-							{"text":"Svar","analysisLog":"2. Svar","callback":"Case1_HUB"},
-							{"text":"Svar","analysisLog":"3. Svar","callback":"Case1_HUB"}
+							{"text":"För att det inte går att få sex på något annat vis.","analysisLog":"1. Svar"},
+							{"text":"För att slippa känna sig ensam och för att få bekräftelse","analysisLog":"2. Svar"},
+							{"text":"För att ha sex med någon som inte ställer krav","analysisLog":"3. Svar"}
+				],
+		 "animation":"left",
+		 "showNextButton":"-1"
+	},
+	{  	"ID": "Case1_sexkopare_fraga2",
+		"type":"question", 
+		"analysisLog":"Case1_sexkopare_fraga2",
+		"question":"Kim: Varför tror du att det kan kännas mindre allvarligt att köpa sex utomlands, än i Sverige?",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"answers":[
+							{"text":"Risken att nån därhemma vår veta nåt är mycket mindre","analysisLog":"1b. Svar","callback":"Case1_HUB"},
+							{"text":"Det är lagligt att köpa sex i många länder","analysisLog":"2b. Svar","callback":"Case1_HUB"},
+							{"text":"Det är ofta mycket billigare än att köpa sex i Sverige","analysisLog":"3b. Svar","callback":"Case1_HUB"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1"
