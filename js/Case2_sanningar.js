@@ -38,7 +38,7 @@ self.nodes = {"content":
 		],
 		"comic_row_height":"370px",
 		 "animation":"left",
-		 "showNextButton":"0"
+		 "showNextButton":"1500"
 	},
 	{  	"ID": "Case2_sanningar_fraga",
 		"type":"question", 

@@ -66,7 +66,7 @@ self.nodes = {"content":
 			}
 			],
      	"animation":"left",
-		 "showNextButton":"0"
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "Case2_ettarsenare_infoomjames",
 		"type":"agent",
@@ -116,7 +116,7 @@ self.nodes = {"content":
 
 			],
      	"animation":"left",
-		"showNextButton":"0"
+		"showNextButton":"-1"
 	},
 	{  	"ID": "Case2_ettarsenare_fraga",
 		"type":"question", 

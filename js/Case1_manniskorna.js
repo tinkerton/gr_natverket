@@ -17,7 +17,7 @@ self.nodes = {"content":
 		"pretext":"<br/>",
 		"posttext":"<br/>",
 		"image": [
-			{"url":"Case1_manniskorna_crina.png"} 
+			{"url":"case1_manniskorna_crina.png"} 
 		],
 		 "animation":"down",
 		  "showNextButton":"0"			
@@ -29,7 +29,7 @@ self.nodes = {"content":
 		"pretext":"<br/>",
 		"posttext":"<br/>",
 		"image": [
-			{"url":"Case1_manniskorna_jobbet.png"} 
+			{"url":"case1_manniskorna_jobbet.png"} 
 		],
 		 "animation":"down",
 		  "showNextButton":"0"			
@@ -41,7 +41,7 @@ self.nodes = {"content":
 		"pretext":"<br/>",
 		"posttext":"<br/>",
 		"image": [
-			{"url":"Case1_manniskorna_sverige.png"} 
+			{"url":"case1_manniskorna_sverige.png"} 
 		],
 		"animation":"down",
 		"showNextButton":"0"			

@@ -23,7 +23,7 @@ self.nodes = {"content":
 			 }],
 
 			 "animation":"fade",
-		 	"showNextButton":"0"
+		 	"showNextButton":"-1"
 	},
 	{  	"ID": "Case2_outro_fraga",
 		"type":"question", 

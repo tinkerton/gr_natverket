@@ -79,7 +79,7 @@ self.nodes = {"content":
 			 	
 			}],
      	"animation":"left",
-		 "showNextButton":"0"
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "Case2_kuratorn_fraga",
 		"type":"question", 

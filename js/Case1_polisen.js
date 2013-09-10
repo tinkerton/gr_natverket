@@ -73,7 +73,7 @@ self.nodes = {"content":
 			},
 			],
      	"animation":"left",
-		 "showNextButton":"0"
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "Case1_polisen_fraga",
 		"type":"question", 
