@@ -28,12 +28,13 @@ self.nodes = {"content":
 				"answers":[
 							{"text":"-Var inte du kär i Samuel?", "gotoID":"2"},
 							{"text":"-Hade du druckit alkohol under festen med Samuel och James?", "gotoID":"5"}
+					
 				]
 			},
 			{	
 				"sequenceID":"2",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68372426", //Kär i samuel
+			 	"url":"http://player.vimeo.com/video/74194758", //Kär i samuel
 			 	 "gotoID":"3"
 			},
 			 {
@@ -47,13 +48,13 @@ self.nodes = {"content":
 			{	
 				"sequenceID":"4",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68372428", //druckit alkohol
+			 	"url":"http://player.vimeo.com/video/74194759", //druckit alkohol
 			 	 "gotoID":"8"
 			},
 			{	
 				"sequenceID":"5",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68372428",
+			 	"url":"http://player.vimeo.com/video/74194759",
 			 	 "gotoID":"6"
 			},
 			 {
@@ -67,14 +68,14 @@ self.nodes = {"content":
 			{	
 				"sequenceID":"7",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68372426",
+			 	"url":"http://player.vimeo.com/video/74194758",
 			 	 "gotoID":"8"
 			},
 
 			{	
 				"sequenceID":"8",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68372427"
+			 	"url":"http://player.vimeo.com/video/74194760"
 			 	
 			}],
      	"animation":"left",
