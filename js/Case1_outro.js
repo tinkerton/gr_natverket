@@ -11,14 +11,19 @@ self.topLeftImage = {"url":"img/case_color_splash.png"};
 self.nodes = {"content": 
 	[
 	{  	"ID": "Case1_Outro",
-		"type":"info",
+		"type":"video_seq",
 		"size":"twelve",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"videos":[{"videoURL":"http://player.vimeo.com/video/74038867",  "source" : "vimeo"}
-			
-			],
-		"animation":"fade",
-		"showNextButton":"0"
+		"background":{"type":"image","url":"bg3.jpg"},
+		"sequences":[
+
+			{
+				"sequenceID":"0",
+			 	"type":"video",
+			 	"url":"http://player.vimeo.com/video/74038867"
+			 }],
+
+			 "animation":"fade",
+		 	"showNextButton":"0"
 	},
 	{  	"ID": "Case1_outro_fraga",
 		"type":"question", 
@@ -42,16 +47,22 @@ self.nodes = {"content":
 		"showNextButton":"0"
 	},
 	{  	"ID": "Case2_Intro",
-		"type":"info",
+		"type":"video_seq",
 		"size":"twelve",
 		"background":{"type":"image","url":"bg3.jpg"},
-		"videos":[{"videoURL":"http://player.vimeo.com/video/74179460",  "source" : "vimeo"}
-			
-			],
-		"animation":"fade",
-		"showNextButton":"0",
-		"callback":"Case2_HUB"
+		"sequences":[
+
+			{
+				"sequenceID":"0",
+			 	"type":"video",
+			 	"url":"http://player.vimeo.com/video/74179460"
+			 }],
+
+			 "animation":"fade",
+		 	"showNextButton":"0",
+			 "callback":"Case2_HUB"
 	}
+
 
 	]
 };

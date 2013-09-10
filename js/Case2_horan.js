@@ -12,6 +12,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case2_horan_film",
 		"type":"video_seq",
+		"size":"tewlve",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"sequences":[
 

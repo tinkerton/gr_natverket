@@ -592,6 +592,10 @@ function addNodeComicSingle(nodeId) {
 			break;
 
 		}
+
+
+
+
 		
 
 		res ="<div class='row'>";
@@ -612,7 +616,7 @@ function addNodeComicSingle(nodeId) {
 				//KEEP ONLY THIS, SHOW ONLY ONE VIDEO AT A TIME ANYWAY
 				res +="<article class='vimeo video videoBg'>";
 				res +="<iframe id='iframe_"+i+"'' style='visibility:hidden;' onload='FS.showIframe("+i+")' ";
-				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0&autoplay="+autoplay+"&api=1&player_id=iframe_0' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
+				res += "src='" + videos[i].videoURL + "?title=0&byline=0&portrait=0&autoplay="+autoplay+"&api=1&player_id=iframe_"+i+"' width='500' height='281' frameboder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen=''>";
 				res +="</iframe>";
 
 			}
@@ -759,10 +763,13 @@ function addNodeComicSingle(nodeId) {
 		var result = addNodeHeader(nodeId) + addNodeTitle(nodeId,2);
 		
 		switch (FS.currentNodeType) {
-			case "info": case "video":
+			case "info":
 				result  += addNodePreText(nodeId) + addNodeImages(nodeId) + addNodeVideos(nodeId) +  addNodePostText(nodeId);
 		   
-			break
+			break;
+			case "video":
+				result +=addNodeVideos(nodeId);
+			break;
 			case "video_seq":
 				result  += addNodeVideoSequence(nodeId);
 		   
@@ -983,7 +990,15 @@ self.zoomIn_BUP = function(wallID) {
    			FS.video_player.removeEvent('ready');
 			FS.video_player.removeEvent('finish');
 			console.log("end of video");
-			FS.gotoNode(FS.currentNodeNr,1);
+		
+		 /*	if (contentObj[FS.currentNodeNr].callback!=undefined && contentObj[FS.currentNodeNr].callback!="-1") {
+		  	 		exitChapter(contentObj[FS.currentNodeNr].callback);
+
+		  	 	}else {
+		  */
+		  	 		FS.gotoNode(FS.currentNodeNr,1);
+		  //	 	}
+		
 	}
 
 	self.video_onFinish = function(id) {
@@ -995,9 +1010,11 @@ self.zoomIn_BUP = function(wallID) {
 		   	 if ( FS.currentSequence!=undefined)  TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
 		  	 else {
 		  	 	if (contentObj[FS.currentNodeNr].callback!=undefined) {
+		  	 		console.log("vof1");
 		  	 		exitChapter(contentObj[FS.currentNodeNr].callback);
 
 		  	 	}else {
+		  	 		console.log("vof2");
 		  	 		FS.gotoNode(FS.currentNodeNr,1);
 		  	 	}
 		  	 }
