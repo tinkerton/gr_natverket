@@ -27,212 +27,94 @@ self.nodes = {"content":
 				"text":"Påbörja förhöret med:",
 				"answers":[
 							{"text":"- Samuel", "gotoID":"1"},
-							{"text":"- James", "gotoID":"4"}
+							{"text":"- James", "gotoID":"7"},
+							{"text":"- Avsluta", "gotoID":"-1"}
 				]
 			},
-			/***ADVOKATEN FRÅGAR 1  *******************************************/
+			/***ADVOKATEN FRÅGAR SAMUEL  *******************************************/
 			{
 				"sequenceID":"1",
 				"type":"question",
-				"text":"Advokaten frågar",
+				"text":"Förhör med Samuel. Advokaten frågar:",
 				"answers":[
-							{"text":"- Samuel, kan du beskriva vad det var som hände?", "gotoID":"2"},
-							{"text":"- Samuel, kan du beskriva din tidigare relation med Mikaela?", "gotoID":"3"}
+							{"text":"- Kan du beskriva vad det var som hände? Börja från när du kommer till festen.", "gotoID":"2"},
+							{"text":"- Sa Mikaela någon gång ’nej’ eller på annat sätt uttryckte att hon inte ville ha samlag?", "gotoID":"3"},
+							{"text":"- Höll du och James fast Mikaelas handleder under samlaget?", "gotoID":"4"},
+							{"text":"- Hade Mikaela på något sätt uttryckt att hon ville att du skulle filma under samlaget?", "gotoID":"5"},
+							{"text":"- Hade Mikaela på något sätt uttryckt att hon ville att du skulle publicera filmen på internet?", "gotoID":"6"},
+							{"text":"- Gå tillbaka", "gotoID":"0"}
+				
 				]
 			},
 							{	
 								"sequenceID":"2",
 								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68549166",  //Samuel, advokat 01
-							 	 "gotoID":"7"
+							 	"url":"http://player.vimeo.com/video/74146395",  
+							 	 "gotoID":"1"
 							},
-							{	
+								{	
 								"sequenceID":"3",
 								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68549168",  //Samuel, advokat 02
-							 	 "gotoID":"7"
+							 	"url":"http://player.vimeo.com/video/74146397",  
+							 	 "gotoID":"1"
 							},
-			{
-				"sequenceID":"4",
-				"type":"question",
-				"text":"Advokaten frågar",
-				"answers":[
-							{"text":"- James, kan du beskriva vad det var som hände? ", "gotoID":"5"},
-							{"text":"- James, kan du berätta om vems idé det var att ni skulle ha sex?", "gotoID":"6"}
-				]
-			},
-							{	
+								{	
+								"sequenceID":"4",
+								"type":"video",
+							 	"url":"http://player.vimeo.com/video/74146398",  
+							 	 "gotoID":"1"
+							},
+								{	
 								"sequenceID":"5",
 								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68553974",  //James, advokat 01
-							 	 "gotoID":"10"
+							 	"url":"http://player.vimeo.com/video/74146399",  
+							 	 "gotoID":"1"
 							},
-							{	
+								{	
 								"sequenceID":"6",
 								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68552465",  //James, advokat 02
-							 	 "gotoID":"10"
+							 	"url":"http://player.vimeo.com/video/74146508",  
+							 	 "gotoID":"1"
 							},
-
-			/***ÅKLAGAREN FRÅGAR 1  *******************************************/
+				/***ADVOKATEN FRÅGAR JAMES  *******************************************/
 			{
 				"sequenceID":"7",
 				"type":"question",
-				"text":"Åklagaren frågar",
+				"text":"Förhör med James. Advokaten frågar:",
 				"answers":[
-							{"text":"- Samuel, hade Mikaela på något sätt uttryckt att hon ville att du skulle filma när ni hade sex?", "gotoID":"8"},
-							{"text":"- Samuel, hade Mikaela på något sätt uttryckt att hon ville att du skulle publicera filmen på internet?", "gotoID":"9"}
+							{"text":"- Kan du beskriva vad det var som hände? Börja från när du kommer till festen.", "gotoID":"8"},
+							{"text":"- Sa Mikaela någon gång ’nej’ eller på annat sätt uttryckte att hon inte ville ha samlag?", "gotoID":"9"},
+							{"text":"- Höll du och James fast Mikaelas handleder under samlaget?", "gotoID":"10"},
+							{"text":"- Enligt åtalet så gav ni Mikaela cigaretter för att utföra oralsex, stämmer det?", "gotoID":"11"},
+							{"text":"- Gå tillbaka", "gotoID":"0"}
+				
 				]
 			},
 							{	
 								"sequenceID":"8",
 								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68549167",  //Samuel, åklagare 01
-							 	 "gotoID":"13"
+							 	"url":"http://player.vimeo.com/video/74146025", 
+							 	 "gotoID":"7"
 							},
-							{	
+				{	
 								"sequenceID":"9",
 								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68549165",  //Samuel, åklagare 02
-							 	 "gotoID":"13"
+							 	"url":"http://player.vimeo.com/video/74146258",
+							 	 "gotoID":"7"
 							},
-			{
-				"sequenceID":"10",
-				"type":"question",
-				"text":"Advokaten frågar",
-				"answers":[
-							{"text":"- James, stämmer det att ni gav Mikaela cigaretter i utbyte mot oralsex?", "gotoID":"11"},
-							{"text":"- James, Hur kommer det sig att ni inte avbröt när Mikaela gjorde motstånd?", "gotoID":"12"}
-				]
-			},
-							{	
+				{	
+								"sequenceID":"10",
+								"type":"video",
+							 	"url":"http://player.vimeo.com/video/74146024", 
+							 	 "gotoID":"7"
+							},
+				{	
 								"sequenceID":"11",
 								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68552466",  //James, åklagare 01
-							 	 "gotoID":"14"
-							},
-							{	
-								"sequenceID":"12",
-								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68554700",  //James, åklagare 02
-							 	 "gotoID":"14"
-							},
-		
-		/***FORtSÄTT FÖRHÖRET  *******************************************/
-
-				{
-				"sequenceID":"13",
-				"type":"question",
-				"text":"Forsätt förhöret med:",
-				"answers":[
-							{"text":"- James", "gotoID":"18"},
-							{"text":"- Avsluta förhöret", "gotoID":"-1"}
-				]
-			},
-
-			{
-				"sequenceID":"14",
-				"type":"question",
-				"text":"Forsätt förhöret med:",
-				"answers":[
-							{"text":"- Samuel", "gotoID":"15"},
-							{"text":"- Avsluta förhöret", "gotoID":"-1"}
-				]
-			},
-
-			/***ADVOKATEN FRÅGAR 2  *******************************************/
-			{
-				"sequenceID":"15",
-				"type":"question",
-				"text":"Advokaten frågar",
-				"answers":[
-							{"text":"- Samuel, kan du beskriva vad det var som hände?", "gotoID":"16"},
-							{"text":"- Samuel, kan du beskriva din tidigare relation med Mikaela?", "gotoID":"17"}
-				]
-			},
-							{	
-								"sequenceID":"16",
-								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68549166",  //Samuel, advokat 01
-							 	 "gotoID":"21"
-							},
-							{	
-								"sequenceID":"17",
-								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68549168",  //Samuel, advokat 02
-							 	 "gotoID":"21"
-							},
-			{
-				"sequenceID":"18",
-				"type":"question",
-				"text":"Advokaten frågar",
-				"answers":[
-							{"text":"- James, kan du beskriva vad det var som hände? ", "gotoID":"19"},
-							{"text":"- James, kan du berätta om vems idé det var att ni skulle ha sex?", "gotoID":"20"}
-				]
-			},
-							{	
-								"sequenceID":"19",
-								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68553974",  //James, advokat 01
-							 	 "gotoID":"24"
-							},
-							{	
-								"sequenceID":"20",
-								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68552465",  //James, advokat 02
-							 	 "gotoID":"24"
-							},
-
-			/***ÅKLAGAREN FRÅGAR 2 *******************************************/
-			{
-				"sequenceID":"21",
-				"type":"question",
-				"text":"Åklagaren frågar",
-				"answers":[
-							{"text":"- Samuel, hade Mikaela på något sätt uttryckt att hon ville att du skulle filma när ni hade sex?", "gotoID":"22"},
-							{"text":"- Samuel, hade Mikaela på något sätt uttryckt att hon ville att du skulle publicera filmen på internet?", "gotoID":"23"}
-				]
-			},
-							{	
-								"sequenceID":"22",
-								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68549167"  //Samuel, åklagare 01
-							 	
-							},
-							{	
-								"sequenceID":"23",
-								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68549165"  //Samuel, åklagare 02
-							 	 
-							},
-			{
-				"sequenceID":"24",
-				"type":"question",
-				"text":"Advokaten frågar",
-				"answers":[
-							{"text":"- James, stämmer det att ni gav Mikaela cigaretter i utbyte mot oralsex?", "gotoID":"25"},
-							{"text":"- James, Hur kommer det sig att ni inte avbröt när Mikaela gjorde motstånd?", "gotoID":"26"}
-				]
-			},
-							{	
-								"sequenceID":"25",
-								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68552466"  //James, åklagare 01
-							 	
-							},
-							{	
-								"sequenceID":"26",
-								"type":"video",
-							 	"url":"http://player.vimeo.com/video/68554700"  //James, åklagare 02
-							 	 
+							 	"url":"http://player.vimeo.com/video/74146023", 
+							 	 "gotoID":"7"
 							}
-		
 
-
-
-
-		
 			 ],
      	"animation":"left",
 		 "showNextButton":"0"

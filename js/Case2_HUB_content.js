@@ -74,8 +74,8 @@ self.nodes = {"content":
 								"callback":"Case2_sanningar"},
 							{"text":"Förhör i rättssalen", 
 								"ID":"5",
-									"lockeduntil":"3", 
-								"width":"245px", "height":"90px", 
+									"lockeduntil":"0", //3 
+								"width":"245px", "height":"140px", 
 								"left":"72%", "top":"5%", 
 								"paddingtop":"15px",
 								"fontsize":"2.2",
