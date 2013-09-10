@@ -12,18 +12,15 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case2_horan_film",
 		"type":"video_seq",
-		"size":"tewlve",
 		"background":{"type":"image","url":"bg3.jpg"},
 		"sequences":[
-
 			{
 				"sequenceID":"0",
 			 	"type":"video",
 			 	"url":"http://player.vimeo.com/video/68027628"
 			 }],
 			 "animation":"fade",
-			 "showNextButton":"0",
-			
+			 "showNextButton":"0"
 	} , 
 	{  	"ID": "Case2_horan_fraga",
 		"type":"question", 
