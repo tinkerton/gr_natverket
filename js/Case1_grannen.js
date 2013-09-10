@@ -32,7 +32,7 @@ self.nodes = {"content":
 			{
 				"sequenceID":"0",
 			 	"type":"video",
-			 	"url":"http://player.vimeo.com/video/68480172",
+			 	"url":"http://player.vimeo.com/video/74039032",
 			 	 "gotoID":"1"
 			},
 			{
@@ -43,47 +43,47 @@ self.nodes = {"content":
 							{"text":"Bor du här?", "gotoID":"2"},
 							{"text":"Vad var det som fick dig att larma polisen?", "gotoID":"3"},
 							{"text":"Hur visste du att det handlade om trafficking?", "gotoID":"4"},
-							{"text":"Va du rädd?", "gotoID":"5"},
+							{"text":"Var du rädd?", "gotoID":"5"},
 							{"text":"Blev du kontaktad av polisen efteråt?", "gotoID":"6"},
 							{"text":"Vad skulle du ge för råd till andra som vill engagera sig i kampen mot trafficking?", "gotoID":"7"},
-							{"text":"Avsluta", "gotoID":"Case1_grannen_fraga"}
+							{"text":"Avsluta", "gotoID":"-1"}
 				]
 			},
 			{	
 				"sequenceID":"2",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68480173",
+			 	"url":"http://player.vimeo.com/video/74039033",
 			 	 "gotoID":"1"
 			},
 			{	
 				"sequenceID":"3",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68480174",
+			 	"url":"http://player.vimeo.com/video/74039061",
 			 	 "gotoID":"1"
 			},
 			{	
 				"sequenceID":"4",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68480175",
+			 	"url":"http://player.vimeo.com/video/74039062",
 			 	"gotoID":"1"
 			},
 			{	
 				"sequenceID":"5",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68480177",
+			 	"url":"http://player.vimeo.com/video/74039063",
 			  "gotoID":"1"
 			},
 			{
 				"sequenceID":"6",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68434512",			  
+			 	"url":"http://player.vimeo.com/video/74039064",			  
 			 	"gotoID":"1"
 		 	
 			 },
 			 {
 				"sequenceID":"7",
 				"type":"video",
-			 	"url":"http://player.vimeo.com/video/68434512",			  
+			 	"url":"http://player.vimeo.com/video/74039065",			  
 			 	"gotoID":"1"
 		 	
 			 }
