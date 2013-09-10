@@ -453,8 +453,11 @@ function addNodeComicSingle(nodeId) {
 		var myObj=contentObj[FS.currentNodeNr],
 			myCallback = myObj.answers[answer].callback;
 
+			ga('send', 'event', 'answers',  activeCase.ID.text, myObj.analysisLog , myObj.answers[answer].analysisLog);
 
-		console.log("LOG: "+ myObj.analysisLog + " - "  +myObj.answers[answer].analysisLog);
+
+
+		console.log("LOG: "+ activeCase.ID.text+", " + myObj.analysisLog + ", "  +myObj.answers[answer].analysisLog);
 		
 		if(myCallback!=undefined && myCallback!="Case1_HUB"  && myCallback!="Case2_HUB") {
 			//console.log( myCallback);
@@ -1244,7 +1247,12 @@ self.zoomIn_BUP = function(wallID) {
 	 
 		FS.nrOfVideos = 0;
 	   	FS.currentNodeNr = nextNodeId + direction;
-	
+		
+		try{
+	   	console.log("gotoNode " +  activeCase.ID.text +", " +contentObj[FS.currentNodeNr].ID);
+		ga('send', 'event', 'startNode',  activeCase.ID.text, contentObj[FS.currentNodeNr].ID);
+		
+		 }catch(err) {}
 		//REMOVE POSSIBILTY TO NAVIGATE FREELY
 		//	FS.checkArrows(FS.currentNodeNr);
 		FS.checkDebugArrows(FS.currentNodeNr);
@@ -1525,7 +1533,8 @@ self.zoomIn_BUP = function(wallID) {
 
 		//FS.setUpThumbs();
 
-
+		ga('send', 'event', 'startcase',  activeCase.ID.text );
+	
 		FS.gotoNode(currentNodeNr,1);
 	}
 
