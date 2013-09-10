@@ -10,11 +10,11 @@ self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
 	[
-	{  	"ID": "Case1_Outro",
+	{  	"ID": "Case2_Outro",
 		"type":"info",
 		"size":"twelve",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"videos":[{"videoURL":"http://player.vimeo.com/video/74038867",  "source" : "vimeo"}
+		"videos":[{"videoURL":"http://player.vimeo.com/video/74179462",  "source" : "vimeo"}
 			
 			],
 		"animation":"fade",

@@ -45,7 +45,7 @@ self.nodes = {"content":
 		"type":"info",
 		"size":"twelve",
 		"background":{"type":"image","url":"bg3.jpg"},
-		"videos":[{"videoURL":"http://player.vimeo.com/video/74038866",  "source" : "vimeo"}
+		"videos":[{"videoURL":"http://player.vimeo.com/video/74179460",  "source" : "vimeo"}
 			
 			],
 		"animation":"fade",

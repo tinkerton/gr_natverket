@@ -483,9 +483,10 @@ function addNodeComicSingle(nodeId) {
 			
 			res +="<article class='questionDiv'>";
 			res +="<div class='questionHeadline'>"+myObj.question +"</div>";
-			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer(0)>"+ myObj.answers[0].text +"</div>";
-			 
-			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer(1)>"+ myObj.answers[1].text +"</div>";
+			for (var i =0; i<_.size(myObj.answers); i++) {
+			res +="<div class='sequenceAnswer' onClick=FS.saveAnswer("+i+")>"+ myObj.answers[i].text +"</div>";
+				
+			}
 			res +="</article></div>";
 
 			return res;
