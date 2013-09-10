@@ -10,15 +10,20 @@ self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
 	[
-	{  	"ID": "Case2_Outro",
-		"type":"info",
+		{  	"ID": "Case2_Outro",
+		"type":"video_seq",
 		"size":"twelve",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"videos":[{"videoURL":"http://player.vimeo.com/video/74179462",  "source" : "vimeo"}
-			
-			],
-		"animation":"fade",
-		"showNextButton":"0"
+		"sequences":[
+
+			{
+				"sequenceID":"0",
+			 	"type":"video",
+			 	"url":"http://player.vimeo.com/video/74179462"
+			 }],
+
+			 "animation":"fade",
+		 	"showNextButton":"0"
 	},
 	{  	"ID": "Case2_outro_fraga",
 		"type":"question", 

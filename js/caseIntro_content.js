@@ -62,33 +62,22 @@ self.nodes = {"content":
 		"showNextButton":"0"
 	},
 	{  	"ID": "Case1_Intro",
-		"type":"info",
+		"type":"video_seq",
 		"size":"twelve",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"videos":[{"videoURL":"http://player.vimeo.com/video/74038866",  "source" : "vimeo"}
-			
-			],
-		"animation":"fade",
-		"showNextButton":"0",
-		"callback":"Case1_HUB"
+		"sequences":[
+
+			{
+				"sequenceID":"0",
+			 	"type":"video",
+			 	"url":"http://player.vimeo.com/video/74038866"
+			 }],
+
+			 "animation":"fade",
+		 	"showNextButton":"0",
+			 "callback":"Case1_HUB"
 	}
-
-	//, 
-	/*{  	"ID": "INTRO.4",
-		"type":"question", 
-		"analysisLog":"Intro, select case:",
-		/*"title":"SPECIALISERING",
-		"question":"~ * Du ska nu välja ett av två tränignsprogram. <br> I programmet Varför trafficking? lär du dig om trafficking och hur det sker, varje dag, i Sverige och Europa. <br> I programmet Bara på skoj? lär du dig om sexuella kränkningar i verkligheten och på internet. <br>Personerna som berättelserna handlar om är påhittade, men all fakta kommer från verkligheten. <br><br> Lycka till i träningsprogrammet. Hälsningar S. * ~ ",
-		"background":{"type":"image","url":"intro1.jpg"},
-		"answers":[
-							{"text":"1 - Varför trafficking?","analysisLog":"1. CASE 1","callback":"Case1_HUB"},
-							{"text":"2 - Bara på skoj?","analysisLog":"2. CASE 2","callback":"Case2_HUB"}
-				]
-		 ,
-		 "animation":"down",
-		 "showNextButton":"-1"
-	},*/
-
+	
     ]
 };
 
