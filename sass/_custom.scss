@@ -347,7 +347,7 @@ z-index: 400;
   line-height: 12px;  
    overflow: visible;  
    text-align: center;
-   display: block;
+   display: none;
 }
 #case-nav{
   max-width: 940px;
@@ -735,7 +735,14 @@ opacity: 0;
  
   opacity: 0.2;
    padding-bottom: 40px;
-   zoom:0.7;
+   /*zoom:0.7;
+   -moz-transform :  scale (0.7);
+   */
+transform: scale(0.7,0.7);
+-ms-transform: scale(0.7,0.7); /* IE 9 */
+-webkit-transform: scale(0.7,0.7); /* Safari and Chrome */
+-o-transform: scale(0.7,0.7); /* Opera */
+-moz-transform: scale(0.7,0.7);
 
    -webkit-transition: height,opacity 0.5s ease;
     -moz-transition: height,opacity 0.5s ease;
@@ -828,8 +835,12 @@ width:280px;
 .comicActive {
   opacity: 1;
   padding-left: 0px;
-   zoom:1;
-
+  // zoom:1;
+transform: scale(1,1);
+-ms-transform: scale(1,1);
+-webkit-transform: scale(1,1);
+-o-transform: scale(1,1);
+-moz-transform: scale(1,1);
 }
 .comicSingleHeader {
   position: relative;

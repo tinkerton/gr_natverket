@@ -1954,7 +1954,7 @@ border-radius: 0px 10px 10px 0px;
 
 #topleft-overlay { position: absolute; z-index: 30; /*background: url(../img/case_color_splash.png);*/ background-repeat: no-repeat; top: 0px; left: 0px; width: 100%; height: 100%; pointer-events: none; }
 
-#case-nav-wrapper { position: absolute; height: 50px; width: 100%; bottom: 0px; background-color: rgba(0, 0, 0, 0.2); z-index: 400; text-align: center; font-size: 20px; letter-spacing: 35px; white-space: nowrap; line-height: 12px; overflow: visible; text-align: center; display: block; }
+#case-nav-wrapper { position: absolute; height: 50px; width: 100%; bottom: 0px; background-color: rgba(0, 0, 0, 0.2); z-index: 400; text-align: center; font-size: 20px; letter-spacing: 35px; white-space: nowrap; line-height: 12px; overflow: visible; text-align: center; display: none; }
 
 #case-nav { max-width: 940px; width: 100%; display: inline-block; padding-top: 0.2em; }
 
@@ -2046,7 +2046,9 @@ img, object, embed .node-image { max-width: 100%; width: auto; border: none; }
 
 #comicScroller { position: absolute; top: 0; left: 0; }
 
-.comicSlide { position: relative; height: 220px; width: 960px; display: inline-block; opacity: 0.2; padding-bottom: 40px; zoom: 0.7; -webkit-transition: height,opacity 0.5s ease; -moz-transition: height,opacity 0.5s ease; -o-transition: height,opacity 0.5s ease; transition: height,opacity 0.5s ease; }
+.comicSlide { position: relative; height: 220px; width: 960px; display: inline-block; opacity: 0.2; padding-bottom: 40px; /*zoom:0.7;
+-moz-transform :  scale (0.7);
+*/ transform: scale(0.7, 0.7); -ms-transform: scale(0.7, 0.7); /* IE 9 */ -webkit-transform: scale(0.7, 0.7); /* Safari and Chrome */ -o-transform: scale(0.7, 0.7); /* Opera */ -moz-transform: scale(0.7, 0.7); -webkit-transition: height,opacity 0.5s ease; -moz-transition: height,opacity 0.5s ease; -o-transition: height,opacity 0.5s ease; transition: height,opacity 0.5s ease; }
 
 .parallelcomic { position: relative; display: inline-block;  /* float:left;
 width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
@@ -2064,7 +2066,7 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .singlecomic { position: relative; display: inline-block; width: 660px; height: 437px; }
 
-.comicActive { opacity: 1; padding-left: 0px; zoom: 1; }
+.comicActive { opacity: 1; padding-left: 0px; transform: scale(1, 1); -ms-transform: scale(1, 1); -webkit-transform: scale(1, 1); -o-transform: scale(1, 1); -moz-transform: scale(1, 1); }
 
 .comicSingleHeader { position: relative; width: 660px; height: 40px; padding: 5px; display: inline-block; background-color: rgba(0, 0, 0, 0.8); text-align: left; font-size: 18px; }
 

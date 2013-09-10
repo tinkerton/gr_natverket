@@ -195,7 +195,7 @@ function startComicSingle(nrOfSlides) {
 			
 				resetAllComicParallels(nrOfSlides, currentNr);
 					
-				var scrollto = winHeight -(comicHeight*0.7)* currentNr;
+				var scrollto = winHeight -(comicHeight)* currentNr;
 				//console.log("scrollto "+ scrollto + "  currentNr="+currentNr + "            currentComic="+currentComic);
 				TweenMax.to($("#comicScroller"),0,{top:scrollto});
 				currentComic = currentNr;
@@ -1544,6 +1544,9 @@ self.zoomIn_BUP = function(wallID) {
 			$("#case-nav-wrapper").hide();
 			$("#debugNextButton").hide();
 			$("#debugPrevButton").hide();
+		}
+		else {
+			$("#case-nav-wrapper").css("display","block");
 		}
 
 	//BV = new $.BigVideo();
