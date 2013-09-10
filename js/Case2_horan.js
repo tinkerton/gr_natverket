@@ -27,12 +27,12 @@ self.nodes = {"content":
 	{  	"ID": "Case2_horan_fraga",
 		"type":"question", 
 		"analysisLog":"Case2_horan_fraga1",
-		"question":"Vad tänker du när det skrivs negativa saker om någon på internet?",
+		"question":"Kim: Varför kallar man någon för hora?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Jag bryr mig inte så mycket, man ska inte ta det personligt.","analysisLog":"1. Svar"},
-							{"text":"Det är svårt när det är man själv som är utsatt, då blir det personligt.","analysisLog":"2. Svar"},
-							{"text":"Jag blir oftast arg och besviken på dem som skriver saker.","analysisLog":"3. Svar"}
+							{"text":"Det är ett sätt att hämnas om någon beter sig dåligt eller har sårat en själv.","analysisLog":"1. Svar"},
+							{"text":"Det ett sätt att påminna en tjej om hur hon bör bete sig och se ut – och hur hon inte ska bete sig och se ut.","analysisLog":"2. Svar"},
+							{"text":"Det är roligt – som ett skämt, lite som att kalla någon för ”bitch”.","analysisLog":"3. Svar"}
 				]
 		 ,
 		 "animation":"left",
