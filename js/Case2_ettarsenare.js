@@ -111,12 +111,12 @@ self.nodes = {"content":
 	{  	"ID": "Case2_ettarsenare_fraga",
 		"type":"question", 
 		"analysisLog":"Case2_ettarsenare_fraga1",
-		"question":"(placeholder)Reflektionsfråga kring hur James och samuel skiljer sig och vad det säger om deras människosyn.",
+		"question":"Kim: På internet är det fortfarande många som stöttar James och Samuel och skriver att de blivit oskyldigt dömda. Hur tror du det påverkar deras möjligheter att ta ansvar för det som hänt?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Svar1","analysisLog":"1. Svar"},
-							{"text":"Svar2","analysisLog":"2. Svar"},
-							{"text":"Svar3","analysisLog":"3. Svar"}
+							{"text":"De kan själva välja att lyssna eller inte lyssna på det som skrivs; det påverkar dem inte.","analysisLog":"1. Svar"},
+							{"text":"Allt som skrivs på Internet riskerar att göra så James och Samuel förlorar stöd av andra, både familj och vänner, som vill hjälpa dem att gå vidare – även om de begått ett brott.","analysisLog":"2. Svar"},
+							{"text":"Det är bra att de får stöttning av andra som skriver att de blivit oskyldigt dömda – det kommer göra det lättare att gå vidare.","analysisLog":"3. Svar"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1",

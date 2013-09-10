@@ -20,10 +20,25 @@ self.nodes = {"content":
 		"animation":"fade",
 		"showNextButton":"0"
 	},
+	{  	"ID": "Case2_outro_fraga",
+		"type":"question", 
+		"analysisLog":"Case2_outro_fraga1",
+		"question":"Kim: Hur tror du att Mikaela hade mått om Samuel och James inte blivit dömda?",
+		"background":{"type":"image","url":"intro2.jpg"},
+		"answers":[
+							{"text":"Det hade inte gjort någon större skillnad, det största problemet var att hon blev så smutskastad när så många påstod att hon ljög.","analysisLog":"1. Svar"},
+							{"text":"Om de inte hade blivit dömda hade Mikaela troligen fortsatt ifrågasätta sig själv och mått väldigt dåligt över det som skett.","analysisLog":"2. Svar"},
+							{"text":"Det hade inte gjort någon skillnad, eftersom Mikaela ändå bara vill flytta någon annan stans och starta ett nytt liv.","analysisLog":"3. Svar"}
+				]
+		 ,
+		 "animation":"left",
+		 "showNextButton":"-1",
+		 "callback":"Case2_HUB"
+	}
 	{  	"ID": "Case2_outro_kim",
 		"type":"agent",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"(placeholder)Att man nu har gått igenom träningsprogrammet och är redo att agera som agent – i verkligeheten. <br><br>//Kim",
+		"text":"Kim: Du har nu gått igenom träningsprogrammet och kan, om du vill, bli agent i Nätverket. <br><br>Att vara agent handlar om att stå upp för alla människors lika värde och för sex på lika villkor.<br><br>Nu är det dags att återvända till verkligheten där du har möjlighet att göra skillnad – på riktigt – för dig själv och många andra.",
 		"animation":"fade",
 		"showNextButton":"0",
 		"callback":"OUTRO"
