@@ -68,6 +68,16 @@ self.nodes = {"content":
      	"animation":"left",
 		 "showNextButton":"0"
 	},
+	{  	"ID": "Case2_ettarsenare_infoomjames",
+		"type":"agent",
+		"background":{"type":"image","url":"bg3.jpg"},
+		/*"image": [
+			{"url":"1.1.2_bordell.png"} 
+		],*/
+		"text":"James dömdes till 13 månaders sluten ungdomsvård. Det är nu en månad tills han släpps ut.<br><br>Här kan du ställa några frågor till honom, om du vill.",
+     	"animation":"fade",
+		"showNextButton":"0"
+	},
 	{  	"ID": "Case2_ettarsenare_james",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg3.jpg"},
@@ -75,7 +85,7 @@ self.nodes = {"content":
 			{
 				"sequenceID":"0",
 				"type":"question",
-				"text":"Ställ en fråga:",
+				"text":"Fråga James:",
 				"answers":[
 							{"text":"- Vad tänker du idag om det som hände?", "gotoID":"1"}, 
 							{"text":"- Kommer du kunna gå vidare?", "gotoID":"2"},  
@@ -106,7 +116,7 @@ self.nodes = {"content":
 
 			],
      	"animation":"left",
-		 "showNextButton":"0"
+		"showNextButton":"0"
 	},
 	{  	"ID": "Case2_ettarsenare_fraga",
 		"type":"question", 
