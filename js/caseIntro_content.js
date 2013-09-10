@@ -35,17 +35,29 @@ self.nodes = {"content":
 		/*"image": [
 			{"url":"1.1.2_bordell.png"} 
 		],*/
-		"text":"Programmet består av två delar. Du kommer gå igenom dessa en i taget och få olika perspektiv på de här frågorna.<br> <br> Men att vara agent handlar inte bara om att kunna en massa fakta. Därför kommer jag ställa frågor till dig längs vägen, för att se om du klarar av att tänka själv och göra egna ställningstaganden.<br> <br>Lycka till!<br>// Kim",
+		"text":"Kim: Hej. Mitt namn är Kim och jag är agent i Nätverket. Det här är vårt träningsprogram för nya agenter.<br><br>Träningsprogrammet har två delar. Den första delen handlar om trafficking, och den andra om kränkningar.<br><br>Du behöver lära dig en hel del saker för att bli agent i Nätverket, men det är lika viktigt att kunna tänka själv. Därför kommer jag ställa frågor till dig längs vägen. Du har 3 alternativ till varje fråga. Välj det svar som passar din åsikt bäst. Här följer en testfråga.",
 		"music":"music/bridgeofsighs",
      	"animation":"fade",
 		"showNextButton":"0",
-
-			
+	},
+	{  	"ID": "Intro question",
+		"type":"question", 
+		"analysisLog":"intro_testquestion",
+		"question":"Kim: Vad föredrar du?",
+		"background":{"type":"image","url":"intro1.jpg"},
+		"answers":[
+							{"text":"Se på film.","analysisLog":"1. Svar"},
+							{"text":"Läsa böcker.","analysisLog":"2. Svar"},
+							{"text":"Spela tv-spel.","analysisLog":"3. Svar"}
+				]
+		 ,
+		 "animation":"fade",
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "Case1_intro_kim",
 		"type":"agent",
 		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"Som agenter arbetar vi mot alla former av kränkningar, men trafficking är den grövsta av kränkningarna mot mänskliga rättigheter. Den första delen av det här programmet är till för att du ska få veta några olika anledningar till att det finns trafficking och vad man kan göra som agent i Nätverket för att arbeta mot det. <br><br>//Kim",
+		"text":"Kim: Bra! Då sätter vi igång med den första delen i träningsprogrammet. Gå vidare när du är redo.",
 		"animation":"fade",
 		"showNextButton":"0"
 	},
