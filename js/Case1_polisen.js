@@ -78,7 +78,7 @@ self.nodes = {"content":
 	{  	"ID": "Case1_polisen_fraga",
 		"type":"question", 
 		"analysisLog":"polisen_fraga",
-		"question":"Hur tror du att människors attityder påverkas av sexköpslagen?",
+		"question":"Kim: Hur tror du att människors attityder påverkas av sexköpslagen?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
 							{"text":"Inte alls. Det gör det bara svårare att köpa sex.","analysisLog":"1. svar"},

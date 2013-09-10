@@ -94,12 +94,12 @@ self.nodes = {"content":
 	{  	"ID": "Case1_grannen_fraga",
 		"type":"question", 
 		"analysisLog":"Case1_grannen_fraga1",
-		"question":"Vad tror du är huvudanledningen till att trafficking fortsätter?",
+		"question":"Kim: De allra flesta i Sverige har aldrig köpt sex. Bär dessa människor något ansvar för att trafficking fortsätter?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Att det finns män som vill köpa sex. ","analysisLog":"1. Svar"},
-							{"text":"Att samhället inte agerar hårdare mot de som köper sex och bidrar till trafficking-industrin.","analysisLog":"2. Svar"},
-							{"text":"Att ligorna som sysslar med människohandel är duktiga på att dölja vad de håller på med.","analysisLog":"3. Svar"}
+							{"text":"Nej. De som inte är en del av efterfrågan har inget ansvar alls.","analysisLog":"1. Svar"},
+							{"text":"Delvis. Genom tydligare ställningstagande mot sexköp och trafficking kan andra göra stor skillnad.","analysisLog":"2. Svar"},
+							{"text":"Ja. Genom att vända ryggen till problemet och göra det enkelt att syssla med människohandel och sexköp är andra också medskyldiga till att det fortsätter.","analysisLog":"3. Svar"}
 				]
 		 ,
 		 "animation":"left",

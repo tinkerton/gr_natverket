@@ -23,12 +23,12 @@ self.nodes = {"content":
 	{  	"ID": "Case1_outro_fraga",
 		"type":"question", 
 		"analysisLog":"case1 outro fraga",
-		"question":"Reflektionsfråga case 1 - brygga till case 2",
+		"question":"Kim: Vad har trafficking och prostitution för konsekvenser på samhället?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Svar","analysisLog":"1. Svar"},
-							{"text":"Svar","analysisLog":"2. Svar"},
-							{"text":"Svar","analysisLog":"3. Svar"}
+							{"text":"Det innebär inget särskilt. Människor kan välja hur de vill leva sina liv och man borde få köpa och sälja vad man vill om man har eller vill tjäna pengar.","analysisLog":"1. Svar"},
+							{"text":"Om prostitution ses som ett vanligt yrke riskerar människor att tvingas till att sälja sex om de inte kan tjäna pengar på annat sätt","analysisLog":"2. Svar"},
+							{"text":"Att sex på lika villkor inte ses som en självklarhet: Trafficking och prostitution innebär att någon kan köpa rätten att begå övergrepp.","analysisLog":"3. Svar"}
 				]
 		 ,
 		 "animation":"left",
@@ -37,7 +37,7 @@ self.nodes = {"content":
 	{  	"ID": "Case2_intro_kim",
 		"type":"agent",
 		"background":{"type":"image","url":"bg3.jpg"},
-		"text":"(placeholder) Text om case 2 från Kim. <br><br>//Kim",
+		"text":"Kim: Du är nu klar med första delen i träningsprogrammet och kommer gå vidare till del två som handlar om kränkningar. Gå vidare när du är redo.",
 		"animation":"fade",
 		"showNextButton":"0"
 	},

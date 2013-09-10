@@ -78,7 +78,7 @@ self.nodes = {"content":
 	{  	"ID": "Case1_envanligdag_fraga",
 		"type":"question", 
 		"analysisLog":"envanligdag_fraga",
-		"question":"Vem av de tre karaktärerna tycker du har stört ansvar för Crinas situation?",
+		"question":"Kim: Vem av de tre personerna tycker du har stört ansvar för Crinas situation?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
 							{"text":"Sexköparen. Utan att han och andra köper sex hade inte trafficking varit ett problem.","analysisLog":"1. svar"},
