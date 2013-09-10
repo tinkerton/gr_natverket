@@ -68,6 +68,16 @@ self.nodes = {"content":
      	"animation":"left",
 		 "showNextButton":"0"
 	},
+	{  	"ID": "Case2_ettarsenare_infoomjames",
+		"type":"agent",
+		"background":{"type":"image","url":"bg3.jpg"},
+		/*"image": [
+			{"url":"1.1.2_bordell.png"} 
+		],*/
+		"text":"James dömdes till 13 månaders sluten ungdomsvård. Det är nu en månad tills han släpps ut.<br><br>Här kan du ställa några frågor till honom, om du vill.",
+     	"animation":"fade",
+		"showNextButton":"0"
+	},
 	{  	"ID": "Case2_ettarsenare_james",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg3.jpg"},
@@ -75,7 +85,7 @@ self.nodes = {"content":
 			{
 				"sequenceID":"0",
 				"type":"question",
-				"text":"Ställ en fråga:",
+				"text":"Fråga James:",
 				"answers":[
 							{"text":"- Vad tänker du idag om det som hände?", "gotoID":"1"}, 
 							{"text":"- Kommer du kunna gå vidare?", "gotoID":"2"},  
@@ -106,17 +116,17 @@ self.nodes = {"content":
 
 			],
      	"animation":"left",
-		 "showNextButton":"0"
+		"showNextButton":"0"
 	},
 	{  	"ID": "Case2_ettarsenare_fraga",
 		"type":"question", 
 		"analysisLog":"Case2_ettarsenare_fraga1",
-		"question":"(placeholder)Reflektionsfråga kring hur James och samuel skiljer sig och vad det säger om deras människosyn.",
+		"question":"Kim: På internet är det fortfarande många som stöttar James och Samuel och skriver att de blivit oskyldigt dömda. Hur tror du det påverkar deras möjligheter att ta ansvar för det som hänt?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Svar1","analysisLog":"1. Svar"},
-							{"text":"Svar2","analysisLog":"2. Svar"},
-							{"text":"Svar3","analysisLog":"3. Svar"}
+							{"text":"De kan själva välja att lyssna eller inte lyssna på det som skrivs; det påverkar dem inte.","analysisLog":"1. Svar"},
+							{"text":"Allt som skrivs på Internet riskerar att göra så James och Samuel förlorar stöd av andra, både familj och vänner, som vill hjälpa dem att gå vidare – även om de begått ett brott.","analysisLog":"2. Svar"},
+							{"text":"Det är bra att de får stöttning av andra som skriver att de blivit oskyldigt dömda – det kommer göra det lättare att gå vidare.","analysisLog":"3. Svar"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1",

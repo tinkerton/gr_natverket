@@ -122,12 +122,12 @@ self.nodes = {"content":
 	{  	"ID": "Case2_rattssalen_fraga",
 		"type":"question", 
 		"analysisLog":"Case2_rattssalen_fraga1",
-		"question":"Hur tycker du att Samuel och James versioner av händelsen skiljer sig från Mikaelas?",
+		"question":"Kim: Hur tror du att James och Samuel kommer påverkas av det som hänt?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Svar1","analysisLog":"1. Svar"},
-							{"text":"Svar2","analysisLog":"2. Svar"},
-							{"text":"Svar3","analysisLog":"3. Svar"}
+							{"text":"Samuel vill inte erkänna att han skadat någon annan, han kommer troligen kunna göra samma sak igen även efter rättegången.","analysisLog":"1. Svar"},
+							{"text":"James verkar ångerfull. Han kommer troligen må väldigt dåligt och behöva hjälp efteråt för att kunna gå vidare.","analysisLog":"2. Svar"},
+							{"text":"Samuel och James kommer troligen inte kunna vara vänner efter rättegången, då Samuel kommer känna sig sviken av James.","analysisLog":"3. Svar"}
 				]
 		 ,
 		 "animation":"left",

@@ -83,12 +83,12 @@ self.nodes = {"content":
 	{  	"ID": "Case2_kuratorn_fraga",
 		"type":"question", 
 		"analysisLog":"Case2_kuratorn_fraga1",
-		"question":"(placeholder)Reflektionsfråga kring kuratorns bemötande av Mikaela.",
+		"question":"Kim: Hur tycker du att kuratorn bemöter Mikaela i den här situationen?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Svar1","analysisLog":"1. Svar"},
-							{"text":"Svar2","analysisLog":"2. Svar"},
-							{"text":"Svar3","analysisLog":"3. Svar"}
+							{"text":"Kuratorn försvarar James och Samuel medan hon inte lyssnar på Mikaelas version av vad som hände på festen.","analysisLog":"1. Svar"},
+							{"text":"Kuratorn verkar inte kunna ta det som hänt på allvar och försöker bortförklara våldtäkten.","analysisLog":"2. Svar"},
+							{"text":"Kuratorn vill hjälpa Mikaela men Mikaela är för upprörd för att lyssna. ","analysisLog":"3. Svar"}
 				]
 		 ,
 		 "animation":"left",
