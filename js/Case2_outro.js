@@ -38,7 +38,7 @@ self.nodes = {"content":
 		 ,
 		 "animation":"left",
 		 "showNextButton":"-1",
-	}
+	},
 	{  	"ID": "Case2_outro_kim",
 		"type":"agent",
 		"background":{"type":"image","url":"bg4.jpg"},
