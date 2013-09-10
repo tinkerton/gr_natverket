@@ -33,7 +33,6 @@ self.nodes = {"content":
 		 ,
 		 "animation":"left",
 		 "showNextButton":"-1",
-		 "callback":"Case2_HUB"
 	}
 	{  	"ID": "Case2_outro_kim",
 		"type":"agent",
