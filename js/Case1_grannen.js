@@ -89,7 +89,7 @@ self.nodes = {"content":
 			 }
 			 ],
      	"animation":"left",
-		 "showNextButton":"0"
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "Case1_grannen_fraga",
 		"type":"question", 
@@ -103,7 +103,7 @@ self.nodes = {"content":
 				]
 		 ,
 		 "animation":"left",
-		 "showNextButton":"0",
+		 "showNextButton":"-1",
 		 "callback":"Case1_HUB"
 	}
 

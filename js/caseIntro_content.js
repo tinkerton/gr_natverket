@@ -38,7 +38,7 @@ self.nodes = {"content":
 		"text":"Kim: Hej. Mitt namn är Kim och jag är agent i Nätverket. Det här är vårt träningsprogram för nya agenter.<br><br>Träningsprogrammet har två delar. Den första delen handlar om trafficking, och den andra om kränkningar.<br><br>Du behöver lära dig en hel del saker för att bli agent i Nätverket, men det är lika viktigt att kunna tänka själv. Därför kommer jag ställa frågor till dig längs vägen. Du har 3 alternativ till varje fråga. Välj det svar som passar din åsikt bäst. Här följer en testfråga.",
 		"music":"music/bridgeofsighs",
      	"animation":"fade",
-		"showNextButton":"0",
+		"showNextButton":"2000",
 	},
 	{  	"ID": "Intro question",
 		"type":"question", 
@@ -74,7 +74,7 @@ self.nodes = {"content":
 			 }],
 
 			 "animation":"fade",
-		 	"showNextButton":"0",
+		 	"showNextButton":"-1",
 			 "callback":"Case1_HUB"
 	}
 	
