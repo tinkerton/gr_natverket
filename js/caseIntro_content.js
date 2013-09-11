@@ -74,7 +74,7 @@ self.nodes = {"content":
 			 }],
 
 			 "animation":"fade",
-		 	"showNextButton":"-1",
+		 	"showNextButton":"0",
 			 "callback":"Case1_HUB"
 	}
 	
