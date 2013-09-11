@@ -434,6 +434,8 @@ function addNodeComicSingle(nodeId) {
 		for (var i=0; i<=_.size(FS.unlockedChapters); i++) {
 			if (FS.unlockedChapters[i] == currentCase) {
 				foundNextHUB = true;
+				FS.unlockedChapters.length = 0;
+				FS.unlockedChapters = [];
 				break;
 			}
 			

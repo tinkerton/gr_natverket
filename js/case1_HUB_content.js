@@ -89,7 +89,7 @@ self.nodes = {"content":
 							{"text":"I lägenheten bredvid", 
 								"ID":"4",
 								"lockeduntil":"2",
-								"width":"240px", "height":"125px", 
+								"width":"240px", "height":"85px", 
 								"left":"8%", "top":"14%",
 								"paddingtop":"12px", 
 								"fontsize":"2",
