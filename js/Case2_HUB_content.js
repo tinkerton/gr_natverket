@@ -77,7 +77,7 @@ self.nodes = {"content":
 							{"text":"Förhör i rättssalen", 
 								"ID":"5",
 									"lockeduntil":"11",
-								"width":"245px", "height":"140px", 
+								"width":"245px", "height":"90px", 
 								"left":"72%", "top":"5%", 
 								"paddingtop":"15px",
 								"fontsize":"2.2",
