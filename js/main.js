@@ -211,7 +211,7 @@ function startComicSingle(nrOfSlides) {
 	}
 function resetAllComicParallels(nrOfSlides,exceptSlide) {
 			window.clearTimeout(myTimeout);
-		console.log("resetAllComicParallels " + nrOfSlides+ ","+exceptSlide);
+		 //console.log("resetAllComicParallels " + nrOfSlides+ ","+exceptSlide);
 		for (var i=0; i<nrOfSlides; i++) {
 			
 				$("#slide_"+i).removeClass("comicActive")
@@ -222,7 +222,7 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 	}
 
 	function startComicHint(nrOfSlides) {
-		console.log("startComicHint " + nrOfSlides+ ","+currentComic);
+		//console.log("startComicHint " + nrOfSlides+ ","+currentComic);
 		window.clearTimeout(myTimeout);
 		var myT;
 			for (var i=0; i<nrOfSlides; i++) {
@@ -440,7 +440,7 @@ function addNodeComicSingle(nodeId) {
 		}
 		if(currentCase!="CaseIntro" && foundNextHUB == false) FS.unlockedChapters.push(currentCase);
 		
-		console.log("exitChapter goto:"+ nextHUB  + "    unlockedChapters:" + _.size(FS.unlockedChapters) +" " + currentCase);
+		 ////console.log("exitChapter goto:"+ nextHUB  + "    unlockedChapters:" + _.size(FS.unlockedChapters) +" " + currentCase);
 	
 		TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[nextHUB]});
 	}
@@ -457,7 +457,7 @@ function addNodeComicSingle(nodeId) {
 
 
 
-		console.log("LOG: "+ activeCase.ID.text+", " + myObj.analysisLog + ", "  +myObj.answers[answer].analysisLog);
+		//console.log("LOG: "+ activeCase.ID.text+", " + myObj.analysisLog + ", "  +myObj.answers[answer].analysisLog);
 		
 		if(myCallback!=undefined && myCallback!="Case1_HUB"  && myCallback!="Case2_HUB") {
 			//console.log( myCallback);
@@ -503,7 +503,7 @@ function addNodeComicSingle(nodeId) {
 
 	self.gotoSequence = function(sequenceID) {
 		 if (sequenceID == "-1") {
-		 	console.log("END of video");
+		 	 //console.log("END of video");
 		 	FS.gotoNode(FS.currentNodeNr,1); 
 		 return; 
 		}
@@ -708,9 +708,9 @@ function addNodeComicSingle(nodeId) {
 	
 
 		var myObj=contentObj[FS.currentNodeNr];
-		console.log("goto chapter " + chapter + " : " + myObj.chapters[chapter].lockeduntil + " | " +  _.size(FS.unlockedChapters));
+		//console.log("goto chapter " + chapter + " : " + myObj.chapters[chapter].lockeduntil + " | " +  _.size(FS.unlockedChapters));
 		if (myObj.chapters[chapter].lockeduntil > _.size(FS.unlockedChapters)) {
-				//console.log("return");
+				// //console.log("return");
 				return;
 		}
 		globalAnimation=1;
@@ -720,7 +720,7 @@ function addNodeComicSingle(nodeId) {
 		//	console.log( myObj.chapters[chapter].callback);
 			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myObj.chapters[chapter].callback]});
 		}
-		else console.log("HUB error: could not found callback action in function respondToHUB");
+		//else console.log("HUB error: could not found callback action in function respondToHUB");
 	}
 
 
@@ -992,7 +992,7 @@ self.zoomIn_BUP = function(wallID) {
     	
    			FS.video_player.removeEvent('ready');
 			FS.video_player.removeEvent('finish');
-			console.log("end of video");
+			//console.log("end of video");
 		
 		 /*	if (contentObj[FS.currentNodeNr].callback!=undefined && contentObj[FS.currentNodeNr].callback!="-1") {
 		  	 		exitChapter(contentObj[FS.currentNodeNr].callback);
@@ -1008,16 +1008,16 @@ self.zoomIn_BUP = function(wallID) {
 		  	
 		  	
 		  	 removeVideoListener();
-		  	 console.log("video on finish");
+		  	// console.log("video on finish");
 		  	 FS.currentSequence =  contentObj[FS.currentNodeNr].sequences[FS.currentSequence].gotoID;
 		   	 if ( FS.currentSequence!=undefined)  TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
 		  	 else {
 		  	 	if (contentObj[FS.currentNodeNr].callback!=undefined) {
-		  	 		console.log("vof1");
+		  	 		//console.log("vof1");
 		  	 		exitChapter(contentObj[FS.currentNodeNr].callback);
 
 		  	 	}else {
-		  	 		console.log("vof2");
+		  	 		//console.log("vof2");
 		  	 		FS.gotoNode(FS.currentNodeNr,1);
 		  	 	}
 		  	 }
@@ -1249,7 +1249,7 @@ self.zoomIn_BUP = function(wallID) {
 	   	FS.currentNodeNr = nextNodeId + direction;
 		
 		try{
-	   	console.log("gotoNode " +  activeCase.ID.text +", " +contentObj[FS.currentNodeNr].ID);
+	   	//console.log("gotoNode " +  activeCase.ID.text +", " +contentObj[FS.currentNodeNr].ID);
 		ga('send', 'event', 'startNode',  activeCase.ID.text, contentObj[FS.currentNodeNr].ID);
 		
 		 }catch(err) {}
@@ -1262,7 +1262,7 @@ self.zoomIn_BUP = function(wallID) {
   			if (contentObj[oldNodeId].callback!=undefined) {
   				if (contentObj[oldNodeId].callback=="OUTRO") window.location = "outro.html";
   				else {
-  					console.log("JONAS force exit");
+  				
 		
   						exitChapter(contentObj[oldNodeId].callback);
   					return;	
@@ -1627,7 +1627,7 @@ self.zoomIn_BUP = function(wallID) {
 
 // Gumby is ready to go
 Gumby.ready(function() {
-	console.log('Gumby is ready to go...', Gumby.debug());
+	//console.log('Gumby is ready to go...', Gumby.debug());
 
 	// placeholder polyfil
 	if(Gumby.isOldie || Gumby.$dom.find('html').hasClass('ie9')) {
@@ -1645,7 +1645,7 @@ Gumby.ready(function() {
 
 // Oldie document loaded
 Gumby.oldie(function() {
-	console.log("Oldie");
+	//console.log("Oldie");
 });
 
 
