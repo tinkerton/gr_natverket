@@ -1021,3 +1021,22 @@ background-position: center;
   color:#99035D;
 }
 
+#restart {
+  position: absolute;
+  z-index:9000;
+  right:10px;
+  top:10px;
+  cursor: pointer;
+  color:#FFF;
+  font-size: 0.75em;
+}
+#restart:hover {
+  color:#e94d7e;
+}
+
+.modal > .content {
+  color:#FFF;
+  height:40%;
+  min-height: 25%;
+  background-color: #111;
+}

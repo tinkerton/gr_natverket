@@ -79,7 +79,7 @@ self.nodes = {"content":
 			 	
 			}],
      	"animation":"left",
-		 "showNextButton":"-1"
+		 "showNextButton":"0"
 	},
 	{  	"ID": "Case2_kuratorn_fraga",
 		"type":"question", 
@@ -87,9 +87,9 @@ self.nodes = {"content":
 		"question":"Kim: Hur tycker du att kuratorn bemöter Mikaela i den här situationen?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Kuratorn försvarar James och Samuel medan hon inte lyssnar på Mikaelas version av vad som hände på festen.","analysisLog":"1. Svar"},
-							{"text":"Kuratorn verkar inte kunna ta det som hänt på allvar och försöker bortförklara våldtäkten.","analysisLog":"2. Svar"},
-							{"text":"Kuratorn vill hjälpa Mikaela men Mikaela är för upprörd för att lyssna. ","analysisLog":"3. Svar"}
+							{"text":"Kuratorn försvarar James och Samuel medan hon inte lyssnar på Mikaelas version av vad som hände på festen.","analysisLog":"1. Försvarar pojkarna"},
+							{"text":"Kuratorn verkar inte kunna ta det som hänt på allvar och försöker bortförklara våldtäkten.","analysisLog":"2. Tar  ej det på allvar"},
+							{"text":"Kuratorn vill hjälpa Mikaela men Mikaela är för upprörd för att lyssna. ","analysisLog":"3. Upprörd"}
 				]
 		 ,
 		 "animation":"left",

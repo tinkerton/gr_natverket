@@ -27,7 +27,8 @@ var FS = (function(self){
 		BV,
 		globalAnimation,
 		myTimeout,
-		unlockedChapters;
+		unlockedChapters,
+		storeCase;
 
 
 	
@@ -411,6 +412,10 @@ function addNodeComicSingle(nodeId) {
 		var myObj=contentObj[FS.currentNodeNr],
 			nrOfUnlocks = _.size(FS.unlockedChapters);
 		
+		//FS.unlockedChapters.length = 0;
+		//FS.unlockedChapters = [];
+
+
 		for (var i=0; i<_.size(myObj.chapters); i++) {
 				if (myObj.chapters[i].lockeduntil<=nrOfUnlocks) {
 					$("#chapter_"+myObj.chapters[i].ID).removeClass("locked");
@@ -434,13 +439,17 @@ function addNodeComicSingle(nodeId) {
 		for (var i=0; i<=_.size(FS.unlockedChapters); i++) {
 			if (FS.unlockedChapters[i] == currentCase) {
 				foundNextHUB = true;
-				FS.unlockedChapters.length = 0;
-				FS.unlockedChapters = [];
+
 				break;
 			}
 			
 		}
+
+		$.totalStorage('currentNodeNr',  "-1");
+
+
 		if(currentCase!="CaseIntro" && foundNextHUB == false) FS.unlockedChapters.push(currentCase);
+		 $.totalStorage('unlockedChapters', FS.unlockedChapters);
 		
 		 ////console.log("exitChapter goto:"+ nextHUB  + "    unlockedChapters:" + _.size(FS.unlockedChapters) +" " + currentCase);
 	
@@ -455,11 +464,11 @@ function addNodeComicSingle(nodeId) {
 		var myObj=contentObj[FS.currentNodeNr],
 			myCallback = myObj.answers[answer].callback;
 
-			ga('send', 'event', 'answers',  activeCase.ID.text, myObj.analysisLog , myObj.answers[answer].analysisLog);
+			ga('send', 'event', 'answers: '+ activeCase.ID.text, myObj.analysisLog , myObj.answers[answer].analysisLog);
 
 
 
-		//console.log("LOG: "+ activeCase.ID.text+", " + myObj.analysisLog + ", "  +myObj.answers[answer].analysisLog);
+		console.log("LOG: "+ activeCase.ID.text+", " + myObj.analysisLog + ", "  +myObj.answers[answer].analysisLog);
 		
 		if(myCallback!=undefined && myCallback!="Case1_HUB"  && myCallback!="Case2_HUB") {
 			//console.log( myCallback);
@@ -808,6 +817,7 @@ function addNodeComicSingle(nodeId) {
 
 			break;
 			case "hub":
+
 				result = addHubMenu(nodeId);
 		   
 
@@ -1089,6 +1099,7 @@ self.zoomIn_BUP = function(wallID) {
 
 	function showNext() {
 		$("#nextButton").fadeIn();
+		if (FS.currentNodeNr>0) $("#prevButton").fadeIn();
 
 	}
 	function killSound(){
@@ -1153,6 +1164,7 @@ self.zoomIn_BUP = function(wallID) {
 				checkToUnlockChapters();
 				showNextButton=-1;
 				$("#nextButton").fadeOut();	
+				$("#prevButton").fadeOut();	
 				startHUBAnimation();
 			break;
 
@@ -1249,7 +1261,12 @@ self.zoomIn_BUP = function(wallID) {
 	 
 		FS.nrOfVideos = 0;
 	   	FS.currentNodeNr = nextNodeId + direction;
-		
+	   	if(direction <0) {
+	   		$.totalStorage('currentNodeNr', String(FS.currentNodeNr));
+	   	}
+		else $.totalStorage('currentNodeNr', String(nextNodeId));
+		//console.log("self.gotoNode - save progress. currentNodeNr: " + $.totalStorage('currentNodeNr'));
+
 		try{
 	   	//console.log("gotoNode " +  activeCase.ID.text +", " +contentObj[FS.currentNodeNr].ID);
 		ga('send', 'event', 'startNode',  activeCase.ID.text, contentObj[FS.currentNodeNr].ID);
@@ -1258,22 +1275,22 @@ self.zoomIn_BUP = function(wallID) {
 		//REMOVE POSSIBILTY TO NAVIGATE FREELY
 		//	FS.checkArrows(FS.currentNodeNr);
 		FS.checkDebugArrows(FS.currentNodeNr);
-		
-		try
- 		 {
-  			if (contentObj[oldNodeId].callback!=undefined) {
-  				if (contentObj[oldNodeId].callback=="OUTRO") window.location = "outro.html";
-  				else {
+		if(direction >0) {
+			try
+ 		 	{
+  				if (contentObj[oldNodeId].callback!=undefined) {
+  					if (contentObj[oldNodeId].callback=="OUTRO") window.location = "outro.html";
+  					else {
   				
-		
+						
   						exitChapter(contentObj[oldNodeId].callback);
-  					return;	
-  				}	
+  						return;	
+  					}	
   				
-  			};
-		 }catch(err) {}
+  				};
+		 	}catch(err) {}
 	
-		
+		}
 
 		if (FS.DEBUG == "true") $("#nodeNrDebug").html("Node " + contentObj[FS.currentNodeNr].ID);
 
@@ -1294,6 +1311,8 @@ self.zoomIn_BUP = function(wallID) {
 			$("#topleft-overlay").css("background-image","url("+activeCase.topLeftImage.url+")");
 		}
 		*/
+	
+
 
 		if (!FS.initComplete){  // Modernizr.touch || 
 			
@@ -1302,6 +1321,7 @@ self.zoomIn_BUP = function(wallID) {
 			onCompleteFadeoutNode(maindiv, FS.currentNodeNr , speed,"none");
 		}else {
 			$("#nextButton").fadeOut();	
+			$("#prevButton").fadeOut();	
 			var animationType = contentObj[oldNodeId].animation; 
 			switch (animationType) {
 				case "up":
@@ -1462,7 +1482,15 @@ self.zoomIn_BUP = function(wallID) {
 	}
 
 
+	self.resetProgress =function() {
 
+ 	$.totalStorage('storeCase','CaseIntro');
+ 	$.totalStorage('currentNodeNr','-1');
+ 	FS.unlockedChapters = new Array();
+	FS.unlockedChapters.length=0;
+ 	$.totalStorage('unlockedChapters',FS.unlockedChapters);
+ 	window.location.reload();
+	}
 
 
 	function animateText(elements, callback) {
@@ -1527,6 +1555,8 @@ self.zoomIn_BUP = function(wallID) {
 		contentObj = activeCase.nodes.content;
 
 		currentNodeNr = -1;
+		if ($.totalStorage('currentNodeNr')!=undefined)   currentNodeNr =  parseFloat($.totalStorage('currentNodeNr'));
+
 		maxNodeNr = -1;
 
 		$(".backstretch").remove();
@@ -1536,6 +1566,12 @@ self.zoomIn_BUP = function(wallID) {
 		//FS.setUpThumbs();
 
 		ga('send', 'event', 'startcase',  activeCase.ID.text );
+
+
+			//Store progress
+		
+		$.totalStorage('storeCase', activeCase.ID.text);
+		
 	
 		FS.gotoNode(currentNodeNr,1);
 	}
@@ -1545,7 +1581,7 @@ self.zoomIn_BUP = function(wallID) {
 
 	self.startMain = function() {
 		
-		$("#prevButton").hide();
+		//$("#prevButton").hide();
 		
 		//SET TO TRUE TO ENABLE DEBUG MODE FOR FEEDBACK
 	DEBUG = "false";
@@ -1564,10 +1600,29 @@ self.zoomIn_BUP = function(wallID) {
 	//BV.init();
  
 	FS.globalAnimation = 0;
-	FS.unlockedChapters = new Array();
 
+
+	if($.totalStorage('unlockedChapters')==undefined) {
+		FS.unlockedChapters = new Array();
+		FS.unlockedChapters.length=0;
+		}
+
+	else FS.unlockedChapters = $.totalStorage('unlockedChapters');
 	//START CASE HERE - MAIN
-	FS.startCase(CaseIntro);
+
+
+	//RESET
+	//FS.resetProgress();
+
+
+
+	storeCase = $.totalStorage('storeCase');
+	console.log("main start: start case " +storeCase);
+	if (storeCase==undefined) {
+		storeCase = "CaseIntro";
+	}
+	
+	FS.startCase(storeCase);
 	//FS.startCase(Case1d);
 
 
@@ -1601,13 +1656,11 @@ self.zoomIn_BUP = function(wallID) {
  	
 	});
 	$(document).on('click', '#debugPrevButton', function() {
-		
- 			 		
+			 		
  			FS.gotoNode(FS.currentNodeNr,-1);
 
  	
 	});
-
 
 
 	$(window).resize(function() {
@@ -1635,7 +1688,7 @@ Gumby.ready(function() {
 	if(Gumby.isOldie || Gumby.$dom.find('html').hasClass('ie9')) {
 		$('input, textarea').placeholder();
 	}
-
+	 Gumby.initialize('switches');
 
 
 

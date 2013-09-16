@@ -38,7 +38,7 @@ self.nodes = {"content":
 		],
 		"comic_row_height":"370px",
 		 "animation":"left",
-		 "showNextButton":"1500"
+		 "showNextButton":"0"
 	},
 	{  	"ID": "Case2_sanningar_fraga",
 		"type":"question", 
@@ -46,9 +46,9 @@ self.nodes = {"content":
 		"question":"När är det okej att säga nej om man har börjat ha sex med nån?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"När som helst.","analysisLog":"1. Svar"},
-							{"text":"Det är väl bra om man tänker sig för innan man hamnar i säng med personer man inte vill ha sex med?","analysisLog":"2. Svar"},
-							{"text":"Det är väl smartare att alla väntar på ett tydligt JA än att man ska behöva vara tydlig med ett nej?","analysisLog":"3. Svar"}
+							{"text":"När som helst.","analysisLog":"1. När som helst"},
+							{"text":"Det är väl bra om man tänker sig för innan man hamnar i säng med personer man inte vill ha sex med?","analysisLog":"2. Tänka sig för"},
+							{"text":"Det är väl smartare att alla väntar på ett tydligt JA än att man ska behöva vara tydlig med ett nej?","analysisLog":"3. Vänta på ett ja"}
 				]
 		 ,
 		 "animation":"left",

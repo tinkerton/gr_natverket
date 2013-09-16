@@ -66,7 +66,7 @@ self.nodes = {"content":
 			}
 			],
      	"animation":"left",
-		 "showNextButton":"-1"
+		 "showNextButton":"0"
 	},
 	{  	"ID": "Case2_ettarsenare_infoomjames",
 		"type":"agent",
@@ -116,7 +116,7 @@ self.nodes = {"content":
 
 			],
      	"animation":"left",
-		"showNextButton":"-1"
+		"showNextButton":"0"
 	},
 	{  	"ID": "Case2_ettarsenare_fraga",
 		"type":"question", 
@@ -124,9 +124,9 @@ self.nodes = {"content":
 		"question":"Kim: På internet är det fortfarande många som stöttar James och Samuel och skriver att de blivit oskyldigt dömda. Hur tror du det påverkar deras möjligheter att ta ansvar för det som hänt?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"De kan själva välja att lyssna eller inte lyssna på det som skrivs; det påverkar dem inte.","analysisLog":"1. Svar"},
-							{"text":"Allt som skrivs på Internet riskerar att göra så James och Samuel förlorar stöd av andra, både familj och vänner, som vill hjälpa dem att gå vidare – även om de begått ett brott.","analysisLog":"2. Svar"},
-							{"text":"Det är bra att de får stöttning av andra som skriver att de blivit oskyldigt dömda – det kommer göra det lättare att gå vidare.","analysisLog":"3. Svar"}
+							{"text":"De kan själva välja att lyssna eller inte lyssna på det som skrivs; det påverkar dem inte.","analysisLog":"1. De kan själva välja att lyssna"},
+							{"text":"Allt som skrivs på Internet riskerar att göra så James och Samuel förlorar stöd av andra, både familj och vänner, som vill hjälpa dem att gå vidare – även om de begått ett brott.","analysisLog":"2. Riskerar förlora stöd"},
+							{"text":"Det är bra att de får stöttning av andra som skriver att de blivit oskyldigt dömda – det kommer göra det lättare att gå vidare.","analysisLog":"3. Bra att de får stöd"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1",

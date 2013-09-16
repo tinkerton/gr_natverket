@@ -65,9 +65,9 @@ self.nodes = {"content":
 		"question":"Kim: Varför köper man sex?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"För att det inte går att få sex på något annat vis.","analysisLog":"1. Svar"},
-							{"text":"För att slippa känna sig ensam och för att få bekräftelse","analysisLog":"2. Svar"},
-							{"text":"För att ha sex med någon som inte ställer krav","analysisLog":"3. Svar"}
+							{"text":"För att det inte går att få sex på något annat vis.","analysisLog":"1. Går ej att få på annat sätt"},
+							{"text":"För att slippa känna sig ensam och för att få bekräftelse","analysisLog":"2. Slippa vara ensam samt bekräftelse"},
+							{"text":"För att ha sex med någon som inte ställer krav","analysisLog":"3. Sex utan krav"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1"
@@ -78,9 +78,9 @@ self.nodes = {"content":
 		"question":"Kim: Varför tror du att det kan kännas mindre allvarligt att köpa sex utomlands, än i Sverige?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Risken att nån därhemma vår veta nåt är mycket mindre","analysisLog":"1b. Svar","callback":"Case1_HUB"},
-							{"text":"Det är lagligt att köpa sex i många länder","analysisLog":"2b. Svar","callback":"Case1_HUB"},
-							{"text":"Det är ofta mycket billigare än att köpa sex i Sverige","analysisLog":"3b. Svar","callback":"Case1_HUB"}
+							{"text":"Risken att nån därhemma vår veta nåt är mycket mindre","analysisLog":"1b. Risken mindre","callback":"Case1_HUB"},
+							{"text":"Det är lagligt att köpa sex i många länder","analysisLog":"2b. Lagligt","callback":"Case1_HUB"},
+							{"text":"Det är ofta mycket billigare än att köpa sex i Sverige","analysisLog":"3b. Billigare","callback":"Case1_HUB"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1"

@@ -89,7 +89,7 @@ self.nodes = {"content":
 			 }
 			 ],
      	"animation":"left",
-		 "showNextButton":"-1"
+		 "showNextButton":"0"
 	},
 	{  	"ID": "Case1_grannen_fraga",
 		"type":"question", 
@@ -97,9 +97,9 @@ self.nodes = {"content":
 		"question":"Kim: De allra flesta i Sverige har aldrig köpt sex. Bär dessa människor något ansvar för att trafficking fortsätter?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Nej. De som inte är en del av efterfrågan har inget ansvar alls.","analysisLog":"1. Svar"},
-							{"text":"Delvis. Genom tydligare ställningstagande mot sexköp och trafficking kan andra göra stor skillnad.","analysisLog":"2. Svar"},
-							{"text":"Ja. Genom att vända ryggen till problemet och göra det enkelt att syssla med människohandel och sexköp är andra också medskyldiga till att det fortsätter.","analysisLog":"3. Svar"}
+							{"text":"Nej. De som inte är en del av efterfrågan har inget ansvar alls.","analysisLog":"1. Nej"},
+							{"text":"Delvis. Genom tydligare ställningstagande mot sexköp och trafficking kan andra göra stor skillnad.","analysisLog":"2. Delvis"},
+							{"text":"Ja. Genom att vända ryggen till problemet och göra det enkelt att syssla med människohandel och sexköp är andra också medskyldiga till att det fortsätter.","analysisLog":"3. Ja"}
 				]
 		 ,
 		 "animation":"left",

@@ -23,7 +23,7 @@ self.nodes = {"content":
 			 }],
 
 			 "animation":"fade",
-		 	"showNextButton":"-1"
+		 	"showNextButton":"0"
 	},
 	{  	"ID": "Case2_outro_fraga",
 		"type":"question", 
@@ -31,9 +31,9 @@ self.nodes = {"content":
 		"question":"Kim: Hur tror du att Mikaela hade mått om Samuel och James inte blivit dömda?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Det hade inte gjort någon större skillnad, det största problemet var att hon blev så smutskastad när så många påstod att hon ljög.","analysisLog":"1. Svar"},
-							{"text":"Om de inte hade blivit dömda hade Mikaela troligen fortsatt ifrågasätta sig själv och mått väldigt dåligt över det som skett.","analysisLog":"2. Svar"},
-							{"text":"Det hade inte gjort någon skillnad, eftersom Mikaela ändå bara vill flytta någon annan stans och starta ett nytt liv.","analysisLog":"3. Svar"}
+							{"text":"Det hade inte gjort någon större skillnad, det största problemet var att hon blev så smutskastad när så många påstod att hon ljög.","analysisLog":"1. Ingen skillnad, problem smutskastning"},
+							{"text":"Om de inte hade blivit dömda hade Mikaela troligen fortsatt ifrågasätta sig själv och mått väldigt dåligt över det som skett.","analysisLog":"2. Ifrågasatt sig"},
+							{"text":"Det hade inte gjort någon skillnad, eftersom Mikaela ändå bara vill flytta någon annan stans och starta ett nytt liv.","analysisLog":"3. Inngen skillnad. Vill börja om"}
 				]
 		 ,
 		 "animation":"left",

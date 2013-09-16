@@ -46,9 +46,9 @@ self.nodes = {"content":
 		"question":"Kim: Vad föredrar du?",
 		"background":{"type":"image","url":"intro1.jpg"},
 		"answers":[
-							{"text":"Se på film.","analysisLog":"1. Svar"},
-							{"text":"Läsa böcker.","analysisLog":"2. Svar"},
-							{"text":"Spela tv-spel.","analysisLog":"3. Svar"}
+							{"text":"Se på film.","analysisLog":"1. Film"},
+							{"text":"Läsa böcker.","analysisLog":"2. Böcker"},
+							{"text":"Spela tv-spel.","analysisLog":"3. Tv-spel"}
 				]
 		 ,
 		 "animation":"fade",

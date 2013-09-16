@@ -40,9 +40,9 @@ self.nodes = {"content":
 		"question":"Kim: Vad tänker du när det skrivs negativa saker om någon på internet?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Jag bryr mig inte så mycket, man ska inte ta det personligt.","analysisLog":"1. Svar"},
-							{"text":"Det är svårt när det är man själv som är utsatt, då blir det personligt.","analysisLog":"2. Svar"},
-							{"text":"Jag blir oftast arg och besviken på dem som skriver saker.","analysisLog":"3. Svar"}
+							{"text":"Jag bryr mig inte så mycket, man ska inte ta det personligt.","analysisLog":"1. Bryr mig inte"},
+							{"text":"Det är svårt när det är man själv som är utsatt, då blir det personligt.","analysisLog":"2. Personligt"},
+							{"text":"Jag blir oftast arg och besviken på dem som skriver saker.","analysisLog":"3. Arg"}
 				]
 		 ,
 		 "animation":"left",
@@ -54,9 +54,9 @@ self.nodes = {"content":
 		"question":"Kim: Om Mikaela faktiskt har blivit våldtagen, hur tror du hon uppfattar sakerna som skrivs om henne på internet?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Mikaela blir nog väldigt ledsen och arg över att inte bli trodd.","analysisLog":"1b. Svar"},
-							{"text":"Mikaela ångrar kanske att hon anmälde våldtäkten – alla påhopp och kränkningar på nätet gör att hon nog önskar att hon hållit tyst.","analysisLog":"2b. Svar"},
-							{"text":"Mikaela tar det säkert inte personligt – man vet inte vilka som har skrivit och det är inget man ska ta åt sig av.","analysisLog":"3b. Svar"}
+							{"text":"Mikaela blir nog väldigt ledsen och arg över att inte bli trodd.","analysisLog":"1b. ledsen och arg"},
+							{"text":"Mikaela ångrar kanske att hon anmälde våldtäkten – alla påhopp och kränkningar på nätet gör att hon nog önskar att hon hållit tyst.","analysisLog":"2b. Ångrar sig"},
+							{"text":"Mikaela tar det säkert inte personligt – man vet inte vilka som har skrivit och det är inget man ska ta åt sig av.","analysisLog":"3b. Inte personligt"}
 				]
 		 ,
 		 "animation":"left",

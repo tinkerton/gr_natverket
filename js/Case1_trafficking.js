@@ -28,9 +28,9 @@ self.nodes = {"content":
 		"question":"Kim: Vad tror du är huvudanledningen till att trafficking fortsätter?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Att det finns män som vill köpa sex.","analysisLog":"1. Svar","callback":"Case1_HUB"},
-							{"text":"Att samhället inte agerar hårdare mot de som köper sex och bidrar till trafficking-industrin.","analysisLog":"2. Svar","callback":"Case1_HUB"},
-							{"text":"Att ligorna som sysslar med människohandel är duktiga på att dölja vad de håller på med.  ","analysisLog":"3. Svar","callback":"Case1_HUB"}
+							{"text":"Att det finns män som vill köpa sex.","analysisLog":"1. Finns män som vill","callback":"Case1_HUB"},
+							{"text":"Att samhället inte agerar hårdare mot de som köper sex och bidrar till trafficking-industrin.","analysisLog":"2. Samhället inte agerar","callback":"Case1_HUB"},
+							{"text":"Att ligorna som sysslar med människohandel är duktiga på att dölja vad de håller på med.  ","analysisLog":"3. Ligorna duktiga","callback":"Case1_HUB"}
 				]
 		 ,
 		 "animation":"left",

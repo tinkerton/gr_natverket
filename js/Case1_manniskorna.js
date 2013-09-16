@@ -52,9 +52,9 @@ self.nodes = {"content":
 		"question":"Kim: Varför tror du att Crina inte försöker rymma ifrån människohandlarna?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Hon saknar kontakter och kunskap om hur Sveriges rättssystem fungerar","analysisLog":"1. Svar"},
-							{"text":"Hon är rädd för vad de skulle göra med hennes syster om hon rymmer","analysisLog":"2. Svar"},
-							{"text":"Hon tror fortfarande att om hon fortsätter arbeta så ska hon få pengarna hon blivit lovad","analysisLog":"3. Svar"}
+							{"text":"Hon saknar kontakter och kunskap om hur Sveriges rättssystem fungerar","analysisLog":"1. Saknar kontakter"},
+							{"text":"Hon är rädd för vad de skulle göra med hennes syster om hon rymmer","analysisLog":"2. Rädd för systerns skull"},
+							{"text":"Hon tror fortfarande att om hon fortsätter arbeta så ska hon få pengarna hon blivit lovad","analysisLog":"3. Pengarna"}
 				]
 		 ,
 		 "animation":"left",

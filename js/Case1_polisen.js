@@ -73,7 +73,7 @@ self.nodes = {"content":
 			},
 			],
      	"animation":"left",
-		 "showNextButton":"-1"
+		 "showNextButton":"0"
 	},
 	{  	"ID": "Case1_polisen_fraga",
 		"type":"question", 
@@ -81,9 +81,9 @@ self.nodes = {"content":
 		"question":"Kim: Hur tror du att människors attityder påverkas av sexköpslagen?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Inte alls. Det gör det bara svårare att köpa sex.","analysisLog":"1. svar"},
-							{"text":"Delvis. Det blir tydligt vad som är rätt och fel, men alla ändrar sig nog inte bara för att lagen säger så.","analysisLog":"2. svar"},
-							{"text":"Mycket. På längre sikt påverkar lagstiftningen människors val.","analysisLog":"3. svar"}
+							{"text":"Inte alls. Det gör det bara svårare att köpa sex.","analysisLog":"1. Inte alls"},
+							{"text":"Delvis. Det blir tydligt vad som är rätt och fel, men alla ändrar sig nog inte bara för att lagen säger så.","analysisLog":"2. Delvis"},
+							{"text":"Mycket. På längre sikt påverkar lagstiftningen människors val.","analysisLog":"3. Mycket"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1",

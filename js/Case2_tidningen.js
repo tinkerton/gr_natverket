@@ -34,9 +34,9 @@ self.nodes = {"content":
 		"question":"Vad för sorts personer tycker du James och Samuel verkar vara?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"De har många kompisar och folk tycker de är trevliga.","analysisLog":"1. Svar"},
-							{"text":"De verkar osäkra och skryter mycket.","analysisLog":"2. Svar"},
-							{"text":"De verkar vara ganska kassa.","analysisLog":"3. Svar"}
+							{"text":"De har många kompisar och folk tycker de är trevliga.","analysisLog":"1. Många kompisar"},
+							{"text":"De verkar osäkra och skryter mycket.","analysisLog":"2. Osäkra"},
+							{"text":"De verkar vara ganska kassa.","analysisLog":"3. Kassa"}
 				]
 		 ,
 		 "animation":"left",

@@ -23,7 +23,7 @@ self.nodes = {"content":
 			 }],
 
 			 "animation":"fade",
-		 	"showNextButton":"-1"
+		 	"showNextButton":"0"
 	},
 	{  	"ID": "Case1_outro_fraga",
 		"type":"question", 
@@ -31,9 +31,9 @@ self.nodes = {"content":
 		"question":"Kim: Vad har trafficking och prostitution för konsekvenser på samhället?",
 		"background":{"type":"image","url":"intro2.jpg"},
 		"answers":[
-							{"text":"Det innebär inget särskilt. Människor kan välja hur de vill leva sina liv och man borde få köpa och sälja vad man vill om man har eller vill tjäna pengar.","analysisLog":"1. Svar"},
-							{"text":"Om prostitution ses som ett vanligt yrke riskerar människor att tvingas till att sälja sex om de inte kan tjäna pengar på annat sätt","analysisLog":"2. Svar"},
-							{"text":"Att sex på lika villkor inte ses som en självklarhet: Trafficking och prostitution innebär att någon kan köpa rätten att begå övergrepp.","analysisLog":"3. Svar"}
+							{"text":"Det innebär inget särskilt. Människor kan välja hur de vill leva sina liv och man borde få köpa och sälja vad man vill om man har eller vill tjäna pengar.","analysisLog":"1. Inget särskilt"},
+							{"text":"Om prostitution ses som ett vanligt yrke riskerar människor att tvingas till att sälja sex om de inte kan tjäna pengar på annat sätt","analysisLog":"2. Tvingas pga pengar"},
+							{"text":"Att sex på lika villkor inte ses som en självklarhet: Trafficking och prostitution innebär att någon kan köpa rätten att begå övergrepp.","analysisLog":"3. Sex på lika villkor inte en självklarhet"}
 				]
 		 ,
 		 "animation":"left",
@@ -59,7 +59,7 @@ self.nodes = {"content":
 			 }],
 
 			 "animation":"fade",
-		 	"showNextButton":"-1",
+		 	"showNextButton":"0",
 			"callback":"Case2_HUB"
 	}
 
