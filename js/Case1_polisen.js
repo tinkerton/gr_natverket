@@ -40,8 +40,8 @@ self.nodes = {"content":
 				"type":"question",
 				"text":"Vad vill du veta om polisens arbete mot trafficking?",
 				"answers":[
-							{"text":"Vad gör polisen för att påverka människors attityder?", "gotoID":"2"},
-							{"text":"Vad kan man göra som privatperson?", "gotoID":"3"},
+							{"text":"Hur arbetar polisen för att förhindra trafficking?", "gotoID":"2"},
+							//{"text":"Vad kan man göra som privatperson?", "gotoID":"3"},
 							{"text":"Hur stort är problemet med trafficking i Sverige?", "gotoID":"4"},
 							{"text":"Varför är det olagligt att köpa sex från vanliga prostituerade som inte är offer för trafficking?", "gotoID":"5"},
 							{"text":"Avsluta", "gotoID":"-1"}
