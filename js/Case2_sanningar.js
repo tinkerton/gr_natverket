@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[ 
 	{  	"ID": "Case2_sanningar_serie",
 		"type":"comicparallel",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg1.jpg"},
 		"comicparallel" : [	{"slide": 
 								{"url":"2.4.2_mikaela1.png",
 								"url2":"2.4.2_samuel1.png",}
@@ -44,7 +44,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"2.6.5 Fråga kapitel 6, Case 2",
 		"question":"När är det okej att säga nej om man har börjat ha sex med nån?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case2_bg4.jpg"},
 		"answers":[
 							{"text":"När som helst.","analysisLog":"1. När som helst"},
 							{"text":"Det är väl bra om man tänker sig för innan man hamnar i säng med personer man inte vill ha sex med?","analysisLog":"2. Tänka sig för"},

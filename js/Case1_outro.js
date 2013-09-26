@@ -13,7 +13,7 @@ self.nodes = {"content":
 	{  	"ID": "Case1_Outro",
 		"type":"video_seq",
 		"size":"twelve",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case1_bg3.jpg"},
 		"sequences":[
 
 			{
@@ -29,7 +29,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"case1 outro fraga",
 		"question":"Kim: Vad har trafficking och prostitution för konsekvenser på samhället?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case1_bg3.jpg"},
 		"answers":[
 							{"text":"Det innebär inget särskilt. Människor kan välja hur de vill leva sina liv och man borde få köpa och sälja vad man vill om man har eller vill tjäna pengar.","analysisLog":"1. Inget särskilt"},
 							{"text":"Om prostitution ses som ett vanligt yrke riskerar människor att tvingas till att sälja sex om de inte kan tjäna pengar på annat sätt","analysisLog":"2. Tvingas pga pengar"},
@@ -41,7 +41,7 @@ self.nodes = {"content":
 	},
 	{  	"ID": "Case2_intro_kim",
 		"type":"agent",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case1_bg1.jpg"},
 		"text":"Kim: Du är nu klar med första delen i träningsprogrammet och kommer gå vidare till del två som handlar om kränkningar. Gå vidare när du är redo.",
 		"animation":"fade",
 		"showNextButton":"0"
@@ -49,7 +49,7 @@ self.nodes = {"content":
 	{  	"ID": "Case2_Intro",
 		"type":"video_seq",
 		"size":"twelve",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg1.jpg"},
 		"sequences":[
 
 			{

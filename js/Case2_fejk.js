@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case2_fejk_film",
 		"type":"video_seq",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg1.jpg"},
 		"sequences":[
 			{
 				"sequenceID":"0",
@@ -26,7 +26,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"Case2_fejk_fraga1",
 		"question":"Tyvärr är det en vanlig uppfattning att kvinnor som anmäler våldtäkt ljuger eller överdriver. Varför är det så, tror du?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case2_bg4.jpg"},
 		"answers":[
 							{"text":"Det är svårt att bevisa att någon har blivit våldtagen.","analysisLog":"1. Svårt att bevisa"},
 							{"text":"Om någon blir dömd som våldtäktsman kommer hans liv vara förstört. Därför kräver de flesta starka bevis för att det verkligen har skett en våldtäkt, inte bara offrets berättelse.","analysisLog":"2. Förstöra livet"},

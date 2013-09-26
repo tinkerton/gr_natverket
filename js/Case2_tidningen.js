@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case2_tidningen_fallet",
 		"type":"info",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		"image": [
 			{"url":"2.1.4_artikel-om-fallet.png"} 
 		],
@@ -21,7 +21,7 @@ self.nodes = {"content":
 	}, 
 	{  	"ID": "Case2_tidningen_killarna",
 		"type":"info",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		"image": [
 			{"url":"2.2.2_artikel.png"} 
 		],
@@ -32,7 +32,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"case2_tidningen_fraga1",
 		"question":"Vad för sorts personer tycker du James och Samuel verkar vara?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case2_bg4.jpg"},
 		"answers":[
 							{"text":"De har många kompisar och folk tycker de är trevliga.","analysisLog":"1. Många kompisar"},
 							{"text":"De verkar osäkra och skryter mycket.","analysisLog":"2. Osäkra"},

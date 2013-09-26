@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case2_kuratorn_samtal",
 		"type":"video_seq",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		"sequences":[
 
 			{
@@ -85,7 +85,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"Case2_kuratorn_fraga1",
 		"question":"Kim: Hur tycker du att kuratorn bemöter Mikaela i den här situationen?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case2_bg4.jpg"},
 		"answers":[
 							{"text":"Kuratorn försvarar James och Samuel medan hon inte lyssnar på Mikaelas version av vad som hände på festen.","analysisLog":"1. Försvarar pojkarna"},
 							{"text":"Kuratorn verkar inte kunna ta det som hänt på allvar och försöker bortförklara våldtäkten.","analysisLog":"2. Tar  ej det på allvar"},

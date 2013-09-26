@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[
 	{"ID": "Case1_sexkopare_citat",
 		"type":"walloftext",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"case1_bg1.jpg"},
 		"size":"twelve",
 		"walloftext" : [
 					{"text":"Det blev som en drog. Något jag inte kunde sluta med fast jag ville. Tillslut sökte jag hjälp. Jag ville inte vara den mannen som köper sex."},
@@ -40,7 +40,7 @@ self.nodes = {"content":
 	{  	"ID": "Case1_sexkopare_enavoss",
 		"type":"info",
 		"size":"twelve",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"case1_bg1.jpg"},
 		"videos":[{"videoURL":"http://player.vimeo.com/video/74038868",  "source" : "vimeo"},
 		{"videoURL":"http://player.vimeo.com/video/74038869",  "source" : "vimeo"},
 		{"videoURL":"http://player.vimeo.com/video/74038870",  "source" : "vimeo"}	
@@ -63,7 +63,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"Case1_sexkopare_fraga1",
 		"question":"Kim: Varför köper man sex?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case1_bg4.jpg"},
 		"answers":[
 							{"text":"För att det inte går att få sex på något annat vis.","analysisLog":"1. Går ej att få på annat sätt"},
 							{"text":"För att slippa känna sig ensam och för att få bekräftelse","analysisLog":"2. Slippa vara ensam samt bekräftelse"},
@@ -76,7 +76,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"Case1_sexkopare_fraga2",
 		"question":"Kim: Varför tror du att det kan kännas mindre allvarligt att köpa sex utomlands, än i Sverige?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case1_bg4.jpg"},
 		"answers":[
 							{"text":"Risken att nån därhemma vår veta nåt är mycket mindre","analysisLog":"1b. Risken mindre","callback":"Case1_HUB"},
 							{"text":"Det är lagligt att köpa sex i många länder","analysisLog":"2b. Lagligt","callback":"Case1_HUB"},

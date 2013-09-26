@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case2_rattssalen_forhor",
 		"type":"video_seq",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		"sequences":[
 
 		/*	{
@@ -123,7 +123,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"Case2_rattssalen_fraga1",
 		"question":"Kim: Hur tror du att James och Samuel kommer påverkas av det som hänt?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case2_bg4.jpg"},
 		"answers":[
 							{"text":"Samuel vill inte erkänna att han skadat någon annan, han kommer troligen kunna göra samma sak igen även efter rättegången.","analysisLog":"1. Vill inte erkänna att han skadat någon"},
 							{"text":"James verkar ångerfull. Han kommer troligen må väldigt dåligt och behöva hjälp efteråt för att kunna gå vidare.","analysisLog":"2. Ångerfull"},

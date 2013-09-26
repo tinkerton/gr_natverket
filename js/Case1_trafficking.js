@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case1_trafficking_film",
 		"type":"video_seq",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"case1_bg2.jpg"},
 		"sequences":[
 			{
 				"sequenceID":"0",
@@ -26,7 +26,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"1.1.4 Fråga kapitel 1, Case 1",
 		"question":"Kim: Vad tror du är huvudanledningen till att trafficking fortsätter?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case1_bg4.jpg"},
 		"answers":[
 							{"text":"Att det finns män som vill köpa sex.","analysisLog":"1. Finns män som vill","callback":"Case1_HUB"},
 							{"text":"Att samhället inte agerar hårdare mot de som köper sex och bidrar till trafficking-industrin.","analysisLog":"2. Samhället inte agerar","callback":"Case1_HUB"},

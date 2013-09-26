@@ -27,7 +27,7 @@ self.nodes = {"content":
 	},*/ 
 	{  	"ID": "Case1_grannen_intervju",
 		"type":"video_seq",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"case1_bg1.jpg"},
 		"sequences":[
 			{
 				"sequenceID":"0",
@@ -45,7 +45,7 @@ self.nodes = {"content":
 							{"text":"Hur visste du att det handlade om trafficking?", "gotoID":"4"},
 							{"text":"Var du rädd?", "gotoID":"5"},
 							{"text":"Blev du kontaktad av polisen efteråt?", "gotoID":"6"},
-							{"text":"Vad skulle du ge för råd till andra som vill engagera sig i kampen mot trafficking?", "gotoID":"7"},
+							//{"text":"Vad skulle du ge för råd till andra som vill engagera sig i kampen mot trafficking?", "gotoID":"7"},
 							{"text":"Avsluta", "gotoID":"-1"}
 				]
 			},
@@ -95,7 +95,7 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"Case1_grannen_fraga1",
 		"question":"Kim: De allra flesta i Sverige har aldrig köpt sex. Bär dessa människor något ansvar för att trafficking fortsätter?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case1_bg4.jpg"},
 		"answers":[
 							{"text":"Nej. De som inte är en del av efterfrågan har inget ansvar alls.","analysisLog":"1. Nej"},
 							{"text":"Delvis. Genom tydligare ställningstagande mot sexköp och trafficking kan andra göra stor skillnad.","analysisLog":"2. Delvis"},
