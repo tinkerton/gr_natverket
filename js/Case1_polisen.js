@@ -9,22 +9,8 @@ self.preload = {"images":
 self.topLeftImage = {"url":"img/case_color_splash.png"};
 
 self.nodes = {"content": 
-	[/*{  "ID": "1.5",
-		"type":"chapter", 
-		"title":"Polisens arbete",
-		"background":{"type":"image","url":"intro1.jpg"},
-		 "animation":"fade",
-		 "showNextButton":"0"
-	},*/
-	/*{  	"ID": "1.5.1",
-		"type":"agent",
-		"background":{"type":"image","url":"intro2.jpg"},
-		"text":"~ * Nu ska du få veta mer om hur polisen arbetar mot trafficking. * ~",
-		"animation":"fade",
-		"showNextButton":"0"
-			
-	},*/
-	{  	"ID": "Case1_polisen_intervju",
+	[
+	/*{  	"ID": "Case1_polisen_intervju",
 		"type":"video_seq",
 		"background":{"type":"image","url":"bg4.jpg"},
 		"sequences":[
@@ -74,12 +60,60 @@ self.nodes = {"content":
 			],
      	"animation":"left",
 		 "showNextButton":"0"
-	},
+	},*/
+	{  	"ID": "Case1_polisen_1",
+		"type":"info",
+		"size":"twelve",
+		"background":{"type":"image","url":"case1_bg2.jpg"},
+		"pretext":"<br/>",
+		"posttext":"<br/>",
+		"image": [
+			{"url":"case1_polisen1.png"} 
+		],
+		 "animation":"down",
+		  "showNextButton":"0"			
+	}, 
+	{  	"ID": "Case1_polisen_2",
+		"type":"info",
+		"size":"twelve",
+		"background":{"type":"image","url":"case1_bg2.jpg"},
+		"pretext":"<br/>",
+		"posttext":"<br/>",
+		"image": [
+			{"url":"case1_polisen2.png"} 
+		],
+		 "animation":"down",
+		  "showNextButton":"0"			
+	},  
+	{  	"ID": "Case1_polisen_3",
+		"type":"info",
+		"size":"twelve",
+		"background":{"type":"image","url":"case1_bg2.jpg"},
+		"pretext":"<br/>",
+		"posttext":"<br/>",
+		"image": [
+			{"url":"case1_polisen3.png"} 
+		],
+		 "animation":"down",
+		  "showNextButton":"0"			
+	}, 
+	{  	"ID": "Case1_polisen_4",
+		"type":"info",
+		"size":"twelve",
+		"background":{"type":"image","url":"case1_bg2.jpg"},
+		"pretext":"<br/>",
+		"posttext":"<br/>",
+		"image": [
+			{"url":"case1_polisen4.png"} 
+		],
+		 "animation":"down",
+		  "showNextButton":"0"			
+	}, 
 	{  	"ID": "Case1_polisen_fraga",
 		"type":"question", 
 		"analysisLog":"polisen_fraga",
 		"question":"Kim: Hur tror du att människors attityder påverkas av sexköpslagen?",
-		"background":{"type":"image","url":"intro2.jpg"},
+		"background":{"type":"image","url":"case1_bg4.jpg"},
 		"answers":[
 							{"text":"Inte alls. Det gör det bara svårare att köpa sex.","analysisLog":"1. Inte alls"},
 							{"text":"Delvis. Det blir tydligt vad som är rätt och fel, men alla ändrar sig nog inte bara för att lagen säger så.","analysisLog":"2. Delvis"},
