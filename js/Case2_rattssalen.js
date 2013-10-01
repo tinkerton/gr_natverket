@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case2_rattssalen_forhor",
 		"type":"video_seq",
-		"background":{"type":"image","url":"case2_bg2.jpg"},
+		"background":{"type":"image","url":"case2_bg1.jpg"},
 		"sequences":[
 
 		/*	{
@@ -117,7 +117,7 @@ self.nodes = {"content":
 
 			 ],
      	"animation":"left",
-		 "showNextButton":"0"
+		 "showNextButton":"-1"
 	},
 	{  	"ID": "Case2_rattssalen_fraga",
 		"type":"question", 
@@ -125,9 +125,9 @@ self.nodes = {"content":
 		"question":"Kim: Hur tror du att James och Samuel kommer påverkas av det som hänt?",
 		"background":{"type":"image","url":"case2_bg4.jpg"},
 		"answers":[
-							{"text":"Samuel vill inte erkänna att han skadat någon annan, han kommer troligen kunna göra samma sak igen även efter rättegången.","analysisLog":"1. Vill inte erkänna att han skadat någon"},
-							{"text":"James verkar ångerfull. Han kommer troligen må väldigt dåligt och behöva hjälp efteråt för att kunna gå vidare.","analysisLog":"2. Ångerfull"},
-							{"text":"Samuel och James kommer troligen inte kunna vara vänner efter rättegången, då Samuel kommer känna sig sviken av James.","analysisLog":"3. Sviken av James"}
+							{"text":"Samuel vill inte erkänna att han skadat någon annan, han kommer troligen kunna göra samma sak igen även efter rättegången.","analysisLog":"1. Svar"},
+							{"text":"James verkar ångerfull. Han kommer troligen må väldigt dåligt och behöva hjälp efteråt för att kunna gå vidare.","analysisLog":"2. Svar"},
+							{"text":"Samuel och James kommer troligen inte kunna vara vänner efter rättegången, då Samuel kommer känna sig sviken av James.","analysisLog":"3. Svar"}
 				]
 		 ,
 		 "animation":"left",

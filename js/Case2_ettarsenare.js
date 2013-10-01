@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case2_ettarsenare_pappan",
 		"type":"video_seq",
-		"background":{"type":"image","url":"case2_bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		"sequences":[
 
 			{
@@ -70,7 +70,7 @@ self.nodes = {"content":
 	},
 	{  	"ID": "Case2_ettarsenare_infoomjames",
 		"type":"agent",
-		"background":{"type":"image","url":"bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		/*"image": [
 			{"url":"1.1.2_bordell.png"} 
 		],*/
@@ -80,7 +80,7 @@ self.nodes = {"content":
 	},
 	{  	"ID": "Case2_ettarsenare_james",
 		"type":"video_seq",
-		"background":{"type":"image","url":"case2_bg3.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		"sequences":[
 			{
 				"sequenceID":"0",
@@ -122,11 +122,11 @@ self.nodes = {"content":
 		"type":"question", 
 		"analysisLog":"Case2_ettarsenare_fraga1",
 		"question":"Kim: På internet är det fortfarande många som stöttar James och Samuel och skriver att de blivit oskyldigt dömda. Hur tror du det påverkar deras möjligheter att ta ansvar för det som hänt?",
-		"background":{"type":"image","url":"case2_bg4.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		"answers":[
-							{"text":"De kan själva välja att lyssna eller inte lyssna på det som skrivs; det påverkar dem inte.","analysisLog":"1. De kan själva välja att lyssna"},
-							{"text":"Allt som skrivs på Internet riskerar att göra så James och Samuel förlorar stöd av andra, både familj och vänner, som vill hjälpa dem att gå vidare – även om de begått ett brott.","analysisLog":"2. Riskerar förlora stöd"},
-							{"text":"Det är bra att de får stöttning av andra som skriver att de blivit oskyldigt dömda – det kommer göra det lättare att gå vidare.","analysisLog":"3. Bra att de får stöd"}
+							{"text":"De kan själva välja att lyssna eller inte lyssna på det som skrivs; det påverkar dem inte.","analysisLog":"1. Svar"},
+							{"text":"Allt som skrivs på Internet riskerar att göra så James och Samuel förlorar stöd av andra, både familj och vänner, som vill hjälpa dem att gå vidare – även om de begått ett brott.","analysisLog":"2. Svar"},
+							{"text":"Det är bra att de får stöttning av andra som skriver att de blivit oskyldigt dömda – det kommer göra det lättare att gå vidare.","analysisLog":"3. Svar"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1",

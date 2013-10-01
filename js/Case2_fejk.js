@@ -12,7 +12,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case2_fejk_film",
 		"type":"video_seq",
-		"background":{"type":"image","url":"case2_bg1.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		"sequences":[
 			{
 				"sequenceID":"0",
@@ -28,9 +28,9 @@ self.nodes = {"content":
 		"question":"Tyvärr är det en vanlig uppfattning att kvinnor som anmäler våldtäkt ljuger eller överdriver. Varför är det så, tror du?",
 		"background":{"type":"image","url":"case2_bg4.jpg"},
 		"answers":[
-							{"text":"Det är svårt att bevisa att någon har blivit våldtagen.","analysisLog":"1. Svårt att bevisa"},
-							{"text":"Om någon blir dömd som våldtäktsman kommer hans liv vara förstört. Därför kräver de flesta starka bevis för att det verkligen har skett en våldtäkt, inte bara offrets berättelse.","analysisLog":"2. Förstöra livet"},
-							{"text":"Därför att skadestånden är höga så det är lätt att tro att någon anmäler en våldtäkt för att de vill ha pengar, eller för att hämnas.","analysisLog":"3. Skadestånd"}
+							{"text":"Om någon blir dömd som våldtäktsman kommer hans liv vara förstört. Därför kräver de flesta starka bevis för att det verkligen har skett en våldtäkt, inte bara offrets berättelse.","analysisLog":"1. Svar"},
+							{"text":"Därför att skadestånden är höga så det är lätt att tro att någon anmäler en våldtäkt för att de vill ha pengar, eller för att hämnas.","analysisLog":"2. Svar"},
+							{"text":"På grund av att samhället inte är jämställt. Män har mer makt och status än kvinnor och därför blir kvinnor inte trodda när de anmäler våldtäkt.","analysisLog":"3. Svar"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1",

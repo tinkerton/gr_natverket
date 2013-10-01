@@ -13,7 +13,7 @@ self.nodes = {"content":
 	[
 	{  	"ID": "Case1_envanligdag_serie",
 		"type":"comicparallel",
-		"background":{"type":"image","url":"case1_bg2.jpg"},
+		"background":{"type":"image","url":"case1_bg3.jpg"},
 		"comicparallel" : [	{"slide": 
 								{"url":"1.5.2_horan1.png",
 								"url2":"1.5.2_torsken1.png",
@@ -81,9 +81,9 @@ self.nodes = {"content":
 		"question":"Kim: Vem av de tre personerna tycker du har störst ansvar för Crinas situation?",
 		"background":{"type":"image","url":"case1_bg4.jpg"},
 		"answers":[
-							{"text":"Sexköparen. Utan att han och andra köper sex hade inte trafficking varit ett problem.","analysisLog":"1. Sexköparen."},
-							{"text":"Hallicken. Han utnyttjar Crina och tvingar henne att stanna i prostitution, och tjänar dessutom pengar på det.","analysisLog":"2. Hallicken"},
-							{"text":"Crina. Hon borde göra något åt sin situation, söka hjälp eller försöka ta sig därifrån. Göra motstånd på nåt sätt.","analysisLog":"3. Crina"}
+							{"text":"Sexköparen. Utan efterfrågan på sexuella tjänster skulle inte trafficking existera.","analysisLog":"1. svar"},
+							{"text":"Hallicken. Han utnyttjar Crina och tvingar henne att stanna i prostitution, och tjänar dessutom pengar på det.","analysisLog":"2. svar"},
+							{"text":"Crina. Hon borde göra något åt sin situation, söka hjälp eller försöka ta sig därifrån. Göra motstånd på nåt sätt.","analysisLog":"3. svar"}
 				],
 		 "animation":"left",
 		 "showNextButton":"-1",

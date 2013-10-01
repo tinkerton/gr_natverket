@@ -29,13 +29,24 @@ self.nodes = {"content":
 		"showNextButton":"0"
 			
 	}, */
-	{  	"ID": "INTRO.3",
+	{  	"ID": "INTRO.1",
 		"type":"agent",
-		"background":{"type":"image","url":"intro1.jpg"},
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		/*"image": [
 			{"url":"1.1.2_bordell.png"} 
 		],*/
-		"text":"Kim: Hej. Mitt namn är Kim och jag är agent i Nätverket. Det här är vårt träningsprogram för nya agenter.<br><br>Träningsprogrammet har två delar. Den första delen handlar om trafficking, och den andra om kränkningar.<br><br>Du behöver lära dig en hel del saker för att bli agent i Nätverket, men det är lika viktigt att kunna tänka själv. Därför kommer jag ställa frågor till dig längs vägen. Du har 3 alternativ till varje fråga. Välj det svar som passar din åsikt bäst. Här följer en testfråga.",
+		"text":"Kim: Hej. Du är nu på väg att genomgå Fair Sex Nätverkets träningsprogram för nya agenter. Efter att ha gått igenom programmet kan du välja att bli agent i Nätverket.<br><br>Att vara agent innebär att stå upp för allas mänskliga rättigheter och lika värde. Det innebär också att våga säga ifrån och agera mot saker som är fel.<br><br> Träningsprogrammet innehåller två delar. Den första handlar om trafficking, den andra om övergrepp.<br><br> Även om programmets innehåll grundar sig på riktig fakta, så är alla personer du ser på filmer och foton skådespelare.",
+		"music":"music/bridgeofsighs",
+     	"animation":"fade",
+		"showNextButton":"2000",
+	},
+	{  	"ID": "INTRO.2",
+		"type":"agent",
+		"background":{"type":"image","url":"case2_bg2.jpg"},
+		/*"image": [
+			{"url":"1.1.2_bordell.png"} 
+		],*/
+		"text":"Kim: Såklart behöver du lära dig en hel del saker för att bli agent i Nätverket, men det är lika viktigt att kunna tänka själv. Därför kommer jag ställa frågor till dig längs vägen. <br><br>Du har 3 alternativ till varje fråga. Välj det svar som passar din åsikt bäst, även om inget av svaren passar in exakt på vad du tycker.",
 		"music":"music/bridgeofsighs",
      	"animation":"fade",
 		"showNextButton":"2000",
@@ -43,12 +54,12 @@ self.nodes = {"content":
 	{  	"ID": "Intro question",
 		"type":"question", 
 		"analysisLog":"intro_testquestion",
-		"question":"Kim: Vad föredrar du?",
-		"background":{"type":"image","url":"intro1.jpg"},
+		"question":"Kim: Dina svar kommer inte lagras eller registreras, utan frågorna handlar om att du själv ska reflektera kring vad du tänker och tycker.<br><br> Vad tycker du är det viktigaste att tänka på när det gäller sex?",
+		"background":{"type":"image","url":"case2_bg2.jpg"},
 		"answers":[
-							{"text":"Se på film.","analysisLog":"1. Film"},
-							{"text":"Läsa böcker.","analysisLog":"2. Böcker"},
-							{"text":"Spela tv-spel.","analysisLog":"3. Tv-spel"}
+							{"text":"Respekt för alla inblandade.","analysisLog":"1. Respekt"},
+							{"text":"Det ska vara säkert och schysst.","analysisLog":"2. Tryggt"},
+							{"text":"Att det är skönt och roligt.","analysisLog":"3. Roligt"}
 				]
 		 ,
 		 "animation":"fade",
@@ -56,15 +67,15 @@ self.nodes = {"content":
 	},
 	{  	"ID": "Case1_intro_kim",
 		"type":"agent",
-		"background":{"type":"image","url":"bg4.jpg"},
-		"text":"Kim: Bra! Då sätter vi igång med den första delen i träningsprogrammet. Gå vidare när du är redo.",
+		"background":{"type":"image","url":"case2_bg2.jpg"},
+		"text":"Kim: Bra! Då sätter vi igång med träningsprogrammet.",
 		"animation":"fade",
 		"showNextButton":"0"
 	},
 	{  	"ID": "Case1_Intro",
 		"type":"video_seq",
 		"size":"twelve",
-		"background":{"type":"image","url":"bg4.jpg"},
+		"background":{"type":"image","url":"case1_bg3.jpg"},
 		"sequences":[
 
 			{
