@@ -24,6 +24,7 @@ var FS = (function(self){
 		nextArrowTimeout,
 		animateTextTimeout,
 		DEBUG,
+		GAMEMODE,
 		BV,
 		globalAnimation,
 		myTimeout,
@@ -34,7 +35,37 @@ var FS = (function(self){
 	
 
 	
+	function unlockChapters(nr) {
 
+		var chapterNamesArray = new Array(
+			"Case1_trafficking",
+			"Case1_sexkopare",
+			"Case1_manniskorna",
+			"Case1_polisen",
+			"Case1_grannen",
+			"Case1_envanligdag",
+			"Case2_tidningen",
+			"Case2_internet",
+			"Case2_horan",
+			"Case2_kuratorn",
+			"Case2_sanningar",
+			"Case2_rattsalen",
+			"Case2_fejk",
+			"Case2_ettarsenare"
+		
+		);
+
+		FS.unlockedChapters = new Array();
+		FS.unlockedChapters.length=0;
+
+
+		for (var i=0; i<nr; i++) {
+			FS.unlockedChapters.push(chapterNamesArray[i]);
+		
+		}
+
+		$.totalStorage('unlockedChapters', FS.unlockedChapters);
+	}
 
 
 
@@ -173,7 +204,7 @@ function startComicSingle(nrOfSlides) {
 	}
 		if (myObj.url3 !=undefined) {
 			comicHeight =225;
-			winHeight= $(window).height()/3 -30;
+			winHeight= $(window).height()/3 -20;
 	}
 		if (myObj.url4 !=undefined) {
 			comicHeight =185;
@@ -468,7 +499,8 @@ function addNodeComicSingle(nodeId) {
 
 
 
-		console.log("LOG: "+ activeCase.ID.text+", " + myObj.analysisLog + ", "  +myObj.answers[answer].analysisLog);
+		//console.log("LOG: "+ activeCase.ID.text+", " + myObj.analysisLog + ", "  +myObj.answers[answer].analysisLog);
+		
 		
 		if(myCallback!=undefined && myCallback!="Case1_HUB"  && myCallback!="Case2_HUB") {
 			//console.log( myCallback);
@@ -678,7 +710,7 @@ function addNodeComicSingle(nodeId) {
 			return "";}
 
 		FS.IDWallOfText = nodeId;
-		return "<div id='myCanvas'  style='height:"+$(document).height() * 0.8+"px' ></div>";
+		return "<div id='myCanvas'  style='height:"+$(document).height() * 1+"px' ></div>";
 	/*	canvasHeight =  $(document).height() * 0.8;
 		canvasWidth =$(document).width() * 0.8;
 		if (canvasWidth>940) canvasWidth = 940;
@@ -729,7 +761,11 @@ function addNodeComicSingle(nodeId) {
 		
 		if(myObj.chapters[chapter].callback!=undefined) {
 		//	console.log( myObj.chapters[chapter].callback);
-			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myObj.chapters[chapter].callback]});
+			var myCallback = myObj.chapters[chapter].callback;
+			
+			if (myCallback == "Case1_outro" && parseInt(GAMEMODE)==1) myCallback = "Case1_mode1_outro";
+			
+			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myCallback]});
 		}
 		//else console.log("HUB error: could not found callback action in function respondToHUB");
 	}
@@ -905,7 +941,7 @@ self.zoomIn_BUP = function(wallID) {
 
    			var maxX = $("#nodeHeader").width()-500;
    			currentlyClickedWallText =0;
-   		 	myDiv.append("<ignorefirstchild/><div class='centered twelve columns' id='myDiv_column'><div class='row' id='myDiv_row"+rownr+"'><ignorefirstchild/>");
+   		 	myDiv.append("<ignorefirstchild/><div class='centered twelve columns' id='myDiv_column'><div class='row quoterow' id='myDiv_row"+rownr+"'><ignorefirstchild/>");
     	   for (var i = 0; i<_.size(walloftext); i++) {
     	   		//var randx = 0 +150*(i%4);//0 + Math.floor((Math.random()*480)+1);
     	   		//var randy = Math.floor((Math.random()*$(window).height()*0.6)+1);
@@ -917,7 +953,7 @@ self.zoomIn_BUP = function(wallID) {
     	   		if (i==3 || i==6) {
     	   				 $("#myDiv_column").append("</div>");
     	   				rownr++;
-    	   				 $("#myDiv_column").append("<div class='row' id='myDiv_row"+rownr+"'><ignorefirstchild/>");
+    	   				 $("#myDiv_column").append("<div class='row quoterow' id='myDiv_row"+rownr+"'><ignorefirstchild/>");
     	   		}
     	   		if(i==0) $("#myDiv_row"+rownr).append("<div id='wall_"+i+"' class='three columns walloftextcontent2 wallSelected'><span class='wallOfTextHitarea'>- ” "+walloftext[i].text+" ”</span></div>");
     	   		else if(i<6) $("#myDiv_row"+rownr).append("<div id='wall_"+i+"' class='three columns walloftextcontent2'><span class='wallOfTextHitarea'>- ” "+walloftext[i].text+" ”</span></div>");
@@ -1279,9 +1315,12 @@ self.zoomIn_BUP = function(wallID) {
 			try
  		 	{
   				if (contentObj[oldNodeId].callback!=undefined) {
-  					if (contentObj[oldNodeId].callback=="OUTRO") window.location = "outro.html";
+  					if (contentObj[oldNodeId].callback=="OUTRO") {
+  						FS.resetProgress();
+  						window.location = "outro.html";
+  					} 
   					else {
-  				
+  				 
 						
   						exitChapter(contentObj[oldNodeId].callback);
   						return;	
@@ -1414,8 +1453,11 @@ self.zoomIn_BUP = function(wallID) {
 
 		
 
-		inner.css('max-height', wind.height()-60+'px');
-		inner.css('top', '-50px');
+		//inner.css('max-height', wind.height()-60+'px');
+		//	inner.css('top', '-50px');
+	
+		inner.css('max-height', wind.height()+'px');
+	
 		TweenMax.to($('#prevButton'), 0.125,{css:{"left": "0px"}});
 		if ($("#main_div").height() > $(window).height()) {
 			inner.css("overflow-y","auto");
@@ -1483,8 +1525,9 @@ self.zoomIn_BUP = function(wallID) {
 
 
 	self.resetProgress =function() {
+		
+ 	$.totalStorage('storeCase','');
 
- 	$.totalStorage('storeCase','CaseIntro');
  	$.totalStorage('currentNodeNr','-1');
  	FS.unlockedChapters = new Array();
 	FS.unlockedChapters.length=0;
@@ -1596,6 +1639,11 @@ self.zoomIn_BUP = function(wallID) {
 			$("#case-nav-wrapper").css("display","block");
 		}
 
+		GAMEMODE = params.mode;
+		if(GAMEMODE == undefined) GAMEMODE=0;
+	
+
+
 	//BV = new $.BigVideo();
 	//BV.init();
  
@@ -1608,6 +1656,19 @@ self.zoomIn_BUP = function(wallID) {
 		}
 
 	else FS.unlockedChapters = $.totalStorage('unlockedChapters');
+	
+
+	if($.totalStorage('gameMode')!=GAMEMODE) {
+	 	//new game mode
+	 	$.totalStorage('gameMode',  GAMEMODE);
+		FS.resetProgress();
+	 	
+	}
+
+	if (params.unlock != undefined) {
+			unlockChapters(parseInt(params.unlock));
+	}
+
 	//START CASE HERE - MAIN
 
 
@@ -1617,9 +1678,15 @@ self.zoomIn_BUP = function(wallID) {
 
 
 	storeCase = $.totalStorage('storeCase');
-	console.log("main start: start case " +storeCase);
-	if (storeCase==undefined) {
+	
+	if (storeCase==undefined || storeCase=='') {
 		storeCase = "CaseIntro";
+		if (parseInt(GAMEMODE) ==1) storeCase ="CaseIntro1";	
+		if (parseInt(GAMEMODE) ==2) {
+			unlockChapters(6);
+			storeCase ="CaseIntro2";	
+		}
+		 
 	}
 	
 	FS.startCase(storeCase);
