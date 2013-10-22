@@ -871,6 +871,7 @@ transform: scale(1,1);
   color:#313131;
   height:100%;
   font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
 
  }
  .index_imgcenter {
@@ -1151,7 +1152,7 @@ background-position: center;
 
 }
 .small_logotext {
-  font-size: 11px;
+  font-size: 9px;
 }
 
 .index_container  a {
@@ -1259,8 +1260,8 @@ padding-bottom: 100px;
 }
  .outro_container {
   @extend .index_container;
-  height:800px;
-  max-height: 800px;
+height: 860px;
+max-height: 2000px;
 
   
  }
@@ -1284,4 +1285,38 @@ padding-bottom: 100px;
 .outro_logos {
  display: inline;
   @include respond("max-width: 960px") { display:block; } //" 
+}
+
+
+
+.agentbody_bg {
+  background: url(../img/webpages/agent_bg.jpg);
+  background-repeat: repeat-y;
+  background-position: center;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  color:#000;
+  
+}
+
+.paddingtop50 {
+  padding-top: 50px;
+}
+
+.agent_bliagent {
+  background: url(../img/webpages/agent_jagvillbg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width:297px;
+  height:187px;
+  
+}
+.fb-like {
+  top: 138px;
+  left: -45px;
+}
+
+#agent_minilogo{
+margin-top: 104px;
+margin-left: 90px;  
 }

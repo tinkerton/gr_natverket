@@ -2076,7 +2076,7 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .visitedChapter { background-color: white; color: #000; }
 
-.index_bg { background-color: #FFF; color: #313131; height: 100%; font-size: 14px; }
+.index_bg { background-color: #FFF; color: #313131; height: 100%; font-size: 14px; font-family: 'Open Sans', sans-serif; }
 
 .index_imgcenter { text-align: center; padding-right: 22px; }
 
@@ -2152,7 +2152,7 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .index_container, .fairsex_container, .outro_container { background: url(../img/webpages/bgbig.jpg); background-repeat: no-repeat; background-position: center 0px; height: 77%; max-height: 660px; overflow: hidden; }
 
-.small_logotext { font-size: 11px; }
+.small_logotext { font-size: 9px; }
 
 .index_container a, .fairsex_container a, .outro_container a { color: #99035D; }
 
@@ -2196,7 +2196,7 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 .outro_footer { margin-top: -100px; }
 @media only screen and (max-width: 400px) { .outro_footer { margin-top: 0px; } }
 
-.outro_container { height: 800px; max-height: 800px; }
+.outro_container { height: 860px; max-height: 2000px; }
 
 .outro_links { padding-top: 10px; }
 
@@ -2207,3 +2207,13 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .outro_logos { display: inline; }
 @media only screen and (max-width: 960px) { .outro_logos { display: block; } }
+
+.agentbody_bg { background: url(../img/webpages/agent_bg.jpg); background-repeat: repeat-y; background-position: center; font-size: 15px; font-family: 'Open Sans', sans-serif; color: #000; }
+
+.paddingtop50 { padding-top: 50px; }
+
+.agent_bliagent { background: url(../img/webpages/agent_jagvillbg.jpg); background-repeat: no-repeat; background-position: center; width: 297px; height: 187px; }
+
+.fb-like { top: 138px; left: -45px; }
+
+#agent_minilogo { margin-top: 104px; margin-left: 90px; }
