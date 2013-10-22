@@ -2113,7 +2113,7 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
   .index_logos { text-align: left; }
   .redanagent { margin: 0 40px; }
   .index_footer { float: left; text-align: left; }
-  .index_container { height: 660px; }
+  .index_container, .fairsex_container, .outro_container { height: 660px; }
   .index_footertext { text-align: left; } }
 .start_topcontainer { padding-top: 30px; }
 
@@ -2146,11 +2146,15 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .indexbox { background-color: #e94d7e; padding: 20px; color: #FFF; }
 
-.index_container { background: url(../img/webpages/bgbig.jpg); background-repeat: no-repeat; background-position: center 0px; height: 77%; max-height: 660px; overflow: hidden; }
+#pagerip_top { margin-top: 10px; }
+
+.pagerip_bg { background: url(../img/webpages/pagerip_bg.png); background-repeat: repeat-y; margin-top: -6px; height: 100%; }
+
+.index_container, .fairsex_container, .outro_container { background: url(../img/webpages/bgbig.jpg); background-repeat: no-repeat; background-position: center 0px; height: 77%; max-height: 660px; overflow: hidden; }
 
 .small_logotext { font-size: 11px; }
 
-.index_container a { color: #99035D; }
+.index_container a, .fairsex_container a, .outro_container a { color: #99035D; }
 
 .center { text-align: center; }
 
@@ -2163,3 +2167,43 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 .modalheader { font-size: 2em; }
 
 .quoterow { padding: 9px; }
+
+.fairsex_container { height: 830px; max-height: 830px; }
+
+.fairsex_header { text-align: center; width: 100%; margin: 20px 15px 40px 0px; }
+
+.size15 { font-size: 15px; }
+
+.size14 { font-size: 14px; }
+
+.italic { font-style: italic; }
+
+.bold { font-weight: bold; }
+
+.fairsex_margin_page { padding: 0px 40px 0px 48px; }
+
+.fairsex_startbtn { background: url(../img/webpages/fairsex_ok.png); background-repeat: no-repeat; height: 195px; width: 199px; margin-top: 20px; margin-left: -99px; background-position: center; }
+
+.fairsex_startbtn:hover { background: url(../img/webpages/fairsex_ok_hover.png); }
+
+.fairsex_footer { margin-top: -100px; }
+@media only screen and (max-width: 525px) { .fairsex_footer { margin-top: 20px; } }
+
+.agent_startbtn { background: url(../img/webpages/agent_ok.jpg); background-repeat: no-repeat; height: 192px; width: 298px; margin-top: 40px; margin-left: -155px; background-position: center; padding-bottom: 100px; }
+
+.agent_startbtn:hover { background: url(../img/webpages/agent_ok_hover.jpg); }
+
+.outro_footer { margin-top: -100px; }
+@media only screen and (max-width: 400px) { .outro_footer { margin-top: 0px; } }
+
+.outro_container { height: 800px; max-height: 800px; }
+
+.outro_links { padding-top: 10px; }
+
+.outroright { text-align: right; }
+@media only screen and (max-width: 960px) { .outroright { text-align: center; } }
+
+.outro_links a { color: #99035D; }
+
+.outro_logos { display: inline; }
+@media only screen and (max-width: 960px) { .outro_logos { display: block; } }

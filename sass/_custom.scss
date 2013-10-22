@@ -1104,9 +1104,7 @@ background-position: center;
 
 #indexheader_image {
   margin-top: 6%;
-  @include respond("min-height: 800px") {
-    margin-top:15%;
-  }
+  @include respond("min-height: 800px") { margin-top:15%; } //"
 }
 
 
@@ -1130,6 +1128,17 @@ background-position: center;
   
  
 }
+#pagerip_top {
+  margin-top: 10px;
+}
+.pagerip_bg {
+ background: url(../img/webpages/pagerip_bg.png);
+  background-repeat:repeat-y;
+  margin-top: -6px;
+  height: 100%;
+}
+
+
 
 .index_container {
  background: url(../img/webpages/bgbig.jpg);
@@ -1175,4 +1184,104 @@ background-position: center;
 }
 .quoterow {
   padding: 9px;
+}
+.fairsex_container {
+  @extend .index_container;
+  height: 830px;
+  max-height: 830px;
+ 
+
+
+}
+.fairsex_header {
+  text-align: center;
+  width:100%;
+  margin:20px 15px 40px 0px;
+}
+
+.size15{
+  font-size: 15px;
+}
+.size14{
+  font-size: 14px;
+}
+.italic {
+  font-style: italic;
+}
+.bold {
+   font-weight: bold;
+}
+
+.fairsex_margin_page {
+  padding: 0px 40px 0px 48px;
+
+}
+
+.fairsex_startbtn {
+    background: url(../img/webpages/fairsex_ok.png);
+background-repeat: no-repeat;
+height: 195px;
+width: 199px;
+margin-top:20px;
+margin-left: -99px;
+background-position: center;
+
+}
+
+
+.fairsex_startbtn:hover {
+ background: url(../img/webpages/fairsex_ok_hover.png);
+
+ }
+ .fairsex_footer {
+  margin-top: -100px;
+   @include respond("max-width: 525px") { margin-top:20px; } //"
+ }
+
+.agent_startbtn {
+      background: url(../img/webpages/agent_ok.jpg);
+background-repeat: no-repeat;
+height: 192px;
+width: 298px;
+margin-top: 40px;
+margin-left: -155px;
+background-position: center;
+padding-bottom: 100px;
+}
+.agent_startbtn:hover {
+ background: url(../img/webpages/agent_ok_hover.jpg);
+
+ }
+.outro_footer{
+  margin-top: -100px;
+   @include respond("max-width: 400px") { margin-top:0px; } //"
+   
+}
+ .outro_container {
+  @extend .index_container;
+  height:800px;
+  max-height: 800px;
+
+  
+ }
+ .outro_links{
+  padding-top: 10px;
+
+   
+ }
+
+.outroright {
+  text-align: right;
+   @include respond("max-width: 960px") { text-align:center; } //"
+}
+
+
+.outro_links a {
+  color: #99035D;
+
+}
+
+.outro_logos {
+ display: inline;
+  @include respond("max-width: 960px") { display:block; } //" 
 }
