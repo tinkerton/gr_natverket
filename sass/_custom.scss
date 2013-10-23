@@ -905,9 +905,9 @@ transform: scale(1,1);
  height:20px;
   background: url(../img/webpages/pagerip.png);
   background-repeat: no-repeat;
-  background-position: center;
-   position: relative;
-   top:-20px;
+  background-position: center top;
+    position: relative;
+   top:-10px;
    margin-bottom: -10px;
 
  
@@ -939,7 +939,14 @@ height: 207px;
 width: 150px;
 margin-top:20px;
 margin-left: -75px;
+position: absolute;
+z-index: 100000000;
 background-position: center;
+ @include respond("max-width: 800px") {background-size:75%; } //"
+@include respond("max-height: 580px") {background-size:75%;margin-top:-20px; } //"
+@include respond("max-height: 450px") {background-size:65%;margin-top:-40px; } //"
+
+
 
 }
 
@@ -1016,7 +1023,7 @@ margin-right: auto;
 
                   
                   .index_container {
-                    height:660px;
+                    height:auto;
                   }
 
                   .index_footertext {
@@ -1109,6 +1116,8 @@ background-position: center;
 #indexheader_image {
   margin-top: 6%;
   @include respond("min-height: 800px") { margin-top:15%; } //"
+  @include respond("max-height: 580px") {width:75%; } //"
+@include respond("max-height: 450px") {width:65%; } //"
 }
 
 
@@ -1139,18 +1148,25 @@ background-position: center;
  background: url(../img/webpages/pagerip_bg.png);
   background-repeat:repeat-y;
   margin-top: -7px;
-  height: 100%;
+  height: auto;
 }
 
 
 
 .index_container {
- background: url(../img/webpages/bgbig.jpg);
+ background-image: url(../img/webpages/bgbig.jpg),  url(../img/webpages/pagerip.png);
+;
   background-repeat:no-repeat;
-  background-position: center 0px;
+  background-position: center 0px, center bottom;
   height: 77%;
-  max-height: 660px;
-  overflow: hidden;
+  
+  background-attachment: fixed;
+
+  -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+  /*overflow: hidden;*/
 
 
 }
@@ -1191,8 +1207,7 @@ background-position: center;
 }
 .fairsex_container {
   @extend .index_container;
-  height: 830px;
-  max-height: 830px;
+  
  
 
 
@@ -1200,9 +1215,17 @@ background-position: center;
 .fairsex_header {
   text-align: center;
   width:100%;
-  margin:20px 15px 40px 0px;
+  margin:0px 15px 20px 0px;
 }
-
+#indexheader_image {
+  width:auto;
+  text-align: center;
+}
+#indexheader_image img{
+  width:90%;
+  margin-top: -20px;
+  @include respond("max-width: 800px") { width:70%; margin-top:-20px; } //"
+}
 .size15{
   font-size: 15px;
 }
@@ -1226,7 +1249,8 @@ background-position: center;
 background-repeat: no-repeat;
 height: 195px;
 width: 199px;
-margin-top:20px;
+margin-top: -20px;
+background-size: 75%;
 margin-left: -99px;
 background-position: center;
 
@@ -1235,11 +1259,13 @@ background-position: center;
 
 .fairsex_startbtn:hover {
  background: url(../img/webpages/fairsex_ok_hover.png);
-
+ background-repeat: no-repeat;
+background-size: 75%;
+background-position: center;
  }
  .fairsex_footer {
-  margin-top: -100px;
-   @include respond("max-width: 525px") { margin-top:20px; } //"
+  
+   
  }
 
 .agent_startbtn {
@@ -1247,24 +1273,28 @@ background-position: center;
 background-repeat: no-repeat;
 height: 192px;
 width: 298px;
-margin-top: 40px;
+margin-top: 10px;
 margin-left: -155px;
 background-position: center;
+background-size: 75%;
 padding-bottom: 100px;
 }
 .agent_startbtn:hover {
  background: url(../img/webpages/agent_ok_hover.jpg);
+ background-position: center;
+ background-repeat: no-repeat;
+background-size: 75%;
 
  }
 .outro_footer{
-  margin-top: -100px;
+
    @include respond("max-width: 400px") { margin-top:0px; } //"
    
 }
  .outro_container {
   @extend .index_container;
-height: 860px;
-max-height: 2000px;
+
+
 
   
  }

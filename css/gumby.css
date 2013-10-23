@@ -2092,7 +2092,7 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .index_logos a { display: block; margin-left: 0; }
 
-.pagerip { width: 100%; height: 20px; background: url(../img/webpages/pagerip.png); background-repeat: no-repeat; background-position: center; position: relative; top: -20px; margin-bottom: -10px; }
+.pagerip { width: 100%; height: 20px; background: url(../img/webpages/pagerip.png); background-repeat: no-repeat; background-position: center top; position: relative; top: -10px; margin-bottom: -10px; }
 
 .index_footertext { text-align: center; }
 
@@ -2100,7 +2100,10 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .index_startBtnContainer { width: auto; margin: auto 50%; height: auto; text-align: center; }
 
-.index_startbtn { background: url(../img/webpages/startthumb.png); background-repeat: no-repeat; height: 207px; width: 150px; margin-top: 20px; margin-left: -75px; background-position: center; }
+.index_startbtn { background: url(../img/webpages/startthumb.png); background-repeat: no-repeat; height: 207px; width: 150px; margin-top: 20px; margin-left: -75px; position: absolute; z-index: 100000000; background-position: center; }
+@media only screen and (max-width: 800px) { .index_startbtn { background-size: 75%; } }
+@media only screen and (max-height: 580px) { .index_startbtn { background-size: 75%; margin-top: -20px; } }
+@media only screen and (max-height: 450px) { .index_startbtn { background-size: 65%; margin-top: -40px; } }
 
 .index_startbtn:hover { background: url(../img/webpages/startthumb_hover.png); background-repeat: no-repeat; background-position: center; }
 
@@ -2119,7 +2122,7 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
   .index_logos { text-align: left; }
   .redanagent { margin: 0 40px; }
   .index_footer { float: left; text-align: left; }
-  .index_container, .fairsex_container, .outro_container { height: 660px; }
+  .index_container, .fairsex_container, .outro_container { height: auto; }
   .index_footertext { text-align: left; } }
 .start_topcontainer { padding-top: 30px; }
 
@@ -2145,6 +2148,8 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 #indexheader_image { margin-top: 6%; }
 @media only screen and (min-height: 800px) { #indexheader_image { margin-top: 15%; } }
+@media only screen and (max-height: 580px) { #indexheader_image { width: 75%; } }
+@media only screen and (max-height: 450px) { #indexheader_image { width: 65%; } }
 
 .indexsmaller { font-size: 18px; }
 
@@ -2154,9 +2159,9 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 #pagerip_top { margin-top: 10px; }
 
-.pagerip_bg { background: url(../img/webpages/pagerip_bg.png); background-repeat: repeat-y; margin-top: -7px; height: 100%; }
+.pagerip_bg { background: url(../img/webpages/pagerip_bg.png); background-repeat: repeat-y; margin-top: -7px; height: auto; }
 
-.index_container, .fairsex_container, .outro_container { background: url(../img/webpages/bgbig.jpg); background-repeat: no-repeat; background-position: center 0px; height: 77%; max-height: 660px; overflow: hidden; }
+.index_container, .fairsex_container, .outro_container { background-image: url(../img/webpages/bgbig.jpg), url(../img/webpages/pagerip.png); background-repeat: no-repeat; background-position: center 0px, center bottom; height: 77%; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; /*overflow: hidden;*/ }
 
 .small_logotext { font-size: 10px; }
 
@@ -2174,9 +2179,12 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .quoterow { padding: 9px; }
 
-.fairsex_container { height: 830px; max-height: 830px; }
+.fairsex_header { text-align: center; width: 100%; margin: 0px 15px 20px 0px; }
 
-.fairsex_header { text-align: center; width: 100%; margin: 20px 15px 40px 0px; }
+#indexheader_image { width: auto; text-align: center; }
+
+#indexheader_image img { width: 90%; margin-top: -20px; }
+@media only screen and (max-width: 800px) { #indexheader_image img { width: 70%; margin-top: -20px; } }
 
 .size15 { font-size: 15px; }
 
@@ -2188,21 +2196,15 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .fairsex_margin_page { padding: 0px 40px 0px 48px; }
 
-.fairsex_startbtn { background: url(../img/webpages/fairsex_ok.png); background-repeat: no-repeat; height: 195px; width: 199px; margin-top: 20px; margin-left: -99px; background-position: center; }
+.fairsex_startbtn { background: url(../img/webpages/fairsex_ok.png); background-repeat: no-repeat; height: 195px; width: 199px; margin-top: -20px; background-size: 75%; margin-left: -99px; background-position: center; }
 
-.fairsex_startbtn:hover { background: url(../img/webpages/fairsex_ok_hover.png); }
+.fairsex_startbtn:hover { background: url(../img/webpages/fairsex_ok_hover.png); background-repeat: no-repeat; background-size: 75%; background-position: center; }
 
-.fairsex_footer { margin-top: -100px; }
-@media only screen and (max-width: 525px) { .fairsex_footer { margin-top: 20px; } }
+.agent_startbtn { background: url(../img/webpages/agent_ok.jpg); background-repeat: no-repeat; height: 192px; width: 298px; margin-top: 10px; margin-left: -155px; background-position: center; background-size: 75%; padding-bottom: 100px; }
 
-.agent_startbtn { background: url(../img/webpages/agent_ok.jpg); background-repeat: no-repeat; height: 192px; width: 298px; margin-top: 40px; margin-left: -155px; background-position: center; padding-bottom: 100px; }
+.agent_startbtn:hover { background: url(../img/webpages/agent_ok_hover.jpg); background-position: center; background-repeat: no-repeat; background-size: 75%; }
 
-.agent_startbtn:hover { background: url(../img/webpages/agent_ok_hover.jpg); }
-
-.outro_footer { margin-top: -100px; }
 @media only screen and (max-width: 400px) { .outro_footer { margin-top: 0px; } }
-
-.outro_container { height: 860px; max-height: 2000px; }
 
 .outro_links { padding-top: 30px; }
 
