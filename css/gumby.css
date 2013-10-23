@@ -2080,9 +2080,9 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 
 .visitedChapter { background-color: white; color: #000; }
 
-.index_bg { background-color: #FFF; color: #313131; height: 100%; font-size: 14px; font-family: 'Times New Roman', Georgia, serif; }
+.index_bg { background-color: #FFF; color: #313131; height: 100%; font-size: 14px; font-family: Helvetica, Arial, serif; }
 
-.index_bg p { font-family: 'Times New Roman', Georgia, serif; }
+.index_bg p { font-family: Helvetica, Arial, serif; }
 
 .index_imgcenter { text-align: center; padding-right: 22px; }
 
@@ -2214,9 +2214,9 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 .outro_logos { display: inline; }
 @media only screen and (max-width: 960px) { .outro_logos { display: block; } }
 
-.agentbody_bg { background: url(../img/webpages/agent_bg.jpg); background-repeat: repeat-y; background-position: center; font-size: 14px; font-family: 'Times New Roman', Georgia, serif; color: #000; }
+.agentbody_bg { background: url(../img/webpages/agent_bg.jpg); background-repeat: repeat-y; background-position: center; font-size: 14px; font-family: Helvetica, Arial, serif; color: #000; }
 
-.agentbody_bg p { font-family: 'Times New Roman', Georgia, serif; }
+.agentbody_bg p { font-family: Helvetica, Arial, serif; }
 
 .agent_bliagentleft { padding-top: 50px; font-size: 20px; line-height: 32px; }
 
