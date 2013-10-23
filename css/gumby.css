@@ -59,6 +59,10 @@ html, body { height: 100%; }
 /* Fonts */
 @font-face { font-family: "entypo"; font-style: normal; font-weight: 400; src: url(../fonts/icons/entypo.eot); src: url("../fonts/icons/entypo.eot?#iefix") format("ie9-skip-eot"), url("../fonts/icons/entypo.woff") format("woff"), url("../fonts/icons/entypo.ttf") format("truetype"); }
 
+@font-face { font-family: ChaletComprime; src: url("../fonts/ChaletComprime-CologneSixty.otf"); }
+
+@font-face { font-family: 'chaletcomprime-colognesixtyRg'; src: url("../fonts/chaletcomprime-colognesixty-webfont.eot"); src: url("../fonts/chaletcomprime-colognesixty-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/chaletcomprime-colognesixty-webfont.woff") format("woff"), url("../fonts/chaletcomprime-colognesixty-webfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
 h1, h2, h3, h4, h5, h6 { font-family: "Open Sans"; font-weight: 300; color: #444444; text-rendering: optimizeLegibility; padding-top: 0.273em; line-height: 1.15538em; padding-bottom: 0.273em; }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #d04526; }
 
@@ -2208,12 +2212,33 @@ width:280px; */ padding-top: 0px; padding-left: 0px; padding-right: 20px; }
 .outro_logos { display: inline; }
 @media only screen and (max-width: 960px) { .outro_logos { display: block; } }
 
-.agentbody_bg { background: url(../img/webpages/agent_bg.jpg); background-repeat: repeat-y; background-position: center; font-size: 15px; font-family: 'Open Sans', sans-serif; color: #000; }
+.agentbody_bg { background: url(../img/webpages/agent_bg.jpg); background-repeat: repeat-y; background-position: center; font-size: 12px; font-family: 'Open Sans', sans-serif; color: #000; }
 
-.paddingtop50 { padding-top: 50px; }
+.agent_bliagentleft { padding-top: 50px; font-size: 20px; line-height: 32px; }
 
-.agent_bliagent { background: url(../img/webpages/agent_jagvillbg.jpg); background-repeat: no-repeat; background-position: center; width: 297px; height: 187px; }
+.agent_bliagent { background: url(../img/webpages/agent_jagvillbg.jpg); background-repeat: no-repeat; background-position: center 26px; width: 297px; height: 215px; padding-top: 26px; position: relative; }
 
-.fb-like { top: 138px; left: -45px; }
+.agent_fb { position: relative; top: 137px; margin-left: 50%; left: -90px; }
 
 #agent_minilogo { margin-top: 104px; margin-left: 90px; }
+
+.agent_h1 { font-family: "chaletcomprime-colognesixtyRg", Helvetica, Arial, sans-serif; font-size: 37px; font-weight: normal; color: #000; }
+
+a { color: #ef4c7f; font-weight: bold; }
+
+a:hover { color: #ef4c7f; text-decoration: underline; }
+
+.agentdesc_image { display: inline-block; float: left; }
+
+.agentdesc_text { padding-left: 15px; display: inline-block; float: left; width: 72%; }
+
+.agentdesc_container { padding-top: 15px; display: inline-block; float: none; }
+
+.agent_ul { list-style-type: none; font-size: 14px; }
+
+.agent_ul li { padding-bottom: 10px; }
+
+#fb-root { display: none; }
+
+/* To fill the container and nothing else */
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] { width: 100% !important; }

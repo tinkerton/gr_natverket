@@ -26,3 +26,17 @@
 //			 url('../fonts/icons/#{$some-font-variable}.woff') format('woff'),
 //			 url('../fonts/icons/#{$some-font-variable}.ttf')  format('truetype');
 //}
+
+@font-face {
+    font-family: ChaletComprime;
+    src: url("../fonts/ChaletComprime-CologneSixty.otf");
+}
+@font-face {
+    font-family: 'chaletcomprime-colognesixtyRg';
+    src: url('../fonts/chaletcomprime-colognesixty-webfont.eot');
+    src: url('../fonts/chaletcomprime-colognesixty-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/chaletcomprime-colognesixty-webfont.woff') format('woff'),
+         url('../fonts/chaletcomprime-colognesixty-webfont.ttf') format('truetype');   
+    font-weight: normal;
+    font-style: normal;
+}
