@@ -871,8 +871,11 @@ transform: scale(1,1);
   color:#313131;
   height:100%;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Times New Roman', Georgia, serif;
 
+ }
+ .index_bg p {
+   font-family: 'Times New Roman', Georgia, serif;
  }
  .index_imgcenter {
   text-align: center;
@@ -1152,7 +1155,7 @@ background-position: center;
 
 }
 .small_logotext {
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .index_container  a {
@@ -1266,7 +1269,7 @@ max-height: 2000px;
   
  }
  .outro_links{
-  padding-top: 10px;
+  padding-top: 30px;
 
    
  }
@@ -1293,11 +1296,14 @@ max-height: 2000px;
   background: url(../img/webpages/agent_bg.jpg);
   background-repeat: repeat-y;
   background-position: center;
-  font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-family: 'Times New Roman', Georgia, serif;
   color:#000;
   
 }
+ .agentbody_bg p {
+   font-family: 'Times New Roman', Georgia, serif;
+ }
 
 .agent_bliagentleft {
   padding-top: 50px;
