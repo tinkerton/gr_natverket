@@ -41,7 +41,7 @@ self.nodes = {"content":
 							{"text":"Det som stod på Internet", 
 								"ID":"1",
 								"lockeduntil":"7", 
-								"width":"353px", "height":"49px", 
+								"width":"358px", "height":"49px", 
 								"left":"53%", "top":"30%", 
 								"paddingtop":"10px",
 								"fontsize":"1.8",

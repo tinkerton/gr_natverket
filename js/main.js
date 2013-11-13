@@ -484,7 +484,8 @@ function addNodeComicSingle(nodeId) {
 		
 		 ////console.log("exitChapter goto:"+ nextHUB  + "    unlockedChapters:" + _.size(FS.unlockedChapters) +" " + currentCase);
 	
-		TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[nextHUB]});
+		//TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[nextHUB]});
+	FS.startCase(nextHUB);
 	}
 
 
@@ -504,8 +505,9 @@ function addNodeComicSingle(nodeId) {
 		
 		if(myCallback!=undefined && myCallback!="Case1_HUB"  && myCallback!="Case2_HUB") {
 			//console.log( myCallback);
-			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myCallback]});
+			//TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myCallback]});
 
+			FS.startCase(myCallback);
 		}else {
 			if(myCallback =="Case1_HUB" || myCallback=="Case2_HUB") {
 
@@ -513,7 +515,8 @@ function addNodeComicSingle(nodeId) {
 			}
 			else {
 				globalAnimation=0;
-				TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete: FS.gotoNode,onCompleteParams:[FS.currentNodeNr,1]});
+				//TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete: FS.gotoNode,onCompleteParams:[FS.currentNodeNr,1]});
+				FS.gotoNode(FS.currentNodeNr,1);
 			}
 
 		}
@@ -541,7 +544,8 @@ function addNodeComicSingle(nodeId) {
 
 	self.populateSequence = function() {
 		$("#seqWrapper").html(addNodeVideoSequence(FS.currentNodeNr));
-		 TweenMax.to($("#seqWrapper"), 0.5, {alpha:1, onComplete:FS.startVideoListener})
+		// TweenMax.to($("#seqWrapper"), 0.5, {alpha:1, onComplete:FS.startVideoListener})
+		FS.startVideoListener();
 	}
 
 	self.gotoSequence = function(sequenceID) {
@@ -551,7 +555,8 @@ function addNodeComicSingle(nodeId) {
 		 return; 
 		}
 		 FS.currentSequence =  sequenceID;
-		 TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
+		 FS.populateSequence();
+		// TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
 	
 	}
 
@@ -644,7 +649,7 @@ function addNodeComicSingle(nodeId) {
 
 		
 
-		res ="<div class='row'>";
+		res ="<div class='row' id='seqWrapper'>";
 
 		for (var i=0; i<FS.nrOfVideos; i++) {
 			if(FS.nrOfVideos<=1) res +="<div class='centered "+nrOfCols+" columns'>";
@@ -765,7 +770,8 @@ function addNodeComicSingle(nodeId) {
 			
 			if (myCallback == "Case1_outro" && parseInt(GAMEMODE)==1) myCallback = "Case1_mode1_outro";
 			
-			TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myCallback]});
+			//TweenMax.to($("#main_div"),1,{css:{"opacity":"0"}, onComplete:FS.startCase, onCompleteParams:[myCallback]});
+			FS.startCase(myCallback);
 		}
 		//else console.log("HUB error: could not found callback action in function respondToHUB");
 	}
@@ -1056,20 +1062,29 @@ self.zoomIn_BUP = function(wallID) {
 		  	
 		  	
 		  	 removeVideoListener();
-		  	// console.log("video on finish");
+		  	
 		  	 FS.currentSequence =  contentObj[FS.currentNodeNr].sequences[FS.currentSequence].gotoID;
-		   	 if ( FS.currentSequence!=undefined)  TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
+		   
+		  	 
+		   	 if ( FS.currentSequence!=undefined)  {
+		   	 
+		   	 FS.populateSequence();
+		   	 	//TweenMax.to($("#seqWrapper"), 0.5, {alpha:0, onComplete:FS.populateSequence})
+		   	 		
+		   	 }
 		  	 else {
 		  	 	if (contentObj[FS.currentNodeNr].callback!=undefined) {
-		  	 		//console.log("vof1");
-		  	 		exitChapter(contentObj[FS.currentNodeNr].callback);
+		  	 		
+		  	 		try {exitChapter(contentObj[FS.currentNodeNr].callback);}
+		  	 		catch(err) {console.log("2 error vof1");}
 
 		  	 	}else {
-		  	 		//console.log("vof2");
-		  	 		FS.gotoNode(FS.currentNodeNr,1);
+		  	 		FS.currentSequence=-1;
+		  	 		try{FS.gotoNode(FS.currentNodeNr,1);}
+		  	 		catch(err) {console.log("3 error vof2");}
 		  	 	}
 		  	 }
-		  //	 console.log(FS.currentSequence);
+	 
 		  //	 console.log(addNodeVideoSequence(FS.currentNodeNr));
 		  
 			
@@ -1082,6 +1097,8 @@ self.zoomIn_BUP = function(wallID) {
 
 	function removeVideoListener() {
 	//	console.log("removeVideoListener " +FS.currentSequence );
+   	
+   	try {
    		var iframe = $('#iframe_'+FS.currentSequence)[0];
    		if(iframe==undefined) return;
 //console.log("remove sucess");
@@ -1091,6 +1108,10 @@ self.zoomIn_BUP = function(wallID) {
 		FS.video_player.removeEvent('ready');
 		FS.video_player.removeEvent('finish');
 		$('button').unbind();
+
+		}
+		catch (err) {}
+		
 
 	
 
@@ -1109,11 +1130,15 @@ self.zoomIn_BUP = function(wallID) {
 	self.startVideoListener = function() {
 	//	console.log("startVideoListener " +FS.currentSequence );
    		var iframe = $('#iframe_'+FS.currentSequence)[0];
-   		if(iframe==undefined) return;
+   		if(iframe==undefined) {
+   			removeVideoListener();
+   			return;
+   		}
 //console.log("start sucess");
    		FS.video_player = $f(iframe);
     	
    		// When the player is ready, add listeners for pause, finish, and playProgress
+		try{
 		
 		FS.video_player.addEvent('ready', function() {
     		
@@ -1122,7 +1147,9 @@ self.zoomIn_BUP = function(wallID) {
 			
 		    		//    FS.video_player.addEvent('playProgress',  FS.video_onPlayProgress);
 		});
-	 
+		}
+		catch(err) {}
+			 
 
 		// Call the API when a button is pressed
 		$('button').bind('click', function() {
@@ -1285,7 +1312,9 @@ self.zoomIn_BUP = function(wallID) {
 		if ((nextNodeId+direction == FS.currentNodeNr) && FS.initComplete) return;
 		if(globalAnimation==1) return;
 		globalAnimation =1;
-		 removeVideoListener();
+		removeVideoListener();
+		$('#seqWrapper').remove();
+		 
 
 		currentBlur = 0;
 		speed=0.809;
@@ -1311,6 +1340,10 @@ self.zoomIn_BUP = function(wallID) {
 		//REMOVE POSSIBILTY TO NAVIGATE FREELY
 		//	FS.checkArrows(FS.currentNodeNr);
 		FS.checkDebugArrows(FS.currentNodeNr);
+		
+		
+
+
 		if(direction >0) {
 			try
  		 	{
@@ -1320,9 +1353,11 @@ self.zoomIn_BUP = function(wallID) {
   						window.location = "outro.html";
   					} 
   					else {
-  				 
-						
+  				  
+	
   						exitChapter(contentObj[oldNodeId].callback);
+
+		
   						return;	
   					}	
   				
@@ -1332,7 +1367,6 @@ self.zoomIn_BUP = function(wallID) {
 		}
 
 		if (FS.DEBUG == "true") $("#nodeNrDebug").html("Node " + contentObj[FS.currentNodeNr].ID);
-
 		 clearTimeout(nextArrowTimeout);
 		 clearTimeout(animateTextTimeout);
 
@@ -1341,7 +1375,8 @@ self.zoomIn_BUP = function(wallID) {
 		setupBackground(FS.currentNodeNr);
 		
 		FS.setUpThumbs();
-		var nType = contentObj[FS.currentNodeNr].type;
+		
+		//var nType = contentObj[FS.currentNodeNr].type;
 
 		/*if (!(nType=="chapter" || nType=="question")) $("#topleft-overlay").fadeOut();
 		else  {
