@@ -199,8 +199,10 @@ function startComicSingle(nrOfSlides) {
 			winHeight=0;
 		}
 		if (myObj.url2 !=undefined) {
-			comicHeight =370;
-			winHeight= $(window).height()/4;
+			//comicHeight =370;
+			//winHeight= $(window).height()/4;
+			comicHeight =225;
+			winHeight= $(window).height()/3 -20;
 	}
 		if (myObj.url3 !=undefined) {
 			comicHeight =225;
@@ -214,6 +216,62 @@ function startComicSingle(nrOfSlides) {
 		TweenMax.to($("#comicScroller"),0,{top:winHeight});
 		TweenMax.to($(".comicParallelWrapper"),1,{css:{"opacity":"1"},delay:0});
 		currentComic = 0;
+
+			$("#comicUp").click(function(){
+				TweenMax.to($("#comicUp"),0.125,{css:{"top":"12%"}}); 
+					TweenMax.to($("#comicUp"),0.125,{css:{"top":"15%"}, delay:0.125}); 
+				var currentNr=currentComic;
+				emptyWallTweens();
+				currentNr--;
+				resetAllComicParallels(nrOfSlides, currentNr);
+					var scrollto = winHeight -(comicHeight)* currentNr;
+				TweenMax.to($("#comicScroller"),0,{top:scrollto});
+				
+				currentComic = currentNr;
+				if (currentComic ==0) {
+					$("#comicUp").css('visibility','hidden');	
+				}else {$("#comicUp").css('visibility','visible');}
+
+				if (currentComic ==nrOfSlides-1) {
+					$("#comicDown").css('visibility','hidden');	
+				}else {$("#comicDown").css('visibility','visible');}
+				$("#slide_"+currentNr).addClass("comicActive");
+					TweenMax.to($("#slide_"+currentNr),0, {css:{"opacity":"1"}});
+					startComicHint(nrOfSlides);
+
+				});
+
+				$("#comicDown").click(function(){
+					TweenMax.to($("#comicDown"),0.125,{css:{"top":"68%"}}); 
+					TweenMax.to($("#comicDown"),0.125,{css:{"top":"65%"}, delay:0.125}); 
+					var currentNr=currentComic;
+					emptyWallTweens();
+					currentNr++;
+					resetAllComicParallels(nrOfSlides, currentNr);
+					var scrollto = winHeight -(comicHeight)* currentNr;
+					TweenMax.to($("#comicScroller"),0,{top:scrollto});
+					currentComic = currentNr;
+					if (currentComic ==0) {
+					$("#comicUp").css('visibility','hidden');	
+				}else {$("#comicUp").css('visibility','visible');}
+
+				if (currentComic ==nrOfSlides-1) {
+					$("#comicDown").css('visibility','hidden');	
+				}else {$("#comicDown").css('visibility','visible');}
+					$("#slide_"+currentNr).addClass("comicActive");
+						TweenMax.to($("#slide_"+currentNr),0, {css:{"opacity":"1"}});
+						startComicHint(nrOfSlides);
+
+			});
+
+
+
+
+
+
+
+
+
 		for (var i=0; i<nrOfSlides; i++) {
 			$("#slide_"+i).data("nr",i)
 			$("#slide_"+i).click(function(){
@@ -231,7 +289,16 @@ function startComicSingle(nrOfSlides) {
 				//console.log("scrollto "+ scrollto + "  currentNr="+currentNr + "            currentComic="+currentComic);
 				TweenMax.to($("#comicScroller"),0,{top:scrollto});
 				currentComic = currentNr;
-	
+				if (currentComic ==0) {
+					$("#comicUp").css('visibility','hidden');	
+				}else {$("#comicUp").css('visibility','visible');}
+
+				if (currentComic ==nrOfSlides-1) {
+					$("#comicDown").css('visibility','hidden');	
+				}else {$("#comicDown").css('visibility','visible');}
+				
+
+
 				$("#slide_"+currentNr).addClass("comicActive");
 				TweenMax.to($("#slide_"+currentNr),0, {css:{"opacity":"1"}});
 				startComicHint(nrOfSlides);
@@ -287,10 +354,12 @@ function resetAllComicParallels(nrOfSlides,exceptSlide) {
 			//comic_row_height = contentObj[nodeId].comic_row_height;
 
 			res ="<div class='comicParallelWrapper'>";
+			res +="<div id='comicUp'></div>";
+			res +="<div id='comicDown'></div>";
 			res +="<div id='comicScroller'>";
 			//width:280px;
 			if (comicSlides[0].slide.url !=undefined) {comicWidth = 660;}
-		 	if (comicSlides[0].slide.url2 !=undefined) {comicWidth =460;}
+		 	if (comicSlides[0].slide.url2 !=undefined) {comicWidth =300;}
 			if (comicSlides[0].slide.url3 !=undefined) {comicWidth =300;}
 			if (comicSlides[0].slide.url4 !=undefined){ comicWidth =220;}
 			

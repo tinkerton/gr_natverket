@@ -36,7 +36,7 @@ self.nodes = {"content":
 					
 										  	
 		],
-		"comic_row_height":"370px",
+		"comic_row_height":"225px",
 		 "animation":"left",
 		 "showNextButton":"1500"
 	},

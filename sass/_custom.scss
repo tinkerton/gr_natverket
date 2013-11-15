@@ -1411,3 +1411,35 @@ a:hover {
 .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
   width: 100% !important;
 }
+
+
+#comicUp {
+ top: 15%;
+  visibility: hidden;
+  opacity: 0.6;
+position: relative;
+background: url(/img/arrowup.png);
+background-repeat: no-repeat;
+background-position: center;
+height: 62px;
+z-index:888888;
+
+
+}
+#comicUp:hover {
+  opacity: 1;
+}
+#comicDown {
+  top: 65%;
+position: relative;
+ visibility: visible;
+opacity: 0.6;
+background: url(/img/arrowdown.png);
+background-repeat: no-repeat;
+background-position: center;
+height: 62px;
+z-index:888889;
+}
+#comicDown:hover {
+  opacity: 1;
+}
